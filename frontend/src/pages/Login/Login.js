@@ -15,11 +15,11 @@ const Login = () => {
 
             {/* PROVISIONAL HASTA QUE AÑADA SISTEMA DE TOKENS Y LOGINS */}
 
-        <Link to="/home">
+        {/* <Link to="/home">
             <Button type="primary" className="login-button">
             Iniciar sesión
             </Button>
-        </Link>
+        </Link> */}
       </div>
     </div>
   );
