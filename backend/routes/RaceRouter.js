@@ -1,7 +1,7 @@
 var express = require('express');
 var raceRouter = express.Router();
 
-var RaceController = require('../controllers/RaceControllers');
+var RaceController = require('../controllers/RaceController');
 
 // Create endpoint handlers for /races
 raceRouter.route('/')

@@ -1,26 +1,27 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const multer = require('multer');
 
 // Import routers
-const raceRouter = require('./routes/raceRoutes');
-const runnerRouter = require('./routes/runnerRoutes');
-const sponsorRouter = require('./routes/sponsorRoutes');
-const statusRouter = require('./routes/statusRoutes');
-const userRouter = require('./routes/userRoutes');
-const routeRouter = require('./routes/routeRoutes');
+const raceRouter = require('./routes/RaceRouter');
+const runnerRouter = require('./routes/RunnerRouter');
+const sponsorRouter = require('./routes/SponsorRouter');
+const statusRouter = require('./routes/StatusRouter');
+const userRouter = require('./routes/UserRouter');
+const routeRouter = require('./routes/RouteRouter');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/your_database_name', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useCreateIndex: true,
-});
+mongoose.connect('mongodb://127.0.0.1:27017/mitca');
 
 // Middleware
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
+const upload = multer();
+app.use(upload.array());
 
 // Routes
 app.use('/races', raceRouter);

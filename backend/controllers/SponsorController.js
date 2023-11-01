@@ -54,6 +54,7 @@ exports.updateSponsor = async (req, res) => {
 exports.deleteSponsor = async (req, res) => {
   try {
     const sponsor = await Sponsor.findByIdAndDelete(req.params.id);
+    console.log(req.params.id);
     if (!sponsor) {
       return res.status(404).json({ success: false, error: 'Sponsor not found' });
     }
