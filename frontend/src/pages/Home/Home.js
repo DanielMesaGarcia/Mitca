@@ -10,7 +10,8 @@ const Home = () => {
     <div>
       <Header />
       
-      <h2>Bienvenido, USERNAME</h2>
+      <h2>Carrera NAME:</h2>
+      <h2>Datos de la carrera:</h2>
       <div className="card-container">
       <Card className="custom-card" bordered={false}>
           <div className="card-content">
@@ -21,20 +22,32 @@ const Home = () => {
             <Button type="primary">Acceder</Button>
           </div>
         </Card>
-        <Card className="custom-card" title="Card title" bordered={false}>
-          <p>Card content</p>
+        <Card className="custom-card" bordered={false}>
+          <div className="card-content">
+            <img src="/img/couple.jpg" alt="Sample" className="card-image" />
+            <h3>Ruta</h3>
+            <hr className="divider" />
+            <p>Creación, eliminación, actualización y visualización de rutas</p>
+            <Button type="primary">Acceder</Button>
+          </div>
         </Card>
-        <Card className="custom-card" title="Card title" bordered={false}>
-          <p>Card content</p>
+        <Card className="custom-card" bordered={false}>
+          <div className="card-content">
+            <img src="/img/couple.jpg" alt="Sample" className="card-image" />
+            <h3>Estado</h3>
+            <hr className="divider" />
+            <p>¿¿¿¿¿¿¿¿¿Actualización y visualización de todos los corredores??????????????'</p>
+            <Button type="primary">Acceder</Button>
+          </div>
         </Card>
-        <Card className="custom-card" title="Card title" bordered={false}>
-          <p>Card content</p>
-        </Card>
-        <Card className="custom-card" title="Card title" bordered={false}>
-          <p>Card content</p>
-        </Card>
-        <Card className="custom-card" title="Card title" bordered={false}>
-          <p>Card content</p>
+        <Card className="custom-card" bordered={false}>
+          <div className="card-content">
+            <img src="/img/couple.jpg" alt="Sample" className="card-image" />
+            <h3>Patrocinadores</h3>
+            <hr className="divider" />
+            <p>Creación, eliminación, actualización y visualización de los patrocinadores</p>
+            <Button type="primary">Acceder</Button>
+          </div>
         </Card>
         {/* Agregar más tarjetas según sea necesario */}
       </div>
