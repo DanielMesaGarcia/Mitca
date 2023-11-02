@@ -24,7 +24,7 @@ exports.getStatuses = async (req, res) => {
 // Controller to get a status by its ID
 exports.getStatusById = async (req, res) => {
   try {
-    const status = await Status.findById(req.params.id);
+    const status = await Status.findById(req.params._id);
     if (!status) {
       return res.status(404).json({ success: false, error: 'Status not found' });
     }
@@ -37,7 +37,7 @@ exports.getStatusById = async (req, res) => {
 // Controller to update a status by its ID
 exports.updateStatus = async (req, res) => {
   try {
-    const status = await Status.findByIdAndUpdate(req.params.id, req.body, {
+    const status = await Status.findByIdAndUpdate(req.params._id, req.body, {
       new: true,
       runValidators: true,
     });
@@ -53,7 +53,7 @@ exports.updateStatus = async (req, res) => {
 // Controller to delete a status by its ID
 exports.deleteStatus = async (req, res) => {
   try {
-    const status = await Status.findByIdAndDelete(req.params.id);
+    const status = await Status.findByIdAndDelete(req.params._id);
     if (!status) {
       return res.status(404).json({ success: false, error: 'Status not found' });
     }

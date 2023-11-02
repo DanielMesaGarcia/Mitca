@@ -24,7 +24,7 @@ exports.getRunners = async (req, res) => {
 // Controller to get a runner by their ID
 exports.getRunnerById = async (req, res) => {
   try {
-    const runner = await Runner.findById(req.params.id);
+    const runner = await Runner.findById(req.params._id);
     if (!runner) {
       return res.status(404).json({ success: false, error: 'Runner not found' });
     }
@@ -37,7 +37,7 @@ exports.getRunnerById = async (req, res) => {
 // Controller to update a runner by their ID
 exports.updateRunner = async (req, res) => {
   try {
-    const runner = await Runner.findByIdAndUpdate(req.params.id, req.body, {
+    const runner = await Runner.findByIdAndUpdate(req.params._id, req.body, {
       new: true,
       runValidators: true,
     });
@@ -53,7 +53,7 @@ exports.updateRunner = async (req, res) => {
 // Controller to delete a runner by their ID
 exports.deleteRunner = async (req, res) => {
   try {
-    const runner = await Runner.findByIdAndDelete(req.params.id);
+    const runner = await Runner.findByIdAndDelete(req.params._id);
     if (!runner) {
       return res.status(404).json({ success: false, error: 'Runner not found' });
     }

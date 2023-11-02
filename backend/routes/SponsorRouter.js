@@ -6,7 +6,7 @@ sponsorRouter.route('/')
   .post(SponsorController.createSponsor)
   .get(SponsorController.getSponsors);
 
-sponsorRouter.route('/:sponsor_id')
+sponsorRouter.route('/:_id')
   .get(SponsorController.getSponsorById)
   .put(SponsorController.updateSponsor)
   .delete(SponsorController.deleteSponsor);

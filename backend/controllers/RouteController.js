@@ -24,7 +24,7 @@ exports.getRoutes = async (req, res) => {
 // Controller to get a route by its ID
 exports.getRouteById = async (req, res) => {
   try {
-    const route = await Ruta.findById(req.params.id);
+    const route = await Ruta.findById(req.params._id);
     if (!route) {
       return res.status(404).json({ success: false, error: 'Route not found' });
     }
@@ -37,7 +37,7 @@ exports.getRouteById = async (req, res) => {
 // Controller to update a route by its ID
 exports.updateRoute = async (req, res) => {
   try {
-    const route = await Ruta.findByIdAndUpdate(req.params.id, req.body, {
+    const route = await Ruta.findByIdAndUpdate(req.params._id, req.body, {
       new: true,
       runValidators: true,
     });
@@ -53,7 +53,7 @@ exports.updateRoute = async (req, res) => {
 // Controller to delete a route by its ID
 exports.deleteRoute = async (req, res) => {
   try {
-    const route = await Ruta.findByIdAndDelete(req.params.id);
+    const route = await Ruta.findByIdAndDelete(req.params._id);
     if (!route) {
       return res.status(404).json({ success: false, error: 'Route not found' });
     }

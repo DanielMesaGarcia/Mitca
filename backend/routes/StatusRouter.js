@@ -6,7 +6,7 @@ statusRouter.route('/')
   .post(StatusController.createStatus)
   .get(StatusController.getStatuses);
 
-statusRouter.route('/:status_id')
+statusRouter.route('/:_id')
   .get(StatusController.getStatusById)
   .put(StatusController.updateStatus)
   .delete(StatusController.deleteStatus);

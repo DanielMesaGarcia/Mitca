@@ -6,7 +6,7 @@ routeRouter.route('/')
   .post(RouteController.createRoute)
   .get(RouteController.getRoutes);
 
-routeRouter.route('/:route_id')
+routeRouter.route('/:_id')
   .get(RouteController.getRouteById)
   .put(RouteController.updateRoute)
   .delete(RouteController.deleteRoute);

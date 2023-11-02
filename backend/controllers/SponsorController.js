@@ -24,7 +24,7 @@ exports.getSponsors = async (req, res) => {
 // Controller to get a sponsor by its ID
 exports.getSponsorById = async (req, res) => {
   try {
-    const sponsor = await Sponsor.findById(req.params.id);
+    const sponsor = await Sponsor.findById(req.params._id);
     if (!sponsor) {
       return res.status(404).json({ success: false, error: 'Sponsor not found' });
     }
@@ -37,7 +37,7 @@ exports.getSponsorById = async (req, res) => {
 // Controller to update a sponsor by its ID
 exports.updateSponsor = async (req, res) => {
   try {
-    const sponsor = await Sponsor.findByIdAndUpdate(req.params.id, req.body, {
+    const sponsor = await Sponsor.findByIdAndUpdate(req.params._id, req.body, {
       new: true,
       runValidators: true,
     });
@@ -53,8 +53,7 @@ exports.updateSponsor = async (req, res) => {
 // Controller to delete a sponsor by its ID
 exports.deleteSponsor = async (req, res) => {
   try {
-    const sponsor = await Sponsor.findByIdAndDelete(req.params.id);
-    console.log(req.params.id);
+    const sponsor = await Sponsor.findByIdAndDelete(req.params._id);
     if (!sponsor) {
       return res.status(404).json({ success: false, error: 'Sponsor not found' });
     }

@@ -24,7 +24,7 @@ exports.getUsers = async (req, res) => {
 // Controller to get a user by their ID
 exports.getUserById = async (req, res) => {
   try {
-    const user = await User.findById(req.params.id);
+    const user = await User.findById(req.params._id);
     if (!user) {
       return res.status(404).json({ success: false, error: 'User not found' });
     }
@@ -37,7 +37,7 @@ exports.getUserById = async (req, res) => {
 // Controller to update a user by their ID
 exports.updateUser = async (req, res) => {
   try {
-    const user = await User.findByIdAndUpdate(req.params.id, req.body, {
+    const user = await User.findByIdAndUpdate(req.params._id, req.body, {
       new: true,
       runValidators: true,
     });
@@ -53,7 +53,7 @@ exports.updateUser = async (req, res) => {
 // Controller to delete a user by their ID
 exports.deleteUser = async (req, res) => {
   try {
-    const user = await User.findByIdAndDelete(req.params.id);
+    const user = await User.findByIdAndDelete(req.params._id);
     if (!user) {
       return res.status(404).json({ success: false, error: 'User not found' });
     }

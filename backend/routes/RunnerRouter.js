@@ -6,7 +6,7 @@ runnerRouter.route('/')
   .post(RunnerController.createRunner)
   .get(RunnerController.getRunners);
 
-runnerRouter.route('/:runner_id')
+runnerRouter.route('/:_id')
   .get(RunnerController.getRunnerById)
   .put(RunnerController.updateRunner)
   .delete(RunnerController.deleteRunner);

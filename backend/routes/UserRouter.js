@@ -6,7 +6,7 @@ userRouter.route('/')
   .post(UserController.createUser)
   .get(UserController.getUsers);
 
-userRouter.route('/:user_id')
+userRouter.route('/:_id')
   .get(UserController.getUserById)
   .put(UserController.updateUser)
   .delete(UserController.deleteUser);

@@ -24,7 +24,7 @@ exports.getRaces = async (req, res) => {
 // Controller to get a race by its ID
 exports.getRaceById = async (req, res) => {
   try {
-    const race = await Race.findById(req.params.id).populate('route').populate('status').populate('runners').populate('sponsors');
+    const race = await Race.findById(req.params._id).populate('route').populate('status').populate('runners').populate('sponsors');
     if (!race) {
       return res.status(404).json({ success: false, error: 'Race not found' });
     }
@@ -37,7 +37,7 @@ exports.getRaceById = async (req, res) => {
 // Controller to update a race by its ID
 exports.updateRace = async (req, res) => {
   try {
-    const race = await Race.findByIdAndUpdate(req.params.id, req.body, {
+    const race = await Race.findByIdAndUpdate(req.params._id, req.body, {
       new: true,
       runValidators: true,
     }).populate('route').populate('status').populate('runners').populate('sponsors');
@@ -53,7 +53,7 @@ exports.updateRace = async (req, res) => {
 // Controller to delete a race by its ID
 exports.deleteRace = async (req, res) => {
   try {
-    const race = await Race.findByIdAndDelete(req.params.id);
+    const race = await Race.findByIdAndDelete(req.params._id);
     if (!race) {
       return res.status(404).json({ success: false, error: 'Race not found' });
     }
