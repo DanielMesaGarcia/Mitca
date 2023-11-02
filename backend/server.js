@@ -12,7 +12,7 @@ const userRouter = require('./routes/UserRouter');
 const routeRouter = require('./routes/RouteRouter');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 // Connect to MongoDB
 mongoose.connect('mongodb://127.0.0.1:27017/mitca');
