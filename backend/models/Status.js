@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
+const Race = require('./Race'); 
 
 const statusSchema = new mongoose.Schema({
-    _id: { type: Number, required: true, unique: true },
-  carrera: { type: mongoose.Schema.Types.ObjectId, ref: 'Race', unique: true },
+  carrera: { type: String, ref: 'Race', unique: true },
   statusAtTheMoment: { type: String, required: true, default: "Not started" },
   winner: { type: String },
   duration: { type: String }

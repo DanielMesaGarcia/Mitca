@@ -15,7 +15,10 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 // Connect to MongoDB
-mongoose.connect('mongodb://127.0.0.1:27017/mitca');
+mongoose.connect('mongodb://127.0.0.1:27017/mitca',{
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));

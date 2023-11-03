@@ -21,6 +21,8 @@ exports.getRaces = async (req, res) => {
   }
 };
 
+
+
 // Controller to get a race by its ID
 exports.getRaceById = async (req, res) => {
   try {
@@ -49,6 +51,30 @@ exports.updateRace = async (req, res) => {
     res.status(500).json({ success: false, error: error.message });
   }
 };
+
+exports.patchRace = async (req, res) => {
+  const { _id } = req.params;
+  const updates = req.body;
+
+  try {
+    const race = await Race.findOne({ _id: _id });
+
+    if (!race) {
+      return res.status(404).json({ success: false, error: 'Race not found' });
+    }
+
+    Object.keys(updates).forEach((key) => {
+      race[key] = updates[key];
+    });
+
+    await race.save();
+
+    res.status(200).json({ success: true, data: race });
+  } catch (error) {
+    res.status(500).json({ success: false, error: error.message });
+  }
+};
+
 
 // Controller to delete a race by its ID
 exports.deleteRace = async (req, res) => {

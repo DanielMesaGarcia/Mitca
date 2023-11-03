@@ -7,11 +7,11 @@ var RaceController = require('../controllers/RaceController');
 raceRouter.route('/')
   .post(RaceController.createRace)
   .get(RaceController.getRaces);
-
 // Create endpoint handlers for /races/:race_id
 raceRouter.route('/:_id')
   .get(RaceController.getRaceById)
   .put(RaceController.updateRace)
-  .delete(RaceController.deleteRace);
+  .delete(RaceController.deleteRace)
+  .patch(RaceController.patchRace);
 
 module.exports = raceRouter;
