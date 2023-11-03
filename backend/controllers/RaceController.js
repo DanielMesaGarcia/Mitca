@@ -1,4 +1,6 @@
 const Race = require('../models/Race'); // Make sure to adjust the correct path to the model
+const Route = require('../models/Route');
+const Status = require('../models/Status');
 
 // Controller to create a new race
 exports.createRace = async (req, res) => {
@@ -76,13 +78,17 @@ exports.patchRace = async (req, res) => {
 };
 
 
-// Controller to delete a race by its ID
 exports.deleteRace = async (req, res) => {
   try {
     const race = await Race.findByIdAndDelete(req.params._id);
     if (!race) {
       return res.status(404).json({ success: false, error: 'Race not found' });
     }
+
+    // Delete associated Route and Status
+    await Route.findOneAndDelete({ _id: race.route });
+    await Status.findOneAndDelete({ _id: race.status });
+
     res.status(200).json({ success: true, data: {} });
   } catch (error) {
     res.status(500).json({ success: false, error: error.message });

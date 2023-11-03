@@ -1,3 +1,4 @@
+const Race = require('../models/Race');
 const Ruta = require('../models/Route'); // Make sure to adjust the correct path to the model
 
 // Controller to create a new route record
@@ -56,6 +57,13 @@ exports.deleteRoute = async (req, res) => {
     const route = await Ruta.findByIdAndDelete(req.params._id);
     if (!route) {
       return res.status(404).json({ success: false, error: 'Route not found' });
+    }
+
+    
+    const race = await Race.findOne({ route: req.params._id });
+    if (race) {
+      race.route = undefined; // or you can use null if undefined doesn't work
+      await race.save();
     }
     res.status(200).json({ success: true, data: {} });
   } catch (error) {

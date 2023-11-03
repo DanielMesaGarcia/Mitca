@@ -1,3 +1,4 @@
+const Race = require('../models/Race');
 const Status = require('../models/Status'); // Make sure to adjust the correct path to the model
 
 // Controller to create a new status
@@ -57,6 +58,13 @@ exports.deleteStatus = async (req, res) => {
     if (!status) {
       return res.status(404).json({ success: false, error: 'Status not found' });
     }
+
+    const race = await Race.findOne({ status: req.params._id });
+    if (race) {
+      race.status = undefined; // or you can use null if undefined doesn't work
+      await race.save();
+    }
+
     res.status(200).json({ success: true, data: {} });
   } catch (error) {
     res.status(500).json({ success: false, error: error.message });
