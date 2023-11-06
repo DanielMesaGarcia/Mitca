@@ -14,6 +14,16 @@ const signInService = {
 
     return axios.post(API_URL, mappedData).then((response) => response.data);
   },
+
+  login: async (userData) => {
+    try {
+        console.log(`${API_URL}/login`, userData);
+      const response = await axios.post(`${API_URL}/login`, userData);
+      return response.data;
+    } catch (error) {
+      throw error;
+    }
+  },
 };
 
 export default signInService;
