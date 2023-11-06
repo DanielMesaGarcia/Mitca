@@ -1,23 +1,36 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Input, Button } from 'antd';
 import './Login.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate  } from 'react-router-dom';
 import UserService from '../../services/logInService'; // Adjust the path according to your file structure
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate(); // Use useNavigate hook
 
   const handleLogin = async () => {
     try {
-      const response = await UserService.login({ _id: email, password }); // assuming the email value is stored in the 'email' variable
+      const response = await UserService.login({ _id: email, password });
       // Handle the response as per your requirements
       console.log(response);
+      // Save the token to the local storage
+      localStorage.setItem('token', response.token);
+      // Redirect to the home page
+      navigate('/home');
     } catch (error) {
       // Handle the error
       console.error('Error while logging in:', error);
     }
   };
+
+  // Check if the user is already logged in
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      navigate('/home');
+    }
+  }, [navigate]);
   
 
   return (
