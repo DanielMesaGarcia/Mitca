@@ -1,14 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Input, Button } from 'antd';
 import './Signin.css'; // Archivo de estilos CSS personalizado
 import { Link } from 'react-router-dom';
+import signInService from '../../services/signInService'; // Import the provided signInService
 
 const Signin = () => {
+  const [formData, setFormData] = useState({
+    email: '',
+    password: '',
+    name: '',
+    phone: '',
+    DNI: '',
+  });
+
   const handleSubmit = (e) => {
     e.preventDefault(); // Prevents the default form submission behavior
-    // Add your form submission logic here
+    // Call the createUser function from the signInService
+    signInService.createUser(formData).then((data) => {
+      console.log('User created:', data);
+      // You can add a redirect or other logic here
+    }).catch((error) => {
+      console.error('Error creating user:', error);
+    });
   };
-  //usar axios
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.placeholder]: e.target.value,
+    });
+  };
+  
+  
+
   return (
     <div className="signin-container">
       <div className="background-image">
@@ -17,11 +41,27 @@ const Signin = () => {
       <div className="Signin-form">
         <h2>Bienvenido a la Maratón</h2>
         <form onSubmit={handleSubmit}>
-          <Input placeholder="Correo electrónico" className="input" />
-          <Input.Password placeholder="Contraseña" className="input" />
-          <Input placeholder="Nombre" className="input" />
-          <Input placeholder="Telefono" className="input" />
-          <Input placeholder="DNI" className="input" />
+          <Input
+            placeholder="email"
+            className="input"
+            onChange={handleChange}
+          />
+          <Input.Password
+            placeholder="password"
+            className="input"
+            onChange={handleChange}
+          />
+          <Input
+            placeholder="name"
+            className="input"
+            onChange={handleChange}
+          />
+          <Input
+            placeholder="phone"
+            className="input"
+            onChange={handleChange}
+          />
+          <Input placeholder="DNI" className="input" onChange={handleChange} />
 
           {/* PROVISIONAL HASTA QUE AÑADA SISTEMA DE TOKENS Y SigninS */}
 
@@ -35,3 +75,4 @@ const Signin = () => {
 };
 
 export default Signin;
+
