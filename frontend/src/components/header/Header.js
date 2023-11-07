@@ -1,11 +1,20 @@
 import React, { useState } from 'react';
 import './Header.css'; // Archivo de estilos CSS personalizado
+import { Link, useNavigate } from 'react-router-dom';
+import { Button } from 'antd';
 
 const Header = () => {
   const [menuVisible, setMenuVisible] = useState(false);
-
+  const navigate = useNavigate();
   const toggleMenu = () => {
     setMenuVisible(!menuVisible);
+  };
+
+  const logOut = () => {
+    // Borrar el token del almacenamiento local
+    localStorage.removeItem('token');
+    // Redirigir a la página de inicio de sesión
+    navigate('/login');
   };
 
   return (
@@ -15,8 +24,9 @@ const Header = () => {
           <li>Ruta 1</li>
           <li>Ruta 2</li>
           <li>Ruta 3</li>
-          <li>Ruta 4</li>
-          {/* Agrega más rutas según sea necesario */}
+          <Button type="primary" className="logout-button" onClick={logOut}>
+          Cerrar sesión
+        </Button>
         </ul>
       </div>
       <div className={`menu-overlay ${menuVisible ? 'show' : ''}`} onClick={toggleMenu}></div>
