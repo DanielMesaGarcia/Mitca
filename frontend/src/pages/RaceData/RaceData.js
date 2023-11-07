@@ -1,17 +1,47 @@
-import React from 'react';
-import Header from '../../components/header/Header';
+import React, { useEffect, useState } from 'react';
 import { Card, Button } from 'antd';
+import Header from '../../components/header/Header';
 import './RaceData.css';
+import RaceDataService from '../../services/raceDataService';
 
 const RaceData = () => {
-  
-  // Contenido y lógica específicos para la página de inicio de sesión
+  const [routeData, setRouteData] = useState(null);
+  const selectedRaceId = localStorage.getItem('selectedRaceId');
+
+  useEffect(() => {
+    const fetchRouteData = async () => {
+      try {
+        const response = await RaceDataService.getRouteByRaceId(selectedRaceId);
+        const data = response.data;
+        if (data && data.length > 0) {
+          setRouteData(data[0]); // Access the first item in the array
+          console.log(data[0]);
+        }
+      } catch (error) {
+        console.error('Error fetching route data:', error);
+      }
+    };
+    fetchRouteData();
+  }, [selectedRaceId]);
+
   return (
     <div>
       <Header />
-      
+
       <h2>Carrera NAME:</h2>
       <h2>Datos de la carrera:</h2>
+
+      <Card className='Route'>
+        {routeData && (
+          <div>
+            <p>Checkpoint: {routeData.checkpoint}</p>
+            <p>Start Point: {routeData.startPoint}</p>
+            <p>Goal: {routeData.goal}</p>
+          </div>
+        )}
+      </Card>
+
+
       <div className="card-container">
       <Card className="custom-card" bordered={false}>
           <div className="card-content">

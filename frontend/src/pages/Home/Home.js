@@ -1,55 +1,53 @@
-import React from 'react';
-import Header from '../../components/header/Header';
-import { Card, Button } from 'antd';
+import React, { useState, useEffect } from 'react';
+import { List, Card } from 'antd';
 import './Home.css';
+import { useNavigate } from 'react-router-dom';
+import Header from '../../components/header/Header';
+import RaceListService from '../../services/raceListService';
 
 const Home = () => {
-  
-  // Contenido y lógica específicos para la página de inicio de sesión
+  const [races, setRaces] = useState([]);
+  const navigate = useNavigate();
+  const handleCardClick = (raceId) => {
+    localStorage.setItem('selectedRaceId', raceId);
+    navigate('/racedata');
+  };
+
+
+  useEffect(() => {
+    const fetchRaces = async () => {
+      try {
+        const response = await RaceListService.getRaces();
+        if (response.success) {
+          setRaces(response.data);
+        } else {
+          // Handle error if needed
+          console.error("Error fetching races:", response.error);
+        }
+      } catch (error) {
+        // Handle error if needed
+        console.error("Error fetching races:", error);
+      }
+    };
+    fetchRaces();
+  }, []);
+
   return (
     <div>
-      <Header />
-      
-      <h2>Carrera NAME:</h2>
-      <h2>Datos de la carrera:</h2>
-      <div className="card-container">
-      <Card className="custom-card" bordered={false}>
-          <div className="card-content">
-            <img src="/img/couple.jpg" alt="Sample" className="card-image" />
-            <h3>Corredores</h3>
-            <hr className="divider" />
-            <p>Creación, eliminación, actualización y visualización de todos los corredores</p>
-            <Button type="primary">Acceder</Button>
-          </div>
-        </Card>
-        <Card className="custom-card" bordered={false}>
-          <div className="card-content">
-            <img src="/img/couple.jpg" alt="Sample" className="card-image" />
-            <h3>Ruta</h3>
-            <hr className="divider" />
-            <p>Creación, eliminación, actualización y visualización de rutas</p>
-            <Button type="primary">Acceder</Button>
-          </div>
-        </Card>
-        <Card className="custom-card" bordered={false}>
-          <div className="card-content">
-            <img src="/img/couple.jpg" alt="Sample" className="card-image" />
-            <h3>Estado</h3>
-            <hr className="divider" />
-            <p>¿¿¿¿¿¿¿¿¿Actualización y visualización de todos los corredores??????????????'</p>
-            <Button type="primary">Acceder</Button>
-          </div>
-        </Card>
-        <Card className="custom-card" bordered={false}>
-          <div className="card-content">
-            <img src="/img/couple.jpg" alt="Sample" className="card-image" />
-            <h3>Patrocinadores</h3>
-            <hr className="divider" />
-            <p>Creación, eliminación, actualización y visualización de los patrocinadores</p>
-            <Button type="primary">Acceder</Button>
-          </div>
-        </Card>
-        {/* Agregar más tarjetas según sea necesario */}
+      <Header/>
+
+      <div className="race-list">
+        <List
+          grid={{ gutter: 16, column: 3 }}
+          dataSource={races} // Ensure that the data source is an array
+          renderItem={(race) => (
+            <List.Item key={race._id} onClick={() => handleCardClick(race._id)}>
+              <Card title={race._id} style={{ width: 300 }}>
+                {/* <img src={race.image} alt={race.name} style={{ width: '100%', height: 'auto' }} /> */}
+              </Card>
+            </List.Item>
+          )}
+        />
       </div>
     </div>
   );
