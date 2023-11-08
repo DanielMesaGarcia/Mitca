@@ -45,27 +45,25 @@ const RaceData = () => {
       <h2>Datos de {selectedRaceId}:</h2>
 
       <Card className='Route'>
-  {routeData && statusData && (
-    <div>
-      <p>Puntos de control: {routeData.checkpoint}</p>
-      <p>Lugar de inicio: {routeData.startPoint}</p>
-      <p>Meta: {routeData.goal}</p>
-      <p />
-      <p>Estado actual: {statusData.statusAtTheMoment}</p>
-      {statusData.statusAtTheMoment !== 'No empezada' && statusData.statusAtTheMoment !== 'En curso' && (
-        <div>
-          <p>Ganador: {statusData.winner}</p>
-          <p>Duración: {statusData.duration}</p>
-        </div>
-      )}
-    </div>
-  )}
-</Card>
-
-
+        {routeData && statusData && (
+          <div>
+            <p>Puntos de control: {routeData.checkpoint}</p>
+            <p>Lugar de inicio: {routeData.startPoint}</p>
+            <p>Meta: {routeData.goal}</p>
+            <p />
+            <p>Estado actual: {statusData.statusAtTheMoment}</p>
+            {statusData.statusAtTheMoment !== 'No empezada' && statusData.statusAtTheMoment !== 'En curso' && (
+              <div>
+                <p>Ganador: {statusData.winner}</p>
+                <p>Duración: {statusData.duration}</p>
+              </div>
+            )}
+          </div>
+        )}
+      </Card>
 
       <div className="card-container">
-      <Card className="custom-card" bordered={false}>
+        <Card className="custom-card" bordered={false}>
           <div className="card-content">
             <img src="/img/couple.jpg" alt="Sample" className="card-image" />
             <h3>Corredores</h3>
