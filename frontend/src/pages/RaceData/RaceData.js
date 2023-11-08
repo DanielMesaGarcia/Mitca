@@ -6,6 +6,7 @@ import RaceDataService from '../../services/raceDataService';
 
 const RaceData = () => {
   const [routeData, setRouteData] = useState(null);
+  const [statusData, setStatusData] = useState(null);
   const selectedRaceId = localStorage.getItem('selectedRaceId');
 
   useEffect(() => {
@@ -21,25 +22,46 @@ const RaceData = () => {
         console.error('Error fetching route data:', error);
       }
     };
+    const fetchStatusData = async () => {
+      try {
+        const response = await RaceDataService.getStatusByRaceId(selectedRaceId);
+        const data = response.data;
+        if (data && data.length > 0) {
+          setStatusData(data[0]); // Access the first item in the array
+          console.log(data[0]);
+        }
+      } catch (error) {
+        console.error('Error fetching status data:', error);
+      }
+    };
     fetchRouteData();
+    fetchStatusData();
   }, [selectedRaceId]);
 
   return (
     <div>
       <Header />
 
-      <h2>Carrera NAME:</h2>
-      <h2>Datos de la carrera:</h2>
+      <h2>Datos de {selectedRaceId}:</h2>
 
       <Card className='Route'>
-        {routeData && (
-          <div>
-            <p>Checkpoint: {routeData.checkpoint}</p>
-            <p>Start Point: {routeData.startPoint}</p>
-            <p>Goal: {routeData.goal}</p>
-          </div>
-        )}
-      </Card>
+  {routeData && statusData && (
+    <div>
+      <p>Puntos de control: {routeData.checkpoint}</p>
+      <p>Lugar de inicio: {routeData.startPoint}</p>
+      <p>Meta: {routeData.goal}</p>
+      <p />
+      <p>Estado actual: {statusData.statusAtTheMoment}</p>
+      {statusData.statusAtTheMoment !== 'No empezada' && statusData.statusAtTheMoment !== 'En curso' && (
+        <div>
+          <p>Ganador: {statusData.winner}</p>
+          <p>Duración: {statusData.duration}</p>
+        </div>
+      )}
+    </div>
+  )}
+</Card>
+
 
 
       <div className="card-container">

@@ -3,7 +3,7 @@ const Race = require('./Race');
 
 const statusSchema = new mongoose.Schema({
   carrera: { type: String, ref: 'Race', unique: true },
-  statusAtTheMoment: { type: String, required: true, default: "Not started" },
+  statusAtTheMoment: { type: String, required: true, default: "No empezada" },
   winner: { type: String },
   duration: { type: String }
 });
