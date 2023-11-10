@@ -75,24 +75,6 @@ const RaceData = () => {
         <Card className="custom-card" bordered={false}>
           <div className="card-content">
             <img src="/img/couple.jpg" alt="Sample" className="card-image" />
-            <h3>Ruta</h3>
-            <hr className="divider" />
-            <p>Creación, eliminación, actualización y visualización de rutas</p>
-            <Button type="primary">Acceder</Button>
-          </div>
-        </Card>
-        <Card className="custom-card" bordered={false}>
-          <div className="card-content">
-            <img src="/img/couple.jpg" alt="Sample" className="card-image" />
-            <h3>Estado</h3>
-            <hr className="divider" />
-            <p>¿¿¿¿¿¿¿¿¿Actualización y visualización de todos los corredores??????????????'</p>
-            <Button type="primary">Acceder</Button>
-          </div>
-        </Card>
-        <Card className="custom-card" bordered={false}>
-          <div className="card-content">
-            <img src="/img/couple.jpg" alt="Sample" className="card-image" />
             <h3>Patrocinadores</h3>
             <hr className="divider" />
             <p>Creación, eliminación, actualización y visualización de los patrocinadores</p>

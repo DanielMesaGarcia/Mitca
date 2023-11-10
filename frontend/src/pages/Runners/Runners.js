@@ -67,6 +67,7 @@ const RunnersPage = () => {
       try {
         console.log(formattedValues)
         await RunnerService.addRunner(formattedValues);
+        await RunnerService.addRunnerToRace(formattedValues._id);
         const response = await RunnerService.getRunners();
         if (response.success) {
           setRunners(response.data);
