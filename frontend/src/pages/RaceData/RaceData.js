@@ -6,44 +6,25 @@ import RaceDataService from '../../services/raceDataService';
 import { Link, useParams } from 'react-router-dom';
 
 const RaceData = () => {
-  const [routeData, setRouteData] = useState(null);
-  const [statusData, setStatusData] = useState(null);
+  const [Data, setData] = useState(null);
   const { id } = useParams();
   const selectedRaceId = id;
 
   useEffect(() => {
-    const fetchRouteData = async () => {
+    const fetchData = async () => {
       try {
-        const response = await RaceDataService.getRouteByRaceId(selectedRaceId);
+        const response = await RaceDataService.getDataById(selectedRaceId);
         const data = response.data;
+        console.log(data.route);
         if (data) {
-          const selectedRoute = data;
-          if (selectedRoute) {
-            setRouteData(selectedRoute);
-          }
+          setData(data);
         }
       } catch (error) {
         console.error('Error fetching route data:', error);
       }
     };
-  
-    const fetchStatusData = async () => {
-      try {
-        const response = await RaceDataService.getStatusByRaceId(selectedRaceId);
-        const data = response.data;
-        if (data && data.length > 0) {
-          const selectedStatus = data.find(item => item.carrera === selectedRaceId);
-          if (selectedStatus) {
-            setStatusData(selectedStatus);
-          }
-        }
-      } catch (error) {
-        console.error('Error fetching status data:', error);
-      }
-    };
-    fetchRouteData();
-    fetchStatusData();
-  }, [selectedRaceId]);
+    fetchData();
+  }, []);
   
 
   return (
@@ -53,17 +34,17 @@ const RaceData = () => {
       <h2>Datos de {selectedRaceId}:</h2>
 
       <Card className='Route'>
-        {routeData && statusData && (
+        {Data && (
           <div>
-            <p>Puntos de control: {routeData.checkpoint}</p>
-            <p>Lugar de inicio: {routeData.startPoint}</p>
-            <p>Meta: {routeData.goal}</p>
+            <p>Puntos de control: {Data.route.checkpoint}</p>
+            <p>Lugar de inicio: {Data.route.startPoint}</p>
+            <p>Meta: {Data.route.goal}</p>
             <p />
-            <p>Estado actual: {statusData.statusAtTheMoment}</p>
-            {statusData.statusAtTheMoment !== 'No empezada' && statusData.statusAtTheMoment !== 'En curso' && (
+            <p>Estado actual: {Data.status.statusAtTheMoment}</p>
+            {Data.status.statusAtTheMoment !== 'No empezada' && Data.status.statusAtTheMoment !== 'En curso' && (
               <div>
-                <p>Ganador: {statusData.winner}</p>
-                <p>Duración: {statusData.duration}</p>
+                <p>Ganador: {Data.status.winner}</p>
+                <p>Duración: {Data.status.duration}</p>
               </div>
             )}
           </div>
