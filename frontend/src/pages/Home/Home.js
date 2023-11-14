@@ -12,7 +12,6 @@ const Home = () => {
   const navigate = useNavigate();
 
   const handleCardClick = (raceId) => {
-    localStorage.setItem('selectedRaceId', raceId);
     navigate(`/racedata/${raceId}`);
   };
 

@@ -3,12 +3,16 @@ import { Card, Button } from 'antd';
 import Header from '../../components/header/Header';
 import './RaceData.css';
 import RaceDataService from '../../services/raceDataService';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 
 const RaceData = () => {
   const [Data, setData] = useState(null);
   const { id } = useParams();
   const selectedRaceId = id;
+  const navigate = useNavigate();
+  const handleRunnerClick = () => {
+    navigate(`/runners/${id}`);
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -58,9 +62,8 @@ const RaceData = () => {
             <h3>Corredores</h3>
             <hr className="divider" />
             <p>Creación, eliminación, actualización y visualización de todos los corredores</p>
-            <Link to="/runners">
-            <Button type="primary"  >Acceder</Button>
-            </Link>
+            {/* este de aqui */}
+            <Button type="primary"  onClick={handleRunnerClick}>Acceder</Button> 
           </div>
         </Card>
         <Card className="custom-card" bordered={false}>
@@ -70,7 +73,7 @@ const RaceData = () => {
             <hr className="divider" />
             <p>Creación, eliminación, actualización y visualización de los patrocinadores</p>
             <Link to="/sponsors">
-            <Button type="primary"  >Acceder</Button>
+            <Button type="primary" >Acceder</Button>
             </Link>
           </div>
         </Card>

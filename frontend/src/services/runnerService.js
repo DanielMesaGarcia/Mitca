@@ -1,52 +1,28 @@
 import axios from 'axios';
 
 const API_URL = 'http://localhost:3001/runners';
+const RACE_URL = 'http://localhost:3001/races';
 
-const getRunners = async () => {
+// aquí estaba originalmente la creación de la variable con la que accedía al dato que me interesaba
+
+const getDataById = async (id) => {
   try {
-    const selectedRaceId = localStorage.getItem('selectedRaceId');
-
-    const response = await axios.get(API_URL);
-
-    // Asegúrate de que la respuesta es un objeto con una propiedad 'runners' que es un array
-    const allRunners = response.data.data;
-
-    // Obtener los corredores de la carrera seleccionada
-    const raceRunners = await getRaceRunnersById(selectedRaceId);
-
-    // Filtrar los corredores para incluir solo los de la carrera seleccionada
-
-    const filteredRunners = allRunners.filter(runner =>
-      raceRunners.some(raceRunner => raceRunner._id === runner._id)
-    );
-    return filteredRunners;
+    //aquí tenía que estar realmente, ya al cambiar de página se ejecuta este método, pero existía la posibilidad de
+    //que la variable almacenada en el almacenamiento local siguiera con los datos de otra página y este método se
+    //ejecutara con los datos de la variable de la página anterior en vez de la actual
+    
+    const response = await axios.get(`${RACE_URL}/${id}`);
+    const data = response.data;
+    return data;
   } catch (error) {
-    throw new Error(`Error al obtener corredores: ${error.message}`);
-  }
-};
-
-
-
-
-const getRaceRunnersById = async (raceId) => {
-  try {
-    const response = await axios.get(`http://localhost:3001/races/${raceId}`);
-    const race = response.data.data; // Ajusta según la estructura real
-    const runners = race.runners || [];
-    return runners;
-  } catch (error) {
-    console.error('Error al obtener la raza por ID:', error);
+    console.error('Error fetching data:', error);
     throw error;
   }
-}
-
-
-
+};
 
 const addRunner = async (runner) => {
   try {
     const response = await axios.post(API_URL, runner);
-    console.log(response);
     return response.data;
   } catch (error) {
     throw new Error(`Error al agregar corredor: ${error.message}`);
@@ -56,7 +32,6 @@ const addRunner = async (runner) => {
 const updateRunner = async (id, updatedRunner) => {
   try {
     const response = await axios.put(`${API_URL}/${id}`, updatedRunner);
-    console.log(response);
     return response.data;
   } catch (error) {
     throw new Error(`Error al actualizar corredor: ${error.message}`);
@@ -66,21 +41,17 @@ const updateRunner = async (id, updatedRunner) => {
 const deleteRunner = async (id) => {
   try {
     const response = await axios.delete(`${API_URL}/${id}`);
-    console.log(response);
     return response.data;
   } catch (error) {
     throw new Error(`Error al eliminar corredor: ${error.message}`);
   }
 };
 
-const addRunnerToRace = async (runnerId) => {
+const addRunnerToRace = async (runnerId, id) => {
   try {
-    const selectedRaceId = localStorage.getItem('selectedRaceId');
-    const response = await axios.patch(`http://localhost:3001/races/${selectedRaceId}`, {
+    const response = await axios.patch(`http://localhost:3001/races/${id}`, {
       $push: { runners: runnerId }
     });
-    console.log("respu")
-    console.log(response);
     return response.data;
   } catch (error) {
     throw new Error(`Error al agregar corredor a la carrera: ${error.message}`);
@@ -88,7 +59,7 @@ const addRunnerToRace = async (runnerId) => {
 };
 
 const RaceListService = {
-  getRunners,
+  getDataById,
   addRunner,
   updateRunner,
   deleteRunner,

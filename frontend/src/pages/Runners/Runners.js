@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Table, Form, Input, Button } from 'antd';
 import RunnerService from '../../services/runnerService';
+import Header from '../../components/header/Header';
+import { useParams } from 'react-router-dom';
 
 const RunnersPage = () => {
     const [runners, setRunners] = useState([]);
     const [form] = Form.useForm();
+    const { id } = useParams();
   
     const columns = [
       {
@@ -48,9 +51,10 @@ const RunnersPage = () => {
     useEffect(() => {
       const fetchRunners = async () => {
         try {
-          const response = await RunnerService.getRunners();
-          if (response) {
-            setRunners(response);
+          const response = await RunnerService.getDataById(id);
+          const data = response.data.runners;
+          if (data) {
+            setRunners(data);
           } else {
             console.error('Error fetching runners:', response && response.error);
           }
@@ -60,17 +64,17 @@ const RunnersPage = () => {
       };
     
       fetchRunners();
-    }, []);
+    }, [id]);
   
     const addRunner = async (values) => {
       const formattedValues = { ...values, _id: values.DNI };
       delete formattedValues.DNI;
       try {
-        console.log(formattedValues)
         await RunnerService.addRunner(formattedValues);
-        await RunnerService.addRunnerToRace(formattedValues._id);
-        const response = await RunnerService.getRunners();
-        setRunners(response);
+        await RunnerService.addRunnerToRace(formattedValues._id, id);
+        const response = await RunnerService.getDataById(id);
+        const data = response.data.runners;
+        setRunners(data);
         
         form.resetFields();
       } catch (error) {
@@ -84,7 +88,7 @@ const RunnersPage = () => {
             const updatedRunner = { ...values, _id: values.DNI };
             delete updatedRunner.DNI;
             await RunnerService.updateRunner(id, updatedRunner);
-            const response = await RunnerService.getRunners();
+            const response = await RunnerService.getDataById(id);
             setRunners(response);
             
             form.resetFields();
@@ -106,7 +110,9 @@ const RunnersPage = () => {
 
 
     return (
+      
         <div className="page-container">
+          <Header/>
           <h1>Runners</h1>
           <Table dataSource={runners} columns={columns} rowKey="_id" />
     
