@@ -1,18 +1,43 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:3001/runners'; // Reemplaza con tu URL de API real
-
+const API_URL = 'http://localhost:3001/runners';
 const selectedRaceId = localStorage.getItem('selectedRaceId');
 
 const getRunners = async () => {
   try {
     const response = await axios.get(API_URL);
-    console.log(response);
-    return response.data;
+
+    // Asegúrate de que la respuesta es un objeto con una propiedad 'runners' que es un array
+    const allRunners = response.data.data;
+
+    // Obtener los corredores de la carrera seleccionada
+    const raceRunners = await getRaceRunnersById(selectedRaceId);
+
+    // Filtrar los corredores para incluir solo los de la carrera seleccionada
+    const filteredRunners = allRunners.filter(runner =>
+      raceRunners.some(raceRunner => raceRunner._id === runner._id)
+    );
+    return filteredRunners;
   } catch (error) {
     throw new Error(`Error al obtener corredores: ${error.message}`);
   }
 };
+
+
+
+
+const getRaceRunnersById = async (raceId) => {
+  try {
+    const response = await axios.get(`http://localhost:3001/races/${raceId}`);
+    const race = response.data.data; // Ajusta según la estructura real
+    const runners = race.runners || [];
+    return runners;
+  } catch (error) {
+    console.error('Error al obtener la raza por ID:', error);
+    throw error;
+  }
+}
+
 
 
 

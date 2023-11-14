@@ -49,15 +49,16 @@ const RunnersPage = () => {
       const fetchRunners = async () => {
         try {
           const response = await RunnerService.getRunners();
-          if (response.success) {
-            setRunners(response.data);
+          if (response) {
+            setRunners(response);
           } else {
-            console.error('Error fetching runners:', response.error);
+            console.error('Error fetching runners:', response && response.error);
           }
         } catch (error) {
           console.error('Error fetching runners:', error);
         }
       };
+    
       fetchRunners();
     }, []);
   
@@ -69,11 +70,8 @@ const RunnersPage = () => {
         await RunnerService.addRunner(formattedValues);
         await RunnerService.addRunnerToRace(formattedValues._id);
         const response = await RunnerService.getRunners();
-        if (response.success) {
-          setRunners(response.data);
-        } else {
-          console.error('Error fetching runners:', response.error);
-        }
+        setRunners(response);
+        
         form.resetFields();
       } catch (error) {
         console.error('Error adding runner:', error);
@@ -87,11 +85,8 @@ const RunnersPage = () => {
             delete updatedRunner.DNI;
             await RunnerService.updateRunner(id, updatedRunner);
             const response = await RunnerService.getRunners();
-            if (response.success) {
-                setRunners(response.data);
-            } else {
-                console.error('Error fetching runners:', response.error);
-            }
+            setRunners(response);
+            
             form.resetFields();
         } catch (error) {
             console.error('Error updating runner:', error);
@@ -102,11 +97,8 @@ const RunnersPage = () => {
         try {
             await RunnerService.deleteRunner(id);
             const response = await RunnerService.getRunners();
-            if (response.success) {
-                setRunners(response.data);
-            } else {
-                console.error('Error fetching runners:', response.error);
-            }
+            setRunners(response);
+            
         } catch (error) {
             console.error('Error deleting runner:', error);
         }

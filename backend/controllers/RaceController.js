@@ -76,10 +76,6 @@ exports.patchRace = async (req, res) => {
 
       await race.save();
     }
-
-    console.log("ok");
-    console.log(req.params);
-    console.log(updates);
     
     res.status(200).json({ success: true, data: race });
   } catch (error) {
