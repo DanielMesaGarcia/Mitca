@@ -23,31 +23,47 @@ const Home = () => {
   const handleCreate = async (values) => {
     try {
 
-      console.log(values);
-
       // Extraer los datos para el esquema de la carrera
-    const raceData = {
-      _id: values.name,  // Puedes ajustar esto según tus necesidades
-      eventDate: values.eventDate,
-      city: values.city,
-      length: values.length,
-    };
+      const raceData = {
+        _id: values.name,
+        eventDate: values.eventDate,
+        city: values.city,
+        length: values.length,
+      };
 
-    // Extraer los datos para el esquema de la ruta
-    const routeData = {
-      race: values.name,
-      checkpoint: values.checkpoint,
-      startPoint: values.startPoint,
-      goal: values.goal,
-    };
+      // Extraer los datos para el esquema de la ruta
+      const routeData = {
+        race: values.name,
+        checkpoint: values.checkpoint,
+        startPoint: values.startPoint,
+        goal: values.goal,
+      };
+
+      const statusData = {
+        carrera: values.name,
+      };
 
 
       const response = await RaceListService.createRace(raceData);
       const response2 = await RaceListService.createRoute(routeData);
+      const responseStatus = await RaceListService.createStatus(statusData);
       if (response.success && response2.success) {
-        setRaces([...races, response.data]);
-        setCreateFormVisible(false);
-        createForm.resetFields();
+        const raceDataWithInfo = {
+          _id: values.name,
+          eventDate: values.eventDate,
+          city: values.city,
+          length: values.length,
+          route: response2.data._id,
+          status: responseStatus.data._id,
+        }
+        console.log(raceDataWithInfo);
+        const response3 = await RaceListService.updateRace(values.name, raceDataWithInfo);
+        console.log(response3);
+        if (response3.success) {
+          setRaces([...races, response.data]);
+          setCreateFormVisible(false);
+          createForm.resetFields();
+        }
       } else {
         // Handle error if needed
         console.error("Error creating race:", response.error);
@@ -109,7 +125,7 @@ const Home = () => {
               <Input />
             </Form.Item>
             <Form.Item name="eventDate" label="Event Date" rules={[{ required: true }]}>
-              <DatePicker style={{ width: '100%' }} format="YYYY-MM-DD"/>
+              <DatePicker style={{ width: '100%' }} format="YYYY-MM-DD" />
             </Form.Item>
             <Form.Item name="city" label="City" rules={[{ required: true }]}>
               <Input />

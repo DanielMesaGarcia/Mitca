@@ -16,28 +16,35 @@ const RaceData = () => {
         const response = await RaceDataService.getRouteByRaceId(selectedRaceId);
         const data = response.data;
         if (data && data.length > 0) {
-          setRouteData(data[0]); // Access the first item in the array
-          console.log(data[0]);
+          const selectedRoute = data.find(item => item.race === selectedRaceId);
+          if (selectedRoute) {
+            setRouteData(selectedRoute);
+          }
         }
       } catch (error) {
         console.error('Error fetching route data:', error);
       }
     };
+  
     const fetchStatusData = async () => {
       try {
         const response = await RaceDataService.getStatusByRaceId(selectedRaceId);
         const data = response.data;
         if (data && data.length > 0) {
-          setStatusData(data[0]); // Access the first item in the array
-          console.log(data[0]);
+          const selectedStatus = data.find(item => item.carrera === selectedRaceId);
+          if (selectedStatus) {
+            setStatusData(selectedStatus);
+          }
         }
       } catch (error) {
         console.error('Error fetching status data:', error);
       }
     };
+  
     fetchRouteData();
     fetchStatusData();
   }, [selectedRaceId]);
+  
 
   return (
     <div>
