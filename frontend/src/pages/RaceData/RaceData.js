@@ -3,20 +3,21 @@ import { Card, Button } from 'antd';
 import Header from '../../components/header/Header';
 import './RaceData.css';
 import RaceDataService from '../../services/raceDataService';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 const RaceData = () => {
   const [routeData, setRouteData] = useState(null);
   const [statusData, setStatusData] = useState(null);
-  const selectedRaceId = localStorage.getItem('selectedRaceId');
+  const { id } = useParams();
+  const selectedRaceId = id;
 
   useEffect(() => {
     const fetchRouteData = async () => {
       try {
         const response = await RaceDataService.getRouteByRaceId(selectedRaceId);
         const data = response.data;
-        if (data && data.length > 0) {
-          const selectedRoute = data.find(item => item.race === selectedRaceId);
+        if (data) {
+          const selectedRoute = data;
           if (selectedRoute) {
             setRouteData(selectedRoute);
           }
@@ -40,7 +41,6 @@ const RaceData = () => {
         console.error('Error fetching status data:', error);
       }
     };
-  
     fetchRouteData();
     fetchStatusData();
   }, [selectedRaceId]);

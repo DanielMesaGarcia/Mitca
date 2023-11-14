@@ -17,7 +17,7 @@ const getRaceById = async (id) => {
 
 const getRouteByRaceId = async (id) => {
     try {
-      const response = await axios.get(`${ROUTE_URL}?race=${id}`);
+      const response = await axios.get(`${ROUTE_URL}/${id}`);
       return response.data;
     } catch (error) {
       throw new Error(`Error fetching route: ${error.message}`);

@@ -13,7 +13,7 @@ const Home = () => {
 
   const handleCardClick = (raceId) => {
     localStorage.setItem('selectedRaceId', raceId);
-    navigate('/racedata');
+    navigate(`/racedata/${raceId}`);
   };
 
   const showCreateForm = () => {

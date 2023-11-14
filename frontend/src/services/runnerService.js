@@ -1,10 +1,11 @@
 import axios from 'axios';
 
 const API_URL = 'http://localhost:3001/runners';
-const selectedRaceId = localStorage.getItem('selectedRaceId');
 
 const getRunners = async () => {
   try {
+    const selectedRaceId = localStorage.getItem('selectedRaceId');
+
     const response = await axios.get(API_URL);
 
     // Asegúrate de que la respuesta es un objeto con una propiedad 'runners' que es un array
@@ -14,6 +15,7 @@ const getRunners = async () => {
     const raceRunners = await getRaceRunnersById(selectedRaceId);
 
     // Filtrar los corredores para incluir solo los de la carrera seleccionada
+
     const filteredRunners = allRunners.filter(runner =>
       raceRunners.some(raceRunner => raceRunner._id === runner._id)
     );
@@ -73,6 +75,7 @@ const deleteRunner = async (id) => {
 
 const addRunnerToRace = async (runnerId) => {
   try {
+    const selectedRaceId = localStorage.getItem('selectedRaceId');
     const response = await axios.patch(`http://localhost:3001/races/${selectedRaceId}`, {
       $push: { runners: runnerId }
     });
