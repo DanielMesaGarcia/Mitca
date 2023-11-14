@@ -141,12 +141,6 @@ const Home = () => {
             <Form.Item name="goal" label="goal" rules={[{ required: true }]}>
               <Input />
             </Form.Item>
-            {/* Add other form fields for route, status, runners, sponsors as needed */}
-            <Form.Item>
-              <Button type="primary" htmlType="submit">
-                Create
-              </Button>
-            </Form.Item>
           </Form>
         </Modal>
       </div>

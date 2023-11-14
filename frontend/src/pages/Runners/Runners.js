@@ -82,14 +82,15 @@ const RunnersPage = () => {
       }
     };
   
-    const handleUpdate = async (id) => {
+    const handleUpdate = async (idRunner) => {
         try {
             const values = form.getFieldsValue();
             const updatedRunner = { ...values, _id: values.DNI };
             delete updatedRunner.DNI;
-            await RunnerService.updateRunner(id, updatedRunner);
+            await RunnerService.updateRunner(idRunner, updatedRunner);
             const response = await RunnerService.getDataById(id);
-            setRunners(response);
+            const data = response.data.runners;
+            setRunners(data);
             
             form.resetFields();
         } catch (error) {
@@ -97,11 +98,12 @@ const RunnersPage = () => {
         }
     };
 
-    const handleDelete = async (id) => {
+    const handleDelete = async (idRunner) => {
         try {
-            await RunnerService.deleteRunner(id);
-            const response = await RunnerService.getRunners();
-            setRunners(response);
+            await RunnerService.deleteRunner(idRunner);
+            const response = await RunnerService.getDataById(id);
+            const data = response.data.runners;
+            setRunners(data);
             
         } catch (error) {
             console.error('Error deleting runner:', error);
