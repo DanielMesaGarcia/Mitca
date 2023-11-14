@@ -22,14 +22,36 @@ const Home = () => {
 
   const handleCreate = async (values) => {
     try {
-      const response = await RaceListService.createRace(values);
-      if (response.success) {
+
+      console.log(values);
+
+      // Extraer los datos para el esquema de la carrera
+    const raceData = {
+      _id: values.name,  // Puedes ajustar esto según tus necesidades
+      eventDate: values.eventDate,
+      city: values.city,
+      length: values.length,
+    };
+
+    // Extraer los datos para el esquema de la ruta
+    const routeData = {
+      race: values.name,
+      checkpoint: values.checkpoint,
+      startPoint: values.startPoint,
+      goal: values.goal,
+    };
+
+
+      const response = await RaceListService.createRace(raceData);
+      const response2 = await RaceListService.createRoute(routeData);
+      if (response.success && response2.success) {
         setRaces([...races, response.data]);
         setCreateFormVisible(false);
         createForm.resetFields();
       } else {
         // Handle error if needed
         console.error("Error creating race:", response.error);
+        console.error("Error creating route:", response2.error);
       }
     } catch (error) {
       // Handle error if needed
@@ -76,9 +98,9 @@ const Home = () => {
           )}
         />
 
-<Modal
+        <Modal
           title="Create Race"
-          visible={createFormVisible}
+          open={createFormVisible}
           onCancel={() => setCreateFormVisible(false)}
           onOk={createForm.submit}
         >
@@ -87,12 +109,21 @@ const Home = () => {
               <Input />
             </Form.Item>
             <Form.Item name="eventDate" label="Event Date" rules={[{ required: true }]}>
-              <DatePicker style={{ width: '100%' }} />
+              <DatePicker style={{ width: '100%' }} format="YYYY-MM-DD"/>
             </Form.Item>
             <Form.Item name="city" label="City" rules={[{ required: true }]}>
               <Input />
             </Form.Item>
             <Form.Item name="length" label="Length" rules={[{ required: true }]}>
+              <Input />
+            </Form.Item>
+            <Form.Item name="checkpoint" label="checkpoint" rules={[{ required: true }]}>
+              <Input />
+            </Form.Item>
+            <Form.Item name="startPoint" label="startPoint" rules={[{ required: true }]}>
+              <Input />
+            </Form.Item>
+            <Form.Item name="goal" label="goal" rules={[{ required: true }]}>
               <Input />
             </Form.Item>
             {/* Add other form fields for route, status, runners, sponsors as needed */}

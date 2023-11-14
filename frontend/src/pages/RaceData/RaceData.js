@@ -3,6 +3,7 @@ import { Card, Button } from 'antd';
 import Header from '../../components/header/Header';
 import './RaceData.css';
 import RaceDataService from '../../services/raceDataService';
+import { Link } from 'react-router-dom';
 
 const RaceData = () => {
   const [routeData, setRouteData] = useState(null);
@@ -69,7 +70,9 @@ const RaceData = () => {
             <h3>Corredores</h3>
             <hr className="divider" />
             <p>Creación, eliminación, actualización y visualización de todos los corredores</p>
-            <Button type="primary">Acceder</Button>
+            <Link to="/runners">
+            <Button type="primary"  >Acceder</Button>
+            </Link>
           </div>
         </Card>
         <Card className="custom-card" bordered={false}>
@@ -78,7 +81,9 @@ const RaceData = () => {
             <h3>Patrocinadores</h3>
             <hr className="divider" />
             <p>Creación, eliminación, actualización y visualización de los patrocinadores</p>
-            <Button type="primary">Acceder</Button>
+            <Link to="/sponsors">
+            <Button type="primary"  >Acceder</Button>
+            </Link>
           </div>
         </Card>
         {/* Agregar más tarjetas según sea necesario */}

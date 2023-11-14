@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:3001/races'; // Replace with your actual API URL
-
+const API_URL = 'http://localhost:3001/races';
+const API_URL_route = 'http://localhost:3001/routes';
 const getRaces = async () => {
   try {
     const response = await axios.get(API_URL);
@@ -14,6 +14,15 @@ const getRaces = async () => {
 const createRace = async (raceData) => {
   try {
     const response = await axios.post(API_URL, raceData);
+    return response.data;
+  } catch (error) {
+    throw new Error(`Error creating race: ${error.message}`);
+  }
+};
+
+const createRoute = async (routeData) => {
+  try {
+    const response = await axios.post(API_URL_route, routeData);
     return response.data;
   } catch (error) {
     throw new Error(`Error creating race: ${error.message}`);
@@ -43,6 +52,7 @@ const RaceListService = {
   createRace,
   updateRace,
   deleteRace,
+  createRoute,
 };
 
 
