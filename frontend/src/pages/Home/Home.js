@@ -103,11 +103,11 @@ const Home = () => {
         </Button>
 
         <List
-          grid={{ gutter: 16, column: 3 }}
+          grid={{ gutter: 16 }}
           dataSource={races}
           renderItem={(race) => (
             <List.Item key={race._id} onClick={() => handleCardClick(race._id)}>
-              <Card title={race.name} style={{ width: 300 }}>
+              <Card title={race._id} style={{ width: '100%' }}>
                 {/* Display other race details */}
               </Card>
             </List.Item>

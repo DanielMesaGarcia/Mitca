@@ -8,7 +8,16 @@
 .ant-list {
   width: 80vw;
 }
+@media (max-width: 768px) {
+  .ant-list {
+    justify-content: flex-start; /* Cambia a flex-start para alinear las tarjetas en la parte superior */
+  }
 
+  .ant-card {
+    width: 100%; /* O el ancho que prefieras para ocupar el 100% del contenedor */
+    margin: 2vh 0; /* Ajusta el margen para evitar que las tarjetas se superpongan */
+  }
+}
 .ant-card {
   margin: 2vh;
   border-radius: 8px;
