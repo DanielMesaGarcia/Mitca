@@ -197,7 +197,6 @@ const RaceData = () => {
             <Button type="primary" onClick={handleSponsorClick}>Acceder</Button>
           </div>
         </Card>
-        {/* Agregar más tarjetas según sea necesario */}
       </div>
     </div>
   );
