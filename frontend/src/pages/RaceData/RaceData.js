@@ -1,9 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import { Card, Button } from 'antd';
+import { Card, Button, TimePicker, Checkbox } from 'antd';
 import Header from '../../components/header/Header';
 import './RaceData.css';
 import RaceDataService from '../../services/raceDataService';
 import { useNavigate, useParams } from 'react-router-dom';
+import dayjs from 'dayjs';
+import customParseFormat from 'dayjs/plugin/customParseFormat';
+import Form from 'antd/es/form/Form';
+import Modal from 'antd/es/modal/Modal';
+dayjs.extend(customParseFormat);
+const onChange = (time, timeString) => {
+  console.log(time, timeString);
+};
+
 
 const RaceData = () => {
   const [Data, setData] = useState(null);
@@ -44,6 +53,43 @@ const RaceData = () => {
     }
 };
 
+const [endingFormVisible, setEndingFormVisible] = useState(false);
+const [startingFormVisible, setStartingFormVisible] = useState(false);
+const [endingForm] = Form.useForm();
+const [startingForm] = Form.useForm();
+
+const showForm = () => {
+  if(Data.status.statusAtTheMoment==='No empezada'){
+    setStartingFormVisible(true);
+  }else{
+    setEndingFormVisible(true);
+  }
+  
+};
+
+const handleStart = async (values) => {
+  try {
+    // Extraer los datos para el esquema de la carrera
+    const statusData = {
+      statusAtTheMoment: 'En curso',
+    };
+
+    const response = await RaceDataService.updateStatus(Data.status._id, statusData);
+    if (response.success) {
+        setData({ ...Data, status: response.data });
+        setStartingFormVisible(false);
+      }else {
+        // Handle error if needed
+        console.error("Error updating Status:", response.error);
+      }
+  } catch (error) {
+    // Handle error if needed
+    console.error("Error creating race:", error);
+  }
+};
+
+
+
   return (
     <div>
       <Header />
@@ -66,8 +112,35 @@ const RaceData = () => {
             )}
           </div>
         )}
-
+      <Button type="primary" onClick={showForm} style={{ marginBottom: '16px' }}>
+          Update Status
+        </Button>
       <Button type="primary" onClick={() => handleDelete(id)}>Borrar carrera</Button>
+      <Modal
+          title="Create Race"
+          open={startingFormVisible}
+          onCancel={() => setStartingFormVisible(false)}
+          onOk={startingForm.submit}
+        >
+          <Form form={startingForm} onFinish={handleStart}>
+            <p>Estas seguro de que quieres iniciar la carrera</p>
+          </Form>
+        </Modal>
+      {/* <Modal
+          title="Create Race"
+          open={createFormVisible}
+          onCancel={() => setCreateFormVisible(false)}
+          onOk={endingForm.submit}
+        >
+          <Form form={createForm} onFinish={handleCreate}>
+            <Form.Item name="winner" label="winner" rules={[{ required: true }]}>
+              {/* dropdown with all runners 
+            </Form.Item>
+            <Form.Item name="duration" label="duration" rules={[{ required: true }]}>
+              <TimePicker onChange={onChange} defaultOpenValue={dayjs('00:00:00', 'HH:mm:ss')} />
+            </Form.Item>
+          </Form>
+        </Modal> */}
       </Card>
 
       <div className="card-container">
