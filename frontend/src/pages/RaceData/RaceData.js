@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Card, Button, TimePicker, Checkbox } from 'antd';
+import { Card, Button, TimePicker, Checkbox, Select } from 'antd';
 import Header from '../../components/header/Header';
 import './RaceData.css';
 import RaceDataService from '../../services/raceDataService';
@@ -8,6 +8,7 @@ import dayjs from 'dayjs';
 import customParseFormat from 'dayjs/plugin/customParseFormat';
 import Form from 'antd/es/form/Form';
 import Modal from 'antd/es/modal/Modal';
+const { Option } = Select;
 dayjs.extend(customParseFormat);
 const onChange = (time, timeString) => {
   console.log(time, timeString);
@@ -19,6 +20,7 @@ const RaceData = () => {
   const { id } = useParams();
   const selectedRaceId = id;
   const navigate = useNavigate();
+
 
   const handleRunnerClick = () => {
     navigate(`/runners/${id}`);
@@ -33,7 +35,6 @@ const RaceData = () => {
       try {
         const response = await RaceDataService.getDataById(selectedRaceId);
         const data = response.data;
-        console.log(data.route);
         if (data) {
           setData(data);
         }
@@ -43,50 +44,74 @@ const RaceData = () => {
     };
     fetchData();
   }, []);
-  
+
   const handleDelete = async (idRace) => {
     try {
-        await RaceDataService.deleteRace(idRace);
-        navigate(`/home`);  
+      await RaceDataService.deleteRace(idRace);
+      navigate(`/home`);
     } catch (error) {
-        console.error('Error deleting runner:', error);
+      console.error('Error deleting runner:', error);
     }
-};
+  };
 
-const [endingFormVisible, setEndingFormVisible] = useState(false);
-const [startingFormVisible, setStartingFormVisible] = useState(false);
-const [endingForm] = Form.useForm();
-const [startingForm] = Form.useForm();
+  const [endingFormVisible, setEndingFormVisible] = useState(false);
+  const [startingFormVisible, setStartingFormVisible] = useState(false);
+  const [endingForm] = Form.useForm();
+  const [startingForm] = Form.useForm();
 
-const showForm = () => {
-  if(Data.status.statusAtTheMoment==='No empezada'){
-    setStartingFormVisible(true);
-  }else{
-    setEndingFormVisible(true);
-  }
-  
-};
+  const showForm = () => {
+    if (Data.status.statusAtTheMoment === 'No empezada') {
+      setStartingFormVisible(true);
+    } else {
+      setEndingFormVisible(true);
+    }
 
-const handleStart = async (values) => {
-  try {
-    // Extraer los datos para el esquema de la carrera
-    const statusData = {
-      statusAtTheMoment: 'En curso',
-    };
+  };
 
-    const response = await RaceDataService.updateStatus(Data.status._id, statusData);
-    if (response.success) {
+  const handleStart = async () => {
+    try {
+      // Extraer los datos para el esquema de la carrera
+      const statusData = {
+        statusAtTheMoment: 'En curso',
+      };
+
+      const response = await RaceDataService.updateStatus(Data.status._id, statusData);
+      if (response.success) {
         setData({ ...Data, status: response.data });
         setStartingFormVisible(false);
-      }else {
+      } else {
         // Handle error if needed
         console.error("Error updating Status:", response.error);
       }
-  } catch (error) {
-    // Handle error if needed
-    console.error("Error creating race:", error);
-  }
-};
+    } catch (error) {
+      // Handle error if needed
+      console.error("Error updating Status:", error);
+    }
+  };
+
+  const handleEnding = async (values) => {
+    try {
+      const { winner, duration } = values;
+
+      const statusData = {
+        statusAtTheMoment: 'Finalizada',
+        winner, 
+        duration,
+      };
+
+      const response = await RaceDataService.updateStatus(Data.status._id, statusData);
+      if (response.success) {
+        setData({ ...Data, status: response.data });
+        setEndingFormVisible(false);
+      } else {
+        // Handle error if needed
+        console.error("Error updating Status:", response.error);
+      }
+    } catch (error) {
+      // Handle error if needed
+      console.error("Error updating Status:", error);
+    }
+  };
 
 
 
@@ -110,13 +135,12 @@ const handleStart = async (values) => {
                 <p>Duración: {Data.status.duration}</p>
               </div>
             )}
-          </div>
-        )}
-      <Button type="primary" onClick={showForm} style={{ marginBottom: '16px' }}>
+          
+        <Button type="primary" onClick={showForm} style={{ marginBottom: '16px' }}>
           Update Status
         </Button>
-      <Button type="primary" onClick={() => handleDelete(id)}>Borrar carrera</Button>
-      <Modal
+        <Button type="primary" onClick={() => handleDelete(id)}>Borrar carrera</Button>
+        <Modal
           title="Create Race"
           open={startingFormVisible}
           onCancel={() => setStartingFormVisible(false)}
@@ -126,21 +150,31 @@ const handleStart = async (values) => {
             <p>Estas seguro de que quieres iniciar la carrera</p>
           </Form>
         </Modal>
-      {/* <Modal
+        <Modal
           title="Create Race"
-          open={createFormVisible}
-          onCancel={() => setCreateFormVisible(false)}
+          open={endingFormVisible}
+          onCancel={() => setEndingFormVisible(false)}
           onOk={endingForm.submit}
         >
-          <Form form={createForm} onFinish={handleCreate}>
-            <Form.Item name="winner" label="winner" rules={[{ required: true }]}>
-              {/* dropdown with all runners 
+          <Form form={endingForm} onFinish={handleEnding}>
+            <Form.Item name="winner" label="Winner" rules={[{ required: true }]}>
+              <Select placeholder="Select a winner">
+                {Data?.runners?.map(runner => (
+                  <Option key={runner._id} value={runner.name}>
+                    {`${runner.name}, ${runner._id}`}
+                  </Option>
+                ))}
+              </Select>
             </Form.Item>
+
             <Form.Item name="duration" label="duration" rules={[{ required: true }]}>
-              <TimePicker onChange={onChange} defaultOpenValue={dayjs('00:00:00', 'HH:mm:ss')} />
+              <TimePicker onChange={onChange} />
             </Form.Item>
+            <p>Darle click a OK cambiará el estado de la carrera a terminada con los datos que has introducido</p>
           </Form>
-        </Modal> */}
+        </Modal>
+        </div>
+        )}
       </Card>
 
       <div className="card-container">
@@ -151,7 +185,7 @@ const handleStart = async (values) => {
             <hr className="divider" />
             <p>Creación, eliminación, actualización y visualización de todos los corredores</p>
             {/* este de aqui */}
-            <Button type="primary"  onClick={handleRunnerClick}>Acceder</Button> 
+            <Button type="primary" onClick={handleRunnerClick}>Acceder</Button>
           </div>
         </Card>
         <Card className="custom-card" bordered={false}>
