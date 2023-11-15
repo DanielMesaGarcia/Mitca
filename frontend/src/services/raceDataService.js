@@ -13,8 +13,18 @@ const getDataById = async (id) => {
     }
 };
 
+const deleteRace = async (id) => {
+  try {
+    const response = await axios.delete(`${RACE_URL}/${id}`);
+    return response.data;
+  } catch (error) {
+    throw new Error(`Error al eliminar carrera: ${error.message}`);
+  }
+};
+
 const RaceListService = {
   getDataById,
+  deleteRace,
 };
 
 export default RaceListService;

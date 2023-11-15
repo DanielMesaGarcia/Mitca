@@ -35,6 +35,14 @@ const RaceData = () => {
     fetchData();
   }, []);
   
+  const handleDelete = async (idRace) => {
+    try {
+        await RaceDataService.deleteRace(idRace);
+        navigate(`/home`);  
+    } catch (error) {
+        console.error('Error deleting runner:', error);
+    }
+};
 
   return (
     <div>
@@ -58,6 +66,8 @@ const RaceData = () => {
             )}
           </div>
         )}
+
+      <Button type="primary" onClick={() => handleDelete(id)}>Borrar carrera</Button>
       </Card>
 
       <div className="card-container">
