@@ -33,6 +33,15 @@ const UserSettings = () => {
         <Form.Item label="Email" name="_id">
           <Input disabled />
         </Form.Item>
+        <Form.Item label="DNI" name="_id">
+          <Input disabled />
+        </Form.Item>
+        <Form.Item label="Nombre" name="_id">
+          <Input disabled />
+        </Form.Item>
+        <Form.Item label="Telefono" name="_id">
+          <Input disabled />
+        </Form.Item>
         {/* Agrega más campos para mostrar la información del usuario */}
 
         <Form.Item>
