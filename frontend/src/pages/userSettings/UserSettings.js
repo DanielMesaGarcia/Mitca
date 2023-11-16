@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Form, Input, Button } from 'antd';
 import './UserSettings.css';
+import Header from '../../components/header/Header';
 const UserSettings = () => {
   const [userData, setUserData] = useState({});
   const [loading, setLoading] = useState(false);
@@ -24,7 +25,11 @@ const UserSettings = () => {
   };
 
   return (
+    <>
+    <Header/>
+    
     <div className="account-settings-container">
+      
       <Form
         name="account-settings"
         onFinish={handleFormSubmit}
@@ -60,6 +65,7 @@ const UserSettings = () => {
         </Button>
       </div>
     </div>
+    </>
   );
 };
 
