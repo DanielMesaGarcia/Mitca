@@ -11,6 +11,16 @@ demoRouter.route('/crearDemoData')
     .get(async (req, res) => {
         try {
 
+            // Eliminar todos los datos anteriores relacionados con la demo
+            await Promise.all([
+                Sponsor.deleteMany({ _id: { $in: ['A12345678', 'B87654321'] } }),
+                Runner.deleteMany({ _id: { $in: ['12345678A', '87654321B'] } }),
+                User.deleteMany({ _id: { $in: ['user1@example.com', 'user2@example.com', 'user3@example.com'] } }),
+                Route.deleteMany({ race: { $in: ['Race1', 'Race2'] } }),
+                Status.deleteMany({ carrera: { $in: ['Race1', 'Race2'] } }),
+                Race.deleteMany({ _id: { $in: ['Race1', 'Race2'] } }),
+            ]);
+
             // Crea demo data para SponsorSchema
             await Sponsor.create([
                 {
