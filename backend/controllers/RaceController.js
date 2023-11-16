@@ -65,17 +65,24 @@ exports.patchRace = async (req, res) => {
       return res.status(404).json({ success: false, error: 'Race not found' });
     }
 
-    Object.keys(updates).forEach((key) => {
-      race[key] = updates[key];
-    });
+    // Si la actualización incluye el operador $push
+    if ('$push' in updates) {
+      await Race.updateOne({ _id: _id }, updates);
+    } else {
+      // Actualizar otros campos usando el enfoque anterior
+      Object.keys(updates).forEach((key) => {
+        race[key] = updates[key];
+      });
 
-    await race.save();
-
+      await race.save();
+    }
+    
     res.status(200).json({ success: true, data: race });
   } catch (error) {
     res.status(500).json({ success: false, error: error.message });
   }
 };
+
 
 
 exports.deleteRace = async (req, res) => {

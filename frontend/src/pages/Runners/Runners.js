@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Table, Form, Input, Button } from 'antd';
 import RunnerService from '../../services/runnerService';
+import Header from '../../components/header/Header';
+import { useParams } from 'react-router-dom';
 
 const RunnersPage = () => {
     const [runners, setRunners] = useState([]);
     const [form] = Form.useForm();
+    const { id } = useParams();
   
     const columns = [
       {
@@ -48,64 +51,60 @@ const RunnersPage = () => {
     useEffect(() => {
       const fetchRunners = async () => {
         try {
-          const response = await RunnerService.getRunners();
-          if (response.success) {
-            setRunners(response.data);
+          const response = await RunnerService.getDataById(id);
+          const data = response.data.runners;
+          if (data) {
+            setRunners(data);
           } else {
-            console.error('Error fetching runners:', response.error);
+            console.error('Error fetching runners:', response && response.error);
           }
         } catch (error) {
           console.error('Error fetching runners:', error);
         }
       };
+    
       fetchRunners();
-    }, []);
+    }, [id]);
   
     const addRunner = async (values) => {
       const formattedValues = { ...values, _id: values.DNI };
       delete formattedValues.DNI;
       try {
-        console.log(formattedValues)
         await RunnerService.addRunner(formattedValues);
-        const response = await RunnerService.getRunners();
-        if (response.success) {
-          setRunners(response.data);
-        } else {
-          console.error('Error fetching runners:', response.error);
-        }
+        await RunnerService.addRunnerToRace(formattedValues._id, id);
+        const response = await RunnerService.getDataById(id);
+        const data = response.data.runners;
+        setRunners(data);
+        
         form.resetFields();
       } catch (error) {
         console.error('Error adding runner:', error);
       }
     };
   
-    const handleUpdate = async (id) => {
+    const handleUpdate = async (idRunner) => {
         try {
             const values = form.getFieldsValue();
             const updatedRunner = { ...values, _id: values.DNI };
             delete updatedRunner.DNI;
-            await RunnerService.updateRunner(id, updatedRunner);
-            const response = await RunnerService.getRunners();
-            if (response.success) {
-                setRunners(response.data);
-            } else {
-                console.error('Error fetching runners:', response.error);
-            }
+            await RunnerService.updateRunner(idRunner, updatedRunner);
+            const response = await RunnerService.getDataById(id);
+            const data = response.data.runners;
+            setRunners(data);
+            
             form.resetFields();
         } catch (error) {
             console.error('Error updating runner:', error);
         }
     };
 
-    const handleDelete = async (id) => {
+    const handleDelete = async (idRunner) => {
         try {
-            await RunnerService.deleteRunner(id);
-            const response = await RunnerService.getRunners();
-            if (response.success) {
-                setRunners(response.data);
-            } else {
-                console.error('Error fetching runners:', response.error);
-            }
+            await RunnerService.deleteRunner(idRunner);
+            const response = await RunnerService.getDataById(id);
+            const data = response.data.runners;
+            setRunners(data);
+            
         } catch (error) {
             console.error('Error deleting runner:', error);
         }
@@ -113,7 +112,9 @@ const RunnersPage = () => {
 
 
     return (
+      
         <div className="page-container">
+          <Header/>
           <h1>Runners</h1>
           <Table dataSource={runners} columns={columns} rowKey="_id" />
     

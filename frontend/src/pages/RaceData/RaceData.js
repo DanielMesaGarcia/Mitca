@@ -1,42 +1,119 @@
 import React, { useEffect, useState } from 'react';
-import { Card, Button } from 'antd';
+import { Card, Button, TimePicker, Checkbox, Select } from 'antd';
 import Header from '../../components/header/Header';
 import './RaceData.css';
 import RaceDataService from '../../services/raceDataService';
+import { useNavigate, useParams } from 'react-router-dom';
+import dayjs from 'dayjs';
+import customParseFormat from 'dayjs/plugin/customParseFormat';
+import Form from 'antd/es/form/Form';
+import Modal from 'antd/es/modal/Modal';
+const { Option } = Select;
+dayjs.extend(customParseFormat);
+const onChange = (time, timeString) => {
+  console.log(time, timeString);
+};
+
 
 const RaceData = () => {
-  const [routeData, setRouteData] = useState(null);
-  const [statusData, setStatusData] = useState(null);
-  const selectedRaceId = localStorage.getItem('selectedRaceId');
+  const [Data, setData] = useState(null);
+  const { id } = useParams();
+  const selectedRaceId = id;
+  const navigate = useNavigate();
+
+
+  const handleRunnerClick = () => {
+    navigate(`/runners/${id}`);
+  };
+
+  const handleSponsorClick = () => {
+    navigate(`/sponsors/${id}`);
+  };
 
   useEffect(() => {
-    const fetchRouteData = async () => {
+    const fetchData = async () => {
       try {
-        const response = await RaceDataService.getRouteByRaceId(selectedRaceId);
+        const response = await RaceDataService.getDataById(selectedRaceId);
         const data = response.data;
-        if (data && data.length > 0) {
-          setRouteData(data[0]); // Access the first item in the array
-          console.log(data[0]);
+        if (data) {
+          setData(data);
         }
       } catch (error) {
         console.error('Error fetching route data:', error);
       }
     };
-    const fetchStatusData = async () => {
-      try {
-        const response = await RaceDataService.getStatusByRaceId(selectedRaceId);
-        const data = response.data;
-        if (data && data.length > 0) {
-          setStatusData(data[0]); // Access the first item in the array
-          console.log(data[0]);
-        }
-      } catch (error) {
-        console.error('Error fetching status data:', error);
+    fetchData();
+  }, []);
+
+  const handleDelete = async (idRace) => {
+    try {
+      await RaceDataService.deleteRace(idRace);
+      navigate(`/home`);
+    } catch (error) {
+      console.error('Error deleting runner:', error);
+    }
+  };
+
+  const [endingFormVisible, setEndingFormVisible] = useState(false);
+  const [startingFormVisible, setStartingFormVisible] = useState(false);
+  const [endingForm] = Form.useForm();
+  const [startingForm] = Form.useForm();
+
+  const showForm = () => {
+    if (Data.status.statusAtTheMoment === 'No empezada') {
+      setStartingFormVisible(true);
+    } else {
+      setEndingFormVisible(true);
+    }
+
+  };
+
+  const handleStart = async () => {
+    try {
+      // Extraer los datos para el esquema de la carrera
+      const statusData = {
+        statusAtTheMoment: 'En curso',
+      };
+
+      const response = await RaceDataService.updateStatus(Data.status._id, statusData);
+      if (response.success) {
+        setData({ ...Data, status: response.data });
+        setStartingFormVisible(false);
+      } else {
+        // Handle error if needed
+        console.error("Error updating Status:", response.error);
       }
-    };
-    fetchRouteData();
-    fetchStatusData();
-  }, [selectedRaceId]);
+    } catch (error) {
+      // Handle error if needed
+      console.error("Error updating Status:", error);
+    }
+  };
+
+  const handleEnding = async (values) => {
+    try {
+      const { winner, duration } = values;
+
+      const statusData = {
+        statusAtTheMoment: 'Finalizada',
+        winner, 
+        duration,
+      };
+
+      const response = await RaceDataService.updateStatus(Data.status._id, statusData);
+      if (response.success) {
+        setData({ ...Data, status: response.data });
+        setEndingFormVisible(false);
+      } else {
+        // Handle error if needed
+        console.error("Error updating Status:", response.error);
+      }
+    } catch (error) {
+      // Handle error if needed
+      console.error("Error updating Status:", error);
+    }
+  };
+
+
 
   return (
     <div>
@@ -45,20 +122,58 @@ const RaceData = () => {
       <h2>Datos de {selectedRaceId}:</h2>
 
       <Card className='Route'>
-        {routeData && statusData && (
+        {Data && (
           <div>
-            <p>Puntos de control: {routeData.checkpoint}</p>
-            <p>Lugar de inicio: {routeData.startPoint}</p>
-            <p>Meta: {routeData.goal}</p>
+            <p>Puntos de control: {Data.route.checkpoint}</p>
+            <p>Lugar de inicio: {Data.route.startPoint}</p>
+            <p>Meta: {Data.route.goal}</p>
             <p />
-            <p>Estado actual: {statusData.statusAtTheMoment}</p>
-            {statusData.statusAtTheMoment !== 'No empezada' && statusData.statusAtTheMoment !== 'En curso' && (
+            <p>Estado actual: {Data.status.statusAtTheMoment}</p>
+            {Data.status.statusAtTheMoment !== 'No empezada' && Data.status.statusAtTheMoment !== 'En curso' && (
               <div>
-                <p>Ganador: {statusData.winner}</p>
-                <p>Duración: {statusData.duration}</p>
+                <p>Ganador: {Data.status.winner}</p>
+                <p>Duración: {Data.status.duration}</p>
               </div>
             )}
-          </div>
+          
+        <Button type="primary" onClick={showForm} style={{ marginBottom: '16px' }}>
+          Update Status
+        </Button>
+        <Button type="primary" onClick={() => handleDelete(id)}>Borrar carrera</Button>
+        <Modal
+          title="Create Race"
+          open={startingFormVisible}
+          onCancel={() => setStartingFormVisible(false)}
+          onOk={startingForm.submit}
+        >
+          <Form form={startingForm} onFinish={handleStart}>
+            <p>Estas seguro de que quieres iniciar la carrera</p>
+          </Form>
+        </Modal>
+        <Modal
+          title="Create Race"
+          open={endingFormVisible}
+          onCancel={() => setEndingFormVisible(false)}
+          onOk={endingForm.submit}
+        >
+          <Form form={endingForm} onFinish={handleEnding}>
+            <Form.Item name="winner" label="Winner" rules={[{ required: true }]}>
+              <Select placeholder="Select a winner">
+                {Data?.runners?.map(runner => (
+                  <Option key={runner._id} value={runner.name}>
+                    {`${runner.name}, ${runner._id}`}
+                  </Option>
+                ))}
+              </Select>
+            </Form.Item>
+
+            <Form.Item name="duration" label="duration" rules={[{ required: true }]}>
+              <TimePicker onChange={onChange} />
+            </Form.Item>
+            <p>Darle click a OK cambiará el estado de la carrera a terminada con los datos que has introducido</p>
+          </Form>
+        </Modal>
+        </div>
         )}
       </Card>
 
@@ -69,25 +184,8 @@ const RaceData = () => {
             <h3>Corredores</h3>
             <hr className="divider" />
             <p>Creación, eliminación, actualización y visualización de todos los corredores</p>
-            <Button type="primary">Acceder</Button>
-          </div>
-        </Card>
-        <Card className="custom-card" bordered={false}>
-          <div className="card-content">
-            <img src="/img/couple.jpg" alt="Sample" className="card-image" />
-            <h3>Ruta</h3>
-            <hr className="divider" />
-            <p>Creación, eliminación, actualización y visualización de rutas</p>
-            <Button type="primary">Acceder</Button>
-          </div>
-        </Card>
-        <Card className="custom-card" bordered={false}>
-          <div className="card-content">
-            <img src="/img/couple.jpg" alt="Sample" className="card-image" />
-            <h3>Estado</h3>
-            <hr className="divider" />
-            <p>¿¿¿¿¿¿¿¿¿Actualización y visualización de todos los corredores??????????????'</p>
-            <Button type="primary">Acceder</Button>
+            {/* este de aqui */}
+            <Button type="primary" onClick={handleRunnerClick}>Acceder</Button>
           </div>
         </Card>
         <Card className="custom-card" bordered={false}>
@@ -96,10 +194,9 @@ const RaceData = () => {
             <h3>Patrocinadores</h3>
             <hr className="divider" />
             <p>Creación, eliminación, actualización y visualización de los patrocinadores</p>
-            <Button type="primary">Acceder</Button>
+            <Button type="primary" onClick={handleSponsorClick}>Acceder</Button>
           </div>
         </Card>
-        {/* Agregar más tarjetas según sea necesario */}
       </div>
     </div>
   );

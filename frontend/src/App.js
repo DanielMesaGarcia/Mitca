@@ -5,6 +5,8 @@ import Home from "./pages/Home/Home";
 import Signin from "./pages/Signin/Signin";
 import RaceData from "./pages/RaceData/RaceData";
 import RunnersPage from "./pages/Runners/Runners";
+import SponsorsPage from "./pages/Sponsors/Sponsors";
+import UserSettings from "./pages/userSettings/UserSettings";
 function App() {
   return (
     
@@ -14,8 +16,10 @@ function App() {
         <Route path="/home" element={<Home/>}/>
         <Route path="/signin" element={<Signin/>}/>
         <Route path="/login" element={<Login/>}/>
-        <Route path="/racedata" element={<RaceData/>}/>
-        <Route path="/runners" element={<RunnersPage/>}/>
+        <Route path="/racedata/:id" element={<RaceData/>}/>
+        <Route path="/runners/:id" element={<RunnersPage/>}/>
+        <Route path="/sponsors/:id" element={<SponsorsPage/>}/>
+        <Route path="/usersettings" element={<UserSettings/>}/>
       </Routes>
     </BrowserRouter>
   );

@@ -1,10 +1,9 @@
 import axios from 'axios';
 
-const RACE_URL = 'http://localhost:3001/races'; 
-const ROUTE_URL = 'http://localhost:3001/routes'; 
-const STATUS_URL = 'http://localhost:3001/status'; 
+const RACE_URL = 'http://localhost:3001/races';
+const STATUS_URL = 'http://localhost:3001/status';
 
-const getRaceById = async (id) => {
+const getDataById = async (id) => {
     try {
       const response = await axios.get(`${RACE_URL}/${id}`);
       const data = response.data;
@@ -15,28 +14,28 @@ const getRaceById = async (id) => {
     }
 };
 
-const getRouteByRaceId = async (id) => {
-    try {
-      const response = await axios.get(`${ROUTE_URL}?race=${id}`);
-      return response.data;
-    } catch (error) {
-      throw new Error(`Error fetching route: ${error.message}`);
-    }
+const deleteRace = async (id) => {
+  try {
+    const response = await axios.delete(`${RACE_URL}/${id}`);
+    return response.data;
+  } catch (error) {
+    throw new Error(`Error al eliminar carrera: ${error.message}`);
+  }
 };
 
-const getStatusByRaceId = async (id) => {
-    try {
-      const response = await axios.get(`${STATUS_URL}?carrera=${id}`);
-      return response.data;
-    } catch (error) {
-      throw new Error(`Error fetching status: ${error.message}`);
-    }
+const updateStatus = async (id, updatedStatus) => {
+  try {
+    const response = await axios.put(`${STATUS_URL}/${id}`, updatedStatus);
+    return response.data;
+  } catch (error) {
+    throw new Error(`Error al actualizar corredor: ${error.message}`);
+  }
 };
 
 const RaceListService = {
-  getRaceById,
-  getRouteByRaceId,
-  getStatusByRaceId,
+  getDataById,
+  deleteRace,
+  updateStatus,
 };
 
 export default RaceListService;
