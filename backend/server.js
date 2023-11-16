@@ -2,45 +2,74 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const multer = require('multer');
+const cors = require('cors');
 
-// Import routers
+// Importa tus modelos
+const User = require('./models/User'); // Asegúrate de tener la ruta correcta
+
+// Importa routers
 const raceRouter = require('./routes/RaceRouter');
 const runnerRouter = require('./routes/RunnerRouter');
 const sponsorRouter = require('./routes/SponsorRouter');
 const statusRouter = require('./routes/StatusRouter');
 const userRouter = require('./routes/UserRouter');
 const routeRouter = require('./routes/RouteRouter');
+const demoRouter = require('./routes/DemoRouter');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// Connect to MongoDB
-mongoose.connect('mongodb://127.0.0.1:27017/mitca',{
+// Conecta a MongoDB
+mongoose.connect('mongodb://127.0.0.1:27017/mitca', {
   useNewUrlParser: true,
-  useUnifiedTopology: true
+  useUnifiedTopology: true,
 });
 
 // Middleware
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
+// Configura multer según tus requisitos para la carga de archivos
 const upload = multer();
 app.use(upload.array());
 
-// Routes
+// Rutas
 app.use('/races', raceRouter);
 app.use('/runners', runnerRouter);
 app.use('/sponsors', sponsorRouter);
 app.use('/status', statusRouter);
 app.use('/users', userRouter);
 app.use('/routes', routeRouter);
+app.use('/demo', demoRouter);
 
-// Error handling middleware
-app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).send('Something broke!');
+// Lógica de inicialización
+const db = mongoose.connection;
+db.once('open', async () => {
+  console.log('Conexión exitosa a MongoDB');
+
+  // Crea el usuario admin si no existe
+  const adminUser = await User.findOne({ _id: 'admin@admin.com' });
+
+  if (!adminUser) {
+    await User.create({
+      _id: 'admin@admin.com',
+      password: 'admin1',
+      DNI: '99999999z',
+      name: 'admin',
+      phone: '999999999',
+      role: 'admin',
+    });
+    console.log('Usuario admin creado correctamente.');
+  }
 });
 
-// Start the server
+// Manejo de errores
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send('¡Algo salió mal!');
+});
+
+// Inicia el servidor
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+  console.log(`El servidor está ejecutándose en el puerto ${PORT}`);
 });

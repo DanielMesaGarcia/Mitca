@@ -1,55 +1,148 @@
-import React from 'react';
-import Header from '../../components/header/Header';
-import { Card, Button } from 'antd';
+import React, { useState, useEffect } from 'react';
+import { List, Card, Button, Modal, Form, Input, DatePicker } from 'antd';
 import './Home.css';
+import { useNavigate } from 'react-router-dom';
+import Header from '../../components/header/Header';
+import RaceListService from '../../services/raceListService';
 
 const Home = () => {
-  
-  // Contenido y lógica específicos para la página de inicio de sesión
+  const [races, setRaces] = useState([]);
+  const [createFormVisible, setCreateFormVisible] = useState(false);
+  const [createForm] = Form.useForm();
+  const navigate = useNavigate();
+
+  const handleCardClick = (raceId) => {
+    navigate(`/racedata/${raceId}`);
+  };
+
+  const showCreateForm = () => {
+    setCreateFormVisible(true);
+  };
+
+  const handleCreate = async (values) => {
+    try {
+
+      // Extraer los datos para el esquema de la carrera
+      const raceData = {
+        _id: values.name,
+        eventDate: values.eventDate,
+        city: values.city,
+        length: values.length,
+      };
+
+      // Extraer los datos para el esquema de la ruta
+      const routeData = {
+        race: values.name,
+        checkpoint: values.checkpoint,
+        startPoint: values.startPoint,
+        goal: values.goal,
+      };
+
+      const statusData = {
+        carrera: values.name,
+      };
+
+
+      const response = await RaceListService.createRace(raceData);
+      const response2 = await RaceListService.createRoute(routeData);
+      const responseStatus = await RaceListService.createStatus(statusData);
+      if (response.success && response2.success) {
+        const raceDataWithInfo = {
+          _id: values.name,
+          eventDate: values.eventDate,
+          city: values.city,
+          length: values.length,
+          route: response2.data._id,
+          status: responseStatus.data._id,
+        }
+        console.log(raceDataWithInfo);
+        const response3 = await RaceListService.updateRace(values.name, raceDataWithInfo);
+        console.log(response3);
+        if (response3.success) {
+          setRaces([...races, response.data]);
+          setCreateFormVisible(false);
+          createForm.resetFields();
+        }
+      } else {
+        // Handle error if needed
+        console.error("Error creating race:", response.error);
+        console.error("Error creating route:", response2.error);
+      }
+    } catch (error) {
+      // Handle error if needed
+      console.error("Error creating race:", error);
+    }
+  };
+
+  useEffect(() => {
+    const fetchRaces = async () => {
+      try {
+        const response = await RaceListService.getRaces();
+        if (response.success) {
+          setRaces(response.data);
+        } else {
+          // Handle error if needed
+          console.error("Error fetching races:", response.error);
+        }
+      } catch (error) {
+        // Handle error if needed
+        console.error("Error fetching races:", error);
+      }
+    };
+    fetchRaces();
+  }, []);
+
   return (
     <div>
       <Header />
-      
-      <h2>Carrera NAME:</h2>
-      <h2>Datos de la carrera:</h2>
-      <div className="card-container">
-      <Card className="custom-card" bordered={false}>
-          <div className="card-content">
-            <img src="/img/couple.jpg" alt="Sample" className="card-image" />
-            <h3>Corredores</h3>
-            <hr className="divider" />
-            <p>Creación, eliminación, actualización y visualización de todos los corredores</p>
-            <Button type="primary">Acceder</Button>
-          </div>
-        </Card>
-        <Card className="custom-card" bordered={false}>
-          <div className="card-content">
-            <img src="/img/couple.jpg" alt="Sample" className="card-image" />
-            <h3>Ruta</h3>
-            <hr className="divider" />
-            <p>Creación, eliminación, actualización y visualización de rutas</p>
-            <Button type="primary">Acceder</Button>
-          </div>
-        </Card>
-        <Card className="custom-card" bordered={false}>
-          <div className="card-content">
-            <img src="/img/couple.jpg" alt="Sample" className="card-image" />
-            <h3>Estado</h3>
-            <hr className="divider" />
-            <p>¿¿¿¿¿¿¿¿¿Actualización y visualización de todos los corredores??????????????'</p>
-            <Button type="primary">Acceder</Button>
-          </div>
-        </Card>
-        <Card className="custom-card" bordered={false}>
-          <div className="card-content">
-            <img src="/img/couple.jpg" alt="Sample" className="card-image" />
-            <h3>Patrocinadores</h3>
-            <hr className="divider" />
-            <p>Creación, eliminación, actualización y visualización de los patrocinadores</p>
-            <Button type="primary">Acceder</Button>
-          </div>
-        </Card>
-        {/* Agregar más tarjetas según sea necesario */}
+
+      <div className="race-list">
+        <Button type="primary" onClick={showCreateForm} style={{ marginBottom: '16px' }}>
+          Create Race
+        </Button>
+
+        <List
+          grid={{ gutter: 16 }}
+          dataSource={races}
+          renderItem={(race) => (
+            <List.Item key={race._id} onClick={() => handleCardClick(race._id)}>
+              <Card title={race._id} style={{ width: '100%' }}>
+                {/* Display other race details */}
+              </Card>
+            </List.Item>
+          )}
+        />
+
+        <Modal
+          title="Create Race"
+          open={createFormVisible}
+          onCancel={() => setCreateFormVisible(false)}
+          onOk={createForm.submit}
+        >
+          <Form form={createForm} onFinish={handleCreate}>
+            <Form.Item name="name" label="Race Name" rules={[{ required: true }]}>
+              <Input />
+            </Form.Item>
+            <Form.Item name="eventDate" label="Event Date" rules={[{ required: true }]}>
+              <DatePicker style={{ width: '100%' }} format="YYYY-MM-DD" />
+            </Form.Item>
+            <Form.Item name="city" label="City" rules={[{ required: true }]}>
+              <Input />
+            </Form.Item>
+            <Form.Item name="length" label="Length" rules={[{ required: true }]}>
+              <Input />
+            </Form.Item>
+            <Form.Item name="checkpoint" label="checkpoint" rules={[{ required: true }]}>
+              <Input />
+            </Form.Item>
+            <Form.Item name="startPoint" label="startPoint" rules={[{ required: true }]}>
+              <Input />
+            </Form.Item>
+            <Form.Item name="goal" label="goal" rules={[{ required: true }]}>
+              <Input />
+            </Form.Item>
+          </Form>
+        </Modal>
       </div>
     </div>
   );

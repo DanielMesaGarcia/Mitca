@@ -1,0 +1,134 @@
+import React, { useState, useEffect } from 'react';
+import { Table, Form, Input, Button } from 'antd';
+import SponsorService from '../../services/sponsorService';
+import Header from '../../components/header/Header';
+import { useParams } from 'react-router-dom';
+
+const SponsorsPage = () => {
+    const [sponsors, setSponsors] = useState([]);
+    const [form] = Form.useForm();
+    const { id } = useParams();
+  
+    const columns = [
+      {
+        title: 'CIF',
+        dataIndex: '_id',
+        key: '_id',
+      },
+      {
+        title: 'companyName',
+        dataIndex: 'companyName',
+        key: 'companyName',
+      },
+      {
+        title: 'typeCompany',
+        dataIndex: 'typeCompany',
+        key: 'typeCompany',
+      },
+      {
+        title: 'Actions',
+        dataIndex: 'actions',
+        key: 'actions',
+        render: (_, record) => (
+          <div>
+            <Button onClick={() => handleDelete(record._id)}>Delete</Button>
+            <Button onClick={() => handleUpdate(record._id)}>Update</Button>
+          </div>
+        ),
+      },
+    ];
+  
+    useEffect(() => {
+      const fetchSponsors = async () => {
+        try {
+          const response = await SponsorService.getDataById(id);
+          const data = response.data.sponsors;
+          if (data) {
+            setSponsors(data);
+          } else {
+            console.error('Error fetching sponsors:', response && response.error);
+          }
+        } catch (error) {
+          console.error('Error fetching sponsors:', error);
+        }
+      };
+    
+      fetchSponsors();
+    }, [id]);
+  
+    const addSponsor = async (values) => {
+      const formattedValues = { ...values, _id: values.CIF };
+      delete formattedValues.CIF;
+      try {
+        await SponsorService.addSponsor(formattedValues);
+        await SponsorService.addSponsorToRace(formattedValues._id, id);
+        const response = await SponsorService.getDataById(id);
+        const data = response.data.sponsors;
+        setSponsors(data);
+        
+        form.resetFields();
+      } catch (error) {
+        console.error('Error adding sponsor:', error);
+      }
+    };
+  
+    const handleUpdate = async (idSponsor) => {
+        try {
+            const values = form.getFieldsValue();
+            const updatedSponsor = { ...values, _id: values.CIF };
+            delete updatedSponsor.CIF;
+            await SponsorService.updateSponsor(idSponsor, updatedSponsor);
+            const response = await SponsorService.getDataById(id);
+            const data = response.data.sponsors;
+            setSponsors(data);
+            
+            form.resetFields();
+        } catch (error) {
+            console.error('Error updating sponsor:', error);
+        }
+    };
+
+    const handleDelete = async (idSponsor) => {
+        try {
+            await SponsorService.deleteSponsor(idSponsor);
+            const response = await SponsorService.getDataById(id);
+            const data = response.data.sponsors;
+            setSponsors(data);
+            
+        } catch (error) {
+            console.error('Error deleting sponsor:', error);
+        }
+    };
+
+
+    return (
+      
+        <div className="page-container">
+          <Header/>
+          <h1>Sponsors</h1>
+          <Table dataSource={sponsors} columns={columns} rowKey="_id" />
+    
+          <Form form={form} name="add_sponsor" className="form-container" onFinish={addSponsor}>
+            <Form.Item name="CIF" label="CIF" rules={[{ required: true }]}>
+              <Input />
+            </Form.Item>
+    
+            <Form.Item name="companyName" label="companyName" rules={[{ required: true }]}>
+              <Input />
+            </Form.Item>
+    
+            <Form.Item name="typeCompany" label="typeCompany" rules={[{ required: true }]}>
+              <Input />
+            </Form.Item>
+    
+            <Form.Item>
+              <Button type="primary" htmlType="submit">
+                Add Sponsor
+              </Button>
+            </Form.Item>
+          </Form>
+        </div>
+      );
+    };
+
+    export default SponsorsPage;
