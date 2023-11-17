@@ -11,9 +11,21 @@ const getRaces = async () => {
     throw new Error(`Error fetching races: ${error.message}`);
   }
 };
-const createRace = async (raceData) => {
+const createRace = async (image, raceData) => {
   try {
-    const response = await axios.post(API_URL, raceData);
+    const formData = new FormData();
+    formData.append('filename', image);
+    formData.append('_id', raceData._id);
+    formData.append('eventDate', raceData.eventDate);
+    formData.append('city', raceData.city);
+    formData.append('length', raceData.length);
+
+    const response = await axios.post(API_URL, formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    });
+
     return response.data;
   } catch (error) {
     throw new Error(`Error creating race: ${error.message}`);

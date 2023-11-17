@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { List, Card, Button, Modal, Form, Input, DatePicker } from 'antd';
+import { List, Card, Button, Modal, Form, Input, DatePicker, Upload } from 'antd';
 import './Home.css';
 import { useNavigate } from 'react-router-dom';
 import Header from '../../components/header/Header';
 import RaceListService from '../../services/raceListService';
-
+import { UploadOutlined } from '@ant-design/icons';
 const Home = () => {
   const [races, setRaces] = useState([]);
   const [createFormVisible, setCreateFormVisible] = useState(false);
+  const [file, setFile] = useState(null);
   const [createForm] = Form.useForm();
   const navigate = useNavigate();
 
@@ -43,7 +44,7 @@ const Home = () => {
       };
 
 
-      const response = await RaceListService.createRace(raceData);
+      const response = await RaceListService.createRace(file, raceData);
       const response2 = await RaceListService.createRoute(routeData);
       const responseStatus = await RaceListService.createStatus(statusData);
       if (response.success && response2.success) {
@@ -141,6 +142,16 @@ const Home = () => {
             <Form.Item name="goal" label="goal" rules={[{ required: true }]}>
               <Input />
             </Form.Item>
+            <Upload
+  listType="picture"
+  maxCount={1}
+  beforeUpload={(file) => {
+    setFile(file);
+    return false;
+  }}
+>
+  <Button icon={<UploadOutlined />}>Foto</Button>
+</Upload>
           </Form>
         </Modal>
       </div>
