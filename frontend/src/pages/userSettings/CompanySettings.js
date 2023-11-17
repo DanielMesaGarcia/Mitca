@@ -2,13 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { Form, Input, Button } from 'antd';
 import './UserSettings.css';
 import Header from '../../components/header/Header';
+import UserService from '../../services/userService';
 const CompanySettings = () => {
   const [userData, setUserData] = useState({});
   const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    // redirigir a userSettings si la cuenta no es sponsor (?)
-  }, []);
+  
 
   const handleFormSubmit = (values) => {
     // Aquí deberías enviar los datos actualizados del usuario a tu API

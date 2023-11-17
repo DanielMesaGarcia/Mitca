@@ -7,6 +7,36 @@ const createToken = (user) => {
   return jwt.sign({ _id: user._id }, 'your_secret_key');
 };
 
+exports.getUserFromToken = async (req, res) => {
+  try {
+    // Verify the token using the secret key
+    const decoded = jwt.verify(req.body.token, 'your_secret_key');
+    // The decoded object will contain the data you stored in the token
+    const userId = decoded._id;
+
+    // You can use the userId to retrieve the user data from your database or wherever it is stored
+    // Example: const user = getUserById(userId);
+    
+    try {
+      const user = await User.findById(userId);
+      if (!user) {
+        return res.status(404).json({ success: false, error: 'User not found' });
+      }
+      res.status(200).json({ success: true, data: user });
+    } catch (error) {
+      res.status(500).json({ success: false, error: error.message });
+    }
+  } catch (error) {
+    // If the token is invalid or expired, handle the error
+    return {
+      success: false,
+      error: 'Invalid token'
+    };
+  }
+};
+
+
+
 exports.createUser = async (req, res) => {
   try {
     const newUser = new User(req.body);

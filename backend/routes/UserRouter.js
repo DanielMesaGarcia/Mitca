@@ -11,5 +11,7 @@ userRouter.route('/:_id')
   .put(UserController.updateUser)
   .delete(UserController.deleteUser);
 
+  userRouter.route('/token').post(UserController.getUserFromToken);
+
   userRouter.route('/login').post(UserController.login);
 module.exports = userRouter;
