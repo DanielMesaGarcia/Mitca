@@ -6,6 +6,11 @@ const Status = require('../models/Status');
 exports.createRace = async (req, res) => {
   try {
     const newRace = new Race(req.body);
+    newRace.filename = '';
+  if (req.file) {
+    newRace.filename = req.file.filename;
+  }
+
     await newRace.save();
     res.status(201).json({ success: true, data: newRace });
   } catch (error) {

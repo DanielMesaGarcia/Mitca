@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const multer = require('multer');
 const cors = require('cors');
-
+var path = require('path');
 // Importa tus modelos
 const User = require('./models/User'); // Asegúrate de tener la ruta correcta
 
@@ -29,9 +29,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/mitca', {
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
-// Configura multer según tus requisitos para la carga de archivos
-const upload = multer();
-app.use(upload.array());
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Rutas
 app.use('/races', raceRouter);
