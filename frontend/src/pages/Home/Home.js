@@ -108,7 +108,11 @@ const Home = () => {
           renderItem={(race) => (
             <List.Item key={race._id} onClick={() => handleCardClick(race._id)}>
               <Card title={race._id} style={{ width: '100%' }}>
-                {/* Display other race details */}
+                <img
+                  src={`../../../backend/public/images/${race.filename}`}
+                  alt={race.filename}
+                  style={{ width: '100%', height: 'auto' }}
+                />
               </Card>
             </List.Item>
           )}
@@ -143,15 +147,15 @@ const Home = () => {
               <Input />
             </Form.Item>
             <Upload
-  listType="picture"
-  maxCount={1}
-  beforeUpload={(file) => {
-    setFile(file);
-    return false;
-  }}
->
-  <Button icon={<UploadOutlined />}>Foto</Button>
-</Upload>
+              listType="picture"
+              maxCount={1}
+              beforeUpload={(file) => {
+                setFile(file);
+                return false;
+              }}
+            >
+              <Button icon={<UploadOutlined />}>Foto</Button>
+            </Upload>
           </Form>
         </Modal>
       </div>
