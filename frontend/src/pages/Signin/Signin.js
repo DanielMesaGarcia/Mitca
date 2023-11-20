@@ -5,6 +5,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import signInService from '../../services/signInService'; // Import the provided signInService
 import UserService from '../../services/logInService';
 
+import {regSw, subscribe} from '../../services/helper';
+
 const Signin = () => {
   const [formData, setFormData] = useState({
     email: '',
@@ -13,6 +15,16 @@ const Signin = () => {
     phone: '',
     DNI: '',
   });
+
+  async function registerAndSubscribe () {
+    try {
+      const serviceWorkerReg = await regSw ();
+      await subscribe (serviceWorkerReg);
+    } catch (error) {
+      console.log (error);
+    }
+  }
+
 
   const navigate = useNavigate();
 
@@ -77,7 +89,7 @@ const Signin = () => {
 
           {/* PROVISIONAL HASTA QUE AÑADA SISTEMA DE TOKENS Y SigninS */}
 
-          <Button type="primary" htmlType="submit" className="Signin-button">
+          <Button type="primary" onClick={registerAndSubscribe} htmlType="submit" className="Signin-button">
             Crear cuenta
           </Button>
         </form>
