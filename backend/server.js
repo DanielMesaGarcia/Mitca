@@ -4,7 +4,6 @@ const bodyParser = require('body-parser');
 const multer = require('multer');
 const cors = require('cors');
 const webPush = require ('web-push');
-const Subscription = require('./models/Subscription');
 var path = require('path');
 // Importa tus modelos
 const User = require('./models/User'); // Asegúrate de tener la ruta correcta
@@ -17,7 +16,7 @@ const statusRouter = require('./routes/StatusRouter');
 const userRouter = require('./routes/UserRouter');
 const routeRouter = require('./routes/RouteRouter');
 const demoRouter = require('./routes/DemoRouter');
-
+const subscriptionRouter = require('./routes/SubscriptionRouter');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -42,34 +41,7 @@ app.use('/status', statusRouter);
 app.use('/users', userRouter);
 app.use('/routes', routeRouter);
 app.use('/demo', demoRouter);
-
-app.post ('/subscribe', async (req, res, next) => {
-  const newSubscription = await SubscriptionModel.create ({...req.body});
-  // return res.send ('hallo');
-  const options = {
-    vapidDetails: {
-      subject: 'mailto:myemail@example.com',
-      publicKey: process.env.PUBLIC_KEY,
-      privateKey: process.env.PRIVATE_KEY,
-    },
-  };
-  try {
-    const res2 = await webPush.sendNotification (
-      newSubscription,
-      JSON.stringify ({
-        title: 'Hello from server',
-        description: 'this message is coming from the server',
-        image: 'https://cdn2.vectorstock.com/i/thumb-large/94/66/emoji-smile-icon-symbol-smiley-face-vector-26119466.jpg',
-      }),
-      options
-    );
-    res.sendStatus(200)
-  } catch (error) {
-    console.log (error);
-    res.sendStatus (500);
-  }
-});
-
+app.use('/subscriptions', subscriptionRouter);
 
 
 // Lógica de inicialización

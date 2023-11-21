@@ -8,7 +8,17 @@ import dayjs from 'dayjs';
 import customParseFormat from 'dayjs/plugin/customParseFormat';
 import Form from 'antd/es/form/Form';
 import Modal from 'antd/es/modal/Modal';
+import {
+  regSw,
+  subscribe,
+  checkIfAlreadySubscribed,
+  getAllSubscriptions,
+  sendNotificationToSubscriptionName,
+  unregisterFromServiceWorker
+} from '../../services/helper';
+
 const { Option } = Select;
+
 dayjs.extend(customParseFormat);
 const onChange = (time, timeString) => {
   console.log(time, timeString);
@@ -21,6 +31,7 @@ const RaceData = () => {
   const selectedRaceId = id;
   const navigate = useNavigate();
 
+  
 
   const handleRunnerClick = () => {
     navigate(`/runners/${id}`);
@@ -115,6 +126,61 @@ const RaceData = () => {
 
 
 
+  const [subscribed, setSubscribed] = useState(false);
+  const [subscriptions, setSubscriptions] = useState([]);
+  const [subscriptionName, setSubscriptionName] = useState("");
+  const [notificationMessage, setNotificationMessage] = useState("");
+  const [selectedRecipient, setSelectedRecipient] = useState("select a recipient");
+
+  const registerAndSubscribe = async () => {
+    try {
+      const serviceWorkerReg = await regSw();
+      await subscribe(serviceWorkerReg, selectedRaceId);
+      
+      window.localStorage.setItem("subscription-name", selectedRaceId);
+
+      setSubscribed(true);
+      getAllSubscriptions().then((res) => {
+        setSubscriptions(res.data);
+      })
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+
+  const checkSubscriptionState = async () => {
+    const subscriptionState = await checkIfAlreadySubscribed();
+    setSubscribed(subscriptionState);
+    if (subscriptionState) {
+      const aux = window.localStorage.getItem("subscription-name");
+      setSubscriptionName(aux);
+    }
+  }
+
+
+  const handleUnsubscription = (e) => {
+    e.preventDefault();
+
+    unregisterFromServiceWorker().then(() => {
+      checkSubscriptionState();
+      setSubscriptionName("");
+      window.localStorage.removeItem("subscription-name");
+    })
+  }
+
+
+
+  const handleNotificationSending = (e) => {
+    e.preventDefault();
+    setNotificationMessage("Has sido NOTIFICADO");
+    setSelectedRecipient(selectedRaceId);
+    sendNotificationToSubscriptionName(selectedRecipient, notificationMessage).then(() => {
+      setNotificationMessage("");
+    })
+  }
+
+
   return (
     <div>
       <Header />
@@ -140,6 +206,9 @@ const RaceData = () => {
           Update Status
         </Button>
         <Button type="primary" onClick={() => handleDelete(id)}>Borrar carrera</Button>
+        <Button type="primary" onClick={registerAndSubscribe}>Activar notificaciones</Button>
+        <Button type="primary" onClick={handleNotificationSending}>Notificar</Button>
+        <Button type="primary" onClick={handleUnsubscription}>Desuscribir</Button>handleUnsubscription
         <Modal
           title="Create Race"
           open={startingFormVisible}

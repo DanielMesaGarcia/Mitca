@@ -16,14 +16,9 @@ const Signin = () => {
     DNI: '',
   });
 
-  async function registerAndSubscribe () {
-    try {
-      const serviceWorkerReg = await regSw ();
-      await subscribe (serviceWorkerReg);
-    } catch (error) {
-      console.log (error);
-    }
-  }
+  
+
+  //IMPLEMENTAR CUADRADITO PARA QUE SI QUIERO RECIBIR NOTIFICACIONES
 
 
   const navigate = useNavigate();
@@ -89,7 +84,7 @@ const Signin = () => {
 
           {/* PROVISIONAL HASTA QUE AÑADA SISTEMA DE TOKENS Y SigninS */}
 
-          <Button type="primary" onClick={registerAndSubscribe} htmlType="submit" className="Signin-button">
+          <Button type="primary" htmlType="submit" className="Signin-button">
             Crear cuenta
           </Button>
         </form>
