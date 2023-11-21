@@ -4,6 +4,8 @@ const bodyParser = require('body-parser');
 const multer = require('multer');
 const cors = require('cors');
 var path = require('path');
+require('dotenv').config();
+
 // Importa tus modelos
 const User = require('./models/User'); // Asegúrate de tener la ruta correcta
 
@@ -15,6 +17,7 @@ const statusRouter = require('./routes/StatusRouter');
 const userRouter = require('./routes/UserRouter');
 const routeRouter = require('./routes/RouteRouter');
 const demoRouter = require('./routes/DemoRouter');
+const subscriptionRouter = require('./routes/SubscriptionRouter');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -39,6 +42,7 @@ app.use('/status', statusRouter);
 app.use('/users', userRouter);
 app.use('/routes', routeRouter);
 app.use('/demo', demoRouter);
+app.use('/subscriptions', subscriptionRouter);
 
 // Lógica de inicialización
 const db = mongoose.connection;

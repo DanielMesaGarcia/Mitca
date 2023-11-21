@@ -8,6 +8,7 @@ import dayjs from 'dayjs';
 import customParseFormat from 'dayjs/plugin/customParseFormat';
 import Form from 'antd/es/form/Form';
 import Modal from 'antd/es/modal/Modal';
+import { regSw, subscribe, unsubscribe } from '../../services/helper';
 const { Option } = Select;
 dayjs.extend(customParseFormat);
 const onChange = (time, timeString) => {
@@ -115,6 +116,27 @@ const RaceData = () => {
 
 
 
+
+  async function registerAndSubscribe () {
+    try {
+      const serviceWorkerReg = await regSw ();
+      await subscribe (serviceWorkerReg);
+    } catch (error) {
+      console.log (error);
+    }
+  }
+
+  async function unsubscriber () {
+    try {
+      const serviceWorkerReg = await regSw ();
+      await unsubscribe (serviceWorkerReg);
+    } catch (error) {
+      console.log (error);
+    }
+  }
+
+
+
   return (
     <div>
       <Header />
@@ -138,6 +160,12 @@ const RaceData = () => {
           
         <Button type="primary" onClick={showForm} style={{ marginBottom: '16px' }}>
           Update Status
+        </Button>
+        <Button type="primary" onClick={registerAndSubscribe} style={{ marginBottom: '16px' }}>
+          Suscribirme
+        </Button>
+        <Button type="primary" onClick={unsubscriber} style={{ marginBottom: '16px' }}>
+          Desuscribirme
         </Button>
         <Button type="primary" onClick={() => handleDelete(id)}>Borrar carrera</Button>
         <Modal
