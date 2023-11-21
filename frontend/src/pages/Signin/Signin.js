@@ -5,6 +5,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import signInService from '../../services/signInService'; // Import the provided signInService
 import UserService from '../../services/logInService';
 
+import {regSw, subscribe} from '../../services/helper';
+
 const Signin = () => {
   const [formData, setFormData] = useState({
     email: '',
@@ -13,6 +15,11 @@ const Signin = () => {
     phone: '',
     DNI: '',
   });
+
+  
+
+  //IMPLEMENTAR CUADRADITO PARA QUE SI QUIERO RECIBIR NOTIFICACIONES
+
 
   const navigate = useNavigate();
 

@@ -7,6 +7,11 @@ const Subscription = new Schema ({
     p256dh: String,
     auth: String,
   },
+<<<<<<< HEAD
   subscriptionName: String,
 });
 module.exports = mongoose.model ('subscription', Subscription);
+=======
+});
+module.exports = mongoose.model ('subscription', Subscription);
+>>>>>>> 52fedfe7c736591ccab603e8e47ff9ce71408ef4
