@@ -20,7 +20,20 @@ async function subscribe(serviceWorkerReg) {
             applicationServerKey: 'BG78A44qvf78ct_e_T7oidlwAZLlTe8MexJu5MqKVF7ZgMEo9fUPH4K9TCWUPEwKW1RAOXaA4dqy6Af_hz_KyAo',
         });
 
-        axios.post(`${SUB_URL}/subscribe`, subscription);
+        axios.post(`${SUB_URL}/subscribe`, subscription)
+  .then(response => {
+    // Log the response to the console
+    console.log('Response:', response);
+
+    // You can also access specific properties of the response if needed
+    // For example, to log the response data:
+    // console.log('Response data:', response.data);
+  })
+  .catch(error => {
+    // Handle any errors that occurred during the request
+    console.error('Error:', error);
+  });
+
     }
 }
 

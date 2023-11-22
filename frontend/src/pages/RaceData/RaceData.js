@@ -10,7 +10,6 @@ import Form from 'antd/es/form/Form';
 import Modal from 'antd/es/modal/Modal';
 import { regSw, subscribe, unsubscribe } from '../../services/helper';
 const { Option } = Select;
-
 dayjs.extend(customParseFormat);
 const onChange = (time, timeString) => {
   console.log(time, timeString);
@@ -23,7 +22,6 @@ const RaceData = () => {
   const selectedRaceId = id;
   const navigate = useNavigate();
 
-  
 
   const handleRunnerClick = () => {
     navigate(`/runners/${id}`);
@@ -170,7 +168,6 @@ const RaceData = () => {
           Desuscribirme
         </Button>
         <Button type="primary" onClick={() => handleDelete(id)}>Borrar carrera</Button>
-        <Button type="primary" onClick={registerAndSubscribe}>Activar notificaciones</Button>
         <Modal
           title="Create Race"
           open={startingFormVisible}

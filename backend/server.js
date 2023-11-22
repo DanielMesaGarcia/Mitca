@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const multer = require('multer');
 const cors = require('cors');
-const webPush = require ('web-push');
 var path = require('path');
 require('dotenv').config();
 
@@ -44,10 +43,6 @@ app.use('/users', userRouter);
 app.use('/routes', routeRouter);
 app.use('/demo', demoRouter);
 app.use('/subscriptions', subscriptionRouter);
-<<<<<<< HEAD
-=======
-
->>>>>>> 52fedfe7c736591ccab603e8e47ff9ce71408ef4
 
 // Lógica de inicialización
 const db = mongoose.connection;
