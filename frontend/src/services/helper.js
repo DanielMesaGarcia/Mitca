@@ -13,7 +13,7 @@ async function regSw() {
 async function subscribe(serviceWorkerReg) {
 
     let subscription = await serviceWorkerReg.pushManager.getSubscription();
-    console.log({ subscription });
+    
     if (subscription === null) {
         subscription = await serviceWorkerReg.pushManager.subscribe({
             userVisibleOnly: true,
@@ -47,6 +47,16 @@ async function unsubscribe(serviceWorkerReg) {
     }
 }
 
+async function popup(serviceWorkerReg, title, description) {
+    let subscription = await serviceWorkerReg.pushManager.getSubscription();
+    console.log({ subscription });
+    axios.post(`${SUB_URL}/notification`, {subscription, title, description} )
+  .then(response => {
+    console.log('Response:', response);
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
+}
 
-
-export { regSw, subscribe, unsubscribe };
+export { regSw, subscribe, unsubscribe, popup };
