@@ -167,7 +167,7 @@ const RaceData = () => {
   const handleNotificationSending = (e) => {
     e.preventDefault();
 
-    sendNotificationToSubscriptionName(selectedRecipient, notificationMessage).then(() => {
+    sendNotificationToSubscriptionName(selectedRaceId, notificationMessage).then(() => {
       setNotificationMessage("");
     })
   }
