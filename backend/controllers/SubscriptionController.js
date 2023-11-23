@@ -29,6 +29,7 @@ exports.create = (req, res) => {
           const title = `New Subscription`;
           const description = `${data.subscriptionName} is now subscribed`;
           sendNotification(subscriptionRecipient, title, description);
+          return subscriptionRecipient;
         } else {
           console.log("Invalid subscription data:", s);
         }
@@ -65,8 +66,9 @@ exports.sendNotificationToSubscriptionName = (req, res) => {
   // TODO: validate req.body
   
   Subscription.find({
-    subscriptionName: req.body.subscriptionName
+    subscriptionName: "Carreras"
   }).then((subscriptionsInDB) => {
+    
     subscriptionsInDB.forEach((s) => {
       const subscriptionRecipient = {
         endpoint: s.endpoint,
@@ -76,10 +78,10 @@ exports.sendNotificationToSubscriptionName = (req, res) => {
           auth: s.keys.auth,
         }
       }
-      const title = `Just for ${req.body.subscriptionName}`;
+      const title = `CARRERA EMPEZADA`;
       const description = req.body.notificationMessage;
-      
       sendNotification(subscriptionRecipient, title, description);
+      
     });
     res.send("notification sent");
   }).catch(err => {

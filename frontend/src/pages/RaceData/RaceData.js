@@ -129,12 +129,13 @@ const RaceData = () => {
   const registerAndSubscribe = async () => {
     try {
       const serviceWorkerReg = await regSw();
-      await subscribe(serviceWorkerReg, subscriptionName);
+      const recipient =await subscribe(serviceWorkerReg, subscriptionName);
 
       setSubscribed(true);
       getAllSubscriptions().then((res) => {
         setSubscriptions(res.data);
-      })
+      });
+      setSelectedRecipient(recipient);
     } catch (error) {
       console.log(error);
     }
@@ -142,11 +143,8 @@ const RaceData = () => {
 
   const checkSubscriptionState = async () => {
     const subscriptionState = await checkIfAlreadySubscribed();
+    console.log(subscriptionState);
     setSubscribed(subscriptionState);
-    if (subscriptionState) {
-      const aux = subscriptionName;
-      setSubscriptionName(aux);
-    }
   }
 
   const handleSubscription = async (e) => {
@@ -160,7 +158,6 @@ const RaceData = () => {
 
     unregisterFromServiceWorker().then(() => {
       checkSubscriptionState();
-      setSubscriptionName("");
     })
   }
 
@@ -175,15 +172,15 @@ const RaceData = () => {
     getAllSubscriptions().then((res) => {
       setSubscriptions(res.data);
     });
-    
+    setSubscriptionName("Carreras");
+    setNotificationMessage("¡La carrera "+selectedRaceId+" ha empezado!");
   }, []);
 
   useEffect(() => {
     getAllSubscriptions().then((res) => {
       setSubscriptions(res.data);
     });
-    setSubscriptionName("Carreras");
-    setNotificationMessage("¡La carrera "+selectedRaceId+" ha empezado!")
+    
   }, [subscribed]);
 
 

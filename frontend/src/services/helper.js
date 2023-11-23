@@ -26,7 +26,8 @@ async function subscribe(serviceWorkerReg, subscriptionName) {
       //applicationServerKey: 'BOP1vbXrhHeb_sbD-2GieGRqd82oqmRg05w1t9WMz-Fk3Myi3FqmgsgsrvuRyI6r-owsIPLsK9JS-temIlRfHQc',
       // TODO: Public VAPID key should only be in .env
     });
-    axios.post(`${API}/subscribe`, { subscriptionName: subscriptionName, subscription: subscription });
+    const recipient = axios.post(`${API}/subscribe`, { subscriptionName: subscriptionName, subscription: subscription });
+    return recipient;
   }
 }
 
@@ -38,7 +39,7 @@ async function sendNotificationToSubscriptionName(subscriptionName, notification
   
   try {
     const response = await axios.post(`${API}/sendNotificationToSubscriptionName`, message);
-    console.log('Request completed successfully:', response);
+    // console.log('Request completed successfully:', response);
     return response;
   } catch (error) {
     console.error('Error in request:', error);
