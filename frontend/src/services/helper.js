@@ -34,9 +34,18 @@ async function sendNotificationToSubscriptionName(subscriptionName, notification
   const message = {
     subscriptionName,
     notificationMessage
+  };
+  
+  try {
+    const response = await axios.post(`${API}/sendNotificationToSubscriptionName`, message);
+    console.log('Request completed successfully:', response);
+    return response;
+  } catch (error) {
+    console.error('Error in request:', error);
+    throw error; // Re-throw the error to propagate it to the caller
   }
-  return axios.post(`${API}/sendNotificationToSubscriptionName`, message);
 }
+
 
 async function getAllSubscriptions() {
   return axios.get(`${API}`);

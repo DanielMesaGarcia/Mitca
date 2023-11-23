@@ -122,14 +122,14 @@ const RaceData = () => {
 
   const [subscribed, setSubscribed] = useState(false);
   const [subscriptions, setSubscriptions] = useState([]);
-  const [subscriptionName, setSubscriptionName] = useState("");
+  const [subscriptionName, setSubscriptionName] = useState("Carreras");
   const [notificationMessage, setNotificationMessage] = useState("");
   const [selectedRecipient, setSelectedRecipient] = useState("select a recipient");
 
   const registerAndSubscribe = async () => {
     try {
       const serviceWorkerReg = await regSw();
-      await subscribe(serviceWorkerReg, selectedRaceId);
+      await subscribe(serviceWorkerReg, subscriptionName);
 
       setSubscribed(true);
       getAllSubscriptions().then((res) => {
@@ -144,7 +144,7 @@ const RaceData = () => {
     const subscriptionState = await checkIfAlreadySubscribed();
     setSubscribed(subscriptionState);
     if (subscriptionState) {
-      const aux = selectedRaceId;
+      const aux = subscriptionName;
       setSubscriptionName(aux);
     }
   }
@@ -165,26 +165,26 @@ const RaceData = () => {
   }
 
   const handleNotificationSending = (e) => {
-    e.preventDefault();
-
-    sendNotificationToSubscriptionName(selectedRaceId, notificationMessage).then(() => {
-      setNotificationMessage("");
-    })
+    e.preventDefault(); 
+    sendNotificationToSubscriptionName(selectedRecipient, notificationMessage);
   }
 
   useEffect(() => {
     checkSubscriptionState();
-
+    
     getAllSubscriptions().then((res) => {
       setSubscriptions(res.data);
-    })
+    });
+    
   }, []);
 
   useEffect(() => {
     getAllSubscriptions().then((res) => {
       setSubscriptions(res.data);
-    })
-  }, [subscribed])
+    });
+    setSubscriptionName("Carreras");
+    setNotificationMessage("¡La carrera "+selectedRaceId+" ha empezado!")
+  }, [subscribed]);
 
 
 
