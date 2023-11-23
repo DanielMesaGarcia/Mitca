@@ -8,7 +8,13 @@ import dayjs from 'dayjs';
 import customParseFormat from 'dayjs/plugin/customParseFormat';
 import Form from 'antd/es/form/Form';
 import Modal from 'antd/es/modal/Modal';
-import { regSw, subscribe, unsubscribe, popup } from '../../services/helper';
+import { regSw,
+  subscribe,
+  unregisterAllServiceWorkers,
+  checkIfAlreadySubscribed,
+  getAllSubscriptions,
+  sendNotificationToSubscriptionName,
+  unregisterFromServiceWorker } from '../../services/helper';
 const { Option } = Select;
 dayjs.extend(customParseFormat);
 const onChange = (time, timeString) => {
@@ -114,35 +120,72 @@ const RaceData = () => {
     }
   };
 
+  const [subscribed, setSubscribed] = useState(false);
+  const [subscriptions, setSubscriptions] = useState([]);
+  const [subscriptionName, setSubscriptionName] = useState("");
+  const [notificationMessage, setNotificationMessage] = useState("");
+  const [selectedRecipient, setSelectedRecipient] = useState("select a recipient");
 
-
-
-  async function registerAndSubscribe () {
+  const registerAndSubscribe = async () => {
     try {
-      const serviceWorkerReg = await regSw ();
-      await subscribe (serviceWorkerReg);
+      const serviceWorkerReg = await regSw();
+      await subscribe(serviceWorkerReg, selectedRaceId);
+
+      setSubscribed(true);
+      getAllSubscriptions().then((res) => {
+        setSubscriptions(res.data);
+      })
     } catch (error) {
-      console.log (error);
+      console.log(error);
     }
   }
 
-  async function sendPopup () {
-    try {
-      const serviceWorkerReg = await regSw ();
-      await popup (serviceWorkerReg, selectedRaceId, 'La carrera ha empezado');
-    } catch (error) {
-      console.log (error);
+  const checkSubscriptionState = async () => {
+    const subscriptionState = await checkIfAlreadySubscribed();
+    setSubscribed(subscriptionState);
+    if (subscriptionState) {
+      const aux = selectedRaceId;
+      setSubscriptionName(aux);
     }
   }
 
-  async function unsubscriber () {
-    try {
-      const serviceWorkerReg = await regSw ();
-      await unsubscribe (serviceWorkerReg);
-    } catch (error) {
-      console.log (error);
-    }
+  const handleSubscription = async (e) => {
+    e.preventDefault();
+
+    await registerAndSubscribe();
   }
+
+  const handleUnsubscription = (e) => {
+    e.preventDefault();
+
+    unregisterFromServiceWorker().then(() => {
+      checkSubscriptionState();
+      setSubscriptionName("");
+    })
+  }
+
+  const handleNotificationSending = (e) => {
+    e.preventDefault();
+
+    sendNotificationToSubscriptionName(selectedRecipient, notificationMessage).then(() => {
+      setNotificationMessage("");
+    })
+  }
+
+  useEffect(() => {
+    checkSubscriptionState();
+
+    getAllSubscriptions().then((res) => {
+      setSubscriptions(res.data);
+    })
+  }, []);
+
+  useEffect(() => {
+    getAllSubscriptions().then((res) => {
+      setSubscriptions(res.data);
+    })
+  }, [subscribed])
+
 
 
 
@@ -170,13 +213,14 @@ const RaceData = () => {
         <Button type="primary" onClick={showForm} style={{ marginBottom: '16px' }}>
           Update Status
         </Button>
-        <Button type="primary" onClick={registerAndSubscribe} style={{ marginBottom: '16px' }}>
+        
+        <Button type="primary" onClick={handleSubscription} style={{ marginBottom: '16px' }}>
           Suscribirme
         </Button>
-        <Button type="primary" onClick={unsubscriber} style={{ marginBottom: '16px' }}>
+        <Button type="primary" onClick={handleUnsubscription} style={{ marginBottom: '16px' }}>
           Desuscribirme
         </Button>
-        <Button type="primary" onClick={sendPopup} style={{ marginBottom: '16px' }}>
+        <Button type="primary" onClick={handleNotificationSending} style={{ marginBottom: '16px' }}>
           Notificar
         </Button>
         <Button type="primary" onClick={() => handleDelete(id)}>Borrar carrera</Button>

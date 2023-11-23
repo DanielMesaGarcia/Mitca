@@ -3,10 +3,9 @@ const subscriptionsRouter = express.Router();
 const SubscriptionsController = require('../controllers/SubscriptionController');
 
 
-subscriptionsRouter.route('/subscribe')
-  .post(SubscriptionsController.create);
+subscriptionsRouter.post("/subscribe", SubscriptionsController.create);
 
-  subscriptionsRouter.route('/notification')
-  .post(SubscriptionsController.notification);
-
+  subscriptionsRouter.post("/sendNotificationToSubscriptionName", SubscriptionsController.sendNotificationToSubscriptionName);
+ subscriptionsRouter.post("/deleteByEndpoint", SubscriptionsController.deleteByEndpoint);
+ subscriptionsRouter.get("/", SubscriptionsController.findAll);
 module.exports =subscriptionsRouter;

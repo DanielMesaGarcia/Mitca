@@ -1,9 +1,152 @@
 const Subscription = require('../models/Subscription');
 const webPush = require('web-push');
 
-exports.create= async (req, res, next) => {
-  const newSubscription = await Subscription.create ({...req.body});
-  // return res.send ('hallo');
+exports.create = (req, res) => {
+  // TODO: validate req.body
+  const subscription = {
+    endpoint: req.body.subscription.endpoint,
+    expirationTime: req.body.subscription.expirationTime,
+    keys: {
+      p256dh: req.body.subscription.keys.p256dh,
+      auth: req.body.subscription.keys.auth,
+    },
+    subscriptionName: req.body.subscriptionName
+  }
+
+  Subscription.create(subscription).then(async (data) => {
+    Subscription.find().then((subscriptionsInDB) => {
+
+      for (let s of subscriptionsInDB) {
+        if (s && s.endpoint && s.keys && s.keys.p256dh && s.keys.auth) {
+          const subscriptionRecipient = {
+            endpoint: s.endpoint,
+            expirationTime: s.expirationTime,
+            keys: {
+              p256dh: s.keys.p256dh,
+              auth: s.keys.auth,
+            }
+          }
+          const title = `New Subscription`;
+          const description = `${data.subscriptionName} is now subscribed`;
+          sendNotification(subscriptionRecipient, title, description);
+        } else {
+          console.log("Invalid subscription data:", s);
+        }
+      }
+
+
+
+
+    }).catch(err => {
+      console.log(err);
+      res.status(500).send({
+        message: err.message || "some error happened"
+      })
+    });
+  }).catch(err => {
+    console.log(err);
+    res.status(500).send({
+      message: err.message || "some error happened"
+    })
+  })
+}
+
+exports.findAll = (req, res) => {
+  Subscription.find().then(data => {
+    res.send(data)
+  }).catch(err => {
+    res.status(500).send({
+      message: err.message || "some error happened"
+    })
+  })
+}
+
+exports.sendNotificationToSubscriptionName = (req, res) => {
+  // TODO: validate req.body
+  
+  Subscription.find({
+    subscriptionName: req.body.subscriptionName
+  }).then((subscriptionsInDB) => {
+    subscriptionsInDB.forEach((s) => {
+      const subscriptionRecipient = {
+        endpoint: s.endpoint,
+        expirationTime: s.expirationTime,
+        keys: {
+          p256dh: s.keys.p256dh,
+          auth: s.keys.auth,
+        }
+      }
+      const title = `Just for ${req.body.subscriptionName}`;
+      const description = req.body.notificationMessage;
+      
+      sendNotification(subscriptionRecipient, title, description);
+    });
+    res.send("notification sent");
+  }).catch(err => {
+    
+    res.status(500).send({
+      message: err.message || "some error happened"
+    });
+  });
+};
+
+
+exports.findOne = (req, res) => {
+  //TODO:
+}
+
+exports.update = (req, res) => {
+  //TODO:
+}
+
+exports.deleteByEndpoint = (req, res) => {
+  // TODO: validate req.body
+
+  Subscription.findOne({
+    endpoint: req.body.endpoint
+  }).then((subscriptionToDelete) => {
+    if (!subscriptionToDelete) {
+      res.send("endpoint not found");
+      return;
+    }
+
+    Subscription.deleteOne({
+      _id: subscriptionToDelete._id
+    }).then(() => {
+      Subscription.find().then((subscriptionsInDB) => {
+        subscriptionsInDB.forEach((s) => {
+          const subscriptionRecipient = {
+            endpoint: s.endpoint,
+            expirationTime: s.expirationTime,
+            keys: {
+              p256dh: s.keys.p256dh,
+              auth: s.keys.auth,
+            }
+          }
+          const title = `Subscription to ${subscriptionToDelete.subscriptionName} deleted`;
+          const description = "";
+          sendNotification(subscriptionRecipient, title, description);
+        });
+        res.status(200).send("subscription deleted");
+      }).catch(err => {
+        res.status(500).send({
+          message: err.message || "some error happened"
+        });
+      });
+    }).catch(err => {
+      res.status(500).send({
+        message: err.message || "some error happened"
+      });
+    });
+  }).catch(err => {
+    res.status(500).send({
+      message: err.message || "some error happened"
+    });
+  });
+};
+
+
+const sendNotification = async (subscriptionRecipient, title, description) => {
   const options = {
     vapidDetails: {
       subject: 'mailto:myemail@example.com',
@@ -12,57 +155,17 @@ exports.create= async (req, res, next) => {
     },
   };
   try {
-    const res2 = await webPush.sendNotification (
-      newSubscription,
-      JSON.stringify ({
-        title: 'Hello from server',
-        description: 'this message is coming from the server',
+    await webPush.sendNotification(
+      subscriptionRecipient,
+      JSON.stringify({
+        title,
+        description,
         image: 'https://cdn2.vectorstock.com/i/thumb-large/94/66/emoji-smile-icon-symbol-smiley-face-vector-26119466.jpg',
       }),
       options
     );
-    
-    res.sendStatus(200)
   } catch (error) {
-    console.log (error);
-    res.sendStatus (500);
+    throw (error);
   }
 }
 
-
-exports.notification = async (req, res) => {
-  const { subscription, title, description } = req.body;
-  
-  // Check if the subscription has the required properties
-  if (!subscription || !subscription.endpoint) {
-    console.error('Invalid subscription:', subscription);
-    return res.sendStatus(400); // Bad Request
-  }
-
-  const options = {
-    vapidDetails: {
-      subject: 'mailto:myemail@example.com',
-      publicKey: process.env.PUBLIC_KEY,
-      privateKey: process.env.PRIVATE_KEY,
-    },
-  };
-
-  try {
-    const notificationPayload = {
-      title,
-      description,
-      image: 'https://cdn2.vectorstock.com/i/thumb-large/94/66/emoji-smile-icon-symbol-smiley-face-vector-26119466.jpg',
-    };
-
-    await webPush.sendNotification(
-      subscription,
-      JSON.stringify(notificationPayload),
-      options
-    );
-
-    res.sendStatus(200);
-  } catch (error) {
-    console.error('Error:', error);
-    res.sendStatus(500);
-  }
-};
