@@ -15,6 +15,8 @@ const RunnersPage = () => {
 
   const [targetKeys, setTargetKeys] = useState([]);
   const [selectedKeys, setSelectedKeys] = useState([]);
+  const [runnerBuffer, setRunnerBuffer] = useState([]);
+  const [starter, setStarter] = useState([]);
 
   const columns = [
     {
@@ -44,7 +46,7 @@ const RunnersPage = () => {
     },
   ];
 
-
+ 
   useEffect(() => {
     const fetchRunners = async () => {
       try {
@@ -63,6 +65,9 @@ const RunnersPage = () => {
 
           // Establecer initialTargetKeys como datos iniciales para targetKeys
           setTargetKeys(initialTargetKeys);
+          setRunnerBuffer(initialTargetKeys);
+          setStarter(initialTargetKeys);
+          
         } else {
           console.error('Error fetching runners:', response && response.error);
         }
@@ -75,27 +80,24 @@ const RunnersPage = () => {
   }, [id, token]);
 
   
-  let runnerBuffer = [];
-
-  for (const runner of runners) {
-    runnerBuffer.push(runner._id);
-  }
-  //VAMOS A ACTUALIZAR RACE.RUNNERS CON ESTO
-
+  
 
   const onChange = (nextTargetKeys, direction, moveKeys) => {
-    console.log('targetKeys:', nextTargetKeys);
-    console.log('direction:', direction);
-    console.log('moveKeys:', moveKeys);
-
     setTargetKeys(nextTargetKeys);
+  
+    if (direction === 'right') {
+      // Mover a la derecha, añadir al buffer
+      setRunnerBuffer((prevBuffer) => [...prevBuffer, ...moveKeys]);
+    } else if (direction === 'left') {
+      // Mover a la izquierda, eliminar del buffer
+      setRunnerBuffer((prevBuffer) => prevBuffer.filter((id) => !moveKeys.includes(id)));
+    }
   };
+  
   const onSelectChange = (sourceSelectedKeys, targetSelectedKeys) => {
-    console.log('sourceSelectedKeys:', sourceSelectedKeys);
-    console.log('targetSelectedKeys:', targetSelectedKeys);
-
     setSelectedKeys([...sourceSelectedKeys, ...targetSelectedKeys]);
   };
+  
 
 
 
@@ -105,7 +107,15 @@ const RunnersPage = () => {
   }));
 
 
- 
+  const updateTransfer = async () =>{
+    try{
+      const updatedRaceData = await RunnerService.transferRunners(runnerBuffer,starter, id);
+      console.log(updatedRaceData.data);
+      // setRunners(updatedRaceData.data.runners);
+    }catch (error) {
+      console.error(error);
+    }
+  }
 
 
   return (
@@ -123,7 +133,7 @@ const RunnersPage = () => {
         onSelectChange={onSelectChange}
         render={(item) => item.title}
       />
-
+      <Button onClick={updateTransfer}>Actualizar</Button>
     </div>
   );
 };

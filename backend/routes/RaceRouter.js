@@ -30,7 +30,8 @@ var upload = multer({storage: storage});
 // Create endpoint handlers for /races
 raceRouter.route('/')
   .post(upload.single('filename'), RaceController.createRace)
-  .get(RaceController.getRaces);
+  .get(RaceController.getRaces)
+  .patch(RaceController.updateRunners);
 // Create endpoint handlers for /races/:race_id
 raceRouter.route('/:_id')
   .get(RaceController.getRaceById)

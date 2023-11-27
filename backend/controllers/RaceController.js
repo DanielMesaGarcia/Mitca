@@ -107,3 +107,30 @@ exports.deleteRace = async (req, res) => {
     res.status(500).json({ success: false, error: error.message });
   }
 };
+
+exports.updateRunners = async (req, res) => {
+  try {
+    const raceId = req.body.id;
+    const race = await Race.findById(raceId);
+
+    if (!race) {
+      return res.status(404).json({ success: false, error: 'Carrera no encontrada' });
+    }
+
+    const runnerBuffer = req.body.runnerBuffer;
+    const starter = req.body.starter;
+
+    // Filtra los corredores que NO están en el runnerBuffer y estaban en starter
+    race.runners = race.runners.filter(runner => !runnerBuffer.includes(runner) && !starter.includes(runner));
+
+    // Agrega los nuevos corredores
+    race.runners = race.runners.concat(runnerBuffer);
+
+    // Guarda la carrera actualizada en la base de datos
+    await race.save();
+
+    res.status(200).json({ success: true, data: race });
+  } catch (error) {
+    res.status(500).json({ success: false, error: error.message });
+  }
+};
