@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const API_URL = 'http://localhost:3001/runners';
 const RACE_URL = 'http://localhost:3001/races';
-
+const USER_URL = 'http://localhost:3001/users';
 // aquí estaba originalmente la creación de la variable con la que accedía al dato que me interesaba
 
 const getDataById = async (id) => {
@@ -12,6 +12,17 @@ const getDataById = async (id) => {
     //ejecutara con los datos de la variable de la página anterior en vez de la actual
     
     const response = await axios.get(`${RACE_URL}/${id}`);
+    const data = response.data;
+    return data;
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    throw error;
+  }
+};
+
+const getUserByToken = async (token) => {
+  try {
+    const response = await axios.post(`${USER_URL}/token`, {token});
     const data = response.data;
     return data;
   } catch (error) {
@@ -64,6 +75,7 @@ const RaceListService = {
   updateRunner,
   deleteRunner,
   addRunnerToRace,
+  getUserByToken,
 };
 
 export default RaceListService;

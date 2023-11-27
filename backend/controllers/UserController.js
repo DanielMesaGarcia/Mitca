@@ -18,7 +18,7 @@ exports.getUserFromToken = async (req, res) => {
     // Example: const user = getUserById(userId);
     
     try {
-      const user = await User.findById(userId);
+      const user = await User.findById(userId).populate('runners').populate('sponsor');
       if (!user) {
         return res.status(404).json({ success: false, error: 'User not found' });
       }
@@ -73,7 +73,7 @@ exports.login = async (req, res) => {
 // Controller to get all users
 exports.getUsers = async (req, res) => {
   try {
-    const users = await User.find();
+    const users = await User.find().populate('runners').populate('sponsor');
     res.status(200).json({ success: true, data: users });
   } catch (error) {
     res.status(500).json({ success: false, error: error.message });
@@ -83,7 +83,7 @@ exports.getUsers = async (req, res) => {
 // Controller to get a user by their ID
 exports.getUserById = async (req, res) => {
   try {
-    const user = await User.findById(req.params._id);
+    const user = await User.findById(req.params._id).populate('runners').populate('sponsor');
     if (!user) {
       return res.status(404).json({ success: false, error: 'User not found' });
     }
