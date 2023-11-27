@@ -110,8 +110,7 @@ const RunnersPage = () => {
   const updateTransfer = async () =>{
     try{
       const updatedRaceData = await RunnerService.transferRunners(runnerBuffer,starter, id);
-      console.log(updatedRaceData.data);
-      // setRunners(updatedRaceData.data.runners);
+      setRunners(updatedRaceData.data.runners);
     }catch (error) {
       console.error(error);
     }

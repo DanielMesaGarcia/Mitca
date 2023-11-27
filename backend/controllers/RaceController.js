@@ -128,8 +128,8 @@ exports.updateRunners = async (req, res) => {
 
     // Guarda la carrera actualizada en la base de datos
     await race.save();
-
-    res.status(200).json({ success: true, data: race });
+    const race2 = await Race.findById(raceId).populate('runners');
+    res.status(200).json({ success: true, data: race2 });
   } catch (error) {
     res.status(500).json({ success: false, error: error.message });
   }
