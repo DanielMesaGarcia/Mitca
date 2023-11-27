@@ -3,12 +3,14 @@ import { Form, Input, Button, Switch, Modal } from 'antd';
 import './UserSettings.css';
 import Header from '../../components/header/Header';
 import UserService from '../../services/userService';
+import { useNavigate } from 'react-router-dom';
 
 const UserSettings = () => {
   const [form] = Form.useForm();
   const [userData, setUserData] = useState({});
   const [formDisabled, setFormDisabled] = useState(true); // Estado para controlar si los inputs están deshabilitados
   const token = localStorage.getItem('token');
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -49,8 +51,6 @@ const UserSettings = () => {
 
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [form2] = Form.useForm();
-  const [isModalVisible2, setIsModalVisible2] = useState(false);
-  const [form3] = Form.useForm();
 
   const showModal = () => {
     setIsModalVisible(true);
@@ -63,19 +63,6 @@ const UserSettings = () => {
 
   const handleCancel = () => {
     setIsModalVisible(false);
-  };
-
-  const showModal2 = () => {
-    setIsModalVisible2(true);
-  };
-
-  const handleOk2 = () => {
-    // Aquí puedes agregar la lógica para create, update o delete según sea necesario
-    setIsModalVisible2(false);
-  };
-
-  const handleCancel2 = () => {
-    setIsModalVisible2(false);
   };
 
   // Puedes usar useEffect para actualizar el formulario cuando userData cambia
@@ -127,14 +114,14 @@ const UserSettings = () => {
 
         <div className="buttons-container">
           {userData.role === 'user' && (
-            <Button onClick={showModal2}>
-              Botón para usuarios
+            <Button onClick={navigate('/runners')}>
+              Gestionar corredores
             </Button>
           )}
 
           {userData.role === 'sponsor' && (
             <Button onClick={showModal}>
-              Botón para sponsors
+              Gestionar patrocinador
             </Button>
           )}
         </div>
@@ -179,70 +166,6 @@ const UserSettings = () => {
           <Form.Item
             name="typeCompany"
             label="Tipo de empresa"
-            rules={[
-              {
-                required: true,
-                message: 'Por favor, selecciona el tipo de empresa',
-              },
-            ]}
-          >
-            <Input />
-          </Form.Item>
-
-          {/* Agrega más campos según tus necesidades */}
-
-          <Form.Item>
-            <Button type="primary" htmlType="submit">
-              Crear/Actualizar
-            </Button>
-            <Button type="danger" onClick={() => console.log('Eliminar')}>
-              Eliminar
-            </Button>
-          </Form.Item>
-        </Form>
-      </Modal>
-
-      <Modal
-        title="Título del Modal"
-        visible={isModalVisible2}
-        onOk={handleOk2}
-        onCancel={handleCancel2}
-      >
-        <Form
-          form={form3}
-          onFinish={handleOk2}
-          // Agrega otros props necesarios para tu formulario
-        >
-          <Form.Item
-            name="_id"
-            label="DNI"
-            rules={[
-              {
-                required: true,
-                message: 'Por favor, ingresa el CIF',
-              },
-              // Puedes agregar la validación personalizada aquí
-            ]}
-          >
-            <Input />
-          </Form.Item>
-
-          <Form.Item
-            name="name"
-            label="Nombre"
-            rules={[
-              {
-                required: true,
-                message: 'Por favor, ingresa el nombre de la empresa',
-              },
-            ]}
-          >
-            <Input />
-          </Form.Item>
-
-          <Form.Item
-            name="typeCompany"
-            label="Por hacer"
             rules={[
               {
                 required: true,
