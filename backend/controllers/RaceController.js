@@ -60,6 +60,9 @@ exports.updateRace = async (req, res) => {
   }
 };
 
+
+
+
 exports.patchRace = async (req, res) => {
   const { _id } = req.params;
   const updates = req.body;
@@ -82,8 +85,8 @@ exports.patchRace = async (req, res) => {
 
       await race.save();
     }
-    
-    res.status(200).json({ success: true, data: race });
+    const race2 = await Race.findOne({ _id: _id }).populate('sponsors').populate('runners');
+    res.status(200).json({ success: true, data: race2 });
   } catch (error) {
     res.status(500).json({ success: false, error: error.message });
   }
@@ -134,3 +137,26 @@ exports.updateRunners = async (req, res) => {
     res.status(500).json({ success: false, error: error.message });
   }
 };
+
+
+exports.deleteSponsorFromRace = async (req, res) => {
+  try {
+    const raceId = req.params._id;
+    const sponsorId = req.body.userSponsorId; // Lee el parámetro del cuerpo
+
+    const race = await Race.findByIdAndUpdate(
+      raceId,
+      { $pull: { sponsors: sponsorId } },
+      { new: true }
+    ).populate('sponsors');
+
+    if (!race) {
+      return res.status(404).json({ success: false, error: 'Race not found' });
+    }
+
+    res.status(200).json({ success: true, data: race });
+  } catch (error) {
+    res.status(500).json({ success: false, error: error.message });
+  }
+};
+

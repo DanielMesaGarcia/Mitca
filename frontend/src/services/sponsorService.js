@@ -2,6 +2,7 @@ import axios from 'axios';
 
 const API_URL = 'http://localhost:3001/sponsors';
 const RACE_URL = 'http://localhost:3001/races';
+const USER_URL = 'http://localhost:3001/users';
 
 // aquí estaba originalmente la creación de la variable con la que accedía al dato que me interesaba
 
@@ -58,12 +59,39 @@ const addSponsorToRace = async (sponsorId, id) => {
   }
 };
 
+const getUserByToken = async (token) => {
+  try {
+    const response = await axios.post(`${USER_URL}/token`, {token});
+    const data = response.data;
+    return data;
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    throw error;
+  }
+};
+
+const deleteFromRace = async (id, userSponsorId) => {
+  try {
+    const response = await axios.delete(`${RACE_URL}/sponsor/${id}`, {
+      data: { userSponsorId }, // Pasar el parámetro en el cuerpo de la solicitud
+    });
+    const data = response.data;
+    return data;
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    throw error;
+  }
+};
+
+
 const RaceListService = {
   getDataById,
   addSponsor,
   updateSponsor,
   deleteSponsor,
   addSponsorToRace,
+  getUserByToken,
+  deleteFromRace,
 };
 
 export default RaceListService;

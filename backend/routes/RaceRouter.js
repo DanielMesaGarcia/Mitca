@@ -39,4 +39,5 @@ raceRouter.route('/:_id')
   .delete(RaceController.deleteRace)
   .patch(RaceController.patchRace);
 
+  raceRouter.route('/sponsor/:_id').delete(RaceController.deleteSponsorFromRace);
 module.exports = raceRouter;
