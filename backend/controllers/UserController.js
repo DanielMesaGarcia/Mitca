@@ -121,3 +121,33 @@ exports.deleteUser = async (req, res) => {
     res.status(500).json({ success: false, error: error.message });
   }
 };
+
+exports.patchRunner = async (req, res) => {
+  const { _id } = req.params;
+  const updates = req.body;
+
+  try {
+    const user = await User.findOne({ _id: _id });
+
+    if (!user) {
+      return res.status(404).json({ success: false, error: 'User not found' });
+    }
+
+    // Si la actualización incluye el operador $push
+    if ('$push' in updates) {
+      await User.updateOne({ _id: _id }, updates);
+    } else {
+      // Actualizar otros campos usando el enfoque anterior
+      Object.keys(updates).forEach((key) => {
+        user[key] = updates[key];
+      });
+
+      await user.save();
+    }
+    const race2 = await User.findOne({ _id: _id }).populate('runners');
+    res.status(200).json({ success: true, data: race2 });
+  } catch (error) {
+    res.status(500).json({ success: false, error: error.message });
+  }
+};
+

@@ -26,13 +26,14 @@ const UserSettings = () => {
             phone: data.phone,
             // Agrega más campos según sea necesario
           });
+          if(data.role ==='sponsor'){
           form2.setFieldsValue({
             _id: data.sponsor._id,
             companyName: data.sponsor.companyName,
             typeCompany: data.sponsor.typeCompany,
             // Agrega más campos según sea necesario
           });
-
+        }
         } else {
           console.error('Error fetching users:', response && response.error);
         }
@@ -80,6 +81,10 @@ const UserSettings = () => {
     });
   }, [userData, form]);
 
+
+  const goToRunners = () =>{
+    navigate('/runners');
+  }
   return (
     <>
       <Header />
@@ -120,7 +125,7 @@ const UserSettings = () => {
 
         <div className="buttons-container">
           {userData.role === 'user' && (
-            <Button onClick={navigate('/runners')}>
+            <Button onClick={goToRunners}>
               Gestionar corredores
             </Button>
           )}
@@ -133,7 +138,7 @@ const UserSettings = () => {
         </div>
         <Modal
         title="Título del Modal"
-        visible={isModalVisible}
+        open={isModalVisible}
         onOk={handleOk}
         onCancel={handleCancel}
       >
@@ -182,16 +187,6 @@ const UserSettings = () => {
             <Input />
           </Form.Item>
 
-          {/* Agrega más campos según tus necesidades */}
-
-          <Form.Item>
-            <Button type="primary" htmlType="submit">
-              Crear/Actualizar
-            </Button>
-            <Button type="danger" onClick={() => console.log('Eliminar')}>
-              Eliminar
-            </Button>
-          </Form.Item>
         </Form>
       </Modal>
       </div>

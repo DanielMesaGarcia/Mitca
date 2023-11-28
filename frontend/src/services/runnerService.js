@@ -78,6 +78,28 @@ const transferRunners = async (runnerBuffer,starter, id) => {
   }
 };
 
+const addRunnerToUser = async (runnerId, id) => {
+  try {
+    const response = await axios.patch(`${USER_URL}/${id}`, {
+      $push: { runners: runnerId }
+    });
+    return response.data;
+  } catch (error) {
+    throw new Error(`Error al agregar corredor a la carrera: ${error.message}`);
+  }
+};
+
+const getDataByUser = async (id) => {
+  try {
+    const response = await axios.get(`${USER_URL}/${id}`);
+    const data = response.data;
+    return data;
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    throw error;
+  }
+};
+
 const RaceListService = {
   getDataById,
   addRunner,
@@ -86,6 +108,8 @@ const RaceListService = {
   addRunnerToRace,
   getUserByToken,
   transferRunners,
+  getDataByUser,
+  addRunnerToUser
 };
 
 export default RaceListService;
