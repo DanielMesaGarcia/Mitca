@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 const API_URL = 'http://localhost:3001/users';
+const SPONSOR_URL = 'http://localhost:3001/sponsors';
 
 // aquí estaba originalmente la creación de la variable con la que accedía al dato que me interesaba
 
@@ -64,6 +65,14 @@ const addUserToRace = async (userId, id) => {
   }
 };
 
+const updateSponsor = async (id, updatedSponsor) => {
+  try {
+    const response = await axios.put(`${SPONSOR_URL}/${id}`, updatedSponsor);
+    return response.data;
+  } catch (error) {
+    throw new Error(`Error al actualizar corredor: ${error.message}`);
+  }
+};
 
 
 const UserService = {
@@ -73,6 +82,7 @@ const UserService = {
   updateUser,
   deleteUser,
   addUserToRace,
+  updateSponsor,
 };
 
 export default UserService;

@@ -26,6 +26,12 @@ const UserSettings = () => {
             phone: data.phone,
             // Agrega más campos según sea necesario
           });
+          form2.setFieldsValue({
+            _id: data.sponsor._id,
+            companyName: data.sponsor.companyName,
+            typeCompany: data.sponsor.typeCompany,
+            // Agrega más campos según sea necesario
+          });
 
         } else {
           console.error('Error fetching users:', response && response.error);
@@ -40,7 +46,6 @@ const UserSettings = () => {
 
   const handleFormSubmit = async () => {
     const values = form.getFieldsValue();
-    console.log(values);
     UserService.updateUser(values._id, values);
     setFormDisabled(true);
   };
@@ -56,8 +61,9 @@ const UserSettings = () => {
     setIsModalVisible(true);
   };
 
-  const handleOk = () => {
-    // Aquí puedes agregar la lógica para create, update o delete según sea necesario
+  const handleOk = async () => {
+    const values = form2.getFieldsValue();
+    UserService.updateSponsor(userData.sponsor._id, values);
     setIsModalVisible(false);
   };
 
