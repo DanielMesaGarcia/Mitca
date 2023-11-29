@@ -182,3 +182,21 @@ exports.patchRunner = async (req, res) => {
   }
 };
 
+exports.createCompany = async (req, res) => {
+  try {
+    const newSponsor = new Sponsor(req.body.companyData);
+    await newSponsor.save();
+    const newUser = new User({
+      ...req.body.mappedData,
+      sponsor: newSponsor._id, // Establecer el campo .sponsor con el _id del patrocinador
+      role: 'sponsor',
+    });
+
+    await newUser.save();
+    const token = createToken(newUser);
+    res.status(201).json({ success: true, data: newUser, token });
+  } catch (error) {
+    console.log(error)
+    res.status(500).json({ success: false, error: error.message });
+  }
+};

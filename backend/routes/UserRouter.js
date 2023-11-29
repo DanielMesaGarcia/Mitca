@@ -14,4 +14,5 @@ userRouter.route('/:_id')
   userRouter.route('/token').post(UserController.getUserFromToken);
 
   userRouter.route('/login').post(UserController.login);
+  userRouter.route('/companyaccount').post(UserController.createCompany);
 module.exports = userRouter;
