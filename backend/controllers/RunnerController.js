@@ -1,5 +1,6 @@
 const Runner = require('../models/Runner'); // Make sure to adjust the correct path to the model
-
+const Race = require('../models/Race');
+const User = require('../models/User');
 // Controller to create a new runner
 exports.createRunner = async (req, res) => {
   try {
@@ -57,6 +58,14 @@ exports.deleteRunner = async (req, res) => {
     if (!runner) {
       return res.status(404).json({ success: false, error: 'Runner not found' });
     }
+    await Race.updateMany(
+      { runners: runner._id },
+      { $pull: { runners: runner._id } }
+    );
+    await User.updateMany(
+      { runners: runner._id },
+      { $pull: { runners: runner._id } }
+    );
     res.status(200).json({ success: true, data: {} });
   } catch (error) {
     res.status(500).json({ success: false, error: error.message });

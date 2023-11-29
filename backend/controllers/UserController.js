@@ -1,6 +1,10 @@
 const User = require('../models/User'); // Make sure to adjust the correct path to the model
-
+const RunnerController = require('../controllers/RunnerController');
+const SponsorController = require('../controllers/SponsorController');
 const jwt = require('jsonwebtoken');
+const Runner = require('../models/Runner');
+const Race = require('../models/Race');
+const Sponsor = require('../models/Sponsor');
 
 // Create a token for authentication
 const createToken = (user) => {
@@ -16,7 +20,7 @@ exports.getUserFromToken = async (req, res) => {
 
     // You can use the userId to retrieve the user data from your database or wherever it is stored
     // Example: const user = getUserById(userId);
-    
+
     try {
       const user = await User.findById(userId).populate('runners').populate('sponsor');
       if (!user) {
@@ -116,6 +120,33 @@ exports.deleteUser = async (req, res) => {
     if (!user) {
       return res.status(404).json({ success: false, error: 'User not found' });
     }
+
+    // Borra todos los runners asociados al usuario
+    await Promise.all(user.runners.map(async (runnerId) => {
+      try {
+        const runner = await Runner.findByIdAndDelete(runnerId);
+        await Race.updateMany(
+          { runners: runner._id },
+          { $pull: { runners: runner._id } }
+        );
+      } catch (error) {
+        console.log(error);
+      }
+    }));
+
+    // Borra el sponsor asociado al usuario
+    if (user.sponsor) {
+      try {
+        const sponsor = await Sponsor.findByIdAndDelete(user.sponsor);
+        await Race.updateMany(
+          { sponsors: sponsor._id },
+          { $pull: { sponsors: sponsor._id } }
+        );
+      } catch (error) {
+        console.log(error);
+      }
+    }
+
     res.status(200).json({ success: true, data: {} });
   } catch (error) {
     res.status(500).json({ success: false, error: error.message });
