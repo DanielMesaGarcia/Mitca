@@ -16,6 +16,18 @@ const getUserById = async (id) => {
   }
 };
 
+const getUsers = async () => {
+  try {
+    const response = await axios.get(`${API_URL}`);
+    const data = response.data;
+    return data;
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    throw error;
+  }
+};
+
+
 const getUserByToken = async (token) => {
     try {
       const response = await axios.post(`${API_URL}/token`, {token});
@@ -83,6 +95,7 @@ const UserService = {
   deleteUser,
   addUserToRace,
   updateSponsor,
+  getUsers
 };
 
 export default UserService;

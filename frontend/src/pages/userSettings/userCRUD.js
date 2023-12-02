@@ -1,29 +1,34 @@
 import React, { useState, useEffect } from 'react';
 import { Table, Form, Input, Button } from 'antd';
-import SponsorService from '../../services/sponsorService';
+import UserService from '../../services/userService';
 import Header from '../../components/header/Header';
 import { useParams } from 'react-router-dom';
 
 const UserCRUD = () => {
-    const [sponsors, setSponsors] = useState([]);
+    const [users, setUsers] = useState([]);
     const [form] = Form.useForm();
     const { id } = useParams();
   
     const columns = [
       {
-        title: 'CIF',
+        title: 'Email',
         dataIndex: '_id',
         key: '_id',
       },
       {
-        title: 'companyName',
-        dataIndex: 'companyName',
-        key: 'companyName',
+        title: 'DNI',
+        dataIndex: 'DNI',
+        key: 'DNI',
       },
       {
-        title: 'typeCompany',
-        dataIndex: 'typeCompany',
-        key: 'typeCompany',
+        title: 'name',
+        dataIndex: 'name',
+        key: 'name',
+      },
+      {
+        title: 'role',
+        dataIndex: 'role',
+        key: 'role',
       },
       {
         title: 'Actions',
@@ -39,64 +44,48 @@ const UserCRUD = () => {
     ];
   
     useEffect(() => {
-      const fetchSponsors = async () => {
+      const fetchUsers = async () => {
         try {
-          const response = await SponsorService.getDataById(id);
-          const data = response.data.sponsors;
+          const response = await UserService.getUsers();
+          const data = response.data;
           if (data) {
-            setSponsors(data);
+            setUsers(data);
           } else {
-            console.error('Error fetching sponsors:', response && response.error);
+            console.error('Error fetching users:', response && response.error);
           }
         } catch (error) {
-          console.error('Error fetching sponsors:', error);
+          console.error('Error fetching users:', error);
         }
       };
     
-      fetchSponsors();
+      fetchUsers();
     }, [id]);
   
-    const addSponsor = async (values) => {
-      const formattedValues = { ...values, _id: values.CIF };
-      delete formattedValues.CIF;
-      try {
-        await SponsorService.addSponsor(formattedValues);
-        await SponsorService.addSponsorToRace(formattedValues._id, id);
-        const response = await SponsorService.getDataById(id);
-        const data = response.data.sponsors;
-        setSponsors(data);
-        
-        form.resetFields();
-      } catch (error) {
-        console.error('Error adding sponsor:', error);
-      }
-    };
-  
-    const handleUpdate = async (idSponsor) => {
+    const handleUpdate = async (idUser) => {
         try {
             const values = form.getFieldsValue();
-            const updatedSponsor = { ...values, _id: values.CIF };
-            delete updatedSponsor.CIF;
-            await SponsorService.updateSponsor(idSponsor, updatedSponsor);
-            const response = await SponsorService.getDataById(id);
-            const data = response.data.sponsors;
-            setSponsors(data);
+            const updatedUser = { ...values, _id: values.CIF };
+            delete updatedUser.CIF;
+            await UserService.updateUser(idUser, updatedUser);
+            const response = await UserService.getUsers();
+            const data = response.data;
+            setUsers(data);
             
             form.resetFields();
         } catch (error) {
-            console.error('Error updating sponsor:', error);
+            console.error('Error updating user:', error);
         }
     };
 
-    const handleDelete = async (idSponsor) => {
+    const handleDelete = async (idUser) => {
         try {
-            await SponsorService.deleteSponsor(idSponsor);
-            const response = await SponsorService.getDataById(id);
-            const data = response.data.sponsors;
-            setSponsors(data);
+            await UserService.deleteUser(idUser);
+            const response = await UserService.getUsers();
+            const data = response.data;
+            setUsers(data);
             
         } catch (error) {
-            console.error('Error deleting sponsor:', error);
+            console.error('Error deleting user:', error);
         }
     };
 
@@ -105,26 +94,24 @@ const UserCRUD = () => {
       
         <div className="page-container">
           <Header/>
-          <h1>Sponsors</h1>
-          <Table dataSource={sponsors} columns={columns} rowKey="_id" />
+          <h1>Users</h1>
+          <Table dataSource={users} columns={columns} rowKey="_id" />
     
-          <Form form={form} name="add_sponsor" className="form-container" onFinish={addSponsor}>
-            <Form.Item name="CIF" label="CIF" rules={[{ required: true }]}>
+          <Form form={form} name="add_user" className="form-container">
+            <Form.Item name="Email" label="Email" rules={[{ required: true }]}>
               <Input />
             </Form.Item>
     
-            <Form.Item name="companyName" label="companyName" rules={[{ required: true }]}>
+            <Form.Item name="DNI" label="DNI" rules={[{ required: true }]}>
               <Input />
             </Form.Item>
     
-            <Form.Item name="typeCompany" label="typeCompany" rules={[{ required: true }]}>
+            <Form.Item name="name" label="name" rules={[{ required: true }]}>
               <Input />
             </Form.Item>
-    
-            <Form.Item>
-              <Button type="primary" htmlType="submit">
-                Add Sponsor
-              </Button>
+
+            <Form.Item name="role" label="role" rules={[{ required: true }]}>
+              <Input />
             </Form.Item>
           </Form>
         </div>
