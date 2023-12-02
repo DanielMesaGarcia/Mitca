@@ -7,7 +7,6 @@ import { useParams } from 'react-router-dom';
 const RunnersCRUD = () => {
     const [runners, setRunners] = useState([]);
     const [form] = Form.useForm();
-    const { id } = useParams();
   
     const columns = [
       {
@@ -51,8 +50,8 @@ const RunnersCRUD = () => {
     useEffect(() => {
       const fetchRunners = async () => {
         try {
-          const response = await RunnerService.getDataById(id);
-          const data = response.data.runners;
+          const response = await RunnerService.getRunners();
+          const data = response.data;
           if (data) {
             setRunners(data);
           } else {
@@ -64,16 +63,15 @@ const RunnersCRUD = () => {
       };
     
       fetchRunners();
-    }, [id]);
+    }, []);
   
     const addRunner = async (values) => {
       const formattedValues = { ...values, _id: values.DNI };
       delete formattedValues.DNI;
       try {
         await RunnerService.addRunner(formattedValues);
-        await RunnerService.addRunnerToRace(formattedValues._id, id);
-        const response = await RunnerService.getDataById(id);
-        const data = response.data.runners;
+        const response = await RunnerService.getRunners();
+        const data = response.data;
         setRunners(data);
         
         form.resetFields();
@@ -88,8 +86,8 @@ const RunnersCRUD = () => {
             const updatedRunner = { ...values, _id: values.DNI };
             delete updatedRunner.DNI;
             await RunnerService.updateRunner(idRunner, updatedRunner);
-            const response = await RunnerService.getDataById(id);
-            const data = response.data.runners;
+            const response = await RunnerService.getRunners();
+            const data = response.data;
             setRunners(data);
             
             form.resetFields();
@@ -101,8 +99,8 @@ const RunnersCRUD = () => {
     const handleDelete = async (idRunner) => {
         try {
             await RunnerService.deleteRunner(idRunner);
-            const response = await RunnerService.getDataById(id);
-            const data = response.data.runners;
+            const response = await RunnerService.getRunners();
+            const data = response.data;
             setRunners(data);
             
         } catch (error) {

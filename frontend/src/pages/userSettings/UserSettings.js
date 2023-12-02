@@ -26,14 +26,14 @@ const UserSettings = () => {
             phone: data.phone,
             // Agrega más campos según sea necesario
           });
-          if(data.role ==='sponsor'){
-          form2.setFieldsValue({
-            _id: data.sponsor._id,
-            companyName: data.sponsor.companyName,
-            typeCompany: data.sponsor.typeCompany,
-            // Agrega más campos según sea necesario
-          });
-        }
+          if (data.role === 'sponsor') {
+            form2.setFieldsValue({
+              _id: data.sponsor._id,
+              companyName: data.sponsor.companyName,
+              typeCompany: data.sponsor.typeCompany,
+              // Agrega más campos según sea necesario
+            });
+          }
         } else {
           console.error('Error fetching users:', response && response.error);
         }
@@ -44,6 +44,15 @@ const UserSettings = () => {
 
     fetchUsers();
   }, [token]);
+
+  const handleButtonClick = (path) => {
+    // Call navigate when the button is clicked
+    navigate(path);
+
+    // Optionally, close the modal if needed
+    // handleCancel2();
+  };
+
 
   const handleFormSubmit = async () => {
     const values = form.getFieldsValue();
@@ -56,10 +65,15 @@ const UserSettings = () => {
   };
 
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const [isModalVisible2, setIsModalVisible2] = useState(false);
   const [form2] = Form.useForm();
 
   const showModal = () => {
     setIsModalVisible(true);
+  };
+
+  const showModal2 = () => {
+    setIsModalVisible2(true);
   };
 
   const handleOk = async () => {
@@ -72,6 +86,10 @@ const UserSettings = () => {
     setIsModalVisible(false);
   };
 
+  const handleCancel2 = () => {
+    setIsModalVisible2(false);
+  };
+
   // Puedes usar useEffect para actualizar el formulario cuando userData cambia
   useEffect(() => {
     form.setFieldsValue({
@@ -82,7 +100,7 @@ const UserSettings = () => {
   }, [userData, form]);
 
 
-  const goToRunners = () =>{
+  const goToRunners = () => {
     navigate('/runners');
   }
   return (
@@ -135,60 +153,82 @@ const UserSettings = () => {
               Gestionar patrocinador
             </Button>
           )}
+
+          {userData.role === 'admin' && (
+            <Button onClick={showModal2}>
+              Gestionar tablas
+            </Button>
+          )}
         </div>
+
+
         <Modal
-        title="Título del Modal"
-        open={isModalVisible}
-        onOk={handleOk}
-        onCancel={handleCancel}
-      >
-        <Form
-          form={form2}
-          onFinish={handleOk}
-          // Agrega otros props necesarios para tu formulario
+          title="Título del Modal"
+          open={isModalVisible2}
+          onCancel={handleCancel2}
+
         >
-          <Form.Item
-            name="_id"
-            label="CIF"
-            rules={[
-              {
-                required: true,
-                message: 'Por favor, ingresa el CIF',
-              },
-              // Puedes agregar la validación personalizada aquí
-            ]}
-          >
-            <Input />
-          </Form.Item>
+          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+            <Button type="primary" onClick={() => handleButtonClick('/users')}>Usuarios</Button>
+            <Button type="primary" onClick={() => handleButtonClick('/runners')}>Corredores</Button>
+            <Button type="primary" onClick={() => handleButtonClick('/sponsors')}>Patrocinadores</Button>
+          </div>
+        </Modal>
 
-          <Form.Item
-            name="companyName"
-            label="Nombre de la empresa"
-            rules={[
-              {
-                required: true,
-                message: 'Por favor, ingresa el nombre de la empresa',
-              },
-            ]}
-          >
-            <Input />
-          </Form.Item>
 
-          <Form.Item
-            name="typeCompany"
-            label="Tipo de empresa"
-            rules={[
-              {
-                required: true,
-                message: 'Por favor, selecciona el tipo de empresa',
-              },
-            ]}
+        <Modal
+          title="Título del Modal"
+          open={isModalVisible}
+          onOk={handleOk}
+          onCancel={handleCancel}
+        >
+          <Form
+            form={form2}
+            onFinish={handleOk}
+          // Agrega otros props necesarios para tu formulario
           >
-            <Input />
-          </Form.Item>
+            <Form.Item
+              name="_id"
+              label="CIF"
+              rules={[
+                {
+                  required: true,
+                  message: 'Por favor, ingresa el CIF',
+                },
+                // Puedes agregar la validación personalizada aquí
+              ]}
+            >
+              <Input />
+            </Form.Item>
 
-        </Form>
-      </Modal>
+            <Form.Item
+              name="companyName"
+              label="Nombre de la empresa"
+              rules={[
+                {
+                  required: true,
+                  message: 'Por favor, ingresa el nombre de la empresa',
+                },
+              ]}
+            >
+              <Input />
+            </Form.Item>
+
+            <Form.Item
+              name="typeCompany"
+              label="Tipo de empresa"
+              rules={[
+                {
+                  required: true,
+                  message: 'Por favor, selecciona el tipo de empresa',
+                },
+              ]}
+            >
+              <Input />
+            </Form.Item>
+
+          </Form>
+        </Modal>
       </div>
     </>
   );

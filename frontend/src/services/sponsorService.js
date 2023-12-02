@@ -21,6 +21,17 @@ const getDataById = async (id) => {
   }
 };
 
+const getSponsors = async () => {
+  try {
+    const response = await axios.get(`${API_URL}`);
+    const data = response.data;
+    return data;
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    throw error;
+  }
+};
+
 const addSponsor = async (sponsor) => {
   try {
     const response = await axios.post(API_URL, sponsor);
@@ -42,6 +53,15 @@ const updateSponsor = async (id, updatedSponsor) => {
 const deleteSponsor = async (id) => {
   try {
     const response = await axios.delete(`${API_URL}/${id}`);
+    return response.data;
+  } catch (error) {
+    throw new Error(`Error al eliminar corredor: ${error.message}`);
+  }
+};
+
+const deleteSponsorCRUD = async (id) => {
+  try {
+    const response = await axios.delete(`${API_URL}/CRUD/${id}`);
     return response.data;
   } catch (error) {
     throw new Error(`Error al eliminar corredor: ${error.message}`);
@@ -92,6 +112,8 @@ const RaceListService = {
   addSponsorToRace,
   getUserByToken,
   deleteFromRace,
+  getSponsors,
+  deleteSponsorCRUD
 };
 
 export default RaceListService;

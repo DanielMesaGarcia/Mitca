@@ -4,9 +4,10 @@ import SponsorService from '../../services/sponsorService';
 import Header from '../../components/header/Header';
 import { useParams } from 'react-router-dom';
 
-const SponsorsCRUD = () => {
+const UserCRUD = () => {
     const [sponsors, setSponsors] = useState([]);
     const [form] = Form.useForm();
+    const { id } = useParams();
   
     const columns = [
       {
@@ -40,8 +41,8 @@ const SponsorsCRUD = () => {
     useEffect(() => {
       const fetchSponsors = async () => {
         try {
-          const response = await SponsorService.getSponsors();
-          const data = response.data;
+          const response = await SponsorService.getDataById(id);
+          const data = response.data.sponsors;
           if (data) {
             setSponsors(data);
           } else {
@@ -53,15 +54,16 @@ const SponsorsCRUD = () => {
       };
     
       fetchSponsors();
-    }, []);
+    }, [id]);
   
     const addSponsor = async (values) => {
       const formattedValues = { ...values, _id: values.CIF };
       delete formattedValues.CIF;
       try {
         await SponsorService.addSponsor(formattedValues);
-        const response = await SponsorService.getSponsors();
-        const data = response.data;
+        await SponsorService.addSponsorToRace(formattedValues._id, id);
+        const response = await SponsorService.getDataById(id);
+        const data = response.data.sponsors;
         setSponsors(data);
         
         form.resetFields();
@@ -76,8 +78,8 @@ const SponsorsCRUD = () => {
             const updatedSponsor = { ...values, _id: values.CIF };
             delete updatedSponsor.CIF;
             await SponsorService.updateSponsor(idSponsor, updatedSponsor);
-            const response = await SponsorService.getSponsors();
-            const data = response.data;
+            const response = await SponsorService.getDataById(id);
+            const data = response.data.sponsors;
             setSponsors(data);
             
             form.resetFields();
@@ -88,9 +90,9 @@ const SponsorsCRUD = () => {
 
     const handleDelete = async (idSponsor) => {
         try {
-            await SponsorService.deleteSponsorCRUD(idSponsor);
-            const response = await SponsorService.getSponsors();
-            const data = response.data;
+            await SponsorService.deleteSponsor(idSponsor);
+            const response = await SponsorService.getDataById(id);
+            const data = response.data.sponsors;
             setSponsors(data);
             
         } catch (error) {
@@ -129,4 +131,4 @@ const SponsorsCRUD = () => {
       );
     };
 
-    export default SponsorsCRUD;
+    export default UserCRUD;

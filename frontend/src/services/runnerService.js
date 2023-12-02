@@ -7,12 +7,20 @@ const USER_URL = 'http://localhost:3001/users';
 
 const getDataById = async (id) => {
   try {
-    //aquí tenía que estar realmente, ya al cambiar de página se ejecuta este método, pero existía la posibilidad de
-    //que la variable almacenada en el almacenamiento local siguiera con los datos de otra página y este método se
-    //ejecutara con los datos de la variable de la página anterior en vez de la actual
-    
     const response = await axios.get(`${RACE_URL}/${id}`);
     const data = response.data;
+    return data;
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    throw error;
+  }
+};
+
+const getRunners = async () => {
+  try {
+    const response = await axios.get(`${API_URL}`);
+    const data = response.data;
+    console.log(data)
     return data;
   } catch (error) {
     console.error('Error fetching data:', error);
@@ -109,7 +117,8 @@ const RaceListService = {
   getUserByToken,
   transferRunners,
   getDataByUser,
-  addRunnerToUser
+  addRunnerToUser,
+  getRunners
 };
 
 export default RaceListService;

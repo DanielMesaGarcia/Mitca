@@ -7,7 +7,9 @@ import RaceData from "./pages/RaceData/RaceData";
 import RunnersPage from "./pages/Runners/Runners";
 import SponsorsPage from "./pages/Sponsors/Sponsors";
 import UserSettings from "./pages/userSettings/UserSettings";
-import RunnersCRUDuser from "./pages/Runners/RunnerCRUDuser";
+import SponsorsCRUD from "./pages/Sponsors/SponsorsCRUD";
+import UserCRUD from "./pages/userSettings/userCRUD";
+import RunnersCRUD from "./pages/Runners/RunnerCRUD";
 function App() {
   return (
     
@@ -21,7 +23,9 @@ function App() {
         <Route path="/runners/:id" element={<RunnersPage/>}/>
         <Route path="/sponsors/:id" element={<SponsorsPage/>}/>
         <Route path="/usersettings" element={<UserSettings/>}/>
-        <Route path="/runners" element={<RunnersCRUDuser/>}/>
+        <Route path="/runners" element={<RunnersCRUD/>}/>
+        <Route path="/sponsors" element={<SponsorsCRUD/>}/>
+        <Route path="/users" element={<UserCRUD/>}/>
       </Routes>
     </BrowserRouter>
   );
