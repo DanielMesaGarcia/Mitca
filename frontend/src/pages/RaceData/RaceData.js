@@ -10,17 +10,9 @@ import Form from 'antd/es/form/Form';
 import Modal from 'antd/es/modal/Modal';
 import { regSw,
   subscribe,
-  unregisterAllServiceWorkers,
   checkIfAlreadySubscribed,
   getAllSubscriptions,
-  sendNotificationToSubscriptionName,
   unregisterFromServiceWorker } from '../../services/helper';
-const { Option } = Select;
-dayjs.extend(customParseFormat);
-const onChange = (time, timeString) => {
-  console.log(time, timeString);
-};
-
 
 const RaceData = () => {
   const [Data, setData] = useState(null);
@@ -52,79 +44,20 @@ const RaceData = () => {
     fetchData();
   }, []);
 
-  const handleDelete = async (idRace) => {
-    try {
-      await RaceDataService.deleteRace(idRace);
-      navigate(`/home`);
-    } catch (error) {
-      console.error('Error deleting runner:', error);
-    }
-  };
-
-  const [endingFormVisible, setEndingFormVisible] = useState(false);
-  const [startingFormVisible, setStartingFormVisible] = useState(false);
-  const [endingForm] = Form.useForm();
-  const [startingForm] = Form.useForm();
-
-  const showForm = () => {
-    if (Data.status.statusAtTheMoment === 'No empezada') {
-      setStartingFormVisible(true);
-    } else {
-      setEndingFormVisible(true);
-    }
-
-  };
-
-  const handleStart = async () => {
-    try {
-      // Extraer los datos para el esquema de la carrera
-      const statusData = {
-        statusAtTheMoment: 'En curso',
-      };
-
-      const response = await RaceDataService.updateStatus(Data.status._id, statusData);
-      if (response.success) {
-        setData({ ...Data, status: response.data });
-        setStartingFormVisible(false);
-      } else {
-        // Handle error if needed
-        console.error("Error updating Status:", response.error);
-      }
-    } catch (error) {
-      // Handle error if needed
-      console.error("Error updating Status:", error);
-    }
-  };
-
-  const handleEnding = async (values) => {
-    try {
-      const { winner, duration } = values;
-
-      const statusData = {
-        statusAtTheMoment: 'Finalizada',
-        winner, 
-        duration,
-      };
-
-      const response = await RaceDataService.updateStatus(Data.status._id, statusData);
-      if (response.success) {
-        setData({ ...Data, status: response.data });
-        setEndingFormVisible(false);
-      } else {
-        // Handle error if needed
-        console.error("Error updating Status:", response.error);
-      }
-    } catch (error) {
-      // Handle error if needed
-      console.error("Error updating Status:", error);
-    }
-  };
 
   const [subscribed, setSubscribed] = useState(false);
   const [subscriptions, setSubscriptions] = useState([]);
   const [subscriptionName, setSubscriptionName] = useState("Carreras");
   const [notificationMessage, setNotificationMessage] = useState("");
   const [selectedRecipient, setSelectedRecipient] = useState("select a recipient");
+  useEffect(() => {
+    checkSubscriptionState();
+    
+    getAllSubscriptions().then((res) => {
+      setSubscriptions(res.data);
+    });
+    setSubscriptionName("Carreras");
+  }, []);
 
   const registerAndSubscribe = async () => {
     try {
@@ -161,20 +94,8 @@ const RaceData = () => {
     })
   }
 
-  const handleNotificationSending = (e) => {
-    e.preventDefault(); 
-    sendNotificationToSubscriptionName(selectedRecipient, notificationMessage);
-  }
 
-  useEffect(() => {
-    checkSubscriptionState();
-    
-    getAllSubscriptions().then((res) => {
-      setSubscriptions(res.data);
-    });
-    setSubscriptionName("Carreras");
-    setNotificationMessage("¡La carrera "+selectedRaceId+" ha empezado!");
-  }, []);
+  
 
   useEffect(() => {
     getAllSubscriptions().then((res) => {
@@ -207,9 +128,6 @@ const RaceData = () => {
               </div>
             )}
           
-        <Button type="primary" onClick={showForm} style={{ marginBottom: '16px' }}>
-          Update Status
-        </Button>
         
         <Button type="primary" onClick={handleSubscription} style={{ marginBottom: '16px' }}>
           Suscribirme
@@ -217,43 +135,7 @@ const RaceData = () => {
         <Button type="primary" onClick={handleUnsubscription} style={{ marginBottom: '16px' }}>
           Desuscribirme
         </Button>
-        <Button type="primary" onClick={handleNotificationSending} style={{ marginBottom: '16px' }}>
-          Notificar
-        </Button>
-        <Button type="primary" onClick={() => handleDelete(id)}>Borrar carrera</Button>
-        <Modal
-          title="Create Race"
-          open={startingFormVisible}
-          onCancel={() => setStartingFormVisible(false)}
-          onOk={startingForm.submit}
-        >
-          <Form form={startingForm} onFinish={handleStart}>
-            <p>Estas seguro de que quieres iniciar la carrera</p>
-          </Form>
-        </Modal>
-        <Modal
-          title="Create Race"
-          open={endingFormVisible}
-          onCancel={() => setEndingFormVisible(false)}
-          onOk={endingForm.submit}
-        >
-          <Form form={endingForm} onFinish={handleEnding}>
-            <Form.Item name="winner" label="Winner" rules={[{ required: true }]}>
-              <Select placeholder="Select a winner">
-                {Data?.runners?.map(runner => (
-                  <Option key={runner._id} value={runner.name}>
-                    {`${runner.name}, ${runner._id}`}
-                  </Option>
-                ))}
-              </Select>
-            </Form.Item>
-
-            <Form.Item name="duration" label="duration" rules={[{ required: true }]}>
-              <TimePicker onChange={onChange} />
-            </Form.Item>
-            <p>Darle click a OK cambiará el estado de la carrera a terminada con los datos que has introducido</p>
-          </Form>
-        </Modal>
+        
         </div>
         )}
       </Card>

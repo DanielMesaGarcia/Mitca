@@ -22,11 +22,6 @@ const RunnersCRUDuser = () => {
             key: 'name',
         },
         {
-            title: 'Mail',
-            dataIndex: 'mail',
-            key: 'mail',
-        },
-        {
             title: 'Phone',
             dataIndex: 'phone',
             key: 'phone',
@@ -138,9 +133,6 @@ const RunnersCRUDuser = () => {
                     <Input />
                 </Form.Item>
 
-                <Form.Item name="mail" label="Mail" rules={[{ required: true }]}>
-                    <Input />
-                </Form.Item>
 
                 <Form.Item name="phone" label="Phone" rules={[{ required: true }]}>
                     <Input />

@@ -30,11 +30,6 @@ const RunnersPage = () => {
       key: 'name',
     },
     {
-      title: 'Mail',
-      dataIndex: 'mail',
-      key: 'mail',
-    },
-    {
       title: 'Phone',
       dataIndex: 'phone',
       key: 'phone',

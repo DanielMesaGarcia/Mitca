@@ -107,9 +107,6 @@ const SponsorsCRUD = () => {
           <Table dataSource={sponsors} columns={columns} rowKey="_id" />
     
           <Form form={form} name="add_sponsor" className="form-container" onFinish={addSponsor}>
-            <Form.Item name="CIF" label="CIF" rules={[{ required: true }]}>
-              <Input />
-            </Form.Item>
     
             <Form.Item name="companyName" label="companyName" rules={[{ required: true }]}>
               <Input />
@@ -119,11 +116,6 @@ const SponsorsCRUD = () => {
               <Input />
             </Form.Item>
     
-            <Form.Item>
-              <Button type="primary" htmlType="submit">
-                Add Sponsor
-              </Button>
-            </Form.Item>
           </Form>
         </div>
       );

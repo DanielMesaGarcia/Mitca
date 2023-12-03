@@ -4,6 +4,13 @@ import './UserSettings.css';
 import Header from '../../components/header/Header';
 import UserService from '../../services/userService';
 import { useNavigate } from 'react-router-dom';
+import { regSw,
+  subscribe,
+  unregisterAllServiceWorkers,
+  checkIfAlreadySubscribed,
+  getAllSubscriptions,
+  sendNotificationToSubscriptionName,
+  unregisterFromServiceWorker } from '../../services/helper';
 
 const UserSettings = () => {
   const [form] = Form.useForm();
@@ -44,6 +51,67 @@ const UserSettings = () => {
 
     fetchUsers();
   }, [token]);
+
+  const registerAndSubscribe = async () => {
+    try {
+      const serviceWorkerReg = await regSw();
+      const recipient =await subscribe(serviceWorkerReg, subscriptionName);
+
+      setSubscribed(true);
+      getAllSubscriptions().then((res) => {
+        setSubscriptions(res.data);
+      });
+      setSelectedRecipient(recipient);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  const [subscribed, setSubscribed] = useState(false);
+  const [subscriptions, setSubscriptions] = useState([]);
+  const [subscriptionName, setSubscriptionName] = useState("Carreras");
+  const [notificationMessage, setNotificationMessage] = useState("");
+  const [selectedRecipient, setSelectedRecipient] = useState("select a recipient");
+
+  
+
+  const checkSubscriptionState = async () => {
+    const subscriptionState = await checkIfAlreadySubscribed();
+    console.log(subscriptionState);
+    setSubscribed(subscriptionState);
+  }
+
+  const handleSubscription = async (e) => {
+    e.preventDefault();
+
+    await registerAndSubscribe();
+  }
+
+  const handleUnsubscription = (e) => {
+    e.preventDefault();
+
+    unregisterFromServiceWorker().then(() => {
+      checkSubscriptionState();
+    })
+  }
+
+
+  useEffect(() => {
+    checkSubscriptionState();
+    
+    getAllSubscriptions().then((res) => {
+      setSubscriptions(res.data);
+    });
+    setSubscriptionName("Carreras");
+    setNotificationMessage("Tu suscripción ha sido iniciada");
+  }, []);
+
+  useEffect(() => {
+    getAllSubscriptions().then((res) => {
+      setSubscriptions(res.data);
+    });
+    
+  }, [subscribed]);
 
   const handleButtonClick = (path) => {
     // Call navigate when the button is clicked
@@ -101,7 +169,7 @@ const UserSettings = () => {
 
 
   const goToRunners = () => {
-    navigate('/runners');
+    navigate('/runnersuser');
   }
   return (
     <>
@@ -118,9 +186,6 @@ const UserSettings = () => {
           name="account-settings"
           onFinish={handleFormSubmit}
         >
-          <Form.Item label="Email" name="_id">
-            <Input disabled={formDisabled} />
-          </Form.Item>
           <Form.Item label="DNI" name="DNI">
             <Input disabled={formDisabled} />
           </Form.Item>
@@ -229,6 +294,12 @@ const UserSettings = () => {
 
           </Form>
         </Modal>
+        <Button type="primary" onClick={handleSubscription} style={{ marginBottom: '16px' }}>
+          Suscribirme
+        </Button>
+        <Button type="primary" onClick={handleUnsubscription} style={{ marginBottom: '16px' }}>
+          Desuscribirme
+        </Button>
       </div>
     </>
   );

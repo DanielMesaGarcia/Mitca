@@ -20,11 +20,6 @@ const RunnersCRUD = () => {
         key: 'name',
       },
       {
-        title: 'Mail',
-        dataIndex: 'mail',
-        key: 'mail',
-      },
-      {
         title: 'Phone',
         dataIndex: 'phone',
         key: 'phone',
@@ -117,18 +112,10 @@ const RunnersCRUD = () => {
           <Table dataSource={runners} columns={columns} rowKey="_id" />
     
           <Form form={form} name="add_runner" className="form-container" onFinish={addRunner}>
-            <Form.Item name="DNI" label="DNI" rules={[{ required: true }]}>
-              <Input />
-            </Form.Item>
     
             <Form.Item name="name" label="Name" rules={[{ required: true }]}>
               <Input />
             </Form.Item>
-    
-            <Form.Item name="mail" label="Mail" rules={[{ required: true }]}>
-              <Input />
-            </Form.Item>
-    
             <Form.Item name="phone" label="Phone" rules={[{ required: true }]}>
               <Input />
             </Form.Item>
@@ -137,11 +124,6 @@ const RunnersCRUD = () => {
               <Input.TextArea />
             </Form.Item>
     
-            <Form.Item>
-              <Button type="primary" htmlType="submit">
-                Add Runner
-              </Button>
-            </Form.Item>
           </Form>
         </div>
       );

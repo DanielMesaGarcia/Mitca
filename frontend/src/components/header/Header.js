@@ -22,6 +22,7 @@ const Header = () => {
   const logOut = () => {
     // Borrar el token del almacenamiento local
     localStorage.removeItem('token');
+    localStorage.removeItem('role');
     // Redirigir a la página de inicio de sesión
     navigate('/login');
   };

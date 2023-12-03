@@ -33,11 +33,14 @@ const Signin = () => {
 
         const response = await UserService.login({ _id: formData.email, password: formData.password });
         // Handle the response as per your requirements
-        console.log(response);
-        // Save the token to the local storage
         localStorage.setItem('token', response.token);
-        // Redirect to the home page
+      localStorage.setItem('role', response.role);
+      // Redirect to the home page
+      if(localStorage.getItem('role') === 'admin'){
+        navigate('/homeAdmin');
+      }else{
         navigate('/home');
+        }
 
       }).catch((error) => {
         console.error('Error creating user:', error);

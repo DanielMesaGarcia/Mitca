@@ -98,9 +98,6 @@ const UserCRUD = () => {
           <Table dataSource={users} columns={columns} rowKey="_id" />
     
           <Form form={form} name="add_user" className="form-container">
-            <Form.Item name="Email" label="Email" rules={[{ required: true }]}>
-              <Input />
-            </Form.Item>
     
             <Form.Item name="DNI" label="DNI" rules={[{ required: true }]}>
               <Input />
