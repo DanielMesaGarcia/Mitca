@@ -2,16 +2,35 @@ import axios from 'axios';
 
 const API_URL = 'http://localhost:3001/runners';
 const RACE_URL = 'http://localhost:3001/races';
-
+const USER_URL = 'http://localhost:3001/users';
 // aquí estaba originalmente la creación de la variable con la que accedía al dato que me interesaba
 
 const getDataById = async (id) => {
   try {
-    //aquí tenía que estar realmente, ya al cambiar de página se ejecuta este método, pero existía la posibilidad de
-    //que la variable almacenada en el almacenamiento local siguiera con los datos de otra página y este método se
-    //ejecutara con los datos de la variable de la página anterior en vez de la actual
-    
     const response = await axios.get(`${RACE_URL}/${id}`);
+    const data = response.data;
+    return data;
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    throw error;
+  }
+};
+
+const getRunners = async () => {
+  try {
+    const response = await axios.get(`${API_URL}`);
+    const data = response.data;
+    console.log(data)
+    return data;
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    throw error;
+  }
+};
+
+const getUserByToken = async (token) => {
+  try {
+    const response = await axios.post(`${USER_URL}/token`, {token});
     const data = response.data;
     return data;
   } catch (error) {
@@ -58,12 +77,48 @@ const addRunnerToRace = async (runnerId, id) => {
   }
 };
 
+const transferRunners = async (runnerBuffer,starter, id) => {
+  try {
+    const response = await axios.patch(`http://localhost:3001/races`, { runnerBuffer,starter, id });
+    return response.data;
+  } catch (error) {
+    throw new Error(`Error al agregar corredor a la carrera: ${error.message}`);
+  }
+};
+
+const addRunnerToUser = async (runnerId, id) => {
+  try {
+    const response = await axios.patch(`${USER_URL}/${id}`, {
+      $push: { runners: runnerId }
+    });
+    return response.data;
+  } catch (error) {
+    throw new Error(`Error al agregar corredor a la carrera: ${error.message}`);
+  }
+};
+
+const getDataByUser = async (id) => {
+  try {
+    const response = await axios.get(`${USER_URL}/${id}`);
+    const data = response.data;
+    return data;
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    throw error;
+  }
+};
+
 const RaceListService = {
   getDataById,
   addRunner,
   updateRunner,
   deleteRunner,
   addRunnerToRace,
+  getUserByToken,
+  transferRunners,
+  getDataByUser,
+  addRunnerToUser,
+  getRunners
 };
 
 export default RaceListService;

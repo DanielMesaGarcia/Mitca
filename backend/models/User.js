@@ -25,7 +25,7 @@ const userSchema = new mongoose.Schema({
     required: true,
     unique: true,
     validate: {
-      validator: function(value) {
+      validator: function (value) {
         // Expresión regular para validar el formato de un DNI español
         return /^[0-9]{8}[TRWAGMYFPDXBNJZSQVHLCKE]$/i.test(value);
       },
@@ -40,7 +40,7 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
     validate: {
-      validator: function(value) {
+      validator: function (value) {
         // Expresión regular para validar que el número de teléfono tenga 9 dígitos
         return /^[0-9]{9}$/.test(value);
       },
@@ -51,10 +51,11 @@ const userSchema = new mongoose.Schema({
   role: {
     type: String,
     default: 'user',
-    enum: ['user', 'admin', 'sponsor']},
-    //para los roles
-    runners: [{ type: String, ref: Runner }],
-    sponsor: { type: String, ref: Sponsor },
+    enum: ['user', 'admin', 'sponsor']
+  },
+  //para los roles
+  runners: [{ type: String, ref: Runner }],
+  sponsor: { type: String, ref: Sponsor },
 });
 
 // Hash the password before saving

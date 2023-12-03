@@ -8,7 +8,6 @@ const signInService = {
   },
 
   createUser: (userData) => {
-    console.log(userData);
     const mappedData = { ...userData, _id: userData.email };
     delete mappedData.email; // Remove the 'email' key from the mapped data
 
@@ -17,8 +16,21 @@ const signInService = {
 
   login: async (userData) => {
     try {
-        console.log(`${API_URL}/login`, userData);
       const response = await axios.post(`${API_URL}/login`, userData);
+      return response.data;
+    } catch (error) {
+      throw error;
+    }
+  },
+
+  createCompany: async (userData, companyData) => {
+    try {
+      const mappedData = { ...userData, _id: userData.email };
+      delete mappedData.email;
+      console.log("DATOS")
+      console.log(mappedData)
+      console.log(companyData)
+      const response = await axios.post(`${API_URL}/companyaccount`, {mappedData, companyData});
       return response.data;
     } catch (error) {
       throw error;

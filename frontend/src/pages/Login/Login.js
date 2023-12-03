@@ -16,8 +16,13 @@ const Login = () => {
       console.log(response);
       // Save the token to the local storage
       localStorage.setItem('token', response.token);
+      localStorage.setItem('role', response.role);
       // Redirect to the home page
+      if(localStorage.getItem('role') === 'admin'){
+        navigate('/homeAdmin');
+      }else{
       navigate('/home');
+      }
     } catch (error) {
       // Handle the error
       console.error('Error while logging in:', error);

@@ -11,4 +11,6 @@ sponsorRouter.route('/:_id')
   .put(SponsorController.updateSponsor)
   .delete(SponsorController.deleteSponsor);
 
+  sponsorRouter.route('/CRUD/:_id').delete(SponsorController.deleteSponsorCRUD);
+
 module.exports = sponsorRouter;

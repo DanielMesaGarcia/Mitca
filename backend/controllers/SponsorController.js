@@ -57,6 +57,22 @@ exports.deleteSponsor = async (req, res) => {
     if (!sponsor) {
       return res.status(404).json({ success: false, error: 'Sponsor not found' });
     }
+    await Race.updateMany(
+      { sponsors: sponsor._id },
+      { $pull: { sponsors: sponsor._id } }
+    );
+    res.status(200).json({ success: true, data: {} });
+  } catch (error) {
+    res.status(500).json({ success: false, error: error.message });
+  }
+};
+
+exports.deleteSponsorCRUD = async (req, res) => {
+  try {
+    const sponsor = await Sponsor.findByIdAndDelete(req.params._id);
+    if (!sponsor) {
+      return res.status(404).json({ success: false, error: 'Sponsor not found' });
+    }
     res.status(200).json({ success: true, data: {} });
   } catch (error) {
     res.status(500).json({ success: false, error: error.message });
