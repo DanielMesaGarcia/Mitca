@@ -13,7 +13,8 @@ const raceSchema = new mongoose.Schema({
   route: { type: mongoose.Schema.Types.ObjectId, ref: Route },
   status: { type: mongoose.Schema.Types.ObjectId, ref: Status },
   runners: [{ type: String, ref: Runner }],
-  sponsors: [{ type: String, ref: Sponsor }]
+  sponsors: [{ type: String, ref: Sponsor }],
+  filename: {type: String}
 });
 
 const Race = mongoose.model('Race', raceSchema);
