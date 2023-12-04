@@ -121,6 +121,7 @@ demoRouter.route('/crearDemoData')
                     status: status1._id,
                     runners: ['12345678A'],
                     sponsors: ['A12345678'],
+                    filename: 'couple.jpg'
                 },
                 {
                     _id: 'Race2',
@@ -131,6 +132,7 @@ demoRouter.route('/crearDemoData')
                     status: status2._id,
                     runners: ['87654321B'],
                     sponsors: ['B87654321'],
+                    filename: 'couple.jpg'
                 },
             ]);
 

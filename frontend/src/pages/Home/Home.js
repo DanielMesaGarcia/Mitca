@@ -47,6 +47,7 @@ const Home = () => {
             <List.Item key={race._id} onClick={() => handleCardClick(race._id)}>
               <Card title={race._id} style={{ width: '100%' }}>
                 <img
+                className='racePicture'
                   src={`http://localhost:3001/images/${race.filename}`}
                   alt={race.filename}
                   style={{ width: '100%', height: 'auto' }}

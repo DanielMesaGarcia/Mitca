@@ -1,5 +1,8 @@
 /* Home.css */
-
+.racePicture{
+  width: 30vw;
+  border-radius: 5px;
+}
 .race-list {
   display: flex;
   justify-content: center;

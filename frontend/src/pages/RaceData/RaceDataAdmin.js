@@ -55,7 +55,7 @@ const RaceDataAdmin = () => {
   const handleDelete = async (idRace) => {
     try {
       await RaceDataService.deleteRace(idRace);
-      navigate(`/home`);
+      navigate(`/homeAdmin`);
     } catch (error) {
       console.error('Error deleting runner:', error);
     }
