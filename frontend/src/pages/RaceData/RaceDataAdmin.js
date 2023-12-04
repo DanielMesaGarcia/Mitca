@@ -166,6 +166,7 @@ const RaceDataAdmin = () => {
   return (
     <div>
       <Header />
+      <div className='container'>
 
       <h2>Datos de {selectedRaceId}:</h2>
 
@@ -247,6 +248,7 @@ const RaceDataAdmin = () => {
             <Button type="primary" onClick={handleSponsorClick}>Acceder</Button>
           </div>
         </Card>
+      </div>
       </div>
     </div>
   );

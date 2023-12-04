@@ -89,8 +89,10 @@ const SponsorsPage = () => {
   };
 
   return (
-    <div className="page-container">
-      <Header />
+    <div>
+    <Header />
+    <div className="container">
+      
       <h1>Sponsors</h1>
       <Table dataSource={sponsors} columns={columns} rowKey="_id" />
 
@@ -102,6 +104,7 @@ const SponsorsPage = () => {
           {sponsorsThisRace ? 'Dejar de financiar' : 'Financia esta carrera'}
         </Button>
       )}
+    </div>
     </div>
   );
 };

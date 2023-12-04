@@ -108,6 +108,7 @@ const RunnersCRUD = () => {
       
         <div className="page-container">
           <Header/>
+          <div className='container'>
           <h1>Runners</h1>
           <Table dataSource={runners} columns={columns} rowKey="_id" />
     
@@ -125,6 +126,7 @@ const RunnersCRUD = () => {
             </Form.Item>
     
           </Form>
+        </div>
         </div>
       );
     };

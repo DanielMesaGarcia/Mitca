@@ -94,6 +94,7 @@ const UserCRUD = () => {
       
         <div className="page-container">
           <Header/>
+          <div className='container'>
           <h1>Users</h1>
           <Table dataSource={users} columns={columns} rowKey="_id" />
     
@@ -111,7 +112,7 @@ const UserCRUD = () => {
               <Input />
             </Form.Item>
           </Form>
-        </div>
+        </div></div>
       );
     };
 

@@ -93,6 +93,7 @@ const RunnersCRUDuser = () => {
             const values = form.getFieldsValue();
             const updatedRunner = { ...values, _id: values.DNI };
             delete updatedRunner.DNI;
+            delete updatedRunner._id;
             await RunnerService.updateRunner(idRunner, updatedRunner);
             const response = await RunnerService.getDataByUser(user._id);
             const data = response.data.runners;
@@ -121,6 +122,7 @@ const RunnersCRUDuser = () => {
 
         <div className="page-container">
             <Header />
+            <div className='container'>
             <h1>Runners</h1>
             <Table dataSource={runners} columns={columns} rowKey="_id" />
 
@@ -148,6 +150,7 @@ const RunnersCRUDuser = () => {
                     </Button>
                 </Form.Item>
             </Form>
+            </div>
         </div>
     );
 };

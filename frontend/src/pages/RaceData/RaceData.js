@@ -108,9 +108,9 @@ const RaceData = () => {
 
 
   return (
-    <div>
+    <div >
       <Header />
-
+      <div className='container'>
       <h2>Datos de {selectedRaceId}:</h2>
 
       <Card className='Route'>
@@ -129,12 +129,7 @@ const RaceData = () => {
             )}
           
         
-        <Button type="primary" onClick={handleSubscription} style={{ marginBottom: '16px' }}>
-          Suscribirme
-        </Button>
-        <Button type="primary" onClick={handleUnsubscription} style={{ marginBottom: '16px' }}>
-          Desuscribirme
-        </Button>
+        
         
         </div>
         )}
@@ -160,6 +155,7 @@ const RaceData = () => {
             <Button type="primary" onClick={handleSponsorClick}>Acceder</Button>
           </div>
         </Card>
+      </div>
       </div>
     </div>
   );

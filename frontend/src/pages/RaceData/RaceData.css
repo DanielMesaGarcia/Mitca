@@ -16,6 +16,13 @@
   .card-content {
     text-align: center;
   }
+
+  .container {
+    width: 80%;
+    margin: 0 auto; /* Center the container */
+    padding: 20px;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
   
   .card-image {
     width: 100%;
