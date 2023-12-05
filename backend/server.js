@@ -21,11 +21,15 @@ const subscriptionRouter = require('./routes/SubscriptionRouter');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
+const DATABASE_URL = process.env.DB_URL || 'mongodb://127.0.0.1:27017/mitca';
 
 // Conecta a MongoDB
-mongoose.connect('mongodb://127.0.0.1:27017/mitca', {
+mongoose.connect(DATABASE_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
+  user: process.env.DB_USER || '',
+  pass: process.env.DB_PASSWORD || '',
+
 });
 
 // Middleware

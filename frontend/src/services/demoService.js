@@ -1,6 +1,7 @@
 import axios from 'axios';
+const API_URL = process.env.REACT_APP_API_URL;
 
-const DEMO_URL = 'http://localhost:3001/demo/crearDemoData';
+const DEMO_URL = API_URL+'/demo/crearDemoData';
 
 const createDemoData = async () => {
     try {

@@ -1,6 +1,6 @@
 import axios from 'axios';
-
-const API_URL = 'http://localhost:3001/users'; // Replace with your actual API URL
+const APII_URL = process.env.REACT_APP_API_URL;
+const API_URL = APII_URL+'/users'; // Replace with your actual API URL
 
 const signInService = {
   getUserById: (userId) => {
