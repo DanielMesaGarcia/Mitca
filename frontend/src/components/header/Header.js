@@ -26,12 +26,18 @@ const Header = () => {
     // Redirigir a la página de inicio de sesión
     navigate('/login');
   };
-
+  const role = localStorage.getItem('role');
   return (
     <div className="header-container">
       <div className={`menu ${menuVisible ? 'show' : ''}`} onClick={toggleMenu}>
         <ul>
-          <li><Link to="/home">Vuelta al inicio</Link></li>
+        <li>
+      {role === 'admin' ? (
+        <Link to="/homeAdmin">Vuelta al inicio</Link>
+      ) : (
+        <Link to="/home">Vuelta al inicio</Link>
+      )}
+    </li>
           <li><Link to="/usersettings">Ajustes de usuario</Link></li>
           <li><Button type="primary" className="logout-button" onClick={logOut}>Cerrar sesión</Button></li>
           <li><Button type="primary" className="demo-button" onClick={demoData}>Crear datos demo</Button></li>
