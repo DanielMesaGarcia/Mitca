@@ -25,7 +25,7 @@ const Signin = () => {
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
-    e.preventDefault(); // Prevents the default form submission behavior
+    console.log(formData) // Prevents the default form submission behavior
     if (isCreateCompany) {
       signInService.createCompany(formData, formData2).then(async (data) => {
         console.log('User created:', data);
@@ -104,43 +104,114 @@ const Signin = () => {
       </div>
       <div className="Signin-form">
         <h2>Bienvenido a la Maratón</h2>
-        <form onSubmit={handleSubmit}>
-          <Input
-            placeholder="email"
-            className="input"
-            onChange={handleChange}
-          />
-          <Input.Password
-            placeholder="password"
-            className="input"
-            onChange={handleChange}
-          />
-          <Input
-            placeholder="name"
-            className="input"
-            onChange={handleChange}
-          />
-          <Input
-            placeholder="phone"
-            className="input"
-            onChange={handleChange}
-          />
-          <Input placeholder="DNI" className="input" onChange={handleChange} />
+          <Form>
+            <Form.Item
+              name="email"
+              label="Correo electrónico"
+              rules={[
+                {
+                  required: true,
+                  message: 'Por favor, ingresa tu correo electrónico',
+                },
+                {
+                  type: 'email',
+                  message: 'Por favor, ingresa un correo electrónico válido',
+                },
+              ]}
+            >
+              <Input
+                placeholder="email"
+                className="input"
+                onChange={handleChange}
+              />
+            </Form.Item>
 
-          {/* PROVISIONAL HASTA QUE AÑADA SISTEMA DE TOKENS Y SigninS */}
+            <Form.Item
+              name="password"
+              label="Contraseña"
+              rules={[
+                {
+                  required: true,
+                  message: 'Por favor, ingresa tu contraseña',
+                },
+              ]}
+            >
+              <Input.Password
+                placeholder="password"
+                className="input"
+                onChange={handleChange}
+              />
+            </Form.Item>
 
-          <Button type="primary" htmlType="submit" className="Signin-button">
-            Crear cuenta
-          </Button>
+            <Form.Item
+              name="name"
+              label="Nombre"
+              rules={[
+                {
+                  required: true,
+                  message: 'Por favor, ingresa tu nombre',
+                },
+              ]}
+            >
+              <Input
+                placeholder="name"
+                className="input"
+                onChange={handleChange}
+              />
+            </Form.Item>
 
-          <Button type="primary" className="Signin-button" onClick={showModal}>
-            Abrir Modal
-          </Button>
+            <Form.Item
+              name="phone"
+              label="Teléfono"
+              rules={[
+                {
+                  required: true,
+                  message: 'Por favor, ingresa tu número de teléfono',
+                },
+                {
+                  pattern: /^\d{9}$/,
+                  message: 'El número de teléfono debe tener 9 dígitos',
+                },
+              ]}
+            >
+              <Input
+                placeholder="phone"
+                className="input"
+                onChange={handleChange}
+              />
+            </Form.Item>
 
-          
+            <Form.Item
+              name="DNI"
+              label="DNI"
+              rules={[
+                {
+                  required: true,
+                  message: 'Por favor, ingresa tu DNI',
+                },
+                {
+                  pattern: /^\d{8}[A-Za-z]$/,
+                  message: 'El DNI debe tener 8 números seguidos de una letra',
+                },
+              ]}
+            >
+              <Input
+                placeholder="DNI"
+                className="input"
+                onChange={handleChange}
+              />
+            </Form.Item>
 
-        </form>
-        <Modal
+            {/* Otras entradas del formulario */}
+            <Button type="primary" htmlType="submit" onClick={handleSubmit} className="Signin-button">
+              Crear cuenta
+            </Button>
+            <Button type="primary" className="Signin-button" onClick={showModal}>
+              Abrir Modal
+            </Button>
+          </Form>
+
+          <Modal
             title="Switch para createCompany"
             open={isModalVisible}
             onCancel={handleModalCancel}
@@ -157,10 +228,7 @@ const Signin = () => {
             <p>Selecciona si deseas utilizar createCompany:</p>
             <Switch onChange={handleSwitchChange} />
 
-            <Form
-              form={form2}
-            // Agrega otros props necesarios para tu formulario
-            >
+            <Form form={form2}>
               <Form.Item
                 name="_id"
                 label="CIF"
@@ -169,7 +237,10 @@ const Signin = () => {
                     required: true,
                     message: 'Por favor, ingresa el CIF',
                   },
-                  // Puedes agregar la validación personalizada aquí
+                  {
+                    pattern: /^[A-HJNP-SUVW][0-9]{8}$/,
+                    message: 'El CIF debe tener 9 caracteres alfanuméricos',
+                  },
                 ]}
               >
                 <Input />
@@ -200,14 +271,11 @@ const Signin = () => {
               >
                 <Input />
               </Form.Item>
-
             </Form>
-
           </Modal>
       </div>
     </div>
-  );
-};
+  );};
 
 export default Signin;
 

@@ -5,6 +5,8 @@ import { useNavigate } from 'react-router-dom';
 import Header from '../../components/header/Header';
 import RaceListService from '../../services/raceListService';
 import { UploadOutlined } from '@ant-design/icons';
+import moment from 'moment';
+
 const HomeAdmin = () => {
   const [races, setRaces] = useState([]);
   const [createFormVisible, setCreateFormVisible] = useState(false);
@@ -125,38 +127,72 @@ const HomeAdmin = () => {
           onOk={createForm.submit}
         >
           <Form form={createForm} onFinish={handleCreate}>
-            <Form.Item name="name" label="Race Name" rules={[{ required: true }]}>
-              <Input />
-            </Form.Item>
-            <Form.Item name="eventDate" label="Event Date" rules={[{ required: true }]}>
-              <DatePicker style={{ width: '100%' }} format="YYYY-MM-DD" />
-            </Form.Item>
-            <Form.Item name="city" label="City" rules={[{ required: true }]}>
-              <Input />
-            </Form.Item>
-            <Form.Item name="length" label="Length" rules={[{ required: true }]}>
-              <Input />
-            </Form.Item>
-            <Form.Item name="checkpoint" label="checkpoint" rules={[{ required: true }]}>
-              <Input />
-            </Form.Item>
-            <Form.Item name="startPoint" label="startPoint" rules={[{ required: true }]}>
-              <Input />
-            </Form.Item>
-            <Form.Item name="goal" label="goal" rules={[{ required: true }]}>
-              <Input />
-            </Form.Item>
-            <Upload
-              listType="picture"
-              maxCount={1}
-              beforeUpload={(file) => {
-                setFile(file);
-                return false;
-              }}
-            >
-              <Button icon={<UploadOutlined />}>Foto</Button>
-            </Upload>
-          </Form>
+  <Form.Item name="name" label="Race Name" rules={[{ required: true, message: 'Please enter the race name' }]}>
+    <Input />
+  </Form.Item>
+  <Form.Item name="eventDate" label="Event Date" rules={[
+    { required: true, message: 'Please select the event date' },
+    ({ getFieldValue }) => ({
+      validator(_, value) {
+        if (value && value.isAfter(moment(), 'day')) {
+          return Promise.resolve();
+        }
+        return Promise.reject(new Error('Event date must be in the future'));
+      },
+    }),
+  ]}>
+    <DatePicker style={{ width: '100%' }} format="YYYY-MM-DD" />
+  </Form.Item>
+  <Form.Item name="city" label="City" rules={[{ required: true, message: 'Please enter the city' }]}>
+    <Input />
+  </Form.Item>
+  <Form.Item
+  name="length"
+  label="Length"
+  rules={[
+    { required: true, message: 'Please enter the race length' },
+    {
+      type: 'number',
+      transform: (value) => (value ? Number(value) : undefined),
+      message: 'Please enter a valid number for the race length',
+    },
+  ]}
+>
+  <Input type="number" />
+</Form.Item>
+
+<Form.Item
+  name="checkpoint"
+  label="Checkpoint"
+  rules={[
+    { required: true, message: 'Please enter the checkpoint' },
+    {
+      type: 'number',
+      transform: (value) => (value ? Number(value) : undefined),
+      message: 'Please enter a valid number for the checkpoint',
+    },
+  ]}
+>
+  <Input type="number" />
+</Form.Item>
+  <Form.Item name="startPoint" label="Start Point" rules={[{ required: true, message: 'Please enter the start point' }]}>
+    <Input />
+  </Form.Item>
+  <Form.Item name="goal" label="Goal" rules={[{ required: true, message: 'Please enter the goal' }]}>
+    <Input />
+  </Form.Item>
+  <Upload
+    listType="picture"
+    maxCount={1}
+    beforeUpload={(file) => {
+      // Handle file upload logic
+      return false;
+    }}
+  >
+    <Button icon={<UploadOutlined />}>Foto</Button>
+  </Upload>
+</Form>
+
         </Modal>
       </div>
     </div>

@@ -49,12 +49,12 @@ const RunnersCRUDuser = () => {
             try {
                 const response2 = await RunnerService.getUserByToken(token);
                 const data2 = response2.data;
-    
+
                 console.log(data2._id); // Log the user ID directly
-    
+
                 const response = await RunnerService.getDataByUser(data2._id);
                 const data = response.data.runners;
-    
+
                 if (data) {
                     setRunners(data);
                     setUser(data2);
@@ -65,10 +65,10 @@ const RunnersCRUDuser = () => {
                 console.error('Error fetching runners:', error);
             }
         };
-    
+
         fetchRunners();
     }, []);
-    
+
 
     const addRunner = async (values) => {
         const formattedValues = { ...values, _id: values.DNI };
@@ -123,33 +123,53 @@ const RunnersCRUDuser = () => {
         <div className="page-container">
             <Header />
             <div className='container'>
-            <h1>Runners</h1>
-            <Table dataSource={runners} columns={columns} rowKey="_id" />
+                <h1>Runners</h1>
+                <Table dataSource={runners} columns={columns} rowKey="_id" />
 
-            <Form form={form} name="add_runner" className="form-container" onFinish={addRunner}>
-                <Form.Item name="DNI" label="DNI" rules={[{ required: true }]}>
-                    <Input />
-                </Form.Item>
+                <Form form={form} name="add_runner" className="form-container" onFinish={addRunner}>
+                <Form.Item
+              name="DNI"
+              label="DNI"
+              rules={[
+                {
+                  required: true,
+                  message: 'Por favor, ingresa tu DNI',
+                },
+                {
+                  pattern: /^\d{8}[A-Za-z]$/,
+                  message: 'El DNI debe tener 8 números seguidos de una letra',
+                },
+              ]}
+            >
+                        <Input />
+                    </Form.Item>
 
-                <Form.Item name="name" label="Name" rules={[{ required: true }]}>
-                    <Input />
-                </Form.Item>
+                    <Form.Item name="name" label="Name" rules={[{ required: true }]}>
+                        <Input />
+                    </Form.Item>
 
 
-                <Form.Item name="phone" label="Phone" rules={[{ required: true }]}>
-                    <Input />
-                </Form.Item>
+                    <Form.Item name="phone" label="Phone" rules={[
+                        { required: true, message: 'Please enter your phone number' },
+                        {
+                            pattern: /^[0-9]{9}$/, // Expresión regular para validar un número de teléfono de 10 dígitos
+                            message: 'Please enter a valid 9-digit phone number',
+                        },
+                    ]}
+                    >
+                        <Input />
+                    </Form.Item>
 
-                <Form.Item name="details" label="Details">
-                    <Input.TextArea />
-                </Form.Item>
+                    <Form.Item name="details" label="Details">
+                        <Input.TextArea />
+                    </Form.Item>
 
-                <Form.Item>
-                    <Button type="primary" htmlType="submit">
-                        Add Runner
-                    </Button>
-                </Form.Item>
-            </Form>
+                    <Form.Item>
+                        <Button type="primary" htmlType="submit">
+                            Add Runner
+                        </Button>
+                    </Form.Item>
+                </Form>
             </div>
         </div>
     );
