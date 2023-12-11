@@ -58,9 +58,8 @@ const HomeAdmin = () => {
           route: response2.data._id,
           status: responseStatus.data._id,
         }
-        console.log(raceDataWithInfo);
         const response3 = await RaceListService.updateRace(values.name, raceDataWithInfo);
-        console.log(response3);
+        
         if (response3.success) {
           setRaces([...races, response.data]);
           setCreateFormVisible(false);

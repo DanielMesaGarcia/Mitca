@@ -79,7 +79,6 @@ const UserSettings = () => {
 
   const checkSubscriptionState = async () => {
     const subscriptionState = await checkIfAlreadySubscribed();
-    console.log(subscriptionState);
     setSubscribed(subscriptionState);
   }
 
@@ -126,7 +125,6 @@ const UserSettings = () => {
 
   const handleFormSubmit = async () => {
     const values = form.getFieldsValue();
-    console.log(values)
     UserService.updateUser(values._id, values);
     setFormDisabled(true);
   };

@@ -13,7 +13,7 @@ const Login = () => {
     try {
       const response = await UserService.login({ _id: email, password });
       // Handle the response as per your requirements
-      console.log(response);
+    
       // Save the token to the local storage
       localStorage.setItem('token', response.token);
       localStorage.setItem('role', response.role);

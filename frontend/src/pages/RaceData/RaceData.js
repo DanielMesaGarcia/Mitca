@@ -76,7 +76,6 @@ const RaceData = () => {
 
   const checkSubscriptionState = async () => {
     const subscriptionState = await checkIfAlreadySubscribed();
-    console.log(subscriptionState);
     setSubscribed(subscriptionState);
   }
 

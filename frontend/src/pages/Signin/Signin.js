@@ -25,10 +25,10 @@ const Signin = () => {
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
-    console.log(formData) // Prevents the default form submission behavior
+  // Prevents the default form submission behavior
     if (isCreateCompany) {
       signInService.createCompany(formData, formData2).then(async (data) => {
-        console.log('User created:', data);
+      
         // You can add a redirect or other logic here
 
         const response = await UserService.login({ _id: formData.email, password: formData.password });
@@ -48,12 +48,10 @@ const Signin = () => {
     } else {
       // Call the createUser function from the signInService
       signInService.createUser(formData).then(async (data) => {
-        console.log('User created:', data);
         // You can add a redirect or other logic here
 
         const response = await UserService.login({ _id: formData.email, password: formData.password });
         // Handle the response as per your requirements
-        console.log(response);
         // Save the token to the local storage
         localStorage.setItem('token', response.token);
         // Redirect to the home page

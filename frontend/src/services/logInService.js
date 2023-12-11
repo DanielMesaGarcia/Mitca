@@ -7,7 +7,7 @@ const UserService = {
     try {
         
       const response = await axios.post(`${API_URL}/users/login`, userData);
-      console.log(response.data);
+  
       return response.data;
     } catch (error) {
       throw error;

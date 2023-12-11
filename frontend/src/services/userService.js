@@ -50,7 +50,6 @@ const addUser = async (user) => {
 
 const updateUser = async (id, updatedUser) => {
   try {
-    console.log(`${API_URL}/${id}`)
     const response = await axios.put(`${API_URL}/${id}`, updatedUser);
     return response.data;
   } catch (error) {

@@ -49,8 +49,7 @@ const RunnersCRUDuser = () => {
             try {
                 const response2 = await RunnerService.getUserByToken(token);
                 const data2 = response2.data;
-
-                console.log(data2._id); // Log the user ID directly
+// Log the user ID directly
 
                 const response = await RunnerService.getDataByUser(data2._id);
                 const data = response.data.runners;
@@ -75,8 +74,6 @@ const RunnersCRUDuser = () => {
         delete formattedValues.DNI;
         try {
             await RunnerService.addRunner(formattedValues);
-            console.log(formattedValues._id)
-            console.log(user._id)
             await RunnerService.addRunnerToUser(formattedValues._id, user._id);
             const response = await RunnerService.getDataByUser(user._id);
             const data = response.data.runners;

@@ -21,7 +21,6 @@ const getRunners = async () => {
   try {
     const response = await axios.get(`${API_URL}`);
     const data = response.data;
-    console.log(data)
     return data;
   } catch (error) {
     console.error('Error fetching data:', error);

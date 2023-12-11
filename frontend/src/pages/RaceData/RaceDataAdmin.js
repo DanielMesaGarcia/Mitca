@@ -20,7 +20,6 @@ import {
 const { Option } = Select;
 dayjs.extend(customParseFormat);
 const onChange = (time, timeString) => {
-  console.log(time, timeString);
 };
 
 
@@ -148,7 +147,6 @@ const RaceDataAdmin = () => {
 
   const checkSubscriptionState = async () => {
     const subscriptionState = await checkIfAlreadySubscribed();
-    console.log(subscriptionState);
     setSubscribed(subscriptionState);
   }
 
