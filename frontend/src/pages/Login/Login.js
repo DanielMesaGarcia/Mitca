@@ -3,6 +3,7 @@ import { Input, Button } from 'antd';
 import './Login.css';
 import { Link, useNavigate  } from 'react-router-dom';
 import UserService from '../../services/logInService'; // Adjust the path according to your file structure
+import Footer from '../../components/footer/Footer';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -67,6 +68,7 @@ const Login = () => {
           Iniciar sesión
         </Button>
       </div>
+      <Footer></Footer>
     </div>
   );
 };

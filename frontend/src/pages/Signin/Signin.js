@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Input, Button, Switch, Modal, Form } from 'antd';
 import './Signin.css'; // Archivo de estilos CSS personalizado
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import signInService from '../../services/signInService'; // Import the provided signInService
 import UserService from '../../services/logInService';
 
-import { regSw, subscribe } from '../../services/helper';
+import Footer from '../../components/footer/Footer';
 
 const Signin = () => {
   const [formData, setFormData] = useState({
@@ -272,6 +272,7 @@ const Signin = () => {
             </Form>
           </Modal>
       </div>
+      <Footer></Footer>
     </div>
   );};
 
