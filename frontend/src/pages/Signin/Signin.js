@@ -109,11 +109,11 @@ const Signin = () => {
               rules={[
                 {
                   required: true,
-                  message: 'Por favor, ingresa tu correo electrónico',
+                  message: 'Ingresa tu correo electrónico',
                 },
                 {
                   type: 'email',
-                  message: 'Por favor, ingresa un correo electrónico válido',
+                  message: 'Ingresa un correo electrónico válido',
                 },
               ]}
             >
@@ -130,7 +130,7 @@ const Signin = () => {
               rules={[
                 {
                   required: true,
-                  message: 'Por favor, ingresa tu contraseña',
+                  message: 'Ingresa tu contraseña',
                 },
               ]}
             >
@@ -147,7 +147,7 @@ const Signin = () => {
               rules={[
                 {
                   required: true,
-                  message: 'Por favor, ingresa tu nombre',
+                  message: 'Ingresa tu nombre',
                 },
               ]}
             >
@@ -164,11 +164,11 @@ const Signin = () => {
               rules={[
                 {
                   required: true,
-                  message: 'Por favor, ingresa tu número de teléfono',
+                  message: 'Ingresa tu número de teléfono',
                 },
                 {
                   pattern: /^\d{9}$/,
-                  message: 'El número de teléfono debe tener 9 dígitos',
+                  message: 'El teléfono debe tener 9 dígitos',
                 },
               ]}
             >
@@ -185,11 +185,11 @@ const Signin = () => {
               rules={[
                 {
                   required: true,
-                  message: 'Por favor, ingresa tu DNI',
+                  message: 'Ingresa tu DNI',
                 },
                 {
                   pattern: /^\d{8}[A-Za-z]$/,
-                  message: 'El DNI debe tener 8 números seguidos de una letra',
+                  message: 'Debe tener 8 numeros y 1 letra',
                 },
               ]}
             >
