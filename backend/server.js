@@ -79,3 +79,5 @@ app.use((err, req, res, next) => {
 app.listen(PORT, () => {
   console.log(`El servidor está ejecutándose en el puerto ${PORT}`);
 });
+
+module.exports = app;
