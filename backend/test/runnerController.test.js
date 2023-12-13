@@ -12,6 +12,7 @@ beforeAll(async () => {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   });
+  await Runner.deleteMany({});
 
   // Agrega datos iniciales si es necesario
 });
@@ -27,9 +28,9 @@ describe('RunnerController', () => {
     const response = await request(app)
       .post('/runners')
       .send({
-        _id: '12345688A',
+        _id: '12345698A',
         name: 'Test Runner',
-        phone: '123456799',
+        phone: '123456999',
         details: 'Some details',
       });
       console.log(response)
@@ -38,9 +39,6 @@ describe('RunnerController', () => {
     expect(response.body.data).toHaveProperty('_id');
     expect(response.body.data.name).toBe('Test Runner');
   });
-
-  // Otros tests para las diferentes rutas y funcionalidades del controlador
-  // ...
 
   // Test para obtener todos los runners
   it('should get all runners', async () => {
