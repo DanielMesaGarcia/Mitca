@@ -1,5 +1,6 @@
 import axios from 'axios';
-const API = 'http://localhost:3001/subscriptions';
+const API_URL = process.env.REACT_APP_API_URL;
+const API = API_URL+'/subscriptions';
 function unregisterAllServiceWorkers() {
   navigator.serviceWorker.getRegistrations().then(function (registrations) {
     for (let registration of registrations) {
@@ -10,7 +11,7 @@ function unregisterAllServiceWorkers() {
 
 async function regSw() {
   if ('serviceWorker' in navigator) {
-    let url = 'http://localhost:3000/sw.js';
+    let url = process.env.REACT_APP_WEB_URL+'/sw.js';
     const reg = await navigator.serviceWorker.register(url, { scope: '/' });
     return reg;
   }

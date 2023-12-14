@@ -1,8 +1,9 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:3001/races';
-const API_URL_route = 'http://localhost:3001/routes';
-const API_URL_status = 'http://localhost:3001/status';
+const APII_URL = process.env.REACT_APP_API_URL;
+const API_URL = APII_URL+'/races';
+const API_URL_route = APII_URL+'/routes';
+const API_URL_status = APII_URL+'/status';
 const getRaces = async () => {
   try {
     const response = await axios.get(API_URL);

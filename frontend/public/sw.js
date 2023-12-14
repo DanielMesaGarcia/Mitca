@@ -3,11 +3,9 @@ this.addEventListener('activate', function (event) {
 });
 
 this.addEventListener('push', async function (event) {
-  console.log("notifications will be displayed here");
 
   const message = await event.data.json();
   let { title, description, image } = message;
-  console.log({ message });
   await event.waitUntil(
     this.registration.showNotification(title, {
       body: description,

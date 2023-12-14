@@ -8,17 +8,18 @@ import dayjs from 'dayjs';
 import customParseFormat from 'dayjs/plugin/customParseFormat';
 import Form from 'antd/es/form/Form';
 import Modal from 'antd/es/modal/Modal';
-import { regSw,
+import {
+  regSw,
   subscribe,
   unregisterAllServiceWorkers,
   checkIfAlreadySubscribed,
   getAllSubscriptions,
   sendNotificationToSubscriptionName,
-  unregisterFromServiceWorker } from '../../services/helper';
+  unregisterFromServiceWorker
+} from '../../services/helper';
 const { Option } = Select;
 dayjs.extend(customParseFormat);
 const onChange = (time, timeString) => {
-  console.log(time, timeString);
 };
 
 
@@ -55,7 +56,7 @@ const RaceDataAdmin = () => {
   const handleDelete = async (idRace) => {
     try {
       await RaceDataService.deleteRace(idRace);
-      navigate(`/home`);
+      navigate(`/homeAdmin`);
     } catch (error) {
       console.error('Error deleting runner:', error);
     }
@@ -65,6 +66,7 @@ const RaceDataAdmin = () => {
   const [startingFormVisible, setStartingFormVisible] = useState(false);
   const [endingForm] = Form.useForm();
   const [startingForm] = Form.useForm();
+  const [time, setTime] = useState();
 
   const showForm = () => {
     if (Data.status.statusAtTheMoment === 'No empezada') {
@@ -77,16 +79,16 @@ const RaceDataAdmin = () => {
 
   useEffect(() => {
     checkSubscriptionState();
-    
+
     getAllSubscriptions().then((res) => {
       setSubscriptions(res.data);
     });
     setSubscriptionName("Carreras");
-    setNotificationMessage("¡La carrera "+selectedRaceId+" ha empezado!");
+    setNotificationMessage("¡La carrera " + selectedRaceId + " ha empezado!");
   }, []);
 
   const handleStart = async () => {
-    
+
     try {
       setNotificationMessage("La carrera " + selectedRaceId + " ha empezado");
       await sendNotificationToSubscriptionName(selectedRecipient, notificationMessage);
@@ -112,11 +114,12 @@ const RaceDataAdmin = () => {
 
   const handleEnding = async (values) => {
     try {
+      values.duration = time;
       const { winner, duration } = values;
 
       const statusData = {
         statusAtTheMoment: 'Finalizada',
-        winner, 
+        winner,
         duration,
       };
 
@@ -140,24 +143,23 @@ const RaceDataAdmin = () => {
   const [notificationMessage, setNotificationMessage] = useState("");
   const [selectedRecipient, setSelectedRecipient] = useState("select a recipient");
 
-  
+
 
   const checkSubscriptionState = async () => {
     const subscriptionState = await checkIfAlreadySubscribed();
-    console.log(subscriptionState);
     setSubscribed(subscriptionState);
   }
 
-  
 
 
-  
+
+
 
   useEffect(() => {
     getAllSubscriptions().then((res) => {
       setSubscriptions(res.data);
     });
-    
+
   }, [subscribed]);
 
 
@@ -166,87 +168,94 @@ const RaceDataAdmin = () => {
   return (
     <div>
       <Header />
+      <div className='container'>
 
-      <h2>Datos de {selectedRaceId}:</h2>
+        <h2>Datos de {selectedRaceId}:</h2>
 
-      <Card className='Route'>
-        {Data && (
-          <div>
-            <p>Puntos de control: {Data.route.checkpoint}</p>
-            <p>Lugar de inicio: {Data.route.startPoint}</p>
-            <p>Meta: {Data.route.goal}</p>
-            <p />
-            <p>Estado actual: {Data.status.statusAtTheMoment}</p>
-            {Data.status.statusAtTheMoment !== 'No empezada' && Data.status.statusAtTheMoment !== 'En curso' && (
-              <div>
-                <p>Ganador: {Data.status.winner}</p>
-                <p>Duración: {Data.status.duration}</p>
-              </div>
-            )}
-          
-        <Button type="primary" onClick={showForm} style={{ marginBottom: '16px' }}>
-          Update Status
-        </Button>
-        
-        
-        <Button type="primary" onClick={() => handleDelete(id)}>Borrar carrera</Button>
-        <Modal
-          title="Create Race"
-          open={startingFormVisible}
-          onCancel={() => setStartingFormVisible(false)}
-          onOk={startingForm.submit}
-        >
-          <Form form={startingForm} onFinish={handleStart}>
-            <p>Estas seguro de que quieres iniciar la carrera</p>
-          </Form>
-        </Modal>
-        <Modal
-          title="Create Race"
-          open={endingFormVisible}
-          onCancel={() => setEndingFormVisible(false)}
-          onOk={endingForm.submit}
-        >
-          <Form form={endingForm} onFinish={handleEnding}>
-            <Form.Item name="winner" label="Winner" rules={[{ required: true }]}>
-              <Select placeholder="Select a winner">
-                {Data?.runners?.map(runner => (
-                  <Option key={runner._id} value={runner.name}>
-                    {`${runner.name}, ${runner._id}`}
-                  </Option>
-                ))}
-              </Select>
-            </Form.Item>
+        <Card className='Route'>
+          {Data && (
+            <div>
+              <p>Puntos de control: {Data.route.checkpoint}</p>
+              <p>Lugar de inicio: {Data.route.startPoint}</p>
+              <p>Meta: {Data.route.goal}</p>
+              <p />
+              <p>Estado actual: {Data.status.statusAtTheMoment}</p>
+              {Data.status.statusAtTheMoment !== 'No empezada' && Data.status.statusAtTheMoment !== 'En curso' && (
+                <div>
+                  <p>Ganador: {Data.status.winner}</p>
+                  <p>Duración: {Data.status.duration}</p>
+                </div>
+              )}
 
-            <Form.Item name="duration" label="duration" rules={[{ required: true }]}>
-              <TimePicker onChange={onChange} />
-            </Form.Item>
-            <p>Darle click a OK cambiará el estado de la carrera a terminada con los datos que has introducido</p>
-          </Form>
-        </Modal>
+              <Button type="primary" onClick={showForm} style={{ marginBottom: '16px' }}>
+                Update Status
+              </Button>
+
+
+              <Button type="primary" onClick={() => handleDelete(id)}>Borrar carrera</Button>
+              <Modal
+                title="Create Race"
+                open={startingFormVisible}
+                onCancel={() => setStartingFormVisible(false)}
+                onOk={startingForm.submit}
+              >
+                <Form form={startingForm} onFinish={handleStart}>
+                  <p>Estas seguro de que quieres iniciar la carrera</p>
+                </Form>
+              </Modal>
+              <Modal
+                title="Create Race"
+                open={endingFormVisible}
+                onCancel={() => setEndingFormVisible(false)}
+                onOk={endingForm.submit}
+              >
+                <Form form={endingForm} onFinish={handleEnding}>
+                  <Form.Item name="winner" label="Winner" rules={[{ required: true }]}>
+                    <Select placeholder="Select a winner">
+                      {Data?.runners?.map(runner => (
+                        <Option key={runner._id} value={runner.name}>
+                          {`${runner.name}, ${runner._id}`}
+                        </Option>
+                      ))}
+                    </Select>
+                  </Form.Item>
+
+                  <Form.Item name="duration" label="duration" rules={[{ required: true }]}>
+                    <TimePicker
+                      onChange={(time, timeString) => {
+                        setTime(timeString);
+                      }}
+                      format="HH:mm" // Esto asegura que solo se muestre la hora y los minutos en el selector.
+                    />
+                  </Form.Item>
+                  <p>Darle click a OK cambiará el estado de la carrera a terminada con los datos que has introducido</p>
+                </Form>
+              </Modal>
+            </div>
+          )}
+        </Card>
+
+        <div className="card-container">
+          <Card className="custom-card" bordered={false}>
+            <div className="card-content">
+              <img src="/img/couple.jpg" alt="Sample" className="card-image" />
+              <h3>Corredores</h3>
+              <hr className="divider" />
+              <p>Creación, eliminación, actualización y visualización de todos los corredores</p>
+              {/* este de aqui */}
+              <Button type="primary" onClick={handleRunnerClick}>Acceder</Button>
+            </div>
+          </Card>
+          <Card className="custom-card" bordered={false}>
+            <div className="card-content">
+              <img src="/img/couple.jpg" alt="Sample" className="card-image" />
+              <h3>Patrocinadores</h3>
+              <hr className="divider" />
+              <p>Creación, eliminación, actualización y visualización de los patrocinadores</p>
+              <Button type="primary" onClick={handleSponsorClick}>Acceder</Button>
+            </div>
+          </Card>
         </div>
-        )}
-      </Card>
-
-      <div className="card-container">
-        <Card className="custom-card" bordered={false}>
-          <div className="card-content">
-            <img src="/img/couple.jpg" alt="Sample" className="card-image" />
-            <h3>Corredores</h3>
-            <hr className="divider" />
-            <p>Creación, eliminación, actualización y visualización de todos los corredores</p>
-            {/* este de aqui */}
-            <Button type="primary" onClick={handleRunnerClick}>Acceder</Button>
-          </div>
-        </Card>
-        <Card className="custom-card" bordered={false}>
-          <div className="card-content">
-            <img src="/img/couple.jpg" alt="Sample" className="card-image" />
-            <h3>Patrocinadores</h3>
-            <hr className="divider" />
-            <p>Creación, eliminación, actualización y visualización de los patrocinadores</p>
-            <Button type="primary" onClick={handleSponsorClick}>Acceder</Button>
-          </div>
-        </Card>
       </div>
     </div>
   );

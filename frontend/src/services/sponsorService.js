@@ -1,8 +1,9 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:3001/sponsors';
-const RACE_URL = 'http://localhost:3001/races';
-const USER_URL = 'http://localhost:3001/users';
+const APII_URL = process.env.REACT_APP_API_URL;
+const API_URL = APII_URL+'/sponsors';
+const RACE_URL = APII_URL+'/races';
+const USER_URL = APII_URL+'/users';
 
 // aquí estaba originalmente la creación de la variable con la que accedía al dato que me interesaba
 

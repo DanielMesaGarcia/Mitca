@@ -101,8 +101,9 @@ const SponsorsCRUD = () => {
 
     return (
       
-        <div className="page-container">
+        <div>
           <Header/>
+          <div className="container">
           <h1>Sponsors</h1>
           <Table dataSource={sponsors} columns={columns} rowKey="_id" />
     
@@ -117,7 +118,7 @@ const SponsorsCRUD = () => {
             </Form.Item>
     
           </Form>
-        </div>
+        </div></div>
       );
     };
 

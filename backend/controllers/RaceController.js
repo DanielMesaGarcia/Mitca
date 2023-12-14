@@ -10,8 +10,6 @@ exports.createRace = async (req, res) => {
   if (req.file) {
     newRace.filename = req.file.filename;
   }
-  console.log(req.body);
-  console.log(newRace);
     await newRace.save();
     res.status(201).json({ success: true, data: newRace });
   } catch (error) {

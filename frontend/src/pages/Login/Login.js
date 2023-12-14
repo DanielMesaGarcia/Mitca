@@ -3,6 +3,7 @@ import { Input, Button } from 'antd';
 import './Login.css';
 import { Link, useNavigate  } from 'react-router-dom';
 import UserService from '../../services/logInService'; // Adjust the path according to your file structure
+import Footer from '../../components/footer/Footer';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -13,7 +14,7 @@ const Login = () => {
     try {
       const response = await UserService.login({ _id: email, password });
       // Handle the response as per your requirements
-      console.log(response);
+    
       // Save the token to the local storage
       localStorage.setItem('token', response.token);
       localStorage.setItem('role', response.role);
@@ -67,6 +68,7 @@ const Login = () => {
           Iniciar sesión
         </Button>
       </div>
+      <Footer></Footer>
     </div>
   );
 };

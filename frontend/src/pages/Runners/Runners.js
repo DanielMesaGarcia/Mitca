@@ -116,6 +116,7 @@ const RunnersPage = () => {
 
     <div className="page-container">
       <Header />
+      <div className='container'>
       <h1>Runners</h1>
       <Table dataSource={runners} columns={columns} rowKey="_id" />
       <Transfer
@@ -128,6 +129,7 @@ const RunnersPage = () => {
         render={(item) => item.title}
       />
       <Button onClick={updateTransfer}>Actualizar</Button>
+    </div>
     </div>
   );
 };
