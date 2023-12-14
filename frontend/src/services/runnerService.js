@@ -1,8 +1,9 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:3001/runners';
-const RACE_URL = 'http://localhost:3001/races';
-const USER_URL = 'http://localhost:3001/users';
+const APII_URL = process.env.REACT_APP_API_URL;
+const API_URL = APII_URL+'/runners';
+const RACE_URL = APII_URL+'/races';
+const USER_URL = APII_URL+'/users';
 // aquí estaba originalmente la creación de la variable con la que accedía al dato que me interesaba
 
 const getDataById = async (id) => {
@@ -20,7 +21,6 @@ const getRunners = async () => {
   try {
     const response = await axios.get(`${API_URL}`);
     const data = response.data;
-    console.log(data)
     return data;
   } catch (error) {
     console.error('Error fetching data:', error);

@@ -15,6 +15,7 @@ import { regSw,
 const UserSettings = () => {
   const [form] = Form.useForm();
   const [userData, setUserData] = useState({});
+  const [companyData, setCompanyData] = useState({});
   const [formDisabled, setFormDisabled] = useState(true); // Estado para controlar si los inputs están deshabilitados
   const token = localStorage.getItem('token');
   const navigate = useNavigate();
@@ -34,6 +35,7 @@ const UserSettings = () => {
             // Agrega más campos según sea necesario
           });
           if (data.role === 'sponsor') {
+            setCompanyData(data.sponsor);
             form2.setFieldsValue({
               _id: data.sponsor._id,
               companyName: data.sponsor.companyName,
@@ -77,7 +79,6 @@ const UserSettings = () => {
 
   const checkSubscriptionState = async () => {
     const subscriptionState = await checkIfAlreadySubscribed();
-    console.log(subscriptionState);
     setSubscribed(subscriptionState);
   }
 
@@ -186,9 +187,7 @@ const UserSettings = () => {
           name="account-settings"
           onFinish={handleFormSubmit}
         >
-          <Form.Item label="DNI" name="DNI">
-            <Input disabled={formDisabled} />
-          </Form.Item>
+          <p>{userData._id}</p>
 
           <Form.Item label="Nombre" name="name">
             <Input disabled={formDisabled} />
@@ -242,7 +241,7 @@ const UserSettings = () => {
 
 
         <Modal
-          title="Título del Modal"
+          title="Tu empresa"
           open={isModalVisible}
           onOk={handleOk}
           onCancel={handleCancel}
@@ -252,19 +251,7 @@ const UserSettings = () => {
             onFinish={handleOk}
           // Agrega otros props necesarios para tu formulario
           >
-            <Form.Item
-              name="_id"
-              label="CIF"
-              rules={[
-                {
-                  required: true,
-                  message: 'Por favor, ingresa el CIF',
-                },
-                // Puedes agregar la validación personalizada aquí
-              ]}
-            >
-              <Input />
-            </Form.Item>
+            <p>{companyData._id}</p>
 
             <Form.Item
               name="companyName"

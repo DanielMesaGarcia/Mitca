@@ -1,6 +1,6 @@
 import axios from 'axios';
-
-const API_URL = 'http://localhost:3001/users'; // Replace with your actual API URL
+const APII_URL = process.env.REACT_APP_API_URL;
+const API_URL = APII_URL+'/users'; // Replace with your actual API URL
 
 const signInService = {
   getUserById: (userId) => {
@@ -27,9 +27,6 @@ const signInService = {
     try {
       const mappedData = { ...userData, _id: userData.email };
       delete mappedData.email;
-      console.log("DATOS")
-      console.log(mappedData)
-      console.log(companyData)
       const response = await axios.post(`${API_URL}/companyaccount`, {mappedData, companyData});
       return response.data;
     } catch (error) {

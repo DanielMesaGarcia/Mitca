@@ -1,7 +1,9 @@
 import axios from 'axios';
 
-const RACE_URL = 'http://localhost:3001/races';
-const STATUS_URL = 'http://localhost:3001/status';
+const API_URL = process.env.REACT_APP_API_URL;
+
+const RACE_URL = API_URL+'/races';
+const STATUS_URL = API_URL+'/status';
 
 const getDataById = async (id) => {
     try {
