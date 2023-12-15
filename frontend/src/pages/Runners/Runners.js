@@ -4,6 +4,7 @@ import RunnerService from '../../services/runnerService';
 import Header from '../../components/header/Header';
 import { useParams } from 'react-router-dom';
 import { Transfer } from 'antd';
+import MyButton from '../../components/buttonBack/buttonBack';
 
 
 
@@ -116,6 +117,7 @@ const RunnersPage = () => {
 
     <div className="page-container">
       <Header />
+        <MyButton/>
       <div className='container'>
       <h1>Runners</h1>
       <Table dataSource={runners} pagination={{ pageSize: 5 }}  columns={columns} rowKey="_id" />

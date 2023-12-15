@@ -11,6 +11,10 @@ const Header = () => {
     setMenuVisible(!menuVisible);
   };
 
+  const handleRedirect = (path) => {
+    navigate(path);
+  };
+
   const demoData = async () => {
     try {
       const response = await DemoService.createDemoData();
@@ -33,16 +37,42 @@ const Header = () => {
       <div className={`menu ${menuVisible ? 'show' : ''}`} onClick={toggleMenu}>
         <ul>
         <li>
-      {role === 'admin' ? (
-        <Link to="/homeAdmin">Vuelta al inicio</Link>
-      ) : (
-        <Link to="/home">Vuelta al inicio</Link>
-      )}
-    </li>
-          <li><Link to="/usersettings">Ajustes de usuario</Link></li>
-          <li><Button type="primary" className="logout-button" onClick={logOut}>Cerrar sesión</Button></li>
-          <li><Button type="primary" className="demo-button" onClick={demoData}>Crear datos demo</Button></li>
-        </ul>
+        <Button
+          type="primary"
+          className="demo-button"
+          onClick={() => handleRedirect(role === 'admin' ? '/homeAdmin' : '/home')}
+        >
+          Vuelta al inicio
+        </Button>
+      </li>
+      <li>
+        <Button
+          type="primary"
+          className="demo-button"
+          onClick={() => handleRedirect('/usersettings')}
+        >
+          Ajustes de usuario
+        </Button>
+      </li>
+      <li>
+        <Button
+          type="primary"
+          className="demo-button"
+          onClick={demoData}
+        >
+          Crear datos demo
+        </Button>
+      </li>
+      <li>
+        <Button
+          type="primary"
+          className="logout-button"
+          onClick={logOut}
+        >
+          Cerrar sesión
+        </Button>
+      </li>
+      </ul>
       </div>
       <div className={`menu-overlay ${menuVisible ? 'show' : ''}`} onClick={toggleMenu}></div>
       <div className="menu-icon" onClick={toggleMenu}>

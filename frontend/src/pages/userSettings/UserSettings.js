@@ -11,6 +11,7 @@ import { regSw,
   getAllSubscriptions,
   sendNotificationToSubscriptionName,
   unregisterFromServiceWorker } from '../../services/helper';
+import MyButton from '../../components/buttonBack/buttonBack';
 
 const UserSettings = () => {
   const [form] = Form.useForm();
@@ -175,6 +176,7 @@ const UserSettings = () => {
   return (
     <>
       <Header />
+      <MyButton/>
 
       <div className="account-settings-container">
         <Switch

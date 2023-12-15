@@ -3,6 +3,7 @@ import { Table, Form, Input, Button } from 'antd';
 import SponsorService from '../../services/sponsorService';
 import Header from '../../components/header/Header';
 import { useParams } from 'react-router-dom';
+import MyButton from '../../components/buttonBack/buttonBack';
 
 const SponsorsCRUD = () => {
     const [sponsors, setSponsors] = useState([]);
@@ -103,6 +104,7 @@ const SponsorsCRUD = () => {
       
         <div>
           <Header/>
+          <MyButton/>
           <div className="container">
           <h1>Sponsors</h1>
           <Table dataSource={sponsors} columns={columns} pagination={{ pageSize: 5 }}  rowKey="_id" />

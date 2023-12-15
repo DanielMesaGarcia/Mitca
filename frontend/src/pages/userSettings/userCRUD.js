@@ -3,6 +3,7 @@ import { Table, Form, Input, Button, Select } from 'antd';
 import UserService from '../../services/userService';
 import Header from '../../components/header/Header';
 import { useParams } from 'react-router-dom';
+import MyButton from '../../components/buttonBack/buttonBack';
 
 const UserCRUD = () => {
   const [users, setUsers] = useState([]);
@@ -94,6 +95,7 @@ const UserCRUD = () => {
 
     <div className="page-container">
       <Header />
+      <MyButton/>
       <div className='container'>
         <h1>Users</h1>
         <Table dataSource={users} columns={columns} pagination={{ pageSize: 5 }} rowKey="_id" />

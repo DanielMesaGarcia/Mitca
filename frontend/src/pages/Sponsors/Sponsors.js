@@ -3,6 +3,7 @@ import { Table, Form, Input, Button, message } from 'antd';
 import SponsorService from '../../services/sponsorService';
 import Header from '../../components/header/Header';
 import { useParams } from 'react-router-dom';
+import MyButton from '../../components/buttonBack/buttonBack';
 
 const SponsorsPage = () => {
   const [sponsors, setSponsors] = useState([]);
@@ -91,6 +92,7 @@ const SponsorsPage = () => {
   return (
     <div>
     <Header />
+    <MyButton/>
     <div className="container">
       
       <h1>Sponsors</h1>
