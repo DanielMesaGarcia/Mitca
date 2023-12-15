@@ -110,7 +110,7 @@ const RunnersCRUD = () => {
       <Header />
       <div className='container'>
         <h1>Runners</h1>
-        <Table dataSource={runners} columns={columns} rowKey="_id" />
+        <Table dataSource={runners} pagination={{ pageSize: 5 }} columns={columns} rowKey="_id" />
 
         <Form form={form} name="add_runner" className="form-container" onFinish={addRunner}>
 

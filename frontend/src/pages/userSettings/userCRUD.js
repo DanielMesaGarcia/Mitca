@@ -96,7 +96,7 @@ const UserCRUD = () => {
       <Header />
       <div className='container'>
         <h1>Users</h1>
-        <Table dataSource={users} columns={columns} rowKey="_id" />
+        <Table dataSource={users} columns={columns} pagination={{ pageSize: 5 }} rowKey="_id" />
 
         <Form form={form} name="add_user" className="form-container">
 

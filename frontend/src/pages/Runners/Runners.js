@@ -118,7 +118,7 @@ const RunnersPage = () => {
       <Header />
       <div className='container'>
       <h1>Runners</h1>
-      <Table dataSource={runners} columns={columns} rowKey="_id" />
+      <Table dataSource={runners} pagination={{ pageSize: 5 }}  columns={columns} rowKey="_id" />
       <Transfer
         dataSource={mockData}
         titles={['Source', 'Target']}

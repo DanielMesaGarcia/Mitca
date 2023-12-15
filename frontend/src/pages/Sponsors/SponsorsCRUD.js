@@ -105,7 +105,7 @@ const SponsorsCRUD = () => {
           <Header/>
           <div className="container">
           <h1>Sponsors</h1>
-          <Table dataSource={sponsors} columns={columns} rowKey="_id" />
+          <Table dataSource={sponsors} columns={columns} pagination={{ pageSize: 5 }}  rowKey="_id" />
     
           <Form form={form} name="add_sponsor" className="form-container" onFinish={addSponsor}>
     

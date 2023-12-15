@@ -94,7 +94,7 @@ const SponsorsPage = () => {
     <div className="container">
       
       <h1>Sponsors</h1>
-      <Table dataSource={sponsors} columns={columns} rowKey="_id" />
+      <Table dataSource={sponsors} columns={columns} pagination={{ pageSize: 5 }} rowKey="_id" />
 
       {role === 'sponsor' && (
         <Button
