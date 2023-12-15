@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Header.css'; // Archivo de estilos CSS personalizado
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Button } from 'antd';
 import DemoService from '../../services/demoService';
 
@@ -17,7 +17,7 @@ const Header = () => {
 
   const demoData = async () => {
     try {
-      const response = await DemoService.createDemoData();
+      await DemoService.createDemoData();
     } catch (error) {
       console.error('Error fetching route data:', error);
     }
@@ -33,46 +33,57 @@ const Header = () => {
   const role = localStorage.getItem('role');
   return (
     <div className="header-container">
-    
+
       <div className={`menu ${menuVisible ? 'show' : ''}`} onClick={toggleMenu}>
         <ul>
-        <li>
-        <Button
-          type="primary"
-          className="demo-button"
-          onClick={() => handleRedirect(role === 'admin' ? '/homeAdmin' : '/home')}
-        >
-          Vuelta al inicio
-        </Button>
-      </li>
-      <li>
-        <Button
-          type="primary"
-          className="demo-button"
-          onClick={() => handleRedirect('/usersettings')}
-        >
-          Ajustes de usuario
-        </Button>
-      </li>
-      <li>
-        <Button
-          type="primary"
-          className="demo-button"
-          onClick={demoData}
-        >
-          Crear datos demo
-        </Button>
-      </li>
-      <li>
-        <Button
-          type="primary"
-          className="logout-button"
-          onClick={logOut}
-        >
-          Cerrar sesión
-        </Button>
-      </li>
-      </ul>
+          <li>
+            <Button
+              type="primary"
+              className="demo-button"
+              onClick={() => handleRedirect(role === 'admin' ? '/homeAdmin' : '/home')}
+            >
+              Vuelta al inicio
+            </Button>
+          </li>
+          <li>
+            <a href='/user-manual/Home.html'>
+              <Button
+                type="primary"
+                className="demo-button"
+                onClick={() => handleRedirect('')}
+              >
+                Manual
+              </Button>
+            </a>
+          </li>
+          <li>
+            <Button
+              type="primary"
+              className="demo-button"
+              onClick={() => handleRedirect('/usersettings')}
+            >
+              Ajustes de usuario
+            </Button>
+          </li>
+          <li>
+            <Button
+              type="primary"
+              className="demo-button"
+              onClick={demoData}
+            >
+              Crear datos demo
+            </Button>
+          </li>
+          <li>
+            <Button
+              type="primary"
+              className="logout-button"
+              onClick={logOut}
+            >
+              Cerrar sesión
+            </Button>
+          </li>
+        </ul>
       </div>
       <div className={`menu-overlay ${menuVisible ? 'show' : ''}`} onClick={toggleMenu}></div>
       <div className="menu-icon" onClick={toggleMenu}>
