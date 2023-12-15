@@ -1,7 +1,8 @@
 const Race = require('../models/Race'); // Make sure to adjust the correct path to the model
 const Route = require('../models/Route');
 const Status = require('../models/Status');
-
+const fs = require('fs');
+const path = require('path');
 // Controller to create a new race
 exports.createRace = async (req, res) => {
   try {
@@ -102,6 +103,12 @@ exports.deleteRace = async (req, res) => {
     // Delete associated Route and Status
     await Route.findOneAndDelete({ _id: race.route });
     await Status.findOneAndDelete({ _id: race.status });
+
+    const imagePath = path.join(__dirname, '..', 'public', 'images', race.filename);
+    if (fs.existsSync(imagePath)) {
+      fs.unlinkSync(imagePath);
+    }
+
 
     res.status(200).json({ success: true, data: {} });
   } catch (error) {
