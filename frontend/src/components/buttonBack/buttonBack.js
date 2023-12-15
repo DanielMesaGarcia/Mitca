@@ -9,6 +9,34 @@ const MyButton = () => {
 
   const handleButtonClick = () => {
     // Implementa un sistema switch basado en la ruta actual
+    if(localStorage.getItem('role') === 'admin'){
+    switch (location.pathname) {
+      case `/runners/${id}`:
+      case `/sponsors/${id}`:
+        
+        // Ir a la ruta de racedata/:id
+        navigate(`/racedataAdmin/${id}`);
+        break;
+      case `/racedataAdmin/${id}`:
+        // Ir a la ruta de /home
+        navigate('/homeAdmin');
+        break;
+      case '/userSettings':
+        // Ir a la ruta de /home
+        navigate('/homeAdmin');
+        break;
+        case `/runners`:
+        case `/sponsors`:
+        case `/users`:
+          navigate('/userSettings');
+          break;
+      // Agrega más casos según sea necesario
+      default:
+        // Ir a una ruta predeterminada si no se encuentra ninguna coincidencia
+        navigate('/homeAdmin');
+        break;
+    }
+  }else{
     switch (location.pathname) {
       case `/runners/${id}`:
       case `/sponsors/${id}`:
@@ -35,6 +63,7 @@ const MyButton = () => {
         navigate('/home');
         break;
     }
+  }
   };
 
   return (
