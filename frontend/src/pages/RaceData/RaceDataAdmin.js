@@ -17,6 +17,7 @@ import {
   sendNotificationToSubscriptionName,
   unregisterFromServiceWorker
 } from '../../services/helper';
+import MyButton from '../../components/buttonBack/buttonBack';
 const { Option } = Select;
 dayjs.extend(customParseFormat);
 const onChange = (time, timeString) => {
@@ -168,6 +169,7 @@ const RaceDataAdmin = () => {
   return (
     <div>
       <Header />
+      <MyButton/>
       <div className='container'>
 
         <h2>Datos de {selectedRaceId}:</h2>

@@ -13,6 +13,7 @@ import { regSw,
   checkIfAlreadySubscribed,
   getAllSubscriptions,
   unregisterFromServiceWorker } from '../../services/helper';
+import MyButton from '../../components/buttonBack/buttonBack';
 
 const RaceData = () => {
   const [Data, setData] = useState(null);
@@ -109,6 +110,7 @@ const RaceData = () => {
   return (
     <div >
       <Header />
+      <MyButton/>
       <div className='container'>
       <h2>Datos de {selectedRaceId}:</h2>
 
