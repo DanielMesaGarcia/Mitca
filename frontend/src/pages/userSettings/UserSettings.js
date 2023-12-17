@@ -11,6 +11,7 @@ import { regSw,
   getAllSubscriptions,
   sendNotificationToSubscriptionName,
   unregisterFromServiceWorker } from '../../services/helper';
+import MyButton from '../../components/buttonBack/buttonBack';
 
 const UserSettings = () => {
   const [form] = Form.useForm();
@@ -175,6 +176,7 @@ const UserSettings = () => {
   return (
     <>
       <Header />
+      <MyButton/>
 
       <div className="account-settings-container">
         <Switch
@@ -281,7 +283,7 @@ const UserSettings = () => {
 
           </Form>
         </Modal>
-        <Button type="primary" onClick={handleSubscription} style={{ marginBottom: '16px' }}>
+        <Button type="primary" onClick={handleSubscription} style={{ marginTop: '16px',marginRight: '16px' }}>
           Suscribirme
         </Button>
         <Button type="primary" onClick={handleUnsubscription} style={{ marginBottom: '16px' }}>

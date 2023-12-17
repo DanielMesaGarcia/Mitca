@@ -3,6 +3,7 @@ import { Table, Form, Input, Button, message } from 'antd';
 import SponsorService from '../../services/sponsorService';
 import Header from '../../components/header/Header';
 import { useParams } from 'react-router-dom';
+import MyButton from '../../components/buttonBack/buttonBack';
 
 const SponsorsPage = () => {
   const [sponsors, setSponsors] = useState([]);
@@ -91,15 +92,17 @@ const SponsorsPage = () => {
   return (
     <div>
     <Header />
+    <MyButton/>
     <div className="container">
       
       <h1>Sponsors</h1>
-      <Table dataSource={sponsors} columns={columns} rowKey="_id" />
+      <Table dataSource={sponsors} columns={columns} pagination={{ pageSize: 5 }} rowKey="_id" />
 
       {role === 'sponsor' && (
         <Button
-          type={sponsorsThisRace ? 'danger' : 'success'}
+          type={sponsorsThisRace ? 'dashed' : 'primary'}
           onClick={sponsorsThisRace ? () => handleDelete() : () => addToRace()}
+          style={{ marginTop: '10px' }}
         >
           {sponsorsThisRace ? 'Dejar de financiar' : 'Financia esta carrera'}
         </Button>

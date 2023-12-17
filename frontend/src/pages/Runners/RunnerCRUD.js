@@ -3,6 +3,7 @@ import { Table, Form, Input, Button } from 'antd';
 import RunnerService from '../../services/runnerService';
 import Header from '../../components/header/Header';
 import { useParams } from 'react-router-dom';
+import MyButton from '../../components/buttonBack/buttonBack';
 
 const RunnersCRUD = () => {
   const [runners, setRunners] = useState([]);
@@ -108,9 +109,10 @@ const RunnersCRUD = () => {
 
     <div className="page-container">
       <Header />
+      <MyButton/>
       <div className='container'>
         <h1>Runners</h1>
-        <Table dataSource={runners} columns={columns} rowKey="_id" />
+        <Table dataSource={runners} pagination={{ pageSize: 5 }} columns={columns} rowKey="_id" />
 
         <Form form={form} name="add_runner" className="form-container" onFinish={addRunner}>
 

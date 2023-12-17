@@ -9,18 +9,15 @@ import customParseFormat from 'dayjs/plugin/customParseFormat';
 import Form from 'antd/es/form/Form';
 import Modal from 'antd/es/modal/Modal';
 import {
-  regSw,
-  subscribe,
-  unregisterAllServiceWorkers,
   checkIfAlreadySubscribed,
   getAllSubscriptions,
-  sendNotificationToSubscriptionName,
-  unregisterFromServiceWorker
+  sendNotificationToSubscriptionName
 } from '../../services/helper';
+import MyButton from '../../components/buttonBack/buttonBack';
+import CardComponent from '../../components/cards/cards';
 const { Option } = Select;
 dayjs.extend(customParseFormat);
-const onChange = (time, timeString) => {
-};
+
 
 
 const RaceDataAdmin = () => {
@@ -163,11 +160,27 @@ const RaceDataAdmin = () => {
   }, [subscribed]);
 
 
+const msg = new SpeechSynthesisUtterance();
+
+const speechHandler = () => {
+  let textToSpeak;
+
+  if (Data.status.statusAtTheMoment !== 'No empezada' && Data.status.statusAtTheMoment !== 'En curso') {
+    textToSpeak = 'Puntos de control: ' + Data.route.checkpoint + ', Lugar de inicio: ' + Data.route.startPoint + ', Meta: ' + Data.route.goal + ', Estado actual: ' + Data.status.statusAtTheMoment + ', Ganador:' + Data.status.winner + ', Duracion: ' + Data.status.duration;
+  } else {
+    textToSpeak = 'Puntos de control: ' + Data.route.checkpoint + ', Lugar de inicio: ' + Data.route.startPoint + ', Meta: ' + Data.route.goal + ', Estado actual: ' + Data.status.statusAtTheMoment;
+  }
+
+
+  msg.text = textToSpeak;
+  window.speechSynthesis.speak(msg);
+};
 
 
   return (
     <div>
       <Header />
+      <MyButton/>
       <div className='container'>
 
         <h2>Datos de {selectedRaceId}:</h2>
@@ -187,7 +200,8 @@ const RaceDataAdmin = () => {
                 </div>
               )}
 
-              <Button type="primary" onClick={showForm} style={{ marginBottom: '16px' }}>
+              <Button type="primary" onClick={speechHandler}>LEER DATOS</Button>
+              <Button type="primary" id='eee' onClick={showForm} style={{ marginBottom: '16px' }}>
                 Update Status
               </Button>
 
@@ -236,25 +250,22 @@ const RaceDataAdmin = () => {
         </Card>
 
         <div className="card-container">
-          <Card className="custom-card" bordered={false}>
-            <div className="card-content">
-              <img src="/img/couple.jpg" alt="Sample" className="card-image" />
-              <h3>Corredores</h3>
-              <hr className="divider" />
-              <p>Creación, eliminación, actualización y visualización de todos los corredores</p>
-              {/* este de aqui */}
-              <Button type="primary" onClick={handleRunnerClick}>Acceder</Button>
-            </div>
-          </Card>
-          <Card className="custom-card" bordered={false}>
-            <div className="card-content">
-              <img src="/img/couple.jpg" alt="Sample" className="card-image" />
-              <h3>Patrocinadores</h3>
-              <hr className="divider" />
-              <p>Creación, eliminación, actualización y visualización de los patrocinadores</p>
-              <Button type="primary" onClick={handleSponsorClick}>Acceder</Button>
-            </div>
-          </Card>
+        <div className="card-container">
+      <CardComponent
+        title="Corredores"
+        imageSrc="/img/couple.jpg"
+        description="Creación, eliminación, actualización y visualización de todos los corredores"
+        buttonText="Acceder"
+        onClick={handleRunnerClick}
+      />
+      <CardComponent
+        title="Patrocinadores"
+        imageSrc="/img/couple.jpg"
+        description="Creación, eliminación, actualización y visualización de los patrocinadores"
+        buttonText="Acceder"
+        onClick={handleSponsorClick}
+      />
+    </div>
         </div>
       </div>
     </div>
