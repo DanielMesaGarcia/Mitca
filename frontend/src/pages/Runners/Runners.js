@@ -130,7 +130,7 @@ const RunnersPage = () => {
         onSelectChange={onSelectChange}
         render={(item) => item.title}
       />
-      <Button onClick={updateTransfer}>Actualizar</Button>
+      <Button type="primary" onClick={updateTransfer}>Actualizar</Button>
     </div>
     </div>
   );

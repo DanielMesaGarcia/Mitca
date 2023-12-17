@@ -100,8 +100,9 @@ const SponsorsPage = () => {
 
       {role === 'sponsor' && (
         <Button
-          type={sponsorsThisRace ? 'danger' : 'success'}
+          type={sponsorsThisRace ? 'dashed' : 'primary'}
           onClick={sponsorsThisRace ? () => handleDelete() : () => addToRace()}
+          style={{ marginTop: '10px' }}
         >
           {sponsorsThisRace ? 'Dejar de financiar' : 'Financia esta carrera'}
         </Button>

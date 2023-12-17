@@ -199,8 +199,8 @@ const speechHandler = () => {
                 </div>
               )}
 
-              <Button onClick={speechHandler}>LEER DATOS</Button>
-              <Button type="primary" onClick={showForm} style={{ marginBottom: '16px' }}>
+              <Button type="primary" onClick={speechHandler}>LEER DATOS</Button>
+              <Button type="primary" id='eee' onClick={showForm} style={{ marginBottom: '16px' }}>
                 Update Status
               </Button>
 
@@ -251,7 +251,7 @@ const speechHandler = () => {
         <div className="card-container">
           <Card className="custom-card" bordered={false}>
             <div className="card-content">
-              <img src="/img/couple.jpg" alt="Sample" className="card-image" />
+              <img src="/img/couple.jpg" alt="RunnerIMG" className="card-image" />
               <h3>Corredores</h3>
               <hr className="divider" />
               <p>Creación, eliminación, actualización y visualización de todos los corredores</p>
@@ -261,7 +261,7 @@ const speechHandler = () => {
           </Card>
           <Card className="custom-card" bordered={false}>
             <div className="card-content">
-              <img src="/img/couple.jpg" alt="Sample" className="card-image" />
+              <img src="/img/couple.jpg" alt="SponsorIMG" className="card-image" />
               <h3>Patrocinadores</h3>
               <hr className="divider" />
               <p>Creación, eliminación, actualización y visualización de los patrocinadores</p>
