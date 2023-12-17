@@ -7,6 +7,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { checkIfAlreadySubscribed,
   getAllSubscriptions } from '../../services/helper';
 import MyButton from '../../components/buttonBack/buttonBack';
+import CardComponent from '../../components/cards/cards';
 
 const RaceData = () => {
   const [Data, setData] = useState(null);
@@ -109,25 +110,22 @@ const RaceData = () => {
       </Card>
 
       <div className="card-container">
-        <Card className="custom-card" bordered={false}>
-          <div className="card-content">
-            <img src="/img/couple.jpg" alt="RunnerIMG" className="card-image" />
-            <h3>Corredores</h3>
-            <hr className="divider" />
-            <p>Creación, eliminación, actualización y visualización de todos los corredores</p>
-            {/* este de aqui */}
-            <Button type="primary" onClick={handleRunnerClick}>Acceder</Button>
-          </div>
-        </Card>
-        <Card className="custom-card" bordered={false}>
-          <div className="card-content">
-            <img src="/img/couple.jpg" alt="SponsorIMG" className="card-image" />
-            <h3>Patrocinadores</h3>
-            <hr className="divider" />
-            <p>Creación, eliminación, actualización y visualización de los patrocinadores</p>
-            <Button type="primary" onClick={handleSponsorClick}>Acceder</Button>
-          </div>
-        </Card>
+      <div className="card-container">
+      <CardComponent
+        title="Corredores"
+        imageSrc="/img/couple.jpg"
+        description="Creación, eliminación, actualización y visualización de todos los corredores"
+        buttonText="Acceder"
+        onClick={handleRunnerClick}
+      />
+      <CardComponent
+        title="Patrocinadores"
+        imageSrc="/img/couple.jpg"
+        description="Creación, eliminación, actualización y visualización de los patrocinadores"
+        buttonText="Acceder"
+        onClick={handleSponsorClick}
+      />
+    </div>
       </div>
       </div>
     </div>
