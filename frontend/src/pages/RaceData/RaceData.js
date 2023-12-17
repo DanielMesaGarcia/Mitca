@@ -1,18 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { Card, Button, TimePicker, Checkbox, Select } from 'antd';
+import { Card, Button } from 'antd';
 import Header from '../../components/header/Header';
 import './RaceData.css';
 import RaceDataService from '../../services/raceDataService';
 import { useNavigate, useParams } from 'react-router-dom';
-import dayjs from 'dayjs';
-import customParseFormat from 'dayjs/plugin/customParseFormat';
-import Form from 'antd/es/form/Form';
-import Modal from 'antd/es/modal/Modal';
-import { regSw,
-  subscribe,
-  checkIfAlreadySubscribed,
-  getAllSubscriptions,
-  unregisterFromServiceWorker } from '../../services/helper';
+import { checkIfAlreadySubscribed,
+  getAllSubscriptions } from '../../services/helper';
 import MyButton from '../../components/buttonBack/buttonBack';
 
 const RaceData = () => {
@@ -49,8 +42,6 @@ const RaceData = () => {
   const [subscribed, setSubscribed] = useState(false);
   const [subscriptions, setSubscriptions] = useState([]);
   const [subscriptionName, setSubscriptionName] = useState("Carreras");
-  const [notificationMessage, setNotificationMessage] = useState("");
-  const [selectedRecipient, setSelectedRecipient] = useState("select a recipient");
   useEffect(() => {
     checkSubscriptionState();
     
@@ -60,38 +51,11 @@ const RaceData = () => {
     setSubscriptionName("Carreras");
   }, []);
 
-  const registerAndSubscribe = async () => {
-    try {
-      const serviceWorkerReg = await regSw();
-      const recipient =await subscribe(serviceWorkerReg, subscriptionName);
-
-      setSubscribed(true);
-      getAllSubscriptions().then((res) => {
-        setSubscriptions(res.data);
-      });
-      setSelectedRecipient(recipient);
-    } catch (error) {
-      console.log(error);
-    }
-  }
+  
 
   const checkSubscriptionState = async () => {
     const subscriptionState = await checkIfAlreadySubscribed();
     setSubscribed(subscriptionState);
-  }
-
-  const handleSubscription = async (e) => {
-    e.preventDefault();
-
-    await registerAndSubscribe();
-  }
-
-  const handleUnsubscription = (e) => {
-    e.preventDefault();
-
-    unregisterFromServiceWorker().then(() => {
-      checkSubscriptionState();
-    })
   }
 
 
@@ -104,7 +68,18 @@ const RaceData = () => {
     
   }, [subscribed]);
 
+  const [ourText, setOurText] = useState("")
+  const msg = new SpeechSynthesisUtterance()
 
+  const speechHandler = () => {
+    if(Data.status.statusAtTheMoment !== 'No empezada' && Data.status.statusAtTheMoment !== 'En curso'){
+      setOurText('Puntos de control: '+Data.route.checkpoint+', Lugar de inicio: '+Data.route.startPoint+', Meta: '+Data.route.goal+', Estado actual: '+Data.status.statusAtTheMoment+', Ganador:'+Data.status.winner+', Duracion: '+Data.status.duration)
+    }else{
+      setOurText('Puntos de control: '+Data.route.checkpoint+', Lugar de inicio: '+Data.route.startPoint+', Meta: '+Data.route.goal+', Estado actual: '+Data.status.statusAtTheMoment)
+    }
+    msg.text = ourText
+    window.speechSynthesis.speak(msg)
+  }
 
 
   return (
@@ -128,10 +103,7 @@ const RaceData = () => {
                 <p>Duración: {Data.status.duration}</p>
               </div>
             )}
-          
-        
-        
-        
+            <Button onClick={speechHandler}>LEER DATOS</Button>
         </div>
         )}
       </Card>

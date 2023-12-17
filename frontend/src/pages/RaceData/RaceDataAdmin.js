@@ -9,19 +9,14 @@ import customParseFormat from 'dayjs/plugin/customParseFormat';
 import Form from 'antd/es/form/Form';
 import Modal from 'antd/es/modal/Modal';
 import {
-  regSw,
-  subscribe,
-  unregisterAllServiceWorkers,
   checkIfAlreadySubscribed,
   getAllSubscriptions,
-  sendNotificationToSubscriptionName,
-  unregisterFromServiceWorker
+  sendNotificationToSubscriptionName
 } from '../../services/helper';
 import MyButton from '../../components/buttonBack/buttonBack';
 const { Option } = Select;
 dayjs.extend(customParseFormat);
-const onChange = (time, timeString) => {
-};
+
 
 
 const RaceDataAdmin = () => {
@@ -164,6 +159,21 @@ const RaceDataAdmin = () => {
   }, [subscribed]);
 
 
+const msg = new SpeechSynthesisUtterance();
+
+const speechHandler = () => {
+  let textToSpeak;
+
+  if (Data.status.statusAtTheMoment !== 'No empezada' && Data.status.statusAtTheMoment !== 'En curso') {
+    textToSpeak = 'Puntos de control: ' + Data.route.checkpoint + ', Lugar de inicio: ' + Data.route.startPoint + ', Meta: ' + Data.route.goal + ', Estado actual: ' + Data.status.statusAtTheMoment + ', Ganador:' + Data.status.winner + ', Duracion: ' + Data.status.duration;
+  } else {
+    textToSpeak = 'Puntos de control: ' + Data.route.checkpoint + ', Lugar de inicio: ' + Data.route.startPoint + ', Meta: ' + Data.route.goal + ', Estado actual: ' + Data.status.statusAtTheMoment;
+  }
+
+
+  msg.text = textToSpeak;
+  window.speechSynthesis.speak(msg);
+};
 
 
   return (
@@ -189,6 +199,7 @@ const RaceDataAdmin = () => {
                 </div>
               )}
 
+              <Button onClick={speechHandler}>LEER DATOS</Button>
               <Button type="primary" onClick={showForm} style={{ marginBottom: '16px' }}>
                 Update Status
               </Button>
