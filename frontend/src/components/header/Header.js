@@ -69,6 +69,15 @@ const Header = () => {
             <Button
               type="primary"
               className="demo-button"
+              onClick={() => handleRedirect('/report')}
+            >
+              Report
+            </Button>
+          </li>
+          <li>
+            <Button
+              type="primary"
+              className="demo-button"
               onClick={demoData}
             >
               Crear datos demo

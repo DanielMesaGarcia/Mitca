@@ -3,6 +3,7 @@
 # frontend dependencies
 /frontend/node_modules
 /backend/node_modules
+/jsreportapp/node_modules
 /backend/.env
 /frontend/.env
 /frontend/.pnp

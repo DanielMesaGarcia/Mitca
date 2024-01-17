@@ -13,6 +13,7 @@ import RunnersCRUD from "./pages/Runners/RunnerCRUD";
 import RunnersCRUDuser from "./pages/Runners/RunnerCRUDuser";
 import HomeAdmin from "./pages/Home/HomeAdmin";
 import RaceDataAdmin from "./pages/RaceData/RaceDataAdmin";
+import Report from "./pages/Report/Report";
 function App() {
   return (
     
@@ -32,6 +33,7 @@ function App() {
         <Route path="/runnersuser" element={<RunnersCRUDuser/>}/>
         <Route path="/sponsors" element={<SponsorsCRUD/>}/>
         <Route path="/users" element={<UserCRUD/>}/>
+        <Route path="/report" element={<Report/>}/>
       </Routes>
     </BrowserRouter>
   );
