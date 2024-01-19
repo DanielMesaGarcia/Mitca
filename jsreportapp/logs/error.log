@@ -78,3 +78,8 @@ TypeError: res.end is not a function
 TypeError: res.end is not a function
     at sandbox.js:73:11
     at process.processTicksAndRejections (node:internal/process/task_queues:95:5) rootId=wrfiqam9uyuqe7d, id=wrfiqam9uyuqe7d
+2024-01-18T20:02:50.807Z - error: Report render failed
+(because) res.end is not a function
+TypeError: res.end is not a function
+    at sandbox.js:72:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5) rootId=vyhnk32jiboyvqk, id=vyhnk32jiboyvqk

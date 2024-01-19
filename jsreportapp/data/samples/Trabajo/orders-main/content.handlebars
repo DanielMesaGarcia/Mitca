@@ -9,7 +9,7 @@
 <body>
 
     <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
-<script>
+    <script>
     // Obtén los datos de raceNames y runnerCounts de la función transformData
     
     const raceNames = {{{toJS orders.nombres }}};
@@ -20,68 +20,71 @@
     data: {
         labels: raceNames,
         datasets: [{
+            label: "Amount of runners",
             data: runnerCounts
         }]
     },
     options: {
-        legend: { display: false },
-        title: {
-            display: true,
-            text: "Amount of runners"  // Cambiado el texto de la leyenda
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    stepSize: 1,  // Establece el tamaño del paso como 1 para mostrar solo valores enteros
+                    precision: 0  // Establece la precisión a 0 para mostrar solo enteros
+                }
+            },
+            legend: { display: true },
+            title: {
+                display: true,
+                text: "Amount of runners"
+            }
         }
-    }
+
 });
 
-</script>
+</script> {{#each orders.info}}
+    <div>
+        <p>Total Runners: {{this.runnerCount}}</p>
+    </div>
+    {{{pdfCreatePagesGroup this.country}}}
+    <table class='table striped'>
+        <thead>
+            <tr>
+                <th>City</th>
+                <th>Event date</th>
+                <th>Length (km)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{this.city}}</td>
+                <td>{{this.eventDate}}</td>
+                <td>{{this.length}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <table class='table striped'>
+        <thead>
+            <tr>
+                <th>DNI</th>
+                <th>Name</th>
+                <th>Phone number</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each this.runners}}
+            <tr>
+                <td>{{id}}</td>
+                <td>{{name}}</td>
+                <td>{{phone}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
 
-
-
-
-
-    {{#each orders.info}}
-        <div>
-            <p>Total Runners: {{this.runnerCount}}</p>
-        </div>
-        {{{pdfCreatePagesGroup this.country}}}
-        <table class='table striped'>
-            <thead>
-                <tr>
-                    <th>City</th>
-                    <th>Event date</th>
-                    <th>Length (km)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>{{this.city}}</td>
-                    <td>{{this.eventDate}}</td>
-                    <td>{{this.length}}</td>
-                </tr>
-            </tbody>
-        </table>
-        <table class='table striped'>
-            <thead>
-                <tr>
-                    <th>DNI</th>
-                    <th>Name</th>
-                    <th>Phone number</th>
-                </tr>
-            </thead>
-            <tbody>
-                {{#each this.runners}}
-                    <tr>
-                        <td>{{id}}</td>
-                        <td>{{name}}</td>
-                        <td>{{phone}}</td>
-                    </tr>
-                {{/each}}
-            </tbody>
-        </table>
-
-        <div style='page-break-after: always;'></div>
+    <div style='page-break-after: always;'></div>
     {{/each}}
 
-    
+
 </body>
 
 
