@@ -4530,3 +4530,1648 @@ TypeError: res.end is not a function
 2024-01-17T17:44:15.012Z - info: Rendering (child) request finished in 3013 ms rootId=jbcgisapcu8k7lj, id=o5qwubt0b5leutu
 2024-01-17T17:44:15.014Z - info: pdf-utils pdf processing was finished rootId=jbcgisapcu8k7lj, id=jbcgisapcu8k7lj
 2024-01-17T17:44:15.015Z - info: Rendering request 2 finished in 3047 ms rootId=jbcgisapcu8k7lj, id=jbcgisapcu8k7lj
+2024-01-18T14:28:31.703Z - info: Initializing jsreport (version: 4.2.0, configuration file: jsreport.config.json, nodejs: 18.17.1)
+2024-01-18T14:28:31.706Z - info: Searching for available extensions in C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\
+2024-01-18T14:28:31.716Z - info: Extensions location cache contains up to date information, skipping crawling in C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\
+2024-01-18T14:28:31.745Z - info: Found 35 extension(s)
+2024-01-18T14:28:31.873Z - info: Using extension base@4.0.0
+2024-01-18T14:28:31.883Z - info: Using extension child-templates@4.0.0
+2024-01-18T14:28:31.892Z - info: Using extension cli@4.0.2
+2024-01-18T14:28:31.898Z - info: Using extension components@4.0.0
+2024-01-18T14:28:31.902Z - info: Using extension data@4.0.0
+2024-01-18T14:28:31.905Z - info: Using extension express@4.0.1
+2024-01-18T14:28:32.303Z - info: Using extension freeze@4.0.0
+2024-01-18T14:28:32.307Z - info: Using extension fs-store@4.0.1
+2024-01-18T14:28:32.484Z - info: Using extension handlebars@4.0.1
+2024-01-18T14:28:32.487Z - info: Using extension import-export@4.0.2
+2024-01-18T14:28:32.509Z - info: Using extension jsrender@4.0.0
+2024-01-18T14:28:32.513Z - info: Using extension licensing@4.0.1
+2024-01-18T14:28:32.523Z - info: Using extension localization@4.0.1
+2024-01-18T14:28:32.527Z - info: Using extension npm@4.0.0
+2024-01-18T14:28:32.536Z - info: Using extension pdf-utils@4.0.2
+2024-01-18T14:28:32.543Z - info: Using extension reports@4.0.0
+2024-01-18T14:28:32.550Z - info: Using extension tags@4.0.1
+2024-01-18T14:28:32.555Z - info: Using extension text@4.0.0
+2024-01-18T14:28:32.558Z - info: Using extension version-control@4.0.0
+2024-01-18T14:28:32.587Z - info: Using extension assets@4.0.2
+2024-01-18T14:28:32.613Z - info: Using extension authorization@4.0.0
+2024-01-18T14:28:32.623Z - info: Using extension browser-client@4.0.0
+2024-01-18T14:28:32.628Z - info: Using extension chrome-pdf@4.0.0
+2024-01-18T14:28:32.634Z - info: Using extension docx@4.1.1
+2024-01-18T14:28:32.640Z - info: Using extension html-to-xlsx@4.0.1
+2024-01-18T14:28:33.223Z - info: html-to-xlsx detected chrome as available html engine
+2024-01-18T14:28:33.225Z - info: Using extension pptx@4.1.0
+2024-01-18T14:28:33.228Z - info: Using extension scheduling@4.0.0
+2024-01-18T14:28:33.283Z - info: Using extension scripts@4.0.0
+2024-01-18T14:28:33.285Z - info: Using extension static-pdf@4.0.0
+2024-01-18T14:28:33.287Z - info: Using extension studio@4.0.2
+2024-01-18T14:28:33.395Z - info: Using extension xlsx@4.0.2
+2024-01-18T14:28:33.399Z - info: Using extension public-templates@4.0.0
+2024-01-18T14:28:33.403Z - info: Using extension sample-template@4.0.0
+2024-01-18T14:28:33.407Z - info: Using extension studio-theme-dark@4.0.0
+2024-01-18T14:28:33.414Z - info: Code sandboxing is disabled, users can potentially penetrate the local system if you allow code from external users to be part of your reports
+2024-01-18T14:28:33.415Z - info: Using general timeout for rendering (reportTimeout: 60000)
+2024-01-18T14:28:33.416Z - info: Using fs provider for template store.
+2024-01-18T14:28:33.425Z - info: fs store is persisting using fs for C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\data
+2024-01-18T14:28:33.443Z - info: fs store is loading data
+2024-01-18T14:28:33.567Z - info: fs store is initialized successfully
+2024-01-18T14:28:33.585Z - info: Creating default express app.
+2024-01-18T14:28:33.636Z - info: jsreport server successfully started on http port: 5488
+2024-01-18T14:28:33.640Z - info: Verifying license key free
+2024-01-18T14:28:33.642Z - info: Using free license
+2024-01-18T14:28:33.649Z - info: Initializing worker threads
+2024-01-18T14:28:34.022Z - info: 2 worker threads initialized in 373ms
+2024-01-18T14:28:34.023Z - info: Starting temp files cleanup with 180000ms threshold
+2024-01-18T14:28:34.026Z - info: reporter initialized
+2024-01-18T14:29:06.812Z - info: Render request 1 queued for execution and waiting for available worker rootId=ykq082mevyscl51, id=ykq082mevyscl51
+2024-01-18T14:29:06.894Z - info: Starting rendering request 1 rootId=ykq082mevyscl51, id=ykq082mevyscl51
+2024-01-18T14:29:06.895Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=ykq082mevyscl51, id=ykq082mevyscl51
+2024-01-18T14:29:13.914Z - info: pdf-utils is starting pdf processing rootId=ykq082mevyscl51, id=ykq082mevyscl51
+2024-01-18T14:29:13.934Z - info: Starting rendering (child) request rootId=ykq082mevyscl51, id=dtobm05meblgj97
+2024-01-18T14:29:13.936Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=ykq082mevyscl51, id=dtobm05meblgj97
+2024-01-18T14:29:14.469Z - info: Rendering (child) request finished in 7577 ms rootId=ykq082mevyscl51, id=dtobm05meblgj97
+2024-01-18T14:29:14.472Z - info: pdf-utils pdf processing was finished rootId=ykq082mevyscl51, id=ykq082mevyscl51
+2024-01-18T14:29:14.475Z - info: Rendering request 1 finished in 7657 ms rootId=ykq082mevyscl51, id=ykq082mevyscl51
+2024-01-18T14:32:13.952Z - info: Render request 2 queued for execution and waiting for available worker rootId=k2oycbsdpr4u2cq, id=k2oycbsdpr4u2cq
+2024-01-18T14:32:13.997Z - info: Starting rendering request 2 rootId=k2oycbsdpr4u2cq, id=k2oycbsdpr4u2cq
+2024-01-18T14:32:13.999Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=k2oycbsdpr4u2cq, id=k2oycbsdpr4u2cq
+2024-01-18T14:32:14.333Z - warn: Error when processing render request 2
+(because) error when evaluating custom script /samples/Trabajo/orders-script
+Unexpected token '}'
+sandbox.js:46
+  options: {...}
+               ^
+
+SyntaxError: Unexpected token '}'
+    at new Script (node:vm:94:7)
+    at doCompileScript (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\worker\sandbox\createSandbox.js:154:10)
+    at run (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\worker\sandbox\createSandbox.js:135:74)
+    at WorkerReporter.runInSandbox [as _runInSandbox] (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\worker\sandbox\runInSandbox.js:195:20) rootId=k2oycbsdpr4u2cq, id=k2oycbsdpr4u2cq
+2024-01-18T14:32:14.338Z - warn: Rendering request 2 finished with error in 381 ms rootId=k2oycbsdpr4u2cq, id=k2oycbsdpr4u2cq
+2024-01-18T14:32:39.490Z - info: Render request 3 queued for execution and waiting for available worker rootId=cqynfmz6tjgs6g7, id=cqynfmz6tjgs6g7
+2024-01-18T14:32:39.524Z - info: Starting rendering request 3 rootId=cqynfmz6tjgs6g7, id=cqynfmz6tjgs6g7
+2024-01-18T14:32:39.526Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=cqynfmz6tjgs6g7, id=cqynfmz6tjgs6g7
+2024-01-18T14:32:39.602Z - warn: Error when processing render request 3
+(because) error when evaluating custom script /samples/Trabajo/orders-script
+Chart is not defined
+
+(sandbox.js line 37:1)
+
+  35 | const barColors = ["red", "green","blue","orange","brown"];
+  36 |
+> 37 | new Chart("myChart", {
+     | ^
+  38 |   type: "bar",
+  39 |   data: {
+  40 |     labels: xValues,
+
+
+ReferenceError: Chart is not defined
+    at sandbox.js:37:1 rootId=cqynfmz6tjgs6g7, id=cqynfmz6tjgs6g7
+2024-01-18T14:32:39.608Z - warn: Rendering request 3 finished with error in 114 ms rootId=cqynfmz6tjgs6g7, id=cqynfmz6tjgs6g7
+2024-01-18T14:34:00.159Z - info: Render request 4 queued for execution and waiting for available worker rootId=ikvj84topiduwa0, id=ikvj84topiduwa0
+2024-01-18T14:34:00.192Z - info: Starting rendering request 4 rootId=ikvj84topiduwa0, id=ikvj84topiduwa0
+2024-01-18T14:34:00.195Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=ikvj84topiduwa0, id=ikvj84topiduwa0
+2024-01-18T14:34:00.310Z - warn: Error when processing render request 4
+(because) error when evaluating custom script /samples/Trabajo/orders-script
+Chart is not defined
+
+(sandbox.js line 37:1)
+
+  35 | const barColors = ["red", "green","blue","orange","brown"];
+  36 |
+> 37 | new Chart("myChart", {
+     | ^
+  38 |   type: "bar",
+  39 |   data: {
+  40 |     labels: xValues,
+
+
+ReferenceError: Chart is not defined
+    at sandbox.js:37:1 rootId=ikvj84topiduwa0, id=ikvj84topiduwa0
+2024-01-18T14:34:00.316Z - warn: Rendering request 4 finished with error in 153 ms rootId=ikvj84topiduwa0, id=ikvj84topiduwa0
+2024-01-18T14:35:16.601Z - info: Render request 5 queued for execution and waiting for available worker rootId=ux0rnwtxjsriaw6, id=ux0rnwtxjsriaw6
+2024-01-18T14:35:16.631Z - info: Starting rendering request 5 rootId=ux0rnwtxjsriaw6, id=ux0rnwtxjsriaw6
+2024-01-18T14:35:16.632Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=ux0rnwtxjsriaw6, id=ux0rnwtxjsriaw6
+2024-01-18T14:35:17.290Z - info: pdf-utils is starting pdf processing rootId=ux0rnwtxjsriaw6, id=ux0rnwtxjsriaw6
+2024-01-18T14:35:17.296Z - info: Starting rendering (child) request rootId=ux0rnwtxjsriaw6, id=2c4csjhkiuhmkq9
+2024-01-18T14:35:17.296Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=ux0rnwtxjsriaw6, id=2c4csjhkiuhmkq9
+2024-01-18T14:35:17.663Z - info: Rendering (child) request finished in 993 ms rootId=ux0rnwtxjsriaw6, id=2c4csjhkiuhmkq9
+2024-01-18T14:35:17.667Z - info: pdf-utils pdf processing was finished rootId=ux0rnwtxjsriaw6, id=ux0rnwtxjsriaw6
+2024-01-18T14:35:17.669Z - info: Rendering request 5 finished in 1062 ms rootId=ux0rnwtxjsriaw6, id=ux0rnwtxjsriaw6
+2024-01-18T14:37:43.971Z - info: Render request 6 queued for execution and waiting for available worker rootId=cz37m8coyrlk2gt, id=cz37m8coyrlk2gt
+2024-01-18T14:37:43.998Z - info: Starting rendering request 6 rootId=cz37m8coyrlk2gt, id=cz37m8coyrlk2gt
+2024-01-18T14:37:44.000Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=cz37m8coyrlk2gt, id=cz37m8coyrlk2gt
+2024-01-18T14:37:46.728Z - info: pdf-utils is starting pdf processing rootId=cz37m8coyrlk2gt, id=cz37m8coyrlk2gt
+2024-01-18T14:37:46.746Z - info: Starting rendering (child) request rootId=cz37m8coyrlk2gt, id=1k83fpb8r2n1s9t
+2024-01-18T14:37:46.748Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=cz37m8coyrlk2gt, id=1k83fpb8r2n1s9t
+2024-01-18T14:37:47.119Z - info: Rendering (child) request finished in 3072 ms rootId=cz37m8coyrlk2gt, id=1k83fpb8r2n1s9t
+2024-01-18T14:37:47.123Z - info: pdf-utils pdf processing was finished rootId=cz37m8coyrlk2gt, id=cz37m8coyrlk2gt
+2024-01-18T14:37:47.125Z - info: Rendering request 6 finished in 3142 ms rootId=cz37m8coyrlk2gt, id=cz37m8coyrlk2gt
+2024-01-18T14:38:07.615Z - info: Render request 7 queued for execution and waiting for available worker rootId=e9i77b1um5abgsi, id=e9i77b1um5abgsi
+2024-01-18T14:38:07.647Z - info: Starting rendering request 7 rootId=e9i77b1um5abgsi, id=e9i77b1um5abgsi
+2024-01-18T14:38:07.649Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=e9i77b1um5abgsi, id=e9i77b1um5abgsi
+2024-01-18T14:38:08.237Z - info: pdf-utils is starting pdf processing rootId=e9i77b1um5abgsi, id=e9i77b1um5abgsi
+2024-01-18T14:38:08.258Z - info: Starting rendering (child) request rootId=e9i77b1um5abgsi, id=75nwtwz1yemstcb
+2024-01-18T14:38:08.260Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=e9i77b1um5abgsi, id=75nwtwz1yemstcb
+2024-01-18T14:38:08.596Z - info: Rendering (child) request finished in 932 ms rootId=e9i77b1um5abgsi, id=75nwtwz1yemstcb
+2024-01-18T14:38:08.599Z - info: pdf-utils pdf processing was finished rootId=e9i77b1um5abgsi, id=e9i77b1um5abgsi
+2024-01-18T14:38:08.602Z - info: Rendering request 7 finished in 980 ms rootId=e9i77b1um5abgsi, id=e9i77b1um5abgsi
+2024-01-18T14:40:40.452Z - info: Render request 8 queued for execution and waiting for available worker rootId=zryx3julfscvby9, id=zryx3julfscvby9
+2024-01-18T14:40:40.475Z - info: Starting rendering request 8 rootId=zryx3julfscvby9, id=zryx3julfscvby9
+2024-01-18T14:40:40.476Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=zryx3julfscvby9, id=zryx3julfscvby9
+2024-01-18T14:40:40.912Z - warn: Page error: transformedData is not defined , stack: ReferenceError: transformedData is not defined
+    at <anonymous> (file:///C:/Users/DANIEL~1/AppData/Local/Temp/jsreport/autocleanup/2eb2b85b-4350-4bcd-b766-ffb587318f2f-chrome-pdf.html:104:17) rootId=zryx3julfscvby9, id=zryx3julfscvby9
+2024-01-18T14:40:41.085Z - info: pdf-utils is starting pdf processing rootId=zryx3julfscvby9, id=zryx3julfscvby9
+2024-01-18T14:40:41.088Z - info: Starting rendering (child) request rootId=zryx3julfscvby9, id=5swpw26oamvxw8d
+2024-01-18T14:40:41.089Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=zryx3julfscvby9, id=5swpw26oamvxw8d
+2024-01-18T14:40:41.445Z - info: Rendering (child) request finished in 943 ms rootId=zryx3julfscvby9, id=5swpw26oamvxw8d
+2024-01-18T14:40:41.448Z - info: pdf-utils pdf processing was finished rootId=zryx3julfscvby9, id=zryx3julfscvby9
+2024-01-18T14:40:41.451Z - info: Rendering request 8 finished in 991 ms rootId=zryx3julfscvby9, id=zryx3julfscvby9
+2024-01-18T14:40:50.766Z - info: Render request 9 queued for execution and waiting for available worker rootId=c7ovb1szxr89zhq, id=c7ovb1szxr89zhq
+2024-01-18T14:40:50.800Z - info: Starting rendering request 9 rootId=c7ovb1szxr89zhq, id=c7ovb1szxr89zhq
+2024-01-18T14:40:50.801Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=c7ovb1szxr89zhq, id=c7ovb1szxr89zhq
+2024-01-18T14:40:51.166Z - warn: Page error: transformedData is not defined , stack: ReferenceError: transformedData is not defined
+    at <anonymous> (file:///C:/Users/DANIEL~1/AppData/Local/Temp/jsreport/autocleanup/0c3cd040-cc14-473e-aa67-33af817e8ffc-chrome-pdf.html:104:17) rootId=c7ovb1szxr89zhq, id=c7ovb1szxr89zhq
+2024-01-18T14:40:51.326Z - info: pdf-utils is starting pdf processing rootId=c7ovb1szxr89zhq, id=c7ovb1szxr89zhq
+2024-01-18T14:40:51.328Z - info: Starting rendering (child) request rootId=c7ovb1szxr89zhq, id=6we5lerxv65npcj
+2024-01-18T14:40:51.329Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=c7ovb1szxr89zhq, id=6we5lerxv65npcj
+2024-01-18T14:40:51.659Z - info: Rendering (child) request finished in 842 ms rootId=c7ovb1szxr89zhq, id=6we5lerxv65npcj
+2024-01-18T14:40:51.663Z - info: pdf-utils pdf processing was finished rootId=c7ovb1szxr89zhq, id=c7ovb1szxr89zhq
+2024-01-18T14:40:51.664Z - info: Rendering request 9 finished in 893 ms rootId=c7ovb1szxr89zhq, id=c7ovb1szxr89zhq
+2024-01-18T14:40:59.158Z - info: Render request 10 queued for execution and waiting for available worker rootId=ir6ujz67e5wngwl, id=ir6ujz67e5wngwl
+2024-01-18T14:40:59.181Z - info: Starting rendering request 10 rootId=ir6ujz67e5wngwl, id=ir6ujz67e5wngwl
+2024-01-18T14:40:59.183Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=ir6ujz67e5wngwl, id=ir6ujz67e5wngwl
+2024-01-18T14:40:59.778Z - info: pdf-utils is starting pdf processing rootId=ir6ujz67e5wngwl, id=ir6ujz67e5wngwl
+2024-01-18T14:40:59.783Z - info: Starting rendering (child) request rootId=ir6ujz67e5wngwl, id=9od2iuj4ig6wrc4
+2024-01-18T14:40:59.784Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=ir6ujz67e5wngwl, id=9od2iuj4ig6wrc4
+2024-01-18T14:41:00.130Z - info: Rendering (child) request finished in 921 ms rootId=ir6ujz67e5wngwl, id=9od2iuj4ig6wrc4
+2024-01-18T14:41:00.133Z - info: pdf-utils pdf processing was finished rootId=ir6ujz67e5wngwl, id=ir6ujz67e5wngwl
+2024-01-18T14:41:00.135Z - info: Rendering request 10 finished in 974 ms rootId=ir6ujz67e5wngwl, id=ir6ujz67e5wngwl
+2024-01-18T14:44:13.844Z - info: Render request 11 queued for execution and waiting for available worker rootId=4abhs7hrlp8qyyc, id=4abhs7hrlp8qyyc
+2024-01-18T14:44:13.873Z - info: Starting rendering request 11 rootId=4abhs7hrlp8qyyc, id=4abhs7hrlp8qyyc
+2024-01-18T14:44:13.875Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=4abhs7hrlp8qyyc, id=4abhs7hrlp8qyyc
+2024-01-18T14:44:14.233Z - warn: Page error: raceNames is not defined , stack: ReferenceError: raceNames is not defined
+    at <anonymous> (file:///C:/Users/DANIEL~1/AppData/Local/Temp/jsreport/autocleanup/81125afa-fcfa-4275-bcb5-267b6f878794-chrome-pdf.html:104:17) rootId=4abhs7hrlp8qyyc, id=4abhs7hrlp8qyyc
+2024-01-18T14:44:14.331Z - info: pdf-utils is starting pdf processing rootId=4abhs7hrlp8qyyc, id=4abhs7hrlp8qyyc
+2024-01-18T14:44:14.335Z - info: Starting rendering (child) request rootId=4abhs7hrlp8qyyc, id=j07z0iilugvtrfq
+2024-01-18T14:44:14.336Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=4abhs7hrlp8qyyc, id=j07z0iilugvtrfq
+2024-01-18T14:44:14.659Z - info: Rendering (child) request finished in 775 ms rootId=4abhs7hrlp8qyyc, id=j07z0iilugvtrfq
+2024-01-18T14:44:14.663Z - info: pdf-utils pdf processing was finished rootId=4abhs7hrlp8qyyc, id=4abhs7hrlp8qyyc
+2024-01-18T14:44:14.665Z - info: Rendering request 11 finished in 814 ms rootId=4abhs7hrlp8qyyc, id=4abhs7hrlp8qyyc
+2024-01-18T14:46:43.488Z - info: Render request 12 queued for execution and waiting for available worker rootId=49fnrxspv3jyszx, id=49fnrxspv3jyszx
+2024-01-18T14:46:43.517Z - info: Starting rendering request 12 rootId=49fnrxspv3jyszx, id=49fnrxspv3jyszx
+2024-01-18T14:46:43.518Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=49fnrxspv3jyszx, id=49fnrxspv3jyszx
+2024-01-18T14:46:43.886Z - warn: Page error: raceNames is not defined , stack: ReferenceError: raceNames is not defined
+    at <anonymous> (file:///C:/Users/DANIEL~1/AppData/Local/Temp/jsreport/autocleanup/725c0c0d-fce3-47e6-8f70-178d1aa5862c-chrome-pdf.html:104:17) rootId=49fnrxspv3jyszx, id=49fnrxspv3jyszx
+2024-01-18T14:46:44.004Z - info: pdf-utils is starting pdf processing rootId=49fnrxspv3jyszx, id=49fnrxspv3jyszx
+2024-01-18T14:46:44.020Z - info: Starting rendering (child) request rootId=49fnrxspv3jyszx, id=lzqr5xu8p9g7tas
+2024-01-18T14:46:44.022Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=49fnrxspv3jyszx, id=lzqr5xu8p9g7tas
+2024-01-18T14:46:44.374Z - info: Rendering (child) request finished in 839 ms rootId=49fnrxspv3jyszx, id=lzqr5xu8p9g7tas
+2024-01-18T14:46:44.377Z - info: pdf-utils pdf processing was finished rootId=49fnrxspv3jyszx, id=49fnrxspv3jyszx
+2024-01-18T14:46:44.379Z - info: Rendering request 12 finished in 887 ms rootId=49fnrxspv3jyszx, id=49fnrxspv3jyszx
+2024-01-18T14:49:49.970Z - info: Render request 13 queued for execution and waiting for available worker rootId=vm9pdkhaw417wiy, id=vm9pdkhaw417wiy
+2024-01-18T14:49:50.000Z - info: Starting rendering request 13 rootId=vm9pdkhaw417wiy, id=vm9pdkhaw417wiy
+2024-01-18T14:49:50.002Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=vm9pdkhaw417wiy, id=vm9pdkhaw417wiy
+2024-01-18T14:49:50.375Z - warn: Page error: Unexpected token ';' , stack: SyntaxError: Unexpected token ';' rootId=vm9pdkhaw417wiy, id=vm9pdkhaw417wiy
+2024-01-18T14:49:50.543Z - info: pdf-utils is starting pdf processing rootId=vm9pdkhaw417wiy, id=vm9pdkhaw417wiy
+2024-01-18T14:49:50.547Z - info: Starting rendering (child) request rootId=vm9pdkhaw417wiy, id=u56bi4opcfmq69i
+2024-01-18T14:49:50.548Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=vm9pdkhaw417wiy, id=u56bi4opcfmq69i
+2024-01-18T14:49:50.880Z - info: Rendering (child) request finished in 866 ms rootId=vm9pdkhaw417wiy, id=u56bi4opcfmq69i
+2024-01-18T14:49:50.883Z - info: pdf-utils pdf processing was finished rootId=vm9pdkhaw417wiy, id=vm9pdkhaw417wiy
+2024-01-18T14:49:50.886Z - info: Rendering request 13 finished in 911 ms rootId=vm9pdkhaw417wiy, id=vm9pdkhaw417wiy
+2024-01-18T14:50:28.960Z - info: Render request 14 queued for execution and waiting for available worker rootId=0oga7bvh9n2l345, id=0oga7bvh9n2l345
+2024-01-18T14:50:28.985Z - info: Starting rendering request 14 rootId=0oga7bvh9n2l345, id=0oga7bvh9n2l345
+2024-01-18T14:50:28.986Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=0oga7bvh9n2l345, id=0oga7bvh9n2l345
+2024-01-18T14:50:29.360Z - warn: Page error: Unexpected token ';' , stack: SyntaxError: Unexpected token ';' rootId=0oga7bvh9n2l345, id=0oga7bvh9n2l345
+2024-01-18T14:50:29.469Z - info: pdf-utils is starting pdf processing rootId=0oga7bvh9n2l345, id=0oga7bvh9n2l345
+2024-01-18T14:50:29.484Z - info: Starting rendering (child) request rootId=0oga7bvh9n2l345, id=cszgkoczyrgklan
+2024-01-18T14:50:29.486Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=0oga7bvh9n2l345, id=cszgkoczyrgklan
+2024-01-18T14:50:29.814Z - info: Rendering (child) request finished in 811 ms rootId=0oga7bvh9n2l345, id=cszgkoczyrgklan
+2024-01-18T14:50:29.818Z - info: pdf-utils pdf processing was finished rootId=0oga7bvh9n2l345, id=0oga7bvh9n2l345
+2024-01-18T14:50:29.820Z - info: Rendering request 14 finished in 849 ms rootId=0oga7bvh9n2l345, id=0oga7bvh9n2l345
+2024-01-18T14:52:31.224Z - info: Render request 15 queued for execution and waiting for available worker rootId=jkwdn8tmifro62q, id=jkwdn8tmifro62q
+2024-01-18T14:52:31.249Z - info: Starting rendering request 15 rootId=jkwdn8tmifro62q, id=jkwdn8tmifro62q
+2024-01-18T14:52:31.251Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=jkwdn8tmifro62q, id=jkwdn8tmifro62q
+2024-01-18T14:52:31.611Z - warn: Page error: Unexpected token ';' , stack: SyntaxError: Unexpected token ';' rootId=jkwdn8tmifro62q, id=jkwdn8tmifro62q
+2024-01-18T14:52:31.718Z - info: pdf-utils is starting pdf processing rootId=jkwdn8tmifro62q, id=jkwdn8tmifro62q
+2024-01-18T14:52:31.731Z - info: Starting rendering (child) request rootId=jkwdn8tmifro62q, id=kyjwiwpx47ftoo8
+2024-01-18T14:52:31.732Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=jkwdn8tmifro62q, id=kyjwiwpx47ftoo8
+2024-01-18T14:52:32.051Z - info: Rendering (child) request finished in 788 ms rootId=jkwdn8tmifro62q, id=kyjwiwpx47ftoo8
+2024-01-18T14:52:32.055Z - info: pdf-utils pdf processing was finished rootId=jkwdn8tmifro62q, id=jkwdn8tmifro62q
+2024-01-18T14:52:32.057Z - info: Rendering request 15 finished in 826 ms rootId=jkwdn8tmifro62q, id=jkwdn8tmifro62q
+2024-01-18T14:56:04.938Z - info: Render request 16 queued for execution and waiting for available worker rootId=k9hjcrk5mn8oofd, id=k9hjcrk5mn8oofd
+2024-01-18T14:56:04.965Z - info: Starting rendering request 16 rootId=k9hjcrk5mn8oofd, id=k9hjcrk5mn8oofd
+2024-01-18T14:56:04.967Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=k9hjcrk5mn8oofd, id=k9hjcrk5mn8oofd
+2024-01-18T14:56:05.331Z - warn: Page error: barColors is not defined , stack: ReferenceError: barColors is not defined
+    at <anonymous> (file:///C:/Users/DANIEL~1/AppData/Local/Temp/jsreport/autocleanup/cb58504c-be0f-4257-a233-b3bcede10985-chrome-pdf.html:110:24) rootId=k9hjcrk5mn8oofd, id=k9hjcrk5mn8oofd
+2024-01-18T14:56:05.482Z - info: pdf-utils is starting pdf processing rootId=k9hjcrk5mn8oofd, id=k9hjcrk5mn8oofd
+2024-01-18T14:56:05.487Z - info: Starting rendering (child) request rootId=k9hjcrk5mn8oofd, id=9dl6y1bmkf9b01q
+2024-01-18T14:56:05.488Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=k9hjcrk5mn8oofd, id=9dl6y1bmkf9b01q
+2024-01-18T14:56:05.857Z - info: Rendering (child) request finished in 864 ms rootId=k9hjcrk5mn8oofd, id=9dl6y1bmkf9b01q
+2024-01-18T14:56:05.861Z - info: pdf-utils pdf processing was finished rootId=k9hjcrk5mn8oofd, id=k9hjcrk5mn8oofd
+2024-01-18T14:56:05.862Z - info: Rendering request 16 finished in 920 ms rootId=k9hjcrk5mn8oofd, id=k9hjcrk5mn8oofd
+2024-01-18T14:56:29.070Z - info: Render request 17 queued for execution and waiting for available worker rootId=dob3t9eid3fdk6x, id=dob3t9eid3fdk6x
+2024-01-18T14:56:29.097Z - info: Starting rendering request 17 rootId=dob3t9eid3fdk6x, id=dob3t9eid3fdk6x
+2024-01-18T14:56:29.098Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=dob3t9eid3fdk6x, id=dob3t9eid3fdk6x
+2024-01-18T14:56:29.494Z - warn: Page error: barColors is not defined , stack: ReferenceError: barColors is not defined
+    at <anonymous> (file:///C:/Users/DANIEL~1/AppData/Local/Temp/jsreport/autocleanup/34d54602-ba09-45d9-9e87-d66b3010733f-chrome-pdf.html:22:24) rootId=dob3t9eid3fdk6x, id=dob3t9eid3fdk6x
+2024-01-18T14:56:29.545Z - info: pdf-utils is starting pdf processing rootId=dob3t9eid3fdk6x, id=dob3t9eid3fdk6x
+2024-01-18T14:56:29.551Z - info: Starting rendering (child) request rootId=dob3t9eid3fdk6x, id=tb3k60katl9mp5w
+2024-01-18T14:56:29.552Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=dob3t9eid3fdk6x, id=tb3k60katl9mp5w
+2024-01-18T14:56:29.828Z - info: Rendering (child) request finished in 725 ms rootId=dob3t9eid3fdk6x, id=tb3k60katl9mp5w
+2024-01-18T14:56:29.831Z - info: pdf-utils pdf processing was finished rootId=dob3t9eid3fdk6x, id=dob3t9eid3fdk6x
+2024-01-18T14:56:29.834Z - info: Rendering request 17 finished in 749 ms rootId=dob3t9eid3fdk6x, id=dob3t9eid3fdk6x
+2024-01-18T14:56:58.318Z - info: Render request 18 queued for execution and waiting for available worker rootId=lf2n240pz1iphly, id=lf2n240pz1iphly
+2024-01-18T14:56:58.349Z - info: Starting rendering request 18 rootId=lf2n240pz1iphly, id=lf2n240pz1iphly
+2024-01-18T14:56:58.350Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=lf2n240pz1iphly, id=lf2n240pz1iphly
+2024-01-18T14:56:58.919Z - info: pdf-utils is starting pdf processing rootId=lf2n240pz1iphly, id=lf2n240pz1iphly
+2024-01-18T14:56:58.923Z - info: Starting rendering (child) request rootId=lf2n240pz1iphly, id=9kshhbunflk4pls
+2024-01-18T14:56:58.925Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=lf2n240pz1iphly, id=9kshhbunflk4pls
+2024-01-18T14:56:59.304Z - info: Rendering (child) request finished in 939 ms rootId=lf2n240pz1iphly, id=9kshhbunflk4pls
+2024-01-18T14:56:59.308Z - info: pdf-utils pdf processing was finished rootId=lf2n240pz1iphly, id=lf2n240pz1iphly
+2024-01-18T14:56:59.311Z - info: Rendering request 18 finished in 986 ms rootId=lf2n240pz1iphly, id=lf2n240pz1iphly
+2024-01-18T14:57:43.923Z - info: Render request 19 queued for execution and waiting for available worker rootId=wjji86fbatvdyh3, id=wjji86fbatvdyh3
+2024-01-18T14:57:43.942Z - info: Starting rendering request 19 rootId=wjji86fbatvdyh3, id=wjji86fbatvdyh3
+2024-01-18T14:57:43.943Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=wjji86fbatvdyh3, id=wjji86fbatvdyh3
+2024-01-18T14:57:44.375Z - warn: Page error: Unexpected token ';' , stack: SyntaxError: Unexpected token ';' rootId=wjji86fbatvdyh3, id=wjji86fbatvdyh3
+2024-01-18T14:57:44.461Z - info: pdf-utils is starting pdf processing rootId=wjji86fbatvdyh3, id=wjji86fbatvdyh3
+2024-01-18T14:57:44.466Z - info: Starting rendering (child) request rootId=wjji86fbatvdyh3, id=e0ljfy86pn7zxxv
+2024-01-18T14:57:44.467Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=wjji86fbatvdyh3, id=e0ljfy86pn7zxxv
+2024-01-18T14:57:44.799Z - info: Rendering (child) request finished in 839 ms rootId=wjji86fbatvdyh3, id=e0ljfy86pn7zxxv
+2024-01-18T14:57:44.802Z - info: pdf-utils pdf processing was finished rootId=wjji86fbatvdyh3, id=wjji86fbatvdyh3
+2024-01-18T14:57:44.804Z - info: Rendering request 19 finished in 875 ms rootId=wjji86fbatvdyh3, id=wjji86fbatvdyh3
+2024-01-18T14:58:43.426Z - info: Render request 20 queued for execution and waiting for available worker rootId=nhuk69epf6u9vcv, id=nhuk69epf6u9vcv
+2024-01-18T14:58:43.453Z - info: Starting rendering request 20 rootId=nhuk69epf6u9vcv, id=nhuk69epf6u9vcv
+2024-01-18T14:58:43.454Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=nhuk69epf6u9vcv, id=nhuk69epf6u9vcv
+2024-01-18T14:58:43.767Z - warn: Page error: Unexpected token ';' , stack: SyntaxError: Unexpected token ';' rootId=nhuk69epf6u9vcv, id=nhuk69epf6u9vcv
+2024-01-18T14:58:43.898Z - info: pdf-utils is starting pdf processing rootId=nhuk69epf6u9vcv, id=nhuk69epf6u9vcv
+2024-01-18T14:58:43.902Z - info: Starting rendering (child) request rootId=nhuk69epf6u9vcv, id=ndu569tgkkfs22d
+2024-01-18T14:58:43.903Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=nhuk69epf6u9vcv, id=ndu569tgkkfs22d
+2024-01-18T14:58:44.211Z - info: Rendering (child) request finished in 745 ms rootId=nhuk69epf6u9vcv, id=ndu569tgkkfs22d
+2024-01-18T14:58:44.214Z - info: pdf-utils pdf processing was finished rootId=nhuk69epf6u9vcv, id=nhuk69epf6u9vcv
+2024-01-18T14:58:44.215Z - info: Rendering request 20 finished in 784 ms rootId=nhuk69epf6u9vcv, id=nhuk69epf6u9vcv
+2024-01-18T15:00:31.393Z - info: Render request 21 queued for execution and waiting for available worker rootId=zto3nik8q5x8bwg, id=zto3nik8q5x8bwg
+2024-01-18T15:00:31.419Z - info: Starting rendering request 21 rootId=zto3nik8q5x8bwg, id=zto3nik8q5x8bwg
+2024-01-18T15:00:31.421Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=zto3nik8q5x8bwg, id=zto3nik8q5x8bwg
+2024-01-18T15:00:31.506Z - warn: Error when processing render request 21
+(because) error when evaluating engine handlebars for template /samples/Trabajo/orders-main
+(because) "pdfCreatePagesGroup" helper call failed
+(because) "pdfCreatePagesGroup" was called with undefined parameter. One parameter was expected.
+Error: "pdfCreatePagesGroup" helper call failed
+(because) "pdfCreatePagesGroup" was called with undefined parameter. One parameter was expected.
+    at module.exports (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\shared\createError.js:10:13)
+    at WorkerReporter.createError (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\shared\reporter.js:49:12)
+    at getEnhancedHelperError (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\worker\render\executeEngine.js:364:54)
+    at Array.<anonymous> (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\worker\render\executeEngine.js:370:15)
+    at Array.<anonymous> (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\worker\render\executeEngine.js:347:27)
+    at Array.wrapper (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\handlebars\dist\cjs\handlebars\internal\wrapHelper.js:15:19)
+    at 1 (eval at compile (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-handlebars\lib\handlebarsEngine.js:35:30), <anonymous>:14:155)
+    at prog (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\handlebars\dist\cjs\handlebars\runtime.js:268:12)
+    at execIteration (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\handlebars\dist\cjs\handlebars\helpers\each.js:51:19)
+    at C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\handlebars\dist\cjs\handlebars\helpers\each.js:83:15
+wrapped by:
+Error: Error when evaluating engine handlebars for template /samples/Trabajo/orders-main
+(because) "pdfCreatePagesGroup" helper call failed
+(because) "pdfCreatePagesGroup" was called with undefined parameter. One parameter was expected.
+    at module.exports (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\shared\createError.js:10:13)
+    at WorkerReporter.createError (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\shared\reporter.js:49:12)
+    at executeEngine (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\worker\render\executeEngine.js:310:33)
+    at async engine.engine (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\worker\render\executeEngine.js:115:14)
+    at async invokeRender (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\worker\render\render.js:61:23)
+    at async WorkerReporter._render (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\worker\render\render.js:142:7)
+    at async C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\worker\reporter.js:224:19
+    at async processAndResponse (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\advanced-workers\lib\workerHandler.js:41:17) rootId=zto3nik8q5x8bwg, id=zto3nik8q5x8bwg
+2024-01-18T15:00:31.516Z - warn: Rendering request 21 finished with error in 115 ms rootId=zto3nik8q5x8bwg, id=zto3nik8q5x8bwg
+2024-01-18T15:03:02.125Z - info: Render request 22 queued for execution and waiting for available worker rootId=d0otc1vw980u0y0, id=d0otc1vw980u0y0
+2024-01-18T15:03:02.152Z - info: Starting rendering request 22 rootId=d0otc1vw980u0y0, id=d0otc1vw980u0y0
+2024-01-18T15:03:02.153Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=d0otc1vw980u0y0, id=d0otc1vw980u0y0
+2024-01-18T15:03:02.505Z - warn: Page error: Unexpected token ';' , stack: SyntaxError: Unexpected token ';' rootId=d0otc1vw980u0y0, id=d0otc1vw980u0y0
+2024-01-18T15:03:02.507Z - info: pdf-utils is starting pdf processing rootId=d0otc1vw980u0y0, id=d0otc1vw980u0y0
+2024-01-18T15:03:02.510Z - info: Starting rendering (child) request rootId=d0otc1vw980u0y0, id=gfl154q6xklivr5
+2024-01-18T15:03:02.510Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=d0otc1vw980u0y0, id=gfl154q6xklivr5
+2024-01-18T15:03:02.801Z - info: Rendering (child) request finished in 660 ms rootId=d0otc1vw980u0y0, id=gfl154q6xklivr5
+2024-01-18T15:03:02.804Z - info: pdf-utils pdf processing was finished rootId=d0otc1vw980u0y0, id=d0otc1vw980u0y0
+2024-01-18T15:03:02.806Z - info: Rendering request 22 finished in 675 ms rootId=d0otc1vw980u0y0, id=d0otc1vw980u0y0
+2024-01-18T15:03:58.905Z - info: Render request 23 queued for execution and waiting for available worker rootId=fjj0aeu0ywqvbpo, id=fjj0aeu0ywqvbpo
+2024-01-18T15:03:58.930Z - info: Starting rendering request 23 rootId=fjj0aeu0ywqvbpo, id=fjj0aeu0ywqvbpo
+2024-01-18T15:03:58.932Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=fjj0aeu0ywqvbpo, id=fjj0aeu0ywqvbpo
+2024-01-18T15:03:59.295Z - warn: Page error: Unexpected token ';' , stack: SyntaxError: Unexpected token ';' rootId=fjj0aeu0ywqvbpo, id=fjj0aeu0ywqvbpo
+2024-01-18T15:03:59.391Z - info: pdf-utils is starting pdf processing rootId=fjj0aeu0ywqvbpo, id=fjj0aeu0ywqvbpo
+2024-01-18T15:03:59.396Z - info: Starting rendering (child) request rootId=fjj0aeu0ywqvbpo, id=mkzb4s9zoe0z1dq
+2024-01-18T15:03:59.397Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=fjj0aeu0ywqvbpo, id=mkzb4s9zoe0z1dq
+2024-01-18T15:03:59.724Z - info: Rendering (child) request finished in 789 ms rootId=fjj0aeu0ywqvbpo, id=mkzb4s9zoe0z1dq
+2024-01-18T15:03:59.726Z - info: pdf-utils pdf processing was finished rootId=fjj0aeu0ywqvbpo, id=fjj0aeu0ywqvbpo
+2024-01-18T15:03:59.728Z - info: Rendering request 23 finished in 819 ms rootId=fjj0aeu0ywqvbpo, id=fjj0aeu0ywqvbpo
+2024-01-18T15:04:09.206Z - info: Render request 24 queued for execution and waiting for available worker rootId=oifts27512545tv, id=oifts27512545tv
+2024-01-18T15:04:09.243Z - info: Starting rendering request 24 rootId=oifts27512545tv, id=oifts27512545tv
+2024-01-18T15:04:09.245Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=oifts27512545tv, id=oifts27512545tv
+2024-01-18T15:04:09.348Z - warn: Error when processing render request 24
+(because) error when evaluating engine handlebars for template /samples/Trabajo/orders-main
+(because) "pdfCreatePagesGroup" helper call failed
+(because) "pdfCreatePagesGroup" was called with undefined parameter. One parameter was expected.
+Error: "pdfCreatePagesGroup" helper call failed
+(because) "pdfCreatePagesGroup" was called with undefined parameter. One parameter was expected.
+    at module.exports (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\shared\createError.js:10:13)
+    at WorkerReporter.createError (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\shared\reporter.js:49:12)
+    at getEnhancedHelperError (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\worker\render\executeEngine.js:364:54)
+    at Array.<anonymous> (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\worker\render\executeEngine.js:370:15)
+    at Array.<anonymous> (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\worker\render\executeEngine.js:347:27)
+    at Array.wrapper (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\handlebars\dist\cjs\handlebars\internal\wrapHelper.js:15:19)
+    at 1 (eval at compile (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-handlebars\lib\handlebarsEngine.js:35:30), <anonymous>:14:155)
+    at prog (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\handlebars\dist\cjs\handlebars\runtime.js:268:12)
+    at execIteration (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\handlebars\dist\cjs\handlebars\helpers\each.js:51:19)
+    at C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\handlebars\dist\cjs\handlebars\helpers\each.js:83:15
+wrapped by:
+Error: Error when evaluating engine handlebars for template /samples/Trabajo/orders-main
+(because) "pdfCreatePagesGroup" helper call failed
+(because) "pdfCreatePagesGroup" was called with undefined parameter. One parameter was expected.
+    at module.exports (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\shared\createError.js:10:13)
+    at WorkerReporter.createError (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\shared\reporter.js:49:12)
+    at executeEngine (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\worker\render\executeEngine.js:310:33)
+    at async engine.engine (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\worker\render\executeEngine.js:115:14)
+    at async invokeRender (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\worker\render\render.js:61:23)
+    at async WorkerReporter._render (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\worker\render\render.js:142:7)
+    at async C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\worker\reporter.js:224:19
+    at async processAndResponse (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\advanced-workers\lib\workerHandler.js:41:17) rootId=oifts27512545tv, id=oifts27512545tv
+2024-01-18T15:04:09.358Z - warn: Rendering request 24 finished with error in 144 ms rootId=oifts27512545tv, id=oifts27512545tv
+2024-01-18T15:04:36.242Z - info: Render request 25 queued for execution and waiting for available worker rootId=ldor2hzhzt76gf9, id=ldor2hzhzt76gf9
+2024-01-18T15:04:36.268Z - info: Starting rendering request 25 rootId=ldor2hzhzt76gf9, id=ldor2hzhzt76gf9
+2024-01-18T15:04:36.269Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=ldor2hzhzt76gf9, id=ldor2hzhzt76gf9
+2024-01-18T15:04:36.552Z - warn: Page error: Unexpected token ';' , stack: SyntaxError: Unexpected token ';' rootId=ldor2hzhzt76gf9, id=ldor2hzhzt76gf9
+2024-01-18T15:04:36.570Z - info: pdf-utils is starting pdf processing rootId=ldor2hzhzt76gf9, id=ldor2hzhzt76gf9
+2024-01-18T15:04:36.575Z - info: Starting rendering (child) request rootId=ldor2hzhzt76gf9, id=ryxocddp608ifj1
+2024-01-18T15:04:36.578Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=ldor2hzhzt76gf9, id=ryxocddp608ifj1
+2024-01-18T15:04:36.879Z - info: Rendering (child) request finished in 620 ms rootId=ldor2hzhzt76gf9, id=ryxocddp608ifj1
+2024-01-18T15:04:36.883Z - info: pdf-utils pdf processing was finished rootId=ldor2hzhzt76gf9, id=ldor2hzhzt76gf9
+2024-01-18T15:04:36.886Z - info: Rendering request 25 finished in 636 ms rootId=ldor2hzhzt76gf9, id=ldor2hzhzt76gf9
+2024-01-18T15:04:45.157Z - info: Render request 26 queued for execution and waiting for available worker rootId=scowxm8cxu4s7ef, id=scowxm8cxu4s7ef
+2024-01-18T15:04:45.184Z - info: Starting rendering request 26 rootId=scowxm8cxu4s7ef, id=scowxm8cxu4s7ef
+2024-01-18T15:04:45.186Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=scowxm8cxu4s7ef, id=scowxm8cxu4s7ef
+2024-01-18T15:04:45.512Z - warn: Page error: Unexpected token ';' , stack: SyntaxError: Unexpected token ';' rootId=scowxm8cxu4s7ef, id=scowxm8cxu4s7ef
+2024-01-18T15:04:45.515Z - info: pdf-utils is starting pdf processing rootId=scowxm8cxu4s7ef, id=scowxm8cxu4s7ef
+2024-01-18T15:04:45.517Z - info: Starting rendering (child) request rootId=scowxm8cxu4s7ef, id=0dggzmynmxo9tnw
+2024-01-18T15:04:45.518Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=scowxm8cxu4s7ef, id=0dggzmynmxo9tnw
+2024-01-18T15:04:45.810Z - info: Rendering (child) request finished in 634 ms rootId=scowxm8cxu4s7ef, id=0dggzmynmxo9tnw
+2024-01-18T15:04:45.815Z - info: pdf-utils pdf processing was finished rootId=scowxm8cxu4s7ef, id=scowxm8cxu4s7ef
+2024-01-18T15:04:45.816Z - info: Rendering request 26 finished in 654 ms rootId=scowxm8cxu4s7ef, id=scowxm8cxu4s7ef
+2024-01-18T15:05:23.072Z - info: Render request 27 queued for execution and waiting for available worker rootId=2ino87he5z7yijc, id=2ino87he5z7yijc
+2024-01-18T15:05:23.094Z - info: Starting rendering request 27 rootId=2ino87he5z7yijc, id=2ino87he5z7yijc
+2024-01-18T15:05:23.097Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=2ino87he5z7yijc, id=2ino87he5z7yijc
+2024-01-18T15:05:23.427Z - warn: Page error: Unexpected token ';' , stack: SyntaxError: Unexpected token ';' rootId=2ino87he5z7yijc, id=2ino87he5z7yijc
+2024-01-18T15:05:23.454Z - info: pdf-utils is starting pdf processing rootId=2ino87he5z7yijc, id=2ino87he5z7yijc
+2024-01-18T15:05:23.458Z - info: Starting rendering (child) request rootId=2ino87he5z7yijc, id=oyqdyiepwsadao2
+2024-01-18T15:05:23.459Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=2ino87he5z7yijc, id=oyqdyiepwsadao2
+2024-01-18T15:05:23.767Z - info: Rendering (child) request finished in 669 ms rootId=2ino87he5z7yijc, id=oyqdyiepwsadao2
+2024-01-18T15:05:23.771Z - info: pdf-utils pdf processing was finished rootId=2ino87he5z7yijc, id=2ino87he5z7yijc
+2024-01-18T15:05:23.773Z - info: Rendering request 27 finished in 695 ms rootId=2ino87he5z7yijc, id=2ino87he5z7yijc
+2024-01-18T15:06:02.370Z - info: Render request 28 queued for execution and waiting for available worker rootId=ji9twad4v8rpiz1, id=ji9twad4v8rpiz1
+2024-01-18T15:06:02.399Z - info: Starting rendering request 28 rootId=ji9twad4v8rpiz1, id=ji9twad4v8rpiz1
+2024-01-18T15:06:02.400Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=ji9twad4v8rpiz1, id=ji9twad4v8rpiz1
+2024-01-18T15:06:02.762Z - warn: Page error: Unexpected token ';' , stack: SyntaxError: Unexpected token ';' rootId=ji9twad4v8rpiz1, id=ji9twad4v8rpiz1
+2024-01-18T15:06:02.953Z - info: pdf-utils is starting pdf processing rootId=ji9twad4v8rpiz1, id=ji9twad4v8rpiz1
+2024-01-18T15:06:02.955Z - info: Starting rendering (child) request rootId=ji9twad4v8rpiz1, id=sxfp45qpjcn6fmx
+2024-01-18T15:06:02.956Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=ji9twad4v8rpiz1, id=sxfp45qpjcn6fmx
+2024-01-18T15:06:03.266Z - info: Rendering (child) request finished in 850 ms rootId=ji9twad4v8rpiz1, id=sxfp45qpjcn6fmx
+2024-01-18T15:06:03.268Z - info: pdf-utils pdf processing was finished rootId=ji9twad4v8rpiz1, id=ji9twad4v8rpiz1
+2024-01-18T15:06:03.270Z - info: Rendering request 28 finished in 896 ms rootId=ji9twad4v8rpiz1, id=ji9twad4v8rpiz1
+2024-01-18T15:06:17.892Z - info: Render request 29 queued for execution and waiting for available worker rootId=0muggv88ia7tzaa, id=0muggv88ia7tzaa
+2024-01-18T15:06:17.914Z - info: Starting rendering request 29 rootId=0muggv88ia7tzaa, id=0muggv88ia7tzaa
+2024-01-18T15:06:17.914Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=0muggv88ia7tzaa, id=0muggv88ia7tzaa
+2024-01-18T15:06:18.224Z - warn: Page error: Missing initializer in const declaration , stack: SyntaxError: Missing initializer in const declaration rootId=0muggv88ia7tzaa, id=0muggv88ia7tzaa
+2024-01-18T15:06:18.407Z - info: pdf-utils is starting pdf processing rootId=0muggv88ia7tzaa, id=0muggv88ia7tzaa
+2024-01-18T15:06:18.410Z - info: Starting rendering (child) request rootId=0muggv88ia7tzaa, id=21rmlycb5g1sqek
+2024-01-18T15:06:18.411Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=0muggv88ia7tzaa, id=21rmlycb5g1sqek
+2024-01-18T15:06:18.739Z - info: Rendering (child) request finished in 796 ms rootId=0muggv88ia7tzaa, id=21rmlycb5g1sqek
+2024-01-18T15:06:18.741Z - info: pdf-utils pdf processing was finished rootId=0muggv88ia7tzaa, id=0muggv88ia7tzaa
+2024-01-18T15:06:18.743Z - info: Rendering request 29 finished in 845 ms rootId=0muggv88ia7tzaa, id=0muggv88ia7tzaa
+2024-01-18T15:06:20.352Z - info: Render request 30 queued for execution and waiting for available worker rootId=wgj5nek8s4959ix, id=wgj5nek8s4959ix
+2024-01-18T15:06:20.369Z - info: Starting rendering request 30 rootId=wgj5nek8s4959ix, id=wgj5nek8s4959ix
+2024-01-18T15:06:20.370Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=wgj5nek8s4959ix, id=wgj5nek8s4959ix
+2024-01-18T15:06:20.794Z - warn: Page error: Missing initializer in const declaration , stack: SyntaxError: Missing initializer in const declaration rootId=wgj5nek8s4959ix, id=wgj5nek8s4959ix
+2024-01-18T15:06:20.892Z - info: pdf-utils is starting pdf processing rootId=wgj5nek8s4959ix, id=wgj5nek8s4959ix
+2024-01-18T15:06:20.895Z - info: Starting rendering (child) request rootId=wgj5nek8s4959ix, id=mnn71unjj96xzrk
+2024-01-18T15:06:20.896Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=wgj5nek8s4959ix, id=mnn71unjj96xzrk
+2024-01-18T15:06:21.260Z - info: Rendering (child) request finished in 863 ms rootId=wgj5nek8s4959ix, id=mnn71unjj96xzrk
+2024-01-18T15:06:21.264Z - info: pdf-utils pdf processing was finished rootId=wgj5nek8s4959ix, id=wgj5nek8s4959ix
+2024-01-18T15:06:21.265Z - info: Rendering request 30 finished in 911 ms rootId=wgj5nek8s4959ix, id=wgj5nek8s4959ix
+2024-01-18T15:07:14.463Z - info: Render request 31 queued for execution and waiting for available worker rootId=b1lrhwe6f4n9dx7, id=b1lrhwe6f4n9dx7
+2024-01-18T15:07:14.489Z - info: Starting rendering request 31 rootId=b1lrhwe6f4n9dx7, id=b1lrhwe6f4n9dx7
+2024-01-18T15:07:14.490Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=b1lrhwe6f4n9dx7, id=b1lrhwe6f4n9dx7
+2024-01-18T15:07:14.864Z - warn: Page error: Unexpected token ';' , stack: SyntaxError: Unexpected token ';' rootId=b1lrhwe6f4n9dx7, id=b1lrhwe6f4n9dx7
+2024-01-18T15:07:14.961Z - info: pdf-utils is starting pdf processing rootId=b1lrhwe6f4n9dx7, id=b1lrhwe6f4n9dx7
+2024-01-18T15:07:14.964Z - info: Starting rendering (child) request rootId=b1lrhwe6f4n9dx7, id=q39sgq3nyz2bjnl
+2024-01-18T15:07:14.964Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=b1lrhwe6f4n9dx7, id=q39sgq3nyz2bjnl
+2024-01-18T15:07:15.299Z - info: Rendering (child) request finished in 794 ms rootId=b1lrhwe6f4n9dx7, id=q39sgq3nyz2bjnl
+2024-01-18T15:07:15.303Z - info: pdf-utils pdf processing was finished rootId=b1lrhwe6f4n9dx7, id=b1lrhwe6f4n9dx7
+2024-01-18T15:07:15.305Z - info: Rendering request 31 finished in 835 ms rootId=b1lrhwe6f4n9dx7, id=b1lrhwe6f4n9dx7
+2024-01-18T15:07:57.931Z - info: Render request 32 queued for execution and waiting for available worker rootId=xgeo1nmay1m63nt, id=xgeo1nmay1m63nt
+2024-01-18T15:07:57.955Z - info: Starting rendering request 32 rootId=xgeo1nmay1m63nt, id=xgeo1nmay1m63nt
+2024-01-18T15:07:57.956Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=xgeo1nmay1m63nt, id=xgeo1nmay1m63nt
+2024-01-18T15:07:58.264Z - warn: Page error: Unexpected token ';' , stack: SyntaxError: Unexpected token ';' rootId=xgeo1nmay1m63nt, id=xgeo1nmay1m63nt
+2024-01-18T15:07:58.456Z - info: pdf-utils is starting pdf processing rootId=xgeo1nmay1m63nt, id=xgeo1nmay1m63nt
+2024-01-18T15:07:58.461Z - info: Starting rendering (child) request rootId=xgeo1nmay1m63nt, id=f4pgcnzknzb67cm
+2024-01-18T15:07:58.463Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=xgeo1nmay1m63nt, id=f4pgcnzknzb67cm
+2024-01-18T15:07:58.778Z - info: Rendering (child) request finished in 817 ms rootId=xgeo1nmay1m63nt, id=f4pgcnzknzb67cm
+2024-01-18T15:07:58.779Z - info: pdf-utils pdf processing was finished rootId=xgeo1nmay1m63nt, id=xgeo1nmay1m63nt
+2024-01-18T15:07:58.781Z - info: Rendering request 32 finished in 848 ms rootId=xgeo1nmay1m63nt, id=xgeo1nmay1m63nt
+2024-01-18T15:08:04.023Z - info: Render request 33 queued for execution and waiting for available worker rootId=7znnuig7qic6jjb, id=7znnuig7qic6jjb
+2024-01-18T15:08:04.050Z - info: Starting rendering request 33 rootId=7znnuig7qic6jjb, id=7znnuig7qic6jjb
+2024-01-18T15:08:04.051Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=7znnuig7qic6jjb, id=7znnuig7qic6jjb
+2024-01-18T15:08:04.415Z - warn: Page error: Unexpected token ';' , stack: SyntaxError: Unexpected token ';' rootId=7znnuig7qic6jjb, id=7znnuig7qic6jjb
+2024-01-18T15:08:04.494Z - info: pdf-utils is starting pdf processing rootId=7znnuig7qic6jjb, id=7znnuig7qic6jjb
+2024-01-18T15:08:04.497Z - info: Starting rendering (child) request rootId=7znnuig7qic6jjb, id=g12rwdjcklbkwds
+2024-01-18T15:08:04.499Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=7znnuig7qic6jjb, id=g12rwdjcklbkwds
+2024-01-18T15:08:04.821Z - info: Rendering (child) request finished in 755 ms rootId=7znnuig7qic6jjb, id=g12rwdjcklbkwds
+2024-01-18T15:08:04.823Z - info: pdf-utils pdf processing was finished rootId=7znnuig7qic6jjb, id=7znnuig7qic6jjb
+2024-01-18T15:08:04.825Z - info: Rendering request 33 finished in 799 ms rootId=7znnuig7qic6jjb, id=7znnuig7qic6jjb
+2024-01-18T15:08:54.783Z - info: Render request 34 queued for execution and waiting for available worker rootId=d70apqp1krk34og, id=d70apqp1krk34og
+2024-01-18T15:08:54.805Z - info: Starting rendering request 34 rootId=d70apqp1krk34og, id=d70apqp1krk34og
+2024-01-18T15:08:54.807Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=d70apqp1krk34og, id=d70apqp1krk34og
+2024-01-18T15:08:55.167Z - warn: Page error: Unexpected token ';' , stack: SyntaxError: Unexpected token ';' rootId=d70apqp1krk34og, id=d70apqp1krk34og
+2024-01-18T15:08:55.270Z - info: pdf-utils is starting pdf processing rootId=d70apqp1krk34og, id=d70apqp1krk34og
+2024-01-18T15:08:55.281Z - info: Starting rendering (child) request rootId=d70apqp1krk34og, id=6laphf6sli9ue2v
+2024-01-18T15:08:55.282Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=d70apqp1krk34og, id=6laphf6sli9ue2v
+2024-01-18T15:08:55.612Z - info: Rendering (child) request finished in 774 ms rootId=d70apqp1krk34og, id=6laphf6sli9ue2v
+2024-01-18T15:08:55.614Z - info: pdf-utils pdf processing was finished rootId=d70apqp1krk34og, id=d70apqp1krk34og
+2024-01-18T15:08:55.616Z - info: Rendering request 34 finished in 828 ms rootId=d70apqp1krk34og, id=d70apqp1krk34og
+2024-01-18T15:09:34.356Z - info: Render request 35 queued for execution and waiting for available worker rootId=sg2bnq8lw53tyo4, id=sg2bnq8lw53tyo4
+2024-01-18T15:09:34.381Z - info: Starting rendering request 35 rootId=sg2bnq8lw53tyo4, id=sg2bnq8lw53tyo4
+2024-01-18T15:09:34.382Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=sg2bnq8lw53tyo4, id=sg2bnq8lw53tyo4
+2024-01-18T15:09:34.795Z - warn: Page error: Unexpected token ';' , stack: SyntaxError: Unexpected token ';' rootId=sg2bnq8lw53tyo4, id=sg2bnq8lw53tyo4
+2024-01-18T15:09:34.898Z - info: pdf-utils is starting pdf processing rootId=sg2bnq8lw53tyo4, id=sg2bnq8lw53tyo4
+2024-01-18T15:09:34.912Z - info: Starting rendering (child) request rootId=sg2bnq8lw53tyo4, id=nrlgmgt5zz70aab
+2024-01-18T15:09:34.913Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=sg2bnq8lw53tyo4, id=nrlgmgt5zz70aab
+2024-01-18T15:09:35.252Z - info: Rendering (child) request finished in 843 ms rootId=sg2bnq8lw53tyo4, id=nrlgmgt5zz70aab
+2024-01-18T15:09:35.257Z - info: pdf-utils pdf processing was finished rootId=sg2bnq8lw53tyo4, id=sg2bnq8lw53tyo4
+2024-01-18T15:09:35.259Z - info: Rendering request 35 finished in 895 ms rootId=sg2bnq8lw53tyo4, id=sg2bnq8lw53tyo4
+2024-01-18T15:11:25.751Z - info: Render request 36 queued for execution and waiting for available worker rootId=2zpj6iux59955kr, id=2zpj6iux59955kr
+2024-01-18T15:11:25.774Z - info: Starting rendering request 36 rootId=2zpj6iux59955kr, id=2zpj6iux59955kr
+2024-01-18T15:11:25.775Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=2zpj6iux59955kr, id=2zpj6iux59955kr
+2024-01-18T15:11:26.135Z - warn: Page error: Missing initializer in const declaration , stack: SyntaxError: Missing initializer in const declaration rootId=2zpj6iux59955kr, id=2zpj6iux59955kr
+2024-01-18T15:11:26.287Z - info: pdf-utils is starting pdf processing rootId=2zpj6iux59955kr, id=2zpj6iux59955kr
+2024-01-18T15:11:26.291Z - info: Starting rendering (child) request rootId=2zpj6iux59955kr, id=kvc8x0ngou3t6z5
+2024-01-18T15:11:26.292Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=2zpj6iux59955kr, id=kvc8x0ngou3t6z5
+2024-01-18T15:11:26.600Z - info: Rendering (child) request finished in 815 ms rootId=2zpj6iux59955kr, id=kvc8x0ngou3t6z5
+2024-01-18T15:11:26.604Z - info: pdf-utils pdf processing was finished rootId=2zpj6iux59955kr, id=2zpj6iux59955kr
+2024-01-18T15:11:26.607Z - info: Rendering request 36 finished in 849 ms rootId=2zpj6iux59955kr, id=2zpj6iux59955kr
+2024-01-18T15:18:45.664Z - info: Render request 37 queued for execution and waiting for available worker rootId=qhldvura391no6m, id=qhldvura391no6m
+2024-01-18T15:18:45.674Z - info: Starting rendering request 37 rootId=qhldvura391no6m, id=qhldvura391no6m
+2024-01-18T15:18:45.675Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=qhldvura391no6m, id=qhldvura391no6m
+2024-01-18T15:18:45.878Z - warn: Page error: Missing initializer in const declaration , stack: SyntaxError: Missing initializer in const declaration rootId=qhldvura391no6m, id=qhldvura391no6m
+2024-01-18T15:18:45.925Z - info: pdf-utils is starting pdf processing rootId=qhldvura391no6m, id=qhldvura391no6m
+2024-01-18T15:18:45.926Z - info: Starting rendering (child) request rootId=qhldvura391no6m, id=1n14kvk1ujjrwat
+2024-01-18T15:18:45.926Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=qhldvura391no6m, id=1n14kvk1ujjrwat
+2024-01-18T15:18:46.077Z - info: Rendering (child) request finished in 399 ms rootId=qhldvura391no6m, id=1n14kvk1ujjrwat
+2024-01-18T15:18:46.077Z - info: pdf-utils pdf processing was finished rootId=qhldvura391no6m, id=qhldvura391no6m
+2024-01-18T15:18:46.078Z - info: Rendering request 37 finished in 412 ms rootId=qhldvura391no6m, id=qhldvura391no6m
+2024-01-18T15:19:28.503Z - info: Render request 38 queued for execution and waiting for available worker rootId=peu6o3t47wuv220, id=peu6o3t47wuv220
+2024-01-18T15:19:28.510Z - info: Starting rendering request 38 rootId=peu6o3t47wuv220, id=peu6o3t47wuv220
+2024-01-18T15:19:28.511Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=peu6o3t47wuv220, id=peu6o3t47wuv220
+2024-01-18T15:19:28.539Z - warn: Error when processing render request 38
+(because) error when evaluating engine handlebars for template /samples/Trabajo/orders-main
+(because) parse error on line 13:
+...{{ orders.raceNames | jsonify }}; // Ase
+-----------------------^
+Expecting 'CLOSE_RAW_BLOCK', 'CLOSE', 'CLOSE_UNESCAPED', 'OPEN_SEXPR', 'CLOSE_SEXPR', 'ID', 'OPEN_BLOCK_PARAMS', 'STRING', 'NUMBER', 'BOOLEAN', 'UNDEFINED', 'NULL', 'DATA', 'SEP', got 'CLOSE_BLOCK_PARAMS'
+
+(sandbox.js line 13:18)
+Error: Parse error on line 13:
+...{{ orders.raceNames | jsonify }}; // Ase
+-----------------------^
+Expecting 'CLOSE_RAW_BLOCK', 'CLOSE', 'CLOSE_UNESCAPED', 'OPEN_SEXPR', 'CLOSE_SEXPR', 'ID', 'OPEN_BLOCK_PARAMS', 'STRING', 'NUMBER', 'BOOLEAN', 'UNDEFINED', 'NULL', 'DATA', 'SEP', got 'CLOSE_BLOCK_PARAMS'
+    at Parser.parseError (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\handlebars\dist\cjs\handlebars\compiler\parser.js:267:19)
+    at Parser.parse (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\handlebars\dist\cjs\handlebars\compiler\parser.js:336:30)
+    at parseWithoutProcessing (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\handlebars\dist\cjs\handlebars\compiler\base.js:46:33)
+    at HandlebarsEnvironment.parse (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\handlebars\dist\cjs\handlebars\compiler\base.js:52:13)
+    at Object.precompile (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\handlebars\dist\cjs\handlebars\compiler\compiler.js:485:17)
+    at hb.precompile (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\handlebars\dist\cjs\handlebars.js:42:40)
+    at Object.compile (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-handlebars\lib\handlebarsEngine.js:34:52)
+    at Object.compile (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-handlebars\lib\worker.js:26:43)
+    at executionFn (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\worker\render\executeEngine.js:201:42)
+    at sandbox.js:13:18
+wrapped by:
+Error: Error when evaluating engine handlebars for template /samples/Trabajo/orders-main
+(because) parse error on line 13:
+...{{ orders.raceNames | jsonify }}; // Ase
+-----------------------^
+Expecting 'CLOSE_RAW_BLOCK', 'CLOSE', 'CLOSE_UNESCAPED', 'OPEN_SEXPR', 'CLOSE_SEXPR', 'ID', 'OPEN_BLOCK_PARAMS', 'STRING', 'NUMBER', 'BOOLEAN', 'UNDEFINED', 'NULL', 'DATA', 'SEP', got 'CLOSE_BLOCK_PARAMS'
+    at module.exports (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\shared\createError.js:10:13)
+    at WorkerReporter.createError (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\shared\reporter.js:49:12)
+    at executeEngine (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\worker\render\executeEngine.js:310:33)
+    at async engine.engine (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\worker\render\executeEngine.js:115:14)
+    at async invokeRender (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\worker\render\render.js:61:23)
+    at async WorkerReporter._render (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\worker\render\render.js:142:7)
+    at async C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\worker\reporter.js:224:19
+    at async processAndResponse (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\advanced-workers\lib\workerHandler.js:41:17) rootId=peu6o3t47wuv220, id=peu6o3t47wuv220
+2024-01-18T15:19:28.543Z - warn: Rendering request 38 finished with error in 37 ms rootId=peu6o3t47wuv220, id=peu6o3t47wuv220
+2024-01-18T15:19:32.544Z - info: Render request 39 queued for execution and waiting for available worker rootId=s81d127pa0ra72l, id=s81d127pa0ra72l
+2024-01-18T15:19:32.553Z - info: Starting rendering request 39 rootId=s81d127pa0ra72l, id=s81d127pa0ra72l
+2024-01-18T15:19:32.554Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=s81d127pa0ra72l, id=s81d127pa0ra72l
+2024-01-18T15:19:32.738Z - warn: Page error: Missing initializer in const declaration , stack: SyntaxError: Missing initializer in const declaration rootId=s81d127pa0ra72l, id=s81d127pa0ra72l
+2024-01-18T15:19:32.765Z - info: pdf-utils is starting pdf processing rootId=s81d127pa0ra72l, id=s81d127pa0ra72l
+2024-01-18T15:19:32.767Z - info: Starting rendering (child) request rootId=s81d127pa0ra72l, id=dxihsow482cuipu
+2024-01-18T15:19:32.767Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=s81d127pa0ra72l, id=dxihsow482cuipu
+2024-01-18T15:19:32.915Z - info: Rendering (child) request finished in 356 ms rootId=s81d127pa0ra72l, id=dxihsow482cuipu
+2024-01-18T15:19:32.916Z - info: pdf-utils pdf processing was finished rootId=s81d127pa0ra72l, id=s81d127pa0ra72l
+2024-01-18T15:19:32.916Z - info: Rendering request 39 finished in 369 ms rootId=s81d127pa0ra72l, id=s81d127pa0ra72l
+2024-01-18T15:21:15.123Z - info: Render request 40 queued for execution and waiting for available worker rootId=mq8ncgmm0c5z0b2, id=mq8ncgmm0c5z0b2
+2024-01-18T15:21:15.132Z - info: Starting rendering request 40 rootId=mq8ncgmm0c5z0b2, id=mq8ncgmm0c5z0b2
+2024-01-18T15:21:15.133Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=mq8ncgmm0c5z0b2, id=mq8ncgmm0c5z0b2
+2024-01-18T15:21:15.363Z - warn: Page error: Missing initializer in const declaration , stack: SyntaxError: Missing initializer in const declaration rootId=mq8ncgmm0c5z0b2, id=mq8ncgmm0c5z0b2
+2024-01-18T15:21:15.364Z - info: pdf-utils is starting pdf processing rootId=mq8ncgmm0c5z0b2, id=mq8ncgmm0c5z0b2
+2024-01-18T15:21:15.365Z - info: Starting rendering (child) request rootId=mq8ncgmm0c5z0b2, id=fcwb2cbmlmmeb17
+2024-01-18T15:21:15.366Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=mq8ncgmm0c5z0b2, id=fcwb2cbmlmmeb17
+2024-01-18T15:21:15.516Z - info: Rendering (child) request finished in 375 ms rootId=mq8ncgmm0c5z0b2, id=fcwb2cbmlmmeb17
+2024-01-18T15:21:15.518Z - info: pdf-utils pdf processing was finished rootId=mq8ncgmm0c5z0b2, id=mq8ncgmm0c5z0b2
+2024-01-18T15:21:15.518Z - info: Rendering request 40 finished in 394 ms rootId=mq8ncgmm0c5z0b2, id=mq8ncgmm0c5z0b2
+2024-01-18T15:21:41.859Z - info: Render request 41 queued for execution and waiting for available worker rootId=xyrxmwyacxcpeq5, id=xyrxmwyacxcpeq5
+2024-01-18T15:21:41.868Z - info: Starting rendering request 41 rootId=xyrxmwyacxcpeq5, id=xyrxmwyacxcpeq5
+2024-01-18T15:21:41.868Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=xyrxmwyacxcpeq5, id=xyrxmwyacxcpeq5
+2024-01-18T15:21:42.043Z - warn: Page error: Missing initializer in const declaration , stack: SyntaxError: Missing initializer in const declaration rootId=xyrxmwyacxcpeq5, id=xyrxmwyacxcpeq5
+2024-01-18T15:21:42.095Z - info: pdf-utils is starting pdf processing rootId=xyrxmwyacxcpeq5, id=xyrxmwyacxcpeq5
+2024-01-18T15:21:42.096Z - info: Starting rendering (child) request rootId=xyrxmwyacxcpeq5, id=5d7pxjtvkrktwg0
+2024-01-18T15:21:42.097Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=xyrxmwyacxcpeq5, id=5d7pxjtvkrktwg0
+2024-01-18T15:21:42.251Z - info: Rendering (child) request finished in 377 ms rootId=xyrxmwyacxcpeq5, id=5d7pxjtvkrktwg0
+2024-01-18T15:21:42.252Z - info: pdf-utils pdf processing was finished rootId=xyrxmwyacxcpeq5, id=xyrxmwyacxcpeq5
+2024-01-18T15:21:42.252Z - info: Rendering request 41 finished in 390 ms rootId=xyrxmwyacxcpeq5, id=xyrxmwyacxcpeq5
+2024-01-18T15:22:40.860Z - info: Render request 42 queued for execution and waiting for available worker rootId=vvcpw9dlmfn941e, id=vvcpw9dlmfn941e
+2024-01-18T15:22:40.869Z - info: Starting rendering request 42 rootId=vvcpw9dlmfn941e, id=vvcpw9dlmfn941e
+2024-01-18T15:22:40.870Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=vvcpw9dlmfn941e, id=vvcpw9dlmfn941e
+2024-01-18T15:22:41.092Z - warn: Page error: Missing initializer in const declaration , stack: SyntaxError: Missing initializer in const declaration rootId=vvcpw9dlmfn941e, id=vvcpw9dlmfn941e
+2024-01-18T15:22:41.110Z - info: pdf-utils is starting pdf processing rootId=vvcpw9dlmfn941e, id=vvcpw9dlmfn941e
+2024-01-18T15:22:41.111Z - info: Starting rendering (child) request rootId=vvcpw9dlmfn941e, id=ytjro6vg9dbaqxj
+2024-01-18T15:22:41.112Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=vvcpw9dlmfn941e, id=ytjro6vg9dbaqxj
+2024-01-18T15:22:41.274Z - info: Rendering (child) request finished in 396 ms rootId=vvcpw9dlmfn941e, id=ytjro6vg9dbaqxj
+2024-01-18T15:22:41.275Z - info: pdf-utils pdf processing was finished rootId=vvcpw9dlmfn941e, id=vvcpw9dlmfn941e
+2024-01-18T15:22:41.275Z - info: Rendering request 42 finished in 412 ms rootId=vvcpw9dlmfn941e, id=vvcpw9dlmfn941e
+2024-01-18T15:23:00.526Z - info: Render request 43 queued for execution and waiting for available worker rootId=paf75m49cuuusbw, id=paf75m49cuuusbw
+2024-01-18T15:23:00.535Z - info: Starting rendering request 43 rootId=paf75m49cuuusbw, id=paf75m49cuuusbw
+2024-01-18T15:23:00.536Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=paf75m49cuuusbw, id=paf75m49cuuusbw
+2024-01-18T15:23:00.744Z - warn: Page error: Missing initializer in const declaration , stack: SyntaxError: Missing initializer in const declaration rootId=paf75m49cuuusbw, id=paf75m49cuuusbw
+2024-01-18T15:23:00.763Z - info: pdf-utils is starting pdf processing rootId=paf75m49cuuusbw, id=paf75m49cuuusbw
+2024-01-18T15:23:00.765Z - info: Starting rendering (child) request rootId=paf75m49cuuusbw, id=6ctfrrx569fkcrp
+2024-01-18T15:23:00.765Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=paf75m49cuuusbw, id=6ctfrrx569fkcrp
+2024-01-18T15:23:00.931Z - info: Rendering (child) request finished in 390 ms rootId=paf75m49cuuusbw, id=6ctfrrx569fkcrp
+2024-01-18T15:23:00.931Z - info: pdf-utils pdf processing was finished rootId=paf75m49cuuusbw, id=paf75m49cuuusbw
+2024-01-18T15:23:00.932Z - info: Rendering request 43 finished in 403 ms rootId=paf75m49cuuusbw, id=paf75m49cuuusbw
+2024-01-18T15:24:12.471Z - info: Render request 44 queued for execution and waiting for available worker rootId=wcetcsohik4jutd, id=wcetcsohik4jutd
+2024-01-18T15:24:12.480Z - info: Starting rendering request 44 rootId=wcetcsohik4jutd, id=wcetcsohik4jutd
+2024-01-18T15:24:12.480Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=wcetcsohik4jutd, id=wcetcsohik4jutd
+2024-01-18T15:24:12.704Z - warn: Page error: Unexpected number , stack: SyntaxError: Unexpected number rootId=wcetcsohik4jutd, id=wcetcsohik4jutd
+2024-01-18T15:24:12.705Z - info: pdf-utils is starting pdf processing rootId=wcetcsohik4jutd, id=wcetcsohik4jutd
+2024-01-18T15:24:12.706Z - info: Starting rendering (child) request rootId=wcetcsohik4jutd, id=psqf4dzex632mma
+2024-01-18T15:24:12.707Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=wcetcsohik4jutd, id=psqf4dzex632mma
+2024-01-18T15:24:12.870Z - info: Rendering (child) request finished in 383 ms rootId=wcetcsohik4jutd, id=psqf4dzex632mma
+2024-01-18T15:24:12.871Z - info: pdf-utils pdf processing was finished rootId=wcetcsohik4jutd, id=wcetcsohik4jutd
+2024-01-18T15:24:12.872Z - info: Rendering request 44 finished in 398 ms rootId=wcetcsohik4jutd, id=wcetcsohik4jutd
+2024-01-18T15:25:17.004Z - info: Render request 45 queued for execution and waiting for available worker rootId=s2g38tewggdd8du, id=s2g38tewggdd8du
+2024-01-18T15:25:17.012Z - info: Starting rendering request 45 rootId=s2g38tewggdd8du, id=s2g38tewggdd8du
+2024-01-18T15:25:17.013Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=s2g38tewggdd8du, id=s2g38tewggdd8du
+2024-01-18T15:25:17.209Z - warn: Page error: Unexpected token ';' , stack: SyntaxError: Unexpected token ';' rootId=s2g38tewggdd8du, id=s2g38tewggdd8du
+2024-01-18T15:25:17.253Z - info: pdf-utils is starting pdf processing rootId=s2g38tewggdd8du, id=s2g38tewggdd8du
+2024-01-18T15:25:17.255Z - info: Starting rendering (child) request rootId=s2g38tewggdd8du, id=lfyds46xay0jr3m
+2024-01-18T15:25:17.255Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=s2g38tewggdd8du, id=lfyds46xay0jr3m
+2024-01-18T15:25:17.417Z - info: Rendering (child) request finished in 399 ms rootId=s2g38tewggdd8du, id=lfyds46xay0jr3m
+2024-01-18T15:25:17.418Z - info: pdf-utils pdf processing was finished rootId=s2g38tewggdd8du, id=s2g38tewggdd8du
+2024-01-18T15:25:17.418Z - info: Rendering request 45 finished in 412 ms rootId=s2g38tewggdd8du, id=s2g38tewggdd8du
+2024-01-18T15:25:36.690Z - info: Render request 46 queued for execution and waiting for available worker rootId=ju5pfcyxoiqzv9b, id=ju5pfcyxoiqzv9b
+2024-01-18T15:25:36.697Z - info: Starting rendering request 46 rootId=ju5pfcyxoiqzv9b, id=ju5pfcyxoiqzv9b
+2024-01-18T15:25:36.698Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=ju5pfcyxoiqzv9b, id=ju5pfcyxoiqzv9b
+2024-01-18T15:25:36.943Z - info: pdf-utils is starting pdf processing rootId=ju5pfcyxoiqzv9b, id=ju5pfcyxoiqzv9b
+2024-01-18T15:25:36.944Z - info: Starting rendering (child) request rootId=ju5pfcyxoiqzv9b, id=bmdb0nzij38ec9v
+2024-01-18T15:25:36.944Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=ju5pfcyxoiqzv9b, id=bmdb0nzij38ec9v
+2024-01-18T15:25:37.093Z - info: Rendering (child) request finished in 387 ms rootId=ju5pfcyxoiqzv9b, id=bmdb0nzij38ec9v
+2024-01-18T15:25:37.094Z - info: pdf-utils pdf processing was finished rootId=ju5pfcyxoiqzv9b, id=ju5pfcyxoiqzv9b
+2024-01-18T15:25:37.095Z - info: Rendering request 46 finished in 402 ms rootId=ju5pfcyxoiqzv9b, id=ju5pfcyxoiqzv9b
+2024-01-18T15:26:50.096Z - info: Render request 47 queued for execution and waiting for available worker rootId=3sc8srsv5xb6797, id=3sc8srsv5xb6797
+2024-01-18T15:26:50.104Z - info: Starting rendering request 47 rootId=3sc8srsv5xb6797, id=3sc8srsv5xb6797
+2024-01-18T15:26:50.104Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=3sc8srsv5xb6797, id=3sc8srsv5xb6797
+2024-01-18T15:26:50.357Z - info: pdf-utils is starting pdf processing rootId=3sc8srsv5xb6797, id=3sc8srsv5xb6797
+2024-01-18T15:26:50.358Z - info: Starting rendering (child) request rootId=3sc8srsv5xb6797, id=jrtz53mqa0j147b
+2024-01-18T15:26:50.358Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=3sc8srsv5xb6797, id=jrtz53mqa0j147b
+2024-01-18T15:26:50.499Z - info: Rendering (child) request finished in 390 ms rootId=3sc8srsv5xb6797, id=jrtz53mqa0j147b
+2024-01-18T15:26:50.500Z - info: pdf-utils pdf processing was finished rootId=3sc8srsv5xb6797, id=3sc8srsv5xb6797
+2024-01-18T15:26:50.501Z - info: Rendering request 47 finished in 402 ms rootId=3sc8srsv5xb6797, id=3sc8srsv5xb6797
+2024-01-18T15:27:14.242Z - info: Render request 48 queued for execution and waiting for available worker rootId=xoty6uqfnrsmqy7, id=xoty6uqfnrsmqy7
+2024-01-18T15:27:14.251Z - info: Starting rendering request 48 rootId=xoty6uqfnrsmqy7, id=xoty6uqfnrsmqy7
+2024-01-18T15:27:14.252Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=xoty6uqfnrsmqy7, id=xoty6uqfnrsmqy7
+2024-01-18T15:27:14.525Z - info: pdf-utils is starting pdf processing rootId=xoty6uqfnrsmqy7, id=xoty6uqfnrsmqy7
+2024-01-18T15:27:14.526Z - info: Starting rendering (child) request rootId=xoty6uqfnrsmqy7, id=optordtdfprvsl8
+2024-01-18T15:27:14.526Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=xoty6uqfnrsmqy7, id=optordtdfprvsl8
+2024-01-18T15:27:14.689Z - info: Rendering (child) request finished in 425 ms rootId=xoty6uqfnrsmqy7, id=optordtdfprvsl8
+2024-01-18T15:27:14.691Z - info: pdf-utils pdf processing was finished rootId=xoty6uqfnrsmqy7, id=xoty6uqfnrsmqy7
+2024-01-18T15:27:14.691Z - info: Rendering request 48 finished in 447 ms rootId=xoty6uqfnrsmqy7, id=xoty6uqfnrsmqy7
+2024-01-18T15:29:16.795Z - info: Render request 49 queued for execution and waiting for available worker rootId=1bjqh1kq62tjjd7, id=1bjqh1kq62tjjd7
+2024-01-18T15:29:16.803Z - info: Starting rendering request 49 rootId=1bjqh1kq62tjjd7, id=1bjqh1kq62tjjd7
+2024-01-18T15:29:16.804Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=1bjqh1kq62tjjd7, id=1bjqh1kq62tjjd7
+2024-01-18T15:29:16.846Z - warn: Error when processing render request 49
+(because) error when evaluating engine handlebars for template /samples/Trabajo/orders-main
+(because) missing helper: "JSON.stringify"
+
+(sandbox.js line 13:18)
+Error: Missing helper: "JSON.stringify"
+    at Object.<anonymous> (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\handlebars\dist\cjs\handlebars\helpers\helper-missing.js:19:13)
+    at Object.wrapper (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\handlebars\dist\cjs\handlebars\internal\wrapHelper.js:15:19)
+    at Object.main (eval at compile (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-handlebars\lib\handlebarsEngine.js:35:30), <anonymous>:50:117)
+    at main (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\handlebars\dist\cjs\handlebars\runtime.js:208:32)
+    at ret (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\handlebars\dist\cjs\handlebars\runtime.js:212:12)
+    at Object.execute (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-handlebars\lib\handlebarsEngine.js:80:14)
+    at Object.execute (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-handlebars\lib\worker.js:27:43)
+    at executionFn (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\worker\render\executeEngine.js:222:40)
+    at sandbox.js:13:18
+    at async run (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\worker\sandbox\createSandbox.js:137:16)
+wrapped by:
+Error: Error when evaluating engine handlebars for template /samples/Trabajo/orders-main
+(because) missing helper: "JSON.stringify"
+    at module.exports (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\shared\createError.js:10:13)
+    at WorkerReporter.createError (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\shared\reporter.js:49:12)
+    at executeEngine (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\worker\render\executeEngine.js:310:33)
+    at async engine.engine (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\worker\render\executeEngine.js:115:14)
+    at async invokeRender (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\worker\render\render.js:61:23)
+    at async WorkerReporter._render (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\worker\render\render.js:142:7)
+    at async C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\worker\reporter.js:224:19
+    at async processAndResponse (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\advanced-workers\lib\workerHandler.js:41:17) rootId=1bjqh1kq62tjjd7, id=1bjqh1kq62tjjd7
+2024-01-18T15:29:16.849Z - warn: Rendering request 49 finished with error in 52 ms rootId=1bjqh1kq62tjjd7, id=1bjqh1kq62tjjd7
+2024-01-18T15:29:59.475Z - info: Render request 50 queued for execution and waiting for available worker rootId=gz6v1daniijv9nz, id=gz6v1daniijv9nz
+2024-01-18T15:29:59.482Z - info: Starting rendering request 50 rootId=gz6v1daniijv9nz, id=gz6v1daniijv9nz
+2024-01-18T15:29:59.483Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=gz6v1daniijv9nz, id=gz6v1daniijv9nz
+2024-01-18T15:29:59.499Z - warn: Error when processing render request 50
+(because) error when evaluating custom script /samples/Trabajo/orders-script
+Handlebars is not defined
+
+(sandbox.js line 3:1)
+
+  1 | const axios = require('axios');
+  2 |
+> 3 | Handlebars.registerHelper('json', function (context) {
+    | ^
+  4 |     return JSON.stringify(context);
+  5 | });
+  6 |
+
+
+ReferenceError: Handlebars is not defined
+    at sandbox.js:3:1 rootId=gz6v1daniijv9nz, id=gz6v1daniijv9nz
+2024-01-18T15:29:59.500Z - warn: Rendering request 50 finished with error in 24 ms rootId=gz6v1daniijv9nz, id=gz6v1daniijv9nz
+2024-01-18T15:30:11.826Z - info: Render request 51 queued for execution and waiting for available worker rootId=w0pumabtdrochgi, id=w0pumabtdrochgi
+2024-01-18T15:30:11.833Z - info: Starting rendering request 51 rootId=w0pumabtdrochgi, id=w0pumabtdrochgi
+2024-01-18T15:30:11.834Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=w0pumabtdrochgi, id=w0pumabtdrochgi
+2024-01-18T15:30:11.865Z - warn: Error when processing render request 51
+(because) error when evaluating engine handlebars for template /samples/Trabajo/orders-main
+(because) missing helper: "JSON.stringify"
+
+(sandbox.js line 13:18)
+Error: Missing helper: "JSON.stringify"
+    at Object.<anonymous> (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\handlebars\dist\cjs\handlebars\helpers\helper-missing.js:19:13)
+    at Object.wrapper (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\handlebars\dist\cjs\handlebars\internal\wrapHelper.js:15:19)
+    at Object.main (eval at compile (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-handlebars\lib\handlebarsEngine.js:35:30), <anonymous>:50:117)
+    at main (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\handlebars\dist\cjs\handlebars\runtime.js:208:32)
+    at ret (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\handlebars\dist\cjs\handlebars\runtime.js:212:12)
+    at Object.execute (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-handlebars\lib\handlebarsEngine.js:80:14)
+    at Object.execute (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-handlebars\lib\worker.js:27:43)
+    at executionFn (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\worker\render\executeEngine.js:222:40)
+    at sandbox.js:13:18
+    at async run (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\worker\sandbox\createSandbox.js:137:16)
+wrapped by:
+Error: Error when evaluating engine handlebars for template /samples/Trabajo/orders-main
+(because) missing helper: "JSON.stringify"
+    at module.exports (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\shared\createError.js:10:13)
+    at WorkerReporter.createError (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\shared\reporter.js:49:12)
+    at executeEngine (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\worker\render\executeEngine.js:310:33)
+    at async engine.engine (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\worker\render\executeEngine.js:115:14)
+    at async invokeRender (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\worker\render\render.js:61:23)
+    at async WorkerReporter._render (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\worker\render\render.js:142:7)
+    at async C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\worker\reporter.js:224:19
+    at async processAndResponse (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\advanced-workers\lib\workerHandler.js:41:17) rootId=w0pumabtdrochgi, id=w0pumabtdrochgi
+2024-01-18T15:30:11.868Z - warn: Rendering request 51 finished with error in 40 ms rootId=w0pumabtdrochgi, id=w0pumabtdrochgi
+2024-01-18T15:32:30.117Z - info: Render request 52 queued for execution and waiting for available worker rootId=7zw6srjlgfwt1ta, id=7zw6srjlgfwt1ta
+2024-01-18T15:32:30.126Z - info: Starting rendering request 52 rootId=7zw6srjlgfwt1ta, id=7zw6srjlgfwt1ta
+2024-01-18T15:32:30.126Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=7zw6srjlgfwt1ta, id=7zw6srjlgfwt1ta
+2024-01-18T15:32:30.166Z - warn: Error when processing render request 52
+(because) error when evaluating engine handlebars for template /samples/Trabajo/orders-main
+(because) missing helper: "JSON.stringify"
+
+(sandbox.js line 13:18)
+Error: Missing helper: "JSON.stringify"
+    at Object.<anonymous> (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\handlebars\dist\cjs\handlebars\helpers\helper-missing.js:19:13)
+    at Object.wrapper (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\handlebars\dist\cjs\handlebars\internal\wrapHelper.js:15:19)
+    at Object.main (eval at compile (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-handlebars\lib\handlebarsEngine.js:35:30), <anonymous>:50:117)
+    at main (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\handlebars\dist\cjs\handlebars\runtime.js:208:32)
+    at ret (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\handlebars\dist\cjs\handlebars\runtime.js:212:12)
+    at Object.execute (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-handlebars\lib\handlebarsEngine.js:80:14)
+    at Object.execute (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-handlebars\lib\worker.js:27:43)
+    at executionFn (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\worker\render\executeEngine.js:222:40)
+    at sandbox.js:13:18
+    at async run (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\worker\sandbox\createSandbox.js:137:16)
+wrapped by:
+Error: Error when evaluating engine handlebars for template /samples/Trabajo/orders-main
+(because) missing helper: "JSON.stringify"
+    at module.exports (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\shared\createError.js:10:13)
+    at WorkerReporter.createError (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\shared\reporter.js:49:12)
+    at executeEngine (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\worker\render\executeEngine.js:310:33)
+    at async engine.engine (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\worker\render\executeEngine.js:115:14)
+    at async invokeRender (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\worker\render\render.js:61:23)
+    at async WorkerReporter._render (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\worker\render\render.js:142:7)
+    at async C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\worker\reporter.js:224:19
+    at async processAndResponse (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\advanced-workers\lib\workerHandler.js:41:17) rootId=7zw6srjlgfwt1ta, id=7zw6srjlgfwt1ta
+2024-01-18T15:32:30.169Z - warn: Rendering request 52 finished with error in 51 ms rootId=7zw6srjlgfwt1ta, id=7zw6srjlgfwt1ta
+2024-01-18T15:33:36.226Z - info: Render request 53 queued for execution and waiting for available worker rootId=5hgcx9mmjz9xtql, id=5hgcx9mmjz9xtql
+2024-01-18T15:33:36.234Z - info: Starting rendering request 53 rootId=5hgcx9mmjz9xtql, id=5hgcx9mmjz9xtql
+2024-01-18T15:33:36.235Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=5hgcx9mmjz9xtql, id=5hgcx9mmjz9xtql
+2024-01-18T15:33:36.362Z - error: Report render failed
+(because) res.end is not a function
+TypeError: res.end is not a function
+    at sandbox.js:66:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5) rootId=5hgcx9mmjz9xtql, id=5hgcx9mmjz9xtql
+2024-01-18T15:33:41.376Z - info: Render request 54 queued for execution and waiting for available worker rootId=zhiekjc22vkhqfb, id=zhiekjc22vkhqfb
+2024-01-18T15:33:41.388Z - info: Starting rendering request 54 rootId=zhiekjc22vkhqfb, id=zhiekjc22vkhqfb
+2024-01-18T15:33:41.389Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=zhiekjc22vkhqfb, id=zhiekjc22vkhqfb
+2024-01-18T15:33:41.785Z - warn: Error when processing render request 54
+(because) error when evaluating engine handlebars for template /samples/Trabajo/orders-main
+(because) missing helper: "JSON.stringify"
+
+(sandbox.js line 13:18)
+Error: Missing helper: "JSON.stringify"
+    at Object.<anonymous> (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\handlebars\dist\cjs\handlebars\helpers\helper-missing.js:19:13)
+    at Object.wrapper (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\handlebars\dist\cjs\handlebars\internal\wrapHelper.js:15:19)
+    at Object.main (eval at compile (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-handlebars\lib\handlebarsEngine.js:35:30), <anonymous>:50:117)
+    at main (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\handlebars\dist\cjs\handlebars\runtime.js:208:32)
+    at ret (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\handlebars\dist\cjs\handlebars\runtime.js:212:12)
+    at Object.execute (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-handlebars\lib\handlebarsEngine.js:80:14)
+    at Object.execute (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-handlebars\lib\worker.js:27:43)
+    at executionFn (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\worker\render\executeEngine.js:222:40)
+    at sandbox.js:13:18
+    at async run (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\worker\sandbox\createSandbox.js:137:16)
+wrapped by:
+Error: Error when evaluating engine handlebars for template /samples/Trabajo/orders-main
+(because) missing helper: "JSON.stringify"
+    at module.exports (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\shared\createError.js:10:13)
+    at WorkerReporter.createError (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\shared\reporter.js:49:12)
+    at executeEngine (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\worker\render\executeEngine.js:310:33)
+    at async engine.engine (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\worker\render\executeEngine.js:115:14)
+    at async invokeRender (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\worker\render\render.js:61:23)
+    at async WorkerReporter._render (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\worker\render\render.js:142:7)
+    at async C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\worker\reporter.js:224:19
+    at async processAndResponse (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\advanced-workers\lib\workerHandler.js:41:17) rootId=zhiekjc22vkhqfb, id=zhiekjc22vkhqfb
+2024-01-18T15:33:41.789Z - warn: Rendering request 54 finished with error in 410 ms rootId=zhiekjc22vkhqfb, id=zhiekjc22vkhqfb
+2024-01-18T15:34:26.590Z - info: Render request 55 queued for execution and waiting for available worker rootId=96werf46ko1qdee, id=96werf46ko1qdee
+2024-01-18T15:34:26.599Z - info: Starting rendering request 55 rootId=96werf46ko1qdee, id=96werf46ko1qdee
+2024-01-18T15:34:26.599Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=96werf46ko1qdee, id=96werf46ko1qdee
+2024-01-18T15:34:26.643Z - warn: Error when processing render request 55
+(because) error when evaluating engine handlebars for template /samples/Trabajo/orders-main
+(because) missing helper: "JSON.stringify"
+
+(sandbox.js line 13:18)
+Error: Missing helper: "JSON.stringify"
+    at Object.<anonymous> (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\handlebars\dist\cjs\handlebars\helpers\helper-missing.js:19:13)
+    at Object.wrapper (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\handlebars\dist\cjs\handlebars\internal\wrapHelper.js:15:19)
+    at Object.main (eval at compile (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-handlebars\lib\handlebarsEngine.js:35:30), <anonymous>:50:117)
+    at main (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\handlebars\dist\cjs\handlebars\runtime.js:208:32)
+    at ret (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\handlebars\dist\cjs\handlebars\runtime.js:212:12)
+    at Object.execute (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-handlebars\lib\handlebarsEngine.js:80:14)
+    at Object.execute (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-handlebars\lib\worker.js:27:43)
+    at executionFn (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\worker\render\executeEngine.js:222:40)
+    at sandbox.js:13:18
+    at async run (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\worker\sandbox\createSandbox.js:137:16)
+wrapped by:
+Error: Error when evaluating engine handlebars for template /samples/Trabajo/orders-main
+(because) missing helper: "JSON.stringify"
+    at module.exports (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\shared\createError.js:10:13)
+    at WorkerReporter.createError (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\shared\reporter.js:49:12)
+    at executeEngine (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\worker\render\executeEngine.js:310:33)
+    at async engine.engine (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\worker\render\executeEngine.js:115:14)
+    at async invokeRender (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\worker\render\render.js:61:23)
+    at async WorkerReporter._render (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\worker\render\render.js:142:7)
+    at async C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\worker\reporter.js:224:19
+    at async processAndResponse (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\advanced-workers\lib\workerHandler.js:41:17) rootId=96werf46ko1qdee, id=96werf46ko1qdee
+2024-01-18T15:34:26.646Z - warn: Rendering request 55 finished with error in 54 ms rootId=96werf46ko1qdee, id=96werf46ko1qdee
+2024-01-18T15:35:32.306Z - info: Render request 56 queued for execution and waiting for available worker rootId=gqrtzkahg05q7qn, id=gqrtzkahg05q7qn
+2024-01-18T15:35:32.316Z - info: Starting rendering request 56 rootId=gqrtzkahg05q7qn, id=gqrtzkahg05q7qn
+2024-01-18T15:35:32.316Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=gqrtzkahg05q7qn, id=gqrtzkahg05q7qn
+2024-01-18T15:35:36.625Z - warn: Page error: Missing initializer in const declaration , stack: SyntaxError: Missing initializer in const declaration rootId=gqrtzkahg05q7qn, id=gqrtzkahg05q7qn
+2024-01-18T15:35:36.998Z - info: pdf-utils is starting pdf processing rootId=gqrtzkahg05q7qn, id=gqrtzkahg05q7qn
+2024-01-18T15:35:37.009Z - info: Starting rendering (child) request rootId=gqrtzkahg05q7qn, id=stuh30lf1u9kbwk
+2024-01-18T15:35:37.010Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=gqrtzkahg05q7qn, id=stuh30lf1u9kbwk
+2024-01-18T15:35:37.178Z - info: Rendering (child) request finished in 4845 ms rootId=gqrtzkahg05q7qn, id=stuh30lf1u9kbwk
+2024-01-18T15:35:37.178Z - info: pdf-utils pdf processing was finished rootId=gqrtzkahg05q7qn, id=gqrtzkahg05q7qn
+2024-01-18T15:35:37.179Z - info: Rendering request 56 finished in 4871 ms rootId=gqrtzkahg05q7qn, id=gqrtzkahg05q7qn
+2024-01-18T15:36:25.217Z - info: Render request 57 queued for execution and waiting for available worker rootId=4dzi02ddlh0z01c, id=4dzi02ddlh0z01c
+2024-01-18T15:36:25.225Z - info: Starting rendering request 57 rootId=4dzi02ddlh0z01c, id=4dzi02ddlh0z01c
+2024-01-18T15:36:25.226Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=4dzi02ddlh0z01c, id=4dzi02ddlh0z01c
+2024-01-18T15:36:25.414Z - warn: Page error: orders is not defined , stack: ReferenceError: orders is not defined
+    at <anonymous> (file:///C:/Users/DANIEL~1/AppData/Local/Temp/jsreport/autocleanup/76b5c0e1-59a4-48e4-95b5-dda51fe90f32-chrome-pdf.html:14:27) rootId=4dzi02ddlh0z01c, id=4dzi02ddlh0z01c
+2024-01-18T15:36:25.465Z - info: pdf-utils is starting pdf processing rootId=4dzi02ddlh0z01c, id=4dzi02ddlh0z01c
+2024-01-18T15:36:25.466Z - info: Starting rendering (child) request rootId=4dzi02ddlh0z01c, id=kogrw4234xx0opy
+2024-01-18T15:36:25.466Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=4dzi02ddlh0z01c, id=kogrw4234xx0opy
+2024-01-18T15:36:25.610Z - info: Rendering (child) request finished in 378 ms rootId=4dzi02ddlh0z01c, id=kogrw4234xx0opy
+2024-01-18T15:36:25.611Z - info: pdf-utils pdf processing was finished rootId=4dzi02ddlh0z01c, id=4dzi02ddlh0z01c
+2024-01-18T15:36:25.612Z - info: Rendering request 57 finished in 391 ms rootId=4dzi02ddlh0z01c, id=4dzi02ddlh0z01c
+2024-01-18T15:39:06.914Z - info: Render request 58 queued for execution and waiting for available worker rootId=wseddr07ja77ev9, id=wseddr07ja77ev9
+2024-01-18T15:39:06.923Z - info: Starting rendering request 58 rootId=wseddr07ja77ev9, id=wseddr07ja77ev9
+2024-01-18T15:39:06.923Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=wseddr07ja77ev9, id=wseddr07ja77ev9
+2024-01-18T15:39:07.201Z - warn: Page error: Missing initializer in const declaration , stack: SyntaxError: Missing initializer in const declaration rootId=wseddr07ja77ev9, id=wseddr07ja77ev9
+2024-01-18T15:39:07.202Z - info: pdf-utils is starting pdf processing rootId=wseddr07ja77ev9, id=wseddr07ja77ev9
+2024-01-18T15:39:07.209Z - info: Starting rendering (child) request rootId=wseddr07ja77ev9, id=ctpxjdclywfpbz2
+2024-01-18T15:39:07.209Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=wseddr07ja77ev9, id=ctpxjdclywfpbz2
+2024-01-18T15:39:07.371Z - info: Rendering (child) request finished in 437 ms rootId=wseddr07ja77ev9, id=ctpxjdclywfpbz2
+2024-01-18T15:39:07.372Z - info: pdf-utils pdf processing was finished rootId=wseddr07ja77ev9, id=wseddr07ja77ev9
+2024-01-18T15:39:07.373Z - info: Rendering request 58 finished in 456 ms rootId=wseddr07ja77ev9, id=wseddr07ja77ev9
+2024-01-18T15:40:17.997Z - info: Render request 59 queued for execution and waiting for available worker rootId=bmny22q2jn8krvw, id=bmny22q2jn8krvw
+2024-01-18T15:40:18.006Z - info: Starting rendering request 59 rootId=bmny22q2jn8krvw, id=bmny22q2jn8krvw
+2024-01-18T15:40:18.006Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=bmny22q2jn8krvw, id=bmny22q2jn8krvw
+2024-01-18T15:40:18.222Z - warn: Page error: Missing initializer in const declaration , stack: SyntaxError: Missing initializer in const declaration rootId=bmny22q2jn8krvw, id=bmny22q2jn8krvw
+2024-01-18T15:40:18.241Z - info: pdf-utils is starting pdf processing rootId=bmny22q2jn8krvw, id=bmny22q2jn8krvw
+2024-01-18T15:40:18.242Z - info: Starting rendering (child) request rootId=bmny22q2jn8krvw, id=mdt64kkxfk74fyb
+2024-01-18T15:40:18.242Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=bmny22q2jn8krvw, id=mdt64kkxfk74fyb
+2024-01-18T15:40:18.394Z - info: Rendering (child) request finished in 383 ms rootId=bmny22q2jn8krvw, id=mdt64kkxfk74fyb
+2024-01-18T15:40:18.395Z - info: pdf-utils pdf processing was finished rootId=bmny22q2jn8krvw, id=bmny22q2jn8krvw
+2024-01-18T15:40:18.395Z - info: Rendering request 59 finished in 396 ms rootId=bmny22q2jn8krvw, id=bmny22q2jn8krvw
+2024-01-18T15:42:28.452Z - info: Render request 60 queued for execution and waiting for available worker rootId=4s12pwei58qn9fh, id=4s12pwei58qn9fh
+2024-01-18T15:42:28.460Z - info: Starting rendering request 60 rootId=4s12pwei58qn9fh, id=4s12pwei58qn9fh
+2024-01-18T15:42:28.461Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=4s12pwei58qn9fh, id=4s12pwei58qn9fh
+2024-01-18T15:42:28.724Z - info: pdf-utils is starting pdf processing rootId=4s12pwei58qn9fh, id=4s12pwei58qn9fh
+2024-01-18T15:42:28.725Z - info: Starting rendering (child) request rootId=4s12pwei58qn9fh, id=uwzihv17773t1lh
+2024-01-18T15:42:28.726Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=4s12pwei58qn9fh, id=uwzihv17773t1lh
+2024-01-18T15:42:28.886Z - info: Rendering (child) request finished in 413 ms rootId=4s12pwei58qn9fh, id=uwzihv17773t1lh
+2024-01-18T15:42:28.887Z - info: pdf-utils pdf processing was finished rootId=4s12pwei58qn9fh, id=4s12pwei58qn9fh
+2024-01-18T15:42:28.887Z - info: Rendering request 60 finished in 430 ms rootId=4s12pwei58qn9fh, id=4s12pwei58qn9fh
+2024-01-18T15:43:16.816Z - info: Render request 61 queued for execution and waiting for available worker rootId=p11rdgfhx7pq1kr, id=p11rdgfhx7pq1kr
+2024-01-18T15:43:16.826Z - info: Starting rendering request 61 rootId=p11rdgfhx7pq1kr, id=p11rdgfhx7pq1kr
+2024-01-18T15:43:16.826Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=p11rdgfhx7pq1kr, id=p11rdgfhx7pq1kr
+2024-01-18T15:43:17.093Z - info: pdf-utils is starting pdf processing rootId=p11rdgfhx7pq1kr, id=p11rdgfhx7pq1kr
+2024-01-18T15:43:17.094Z - info: Starting rendering (child) request rootId=p11rdgfhx7pq1kr, id=wduxbxo88ebjcfe
+2024-01-18T15:43:17.095Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=p11rdgfhx7pq1kr, id=wduxbxo88ebjcfe
+2024-01-18T15:43:17.259Z - info: Rendering (child) request finished in 428 ms rootId=p11rdgfhx7pq1kr, id=wduxbxo88ebjcfe
+2024-01-18T15:43:17.260Z - info: pdf-utils pdf processing was finished rootId=p11rdgfhx7pq1kr, id=p11rdgfhx7pq1kr
+2024-01-18T15:43:17.262Z - info: Rendering request 61 finished in 443 ms rootId=p11rdgfhx7pq1kr, id=p11rdgfhx7pq1kr
+2024-01-18T15:43:38.154Z - info: Render request 62 queued for execution and waiting for available worker rootId=946qjp98y4yn9p5, id=946qjp98y4yn9p5
+2024-01-18T15:43:38.163Z - info: Starting rendering request 62 rootId=946qjp98y4yn9p5, id=946qjp98y4yn9p5
+2024-01-18T15:43:38.164Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=946qjp98y4yn9p5, id=946qjp98y4yn9p5
+2024-01-18T15:43:38.396Z - warn: Page error: Missing initializer in const declaration , stack: SyntaxError: Missing initializer in const declaration rootId=946qjp98y4yn9p5, id=946qjp98y4yn9p5
+2024-01-18T15:43:38.397Z - info: pdf-utils is starting pdf processing rootId=946qjp98y4yn9p5, id=946qjp98y4yn9p5
+2024-01-18T15:43:38.402Z - info: Starting rendering (child) request rootId=946qjp98y4yn9p5, id=g57ctrzpklonl79
+2024-01-18T15:43:38.403Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=946qjp98y4yn9p5, id=g57ctrzpklonl79
+2024-01-18T15:43:38.557Z - info: Rendering (child) request finished in 386 ms rootId=946qjp98y4yn9p5, id=g57ctrzpklonl79
+2024-01-18T15:43:38.558Z - info: pdf-utils pdf processing was finished rootId=946qjp98y4yn9p5, id=946qjp98y4yn9p5
+2024-01-18T15:43:38.559Z - info: Rendering request 62 finished in 402 ms rootId=946qjp98y4yn9p5, id=946qjp98y4yn9p5
+2024-01-18T15:45:37.324Z - info: Render request 63 queued for execution and waiting for available worker rootId=4xvad86iu6t1hsy, id=4xvad86iu6t1hsy
+2024-01-18T15:45:37.331Z - info: Starting rendering request 63 rootId=4xvad86iu6t1hsy, id=4xvad86iu6t1hsy
+2024-01-18T15:45:37.332Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=4xvad86iu6t1hsy, id=4xvad86iu6t1hsy
+2024-01-18T15:45:37.533Z - warn: Page error: Unexpected token '&' , stack: SyntaxError: Unexpected token '&' rootId=4xvad86iu6t1hsy, id=4xvad86iu6t1hsy
+2024-01-18T15:45:37.569Z - info: pdf-utils is starting pdf processing rootId=4xvad86iu6t1hsy, id=4xvad86iu6t1hsy
+2024-01-18T15:45:37.570Z - info: Starting rendering (child) request rootId=4xvad86iu6t1hsy, id=y6a96zhru9ria6t
+2024-01-18T15:45:37.570Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=4xvad86iu6t1hsy, id=y6a96zhru9ria6t
+2024-01-18T15:45:37.728Z - info: Rendering (child) request finished in 389 ms rootId=4xvad86iu6t1hsy, id=y6a96zhru9ria6t
+2024-01-18T15:45:37.729Z - info: pdf-utils pdf processing was finished rootId=4xvad86iu6t1hsy, id=4xvad86iu6t1hsy
+2024-01-18T15:45:37.729Z - info: Rendering request 63 finished in 403 ms rootId=4xvad86iu6t1hsy, id=4xvad86iu6t1hsy
+2024-01-18T15:46:38.665Z - info: Render request 64 queued for execution and waiting for available worker rootId=163uedoo26gmz6m, id=163uedoo26gmz6m
+2024-01-18T15:46:38.673Z - info: Starting rendering request 64 rootId=163uedoo26gmz6m, id=163uedoo26gmz6m
+2024-01-18T15:46:38.674Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=163uedoo26gmz6m, id=163uedoo26gmz6m
+2024-01-18T15:46:38.787Z - error: Report render failed
+(because) res.end is not a function
+TypeError: res.end is not a function
+    at sandbox.js:101:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5) rootId=163uedoo26gmz6m, id=163uedoo26gmz6m
+2024-01-18T15:46:47.736Z - info: Render request 65 queued for execution and waiting for available worker rootId=96qncgh6fyeo4tl, id=96qncgh6fyeo4tl
+2024-01-18T15:46:47.750Z - info: Starting rendering request 65 rootId=96qncgh6fyeo4tl, id=96qncgh6fyeo4tl
+2024-01-18T15:46:47.751Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=96qncgh6fyeo4tl, id=96qncgh6fyeo4tl
+2024-01-18T15:46:52.812Z - warn: Page error: Unexpected token '&' , stack: SyntaxError: Unexpected token '&' rootId=96qncgh6fyeo4tl, id=96qncgh6fyeo4tl
+2024-01-18T15:46:52.813Z - info: pdf-utils is starting pdf processing rootId=96qncgh6fyeo4tl, id=96qncgh6fyeo4tl
+2024-01-18T15:46:52.819Z - info: Starting rendering (child) request rootId=96qncgh6fyeo4tl, id=c989at85habr0ns
+2024-01-18T15:46:52.820Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=96qncgh6fyeo4tl, id=c989at85habr0ns
+2024-01-18T15:46:53.001Z - info: Rendering (child) request finished in 5234 ms rootId=96qncgh6fyeo4tl, id=c989at85habr0ns
+2024-01-18T15:46:53.003Z - info: pdf-utils pdf processing was finished rootId=96qncgh6fyeo4tl, id=96qncgh6fyeo4tl
+2024-01-18T15:46:53.003Z - info: Rendering request 65 finished in 5263 ms rootId=96qncgh6fyeo4tl, id=96qncgh6fyeo4tl
+2024-01-18T15:47:55.639Z - info: Render request 66 queued for execution and waiting for available worker rootId=sf9siw2aubbp9xc, id=sf9siw2aubbp9xc
+2024-01-18T15:47:55.648Z - info: Starting rendering request 66 rootId=sf9siw2aubbp9xc, id=sf9siw2aubbp9xc
+2024-01-18T15:47:55.648Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=sf9siw2aubbp9xc, id=sf9siw2aubbp9xc
+2024-01-18T15:47:55.870Z - warn: Page error: Unexpected token '&' , stack: SyntaxError: Unexpected token '&' rootId=sf9siw2aubbp9xc, id=sf9siw2aubbp9xc
+2024-01-18T15:47:55.872Z - info: pdf-utils is starting pdf processing rootId=sf9siw2aubbp9xc, id=sf9siw2aubbp9xc
+2024-01-18T15:47:55.873Z - info: Starting rendering (child) request rootId=sf9siw2aubbp9xc, id=ef8q19cyznays94
+2024-01-18T15:47:55.873Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=sf9siw2aubbp9xc, id=ef8q19cyznays94
+2024-01-18T15:47:56.022Z - info: Rendering (child) request finished in 368 ms rootId=sf9siw2aubbp9xc, id=ef8q19cyznays94
+2024-01-18T15:47:56.024Z - info: pdf-utils pdf processing was finished rootId=sf9siw2aubbp9xc, id=sf9siw2aubbp9xc
+2024-01-18T15:47:56.025Z - info: Rendering request 66 finished in 383 ms rootId=sf9siw2aubbp9xc, id=sf9siw2aubbp9xc
+2024-01-18T16:46:44.281Z - info: fs store is loading data
+2024-01-18T16:48:55.641Z - info: Render request 67 queued for execution and waiting for available worker rootId=go07vucysm7l3fb, id=go07vucysm7l3fb
+2024-01-18T16:48:55.650Z - info: Starting rendering request 67 rootId=go07vucysm7l3fb, id=go07vucysm7l3fb
+2024-01-18T16:48:55.651Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=go07vucysm7l3fb, id=go07vucysm7l3fb
+2024-01-18T16:48:59.776Z - warn: Page error: Unexpected token '&' , stack: SyntaxError: Unexpected token '&' rootId=go07vucysm7l3fb, id=go07vucysm7l3fb
+2024-01-18T16:48:59.844Z - info: pdf-utils is starting pdf processing rootId=go07vucysm7l3fb, id=go07vucysm7l3fb
+2024-01-18T16:48:59.846Z - info: Starting rendering (child) request rootId=go07vucysm7l3fb, id=ohp6b9gd1mo1q7h
+2024-01-18T16:48:59.846Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=go07vucysm7l3fb, id=ohp6b9gd1mo1q7h
+2024-01-18T16:49:00.010Z - info: Rendering (child) request finished in 4350 ms rootId=go07vucysm7l3fb, id=ohp6b9gd1mo1q7h
+2024-01-18T16:49:00.011Z - info: pdf-utils pdf processing was finished rootId=go07vucysm7l3fb, id=go07vucysm7l3fb
+2024-01-18T16:49:00.012Z - info: Rendering request 67 finished in 4368 ms rootId=go07vucysm7l3fb, id=go07vucysm7l3fb
+2024-01-18T16:49:12.564Z - info: Render request 68 queued for execution and waiting for available worker rootId=q1yyczdwzvuocrr, id=q1yyczdwzvuocrr
+2024-01-18T16:49:12.572Z - info: Starting rendering request 68 rootId=q1yyczdwzvuocrr, id=q1yyczdwzvuocrr
+2024-01-18T16:49:12.573Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=q1yyczdwzvuocrr, id=q1yyczdwzvuocrr
+2024-01-18T16:49:14.355Z - warn: Page error: Unexpected token '&' , stack: SyntaxError: Unexpected token '&' rootId=q1yyczdwzvuocrr, id=q1yyczdwzvuocrr
+2024-01-18T16:49:14.375Z - info: pdf-utils is starting pdf processing rootId=q1yyczdwzvuocrr, id=q1yyczdwzvuocrr
+2024-01-18T16:49:14.377Z - info: Starting rendering (child) request rootId=q1yyczdwzvuocrr, id=o9o9h7ncxxwv5ad
+2024-01-18T16:49:14.377Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=q1yyczdwzvuocrr, id=o9o9h7ncxxwv5ad
+2024-01-18T16:49:14.531Z - info: Rendering (child) request finished in 1953 ms rootId=q1yyczdwzvuocrr, id=o9o9h7ncxxwv5ad
+2024-01-18T16:49:14.533Z - info: pdf-utils pdf processing was finished rootId=q1yyczdwzvuocrr, id=q1yyczdwzvuocrr
+2024-01-18T16:49:14.534Z - info: Rendering request 68 finished in 1966 ms rootId=q1yyczdwzvuocrr, id=q1yyczdwzvuocrr
+2024-01-18T16:49:28.405Z - info: Render request 69 queued for execution and waiting for available worker rootId=8jbu9gehx8kp62q, id=8jbu9gehx8kp62q
+2024-01-18T16:49:28.413Z - info: Starting rendering request 69 rootId=8jbu9gehx8kp62q, id=8jbu9gehx8kp62q
+2024-01-18T16:49:28.414Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=8jbu9gehx8kp62q, id=8jbu9gehx8kp62q
+2024-01-18T16:49:28.630Z - warn: Page error: Unexpected token '&' , stack: SyntaxError: Unexpected token '&' rootId=8jbu9gehx8kp62q, id=8jbu9gehx8kp62q
+2024-01-18T16:49:28.680Z - info: pdf-utils is starting pdf processing rootId=8jbu9gehx8kp62q, id=8jbu9gehx8kp62q
+2024-01-18T16:49:28.682Z - info: Starting rendering (child) request rootId=8jbu9gehx8kp62q, id=pbqzhky4mg1zf0b
+2024-01-18T16:49:28.682Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=8jbu9gehx8kp62q, id=pbqzhky4mg1zf0b
+2024-01-18T16:49:28.864Z - info: Rendering (child) request finished in 439 ms rootId=8jbu9gehx8kp62q, id=pbqzhky4mg1zf0b
+2024-01-18T16:49:28.865Z - info: pdf-utils pdf processing was finished rootId=8jbu9gehx8kp62q, id=8jbu9gehx8kp62q
+2024-01-18T16:49:28.865Z - info: Rendering request 69 finished in 459 ms rootId=8jbu9gehx8kp62q, id=8jbu9gehx8kp62q
+2024-01-18T16:57:24.503Z - info: Initializing jsreport (version: 4.2.0, configuration file: jsreport.config.json, nodejs: 18.17.1)
+2024-01-18T16:57:24.504Z - info: Searching for available extensions in C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\
+2024-01-18T16:57:24.510Z - info: Extensions location cache contains up to date information, skipping crawling in C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\
+2024-01-18T16:57:24.528Z - info: Found 35 extension(s)
+2024-01-18T16:57:24.589Z - info: Using extension base@4.0.0
+2024-01-18T16:57:24.594Z - info: Using extension child-templates@4.0.0
+2024-01-18T16:57:24.597Z - info: Using extension cli@4.0.2
+2024-01-18T16:57:24.600Z - info: Using extension components@4.0.0
+2024-01-18T16:57:24.602Z - info: Using extension data@4.0.0
+2024-01-18T16:57:24.604Z - info: Using extension express@4.0.1
+2024-01-18T16:57:24.847Z - info: Using extension freeze@4.0.0
+2024-01-18T16:57:24.850Z - info: Using extension fs-store@4.0.1
+2024-01-18T16:57:24.958Z - info: Using extension handlebars@4.0.1
+2024-01-18T16:57:24.960Z - info: Using extension import-export@4.0.2
+2024-01-18T16:57:24.971Z - info: Using extension jsrender@4.0.0
+2024-01-18T16:57:24.973Z - info: Using extension licensing@4.0.1
+2024-01-18T16:57:24.978Z - info: Using extension localization@4.0.1
+2024-01-18T16:57:24.980Z - info: Using extension npm@4.0.0
+2024-01-18T16:57:24.985Z - info: Using extension pdf-utils@4.0.2
+2024-01-18T16:57:24.988Z - info: Using extension reports@4.0.0
+2024-01-18T16:57:24.991Z - info: Using extension tags@4.0.1
+2024-01-18T16:57:24.993Z - info: Using extension text@4.0.0
+2024-01-18T16:57:24.995Z - info: Using extension version-control@4.0.0
+2024-01-18T16:57:25.007Z - info: Using extension assets@4.0.2
+2024-01-18T16:57:25.019Z - info: Using extension authorization@4.0.0
+2024-01-18T16:57:25.024Z - info: Using extension browser-client@4.0.0
+2024-01-18T16:57:25.026Z - info: Using extension chrome-pdf@4.0.0
+2024-01-18T16:57:25.030Z - info: Using extension docx@4.1.1
+2024-01-18T16:57:25.032Z - info: Using extension html-to-xlsx@4.0.1
+2024-01-18T16:57:25.336Z - info: html-to-xlsx detected chrome as available html engine
+2024-01-18T16:57:25.337Z - info: Using extension pptx@4.1.0
+2024-01-18T16:57:25.339Z - info: Using extension scheduling@4.0.0
+2024-01-18T16:57:25.369Z - info: Using extension scripts@4.0.0
+2024-01-18T16:57:25.371Z - info: Using extension static-pdf@4.0.0
+2024-01-18T16:57:25.372Z - info: Using extension studio@4.0.2
+2024-01-18T16:57:25.435Z - info: Using extension xlsx@4.0.2
+2024-01-18T16:57:25.438Z - info: Using extension public-templates@4.0.0
+2024-01-18T16:57:25.440Z - info: Using extension sample-template@4.0.0
+2024-01-18T16:57:25.442Z - info: Using extension studio-theme-dark@4.0.0
+2024-01-18T16:57:25.445Z - info: Code sandboxing is disabled, users can potentially penetrate the local system if you allow code from external users to be part of your reports
+2024-01-18T16:57:25.445Z - info: Using general timeout for rendering (reportTimeout: 60000)
+2024-01-18T16:57:25.446Z - info: Using fs provider for template store.
+2024-01-18T16:57:25.450Z - info: fs store is persisting using fs for C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\data
+2024-01-18T16:57:25.461Z - info: fs store is loading data
+2024-01-18T16:57:25.501Z - info: fs store is initialized successfully
+2024-01-18T16:57:25.514Z - info: Creating default express app.
+2024-01-18T16:57:25.533Z - info: jsreport server successfully started on http port: 5488
+2024-01-18T16:57:25.534Z - info: Verifying license key free
+2024-01-18T16:57:25.535Z - info: Using free license
+2024-01-18T16:57:25.539Z - info: Initializing worker threads
+2024-01-18T16:57:25.727Z - info: 2 worker threads initialized in 188ms
+2024-01-18T16:57:25.727Z - info: Starting temp files cleanup with 180000ms threshold
+2024-01-18T16:57:25.728Z - info: reporter initialized
+2024-01-18T16:58:10.476Z - info: Render request 1 queued for execution and waiting for available worker rootId=n0x970aan2x2se8, id=n0x970aan2x2se8
+2024-01-18T16:58:10.504Z - info: Starting rendering request 1 rootId=n0x970aan2x2se8, id=n0x970aan2x2se8
+2024-01-18T16:58:10.505Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=n0x970aan2x2se8, id=n0x970aan2x2se8
+2024-01-18T16:58:13.340Z - warn: Page error: Unexpected token '&' , stack: SyntaxError: Unexpected token '&' rootId=n0x970aan2x2se8, id=n0x970aan2x2se8
+2024-01-18T16:58:13.340Z - info: pdf-utils is starting pdf processing rootId=n0x970aan2x2se8, id=n0x970aan2x2se8
+2024-01-18T16:58:13.347Z - info: Starting rendering (child) request rootId=n0x970aan2x2se8, id=2tvq9ndedkwa6dr
+2024-01-18T16:58:13.347Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=n0x970aan2x2se8, id=2tvq9ndedkwa6dr
+2024-01-18T16:58:13.522Z - info: Rendering (child) request finished in 3019 ms rootId=n0x970aan2x2se8, id=2tvq9ndedkwa6dr
+2024-01-18T16:58:13.523Z - info: pdf-utils pdf processing was finished rootId=n0x970aan2x2se8, id=n0x970aan2x2se8
+2024-01-18T16:58:13.524Z - info: Rendering request 1 finished in 3046 ms rootId=n0x970aan2x2se8, id=n0x970aan2x2se8
+2024-01-18T16:58:39.993Z - info: Render request 2 queued for execution and waiting for available worker rootId=o1pd74t959r8mki, id=o1pd74t959r8mki
+2024-01-18T16:58:40.008Z - info: Starting rendering request 2 rootId=o1pd74t959r8mki, id=o1pd74t959r8mki
+2024-01-18T16:58:40.009Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=o1pd74t959r8mki, id=o1pd74t959r8mki
+2024-01-18T16:58:42.752Z - warn: Page error: Missing initializer in const declaration , stack: SyntaxError: Missing initializer in const declaration rootId=o1pd74t959r8mki, id=o1pd74t959r8mki
+2024-01-18T16:58:42.754Z - info: pdf-utils is starting pdf processing rootId=o1pd74t959r8mki, id=o1pd74t959r8mki
+2024-01-18T16:58:42.760Z - info: Starting rendering (child) request rootId=o1pd74t959r8mki, id=ievcrt17dososd8
+2024-01-18T16:58:42.761Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=o1pd74t959r8mki, id=ievcrt17dososd8
+2024-01-18T16:58:42.929Z - info: Rendering (child) request finished in 2906 ms rootId=o1pd74t959r8mki, id=ievcrt17dososd8
+2024-01-18T16:58:42.930Z - info: pdf-utils pdf processing was finished rootId=o1pd74t959r8mki, id=o1pd74t959r8mki
+2024-01-18T16:58:42.931Z - info: Rendering request 2 finished in 2933 ms rootId=o1pd74t959r8mki, id=o1pd74t959r8mki
+2024-01-18T16:59:24.733Z - info: Render request 3 queued for execution and waiting for available worker rootId=3fv35hlc3ta70se, id=3fv35hlc3ta70se
+2024-01-18T16:59:24.743Z - info: Starting rendering request 3 rootId=3fv35hlc3ta70se, id=3fv35hlc3ta70se
+2024-01-18T16:59:24.744Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=3fv35hlc3ta70se, id=3fv35hlc3ta70se
+2024-01-18T16:59:25.017Z - warn: Page error: Unexpected token '&' , stack: SyntaxError: Unexpected token '&' rootId=3fv35hlc3ta70se, id=3fv35hlc3ta70se
+2024-01-18T16:59:25.018Z - info: pdf-utils is starting pdf processing rootId=3fv35hlc3ta70se, id=3fv35hlc3ta70se
+2024-01-18T16:59:25.025Z - info: Starting rendering (child) request rootId=3fv35hlc3ta70se, id=4e47vpgk2iz5ww5
+2024-01-18T16:59:25.025Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=3fv35hlc3ta70se, id=4e47vpgk2iz5ww5
+2024-01-18T16:59:25.197Z - info: Rendering (child) request finished in 443 ms rootId=3fv35hlc3ta70se, id=4e47vpgk2iz5ww5
+2024-01-18T16:59:25.198Z - info: pdf-utils pdf processing was finished rootId=3fv35hlc3ta70se, id=3fv35hlc3ta70se
+2024-01-18T16:59:25.199Z - info: Rendering request 3 finished in 463 ms rootId=3fv35hlc3ta70se, id=3fv35hlc3ta70se
+2024-01-18T17:00:42.280Z - info: Render request 4 queued for execution and waiting for available worker rootId=71psw8kdz5au22a, id=71psw8kdz5au22a
+2024-01-18T17:00:42.290Z - info: Starting rendering request 4 rootId=71psw8kdz5au22a, id=71psw8kdz5au22a
+2024-01-18T17:00:42.291Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=71psw8kdz5au22a, id=71psw8kdz5au22a
+2024-01-18T17:00:42.529Z - warn: Page error: Unexpected token '&' , stack: SyntaxError: Unexpected token '&' rootId=71psw8kdz5au22a, id=71psw8kdz5au22a
+2024-01-18T17:00:42.566Z - info: pdf-utils is starting pdf processing rootId=71psw8kdz5au22a, id=71psw8kdz5au22a
+2024-01-18T17:00:42.568Z - info: Starting rendering (child) request rootId=71psw8kdz5au22a, id=u68bcy073k3gzk2
+2024-01-18T17:00:42.568Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=71psw8kdz5au22a, id=u68bcy073k3gzk2
+2024-01-18T17:00:42.742Z - info: Rendering (child) request finished in 441 ms rootId=71psw8kdz5au22a, id=u68bcy073k3gzk2
+2024-01-18T17:00:42.743Z - info: pdf-utils pdf processing was finished rootId=71psw8kdz5au22a, id=71psw8kdz5au22a
+2024-01-18T17:00:42.743Z - info: Rendering request 4 finished in 461 ms rootId=71psw8kdz5au22a, id=71psw8kdz5au22a
+2024-01-18T17:01:05.800Z - info: Render request 5 queued for execution and waiting for available worker rootId=23g7x5buqh32yen, id=23g7x5buqh32yen
+2024-01-18T17:01:05.809Z - info: Starting rendering request 5 rootId=23g7x5buqh32yen, id=23g7x5buqh32yen
+2024-01-18T17:01:05.810Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=23g7x5buqh32yen, id=23g7x5buqh32yen
+2024-01-18T17:01:06.028Z - warn: Page error: Unexpected token '&' , stack: SyntaxError: Unexpected token '&' rootId=23g7x5buqh32yen, id=23g7x5buqh32yen
+2024-01-18T17:01:06.061Z - info: pdf-utils is starting pdf processing rootId=23g7x5buqh32yen, id=23g7x5buqh32yen
+2024-01-18T17:01:06.062Z - info: Starting rendering (child) request rootId=23g7x5buqh32yen, id=xd2ledmtxp97q3h
+2024-01-18T17:01:06.063Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=23g7x5buqh32yen, id=xd2ledmtxp97q3h
+2024-01-18T17:01:06.212Z - info: Rendering (child) request finished in 394 ms rootId=23g7x5buqh32yen, id=xd2ledmtxp97q3h
+2024-01-18T17:01:06.214Z - info: pdf-utils pdf processing was finished rootId=23g7x5buqh32yen, id=23g7x5buqh32yen
+2024-01-18T17:01:06.215Z - info: Rendering request 5 finished in 410 ms rootId=23g7x5buqh32yen, id=23g7x5buqh32yen
+2024-01-18T17:03:24.481Z - info: Render request 6 queued for execution and waiting for available worker rootId=se9sgjzowdxkmmu, id=se9sgjzowdxkmmu
+2024-01-18T17:03:24.492Z - info: Starting rendering request 6 rootId=se9sgjzowdxkmmu, id=se9sgjzowdxkmmu
+2024-01-18T17:03:24.493Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=se9sgjzowdxkmmu, id=se9sgjzowdxkmmu
+2024-01-18T17:03:24.733Z - warn: Page error: Missing initializer in const declaration , stack: SyntaxError: Missing initializer in const declaration rootId=se9sgjzowdxkmmu, id=se9sgjzowdxkmmu
+2024-01-18T17:03:24.734Z - info: pdf-utils is starting pdf processing rootId=se9sgjzowdxkmmu, id=se9sgjzowdxkmmu
+2024-01-18T17:03:24.735Z - info: Starting rendering (child) request rootId=se9sgjzowdxkmmu, id=pai65f4fba8malz
+2024-01-18T17:03:24.735Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=se9sgjzowdxkmmu, id=pai65f4fba8malz
+2024-01-18T17:03:24.896Z - info: Rendering (child) request finished in 396 ms rootId=se9sgjzowdxkmmu, id=pai65f4fba8malz
+2024-01-18T17:03:24.897Z - info: pdf-utils pdf processing was finished rootId=se9sgjzowdxkmmu, id=se9sgjzowdxkmmu
+2024-01-18T17:03:24.897Z - info: Rendering request 6 finished in 415 ms rootId=se9sgjzowdxkmmu, id=se9sgjzowdxkmmu
+2024-01-18T17:03:37.168Z - info: Render request 7 queued for execution and waiting for available worker rootId=j3nkwe95aigqc0k, id=j3nkwe95aigqc0k
+2024-01-18T17:03:37.176Z - info: Starting rendering request 7 rootId=j3nkwe95aigqc0k, id=j3nkwe95aigqc0k
+2024-01-18T17:03:37.176Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=j3nkwe95aigqc0k, id=j3nkwe95aigqc0k
+2024-01-18T17:03:37.392Z - warn: Page error: Unexpected token '&' , stack: SyntaxError: Unexpected token '&' rootId=j3nkwe95aigqc0k, id=j3nkwe95aigqc0k
+2024-01-18T17:03:37.393Z - info: pdf-utils is starting pdf processing rootId=j3nkwe95aigqc0k, id=j3nkwe95aigqc0k
+2024-01-18T17:03:37.394Z - info: Starting rendering (child) request rootId=j3nkwe95aigqc0k, id=nwu16tjnag8iyyh
+2024-01-18T17:03:37.395Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=j3nkwe95aigqc0k, id=nwu16tjnag8iyyh
+2024-01-18T17:03:37.534Z - info: Rendering (child) request finished in 352 ms rootId=j3nkwe95aigqc0k, id=nwu16tjnag8iyyh
+2024-01-18T17:03:37.536Z - info: pdf-utils pdf processing was finished rootId=j3nkwe95aigqc0k, id=j3nkwe95aigqc0k
+2024-01-18T17:03:37.536Z - info: Rendering request 7 finished in 367 ms rootId=j3nkwe95aigqc0k, id=j3nkwe95aigqc0k
+2024-01-18T17:06:53.859Z - info: Render request 8 queued for execution and waiting for available worker rootId=3iktueuymy7an72, id=3iktueuymy7an72
+2024-01-18T17:06:53.868Z - info: Starting rendering request 8 rootId=3iktueuymy7an72, id=3iktueuymy7an72
+2024-01-18T17:06:53.868Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=3iktueuymy7an72, id=3iktueuymy7an72
+2024-01-18T17:06:53.981Z - error: Report render failed
+(because) res.end is not a function
+TypeError: res.end is not a function
+    at sandbox.js:56:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5) rootId=3iktueuymy7an72, id=3iktueuymy7an72
+2024-01-18T17:07:05.592Z - info: Render request 9 queued for execution and waiting for available worker rootId=0nv839lylolzeei, id=0nv839lylolzeei
+2024-01-18T17:07:05.606Z - info: Starting rendering request 9 rootId=0nv839lylolzeei, id=0nv839lylolzeei
+2024-01-18T17:07:05.607Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=0nv839lylolzeei, id=0nv839lylolzeei
+2024-01-18T17:07:10.321Z - warn: Page error: Unexpected token '&', "[&quot;Race"... is not valid JSON
+JSON.parse (<anonymous>) , stack: SyntaxError: Unexpected token '&', "[&quot;Race"... is not valid JSON
+JSON.parse (<anonymous>)
+    at <anonymous> (file:///C:/Users/DANIEL~1/AppData/Local/Temp/jsreport/autocleanup/0474bad7-b0d5-4bf8-a097-414e3755da97-chrome-pdf.html:14:32) rootId=0nv839lylolzeei, id=0nv839lylolzeei
+2024-01-18T17:07:10.666Z - info: pdf-utils is starting pdf processing rootId=0nv839lylolzeei, id=0nv839lylolzeei
+2024-01-18T17:07:10.672Z - info: Starting rendering (child) request rootId=0nv839lylolzeei, id=lc7srlckyiolbrq
+2024-01-18T17:07:10.672Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=0nv839lylolzeei, id=lc7srlckyiolbrq
+2024-01-18T17:07:10.832Z - info: Rendering (child) request finished in 5212 ms rootId=0nv839lylolzeei, id=lc7srlckyiolbrq
+2024-01-18T17:07:10.833Z - info: pdf-utils pdf processing was finished rootId=0nv839lylolzeei, id=0nv839lylolzeei
+2024-01-18T17:07:10.834Z - info: Rendering request 9 finished in 5239 ms rootId=0nv839lylolzeei, id=0nv839lylolzeei
+2024-01-18T17:08:20.800Z - info: Render request 10 queued for execution and waiting for available worker rootId=zhi11anzcp7s9nc, id=zhi11anzcp7s9nc
+2024-01-18T17:08:20.810Z - info: Starting rendering request 10 rootId=zhi11anzcp7s9nc, id=zhi11anzcp7s9nc
+2024-01-18T17:08:20.810Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=zhi11anzcp7s9nc, id=zhi11anzcp7s9nc
+2024-01-18T17:08:20.948Z - warn: Page error: Missing initializer in const declaration , stack: SyntaxError: Missing initializer in const declaration rootId=zhi11anzcp7s9nc, id=zhi11anzcp7s9nc
+2024-01-18T17:08:21.030Z - info: pdf-utils is starting pdf processing rootId=zhi11anzcp7s9nc, id=zhi11anzcp7s9nc
+2024-01-18T17:08:21.032Z - info: Starting rendering (child) request rootId=zhi11anzcp7s9nc, id=1mqocwvzf836qgl
+2024-01-18T17:08:21.032Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=zhi11anzcp7s9nc, id=1mqocwvzf836qgl
+2024-01-18T17:08:21.178Z - info: Rendering (child) request finished in 364 ms rootId=zhi11anzcp7s9nc, id=1mqocwvzf836qgl
+2024-01-18T17:08:21.180Z - info: pdf-utils pdf processing was finished rootId=zhi11anzcp7s9nc, id=zhi11anzcp7s9nc
+2024-01-18T17:08:21.180Z - info: Rendering request 10 finished in 378 ms rootId=zhi11anzcp7s9nc, id=zhi11anzcp7s9nc
+2024-01-18T17:08:38.412Z - info: Render request 11 queued for execution and waiting for available worker rootId=tq7ihv1usw6ohv0, id=tq7ihv1usw6ohv0
+2024-01-18T17:08:38.421Z - info: Starting rendering request 11 rootId=tq7ihv1usw6ohv0, id=tq7ihv1usw6ohv0
+2024-01-18T17:08:38.422Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=tq7ihv1usw6ohv0, id=tq7ihv1usw6ohv0
+2024-01-18T17:08:38.595Z - warn: Page error: Unexpected token '&' , stack: SyntaxError: Unexpected token '&' rootId=tq7ihv1usw6ohv0, id=tq7ihv1usw6ohv0
+2024-01-18T17:08:38.681Z - info: pdf-utils is starting pdf processing rootId=tq7ihv1usw6ohv0, id=tq7ihv1usw6ohv0
+2024-01-18T17:08:38.682Z - info: Starting rendering (child) request rootId=tq7ihv1usw6ohv0, id=lm3uheq7ji2ab3r
+2024-01-18T17:08:38.683Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=tq7ihv1usw6ohv0, id=lm3uheq7ji2ab3r
+2024-01-18T17:08:38.849Z - info: Rendering (child) request finished in 416 ms rootId=tq7ihv1usw6ohv0, id=lm3uheq7ji2ab3r
+2024-01-18T17:08:38.850Z - info: pdf-utils pdf processing was finished rootId=tq7ihv1usw6ohv0, id=tq7ihv1usw6ohv0
+2024-01-18T17:08:38.851Z - info: Rendering request 11 finished in 437 ms rootId=tq7ihv1usw6ohv0, id=tq7ihv1usw6ohv0
+2024-01-18T17:09:47.609Z - info: Render request 12 queued for execution and waiting for available worker rootId=mdiw2t773dprpbq, id=mdiw2t773dprpbq
+2024-01-18T17:09:47.617Z - info: Starting rendering request 12 rootId=mdiw2t773dprpbq, id=mdiw2t773dprpbq
+2024-01-18T17:09:47.618Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=mdiw2t773dprpbq, id=mdiw2t773dprpbq
+2024-01-18T17:09:47.841Z - warn: Page error: Missing initializer in const declaration , stack: SyntaxError: Missing initializer in const declaration rootId=mdiw2t773dprpbq, id=mdiw2t773dprpbq
+2024-01-18T17:09:47.862Z - info: pdf-utils is starting pdf processing rootId=mdiw2t773dprpbq, id=mdiw2t773dprpbq
+2024-01-18T17:09:47.865Z - info: Starting rendering (child) request rootId=mdiw2t773dprpbq, id=u4s15wng9eeh5lp
+2024-01-18T17:09:47.865Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=mdiw2t773dprpbq, id=u4s15wng9eeh5lp
+2024-01-18T17:09:48.032Z - info: Rendering (child) request finished in 407 ms rootId=mdiw2t773dprpbq, id=u4s15wng9eeh5lp
+2024-01-18T17:09:48.033Z - info: pdf-utils pdf processing was finished rootId=mdiw2t773dprpbq, id=mdiw2t773dprpbq
+2024-01-18T17:09:48.033Z - info: Rendering request 12 finished in 422 ms rootId=mdiw2t773dprpbq, id=mdiw2t773dprpbq
+2024-01-18T17:15:02.392Z - info: Render request 13 queued for execution and waiting for available worker rootId=lq1hqymhxcw4t3s, id=lq1hqymhxcw4t3s
+2024-01-18T17:15:02.401Z - info: Starting rendering request 13 rootId=lq1hqymhxcw4t3s, id=lq1hqymhxcw4t3s
+2024-01-18T17:15:02.402Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=lq1hqymhxcw4t3s, id=lq1hqymhxcw4t3s
+2024-01-18T17:15:02.575Z - warn: Page error: Missing initializer in const declaration , stack: SyntaxError: Missing initializer in const declaration rootId=lq1hqymhxcw4t3s, id=lq1hqymhxcw4t3s
+2024-01-18T17:15:02.637Z - info: pdf-utils is starting pdf processing rootId=lq1hqymhxcw4t3s, id=lq1hqymhxcw4t3s
+2024-01-18T17:15:02.639Z - info: Starting rendering (child) request rootId=lq1hqymhxcw4t3s, id=j531qo7rb1gigjn
+2024-01-18T17:15:02.639Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=lq1hqymhxcw4t3s, id=j531qo7rb1gigjn
+2024-01-18T17:15:02.801Z - info: Rendering (child) request finished in 390 ms rootId=lq1hqymhxcw4t3s, id=j531qo7rb1gigjn
+2024-01-18T17:15:02.802Z - info: pdf-utils pdf processing was finished rootId=lq1hqymhxcw4t3s, id=lq1hqymhxcw4t3s
+2024-01-18T17:15:02.802Z - info: Rendering request 13 finished in 407 ms rootId=lq1hqymhxcw4t3s, id=lq1hqymhxcw4t3s
+2024-01-18T17:17:49.036Z - info: Render request 14 queued for execution and waiting for available worker rootId=8ztn07vohxfv3iz, id=8ztn07vohxfv3iz
+2024-01-18T17:17:49.045Z - info: Starting rendering request 14 rootId=8ztn07vohxfv3iz, id=8ztn07vohxfv3iz
+2024-01-18T17:17:49.045Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=8ztn07vohxfv3iz, id=8ztn07vohxfv3iz
+2024-01-18T17:17:52.023Z - warn: Page error: Unexpected token '<' , stack: SyntaxError: Unexpected token '<' rootId=8ztn07vohxfv3iz, id=8ztn07vohxfv3iz
+2024-01-18T17:17:52.081Z - info: pdf-utils is starting pdf processing rootId=8ztn07vohxfv3iz, id=8ztn07vohxfv3iz
+2024-01-18T17:17:52.083Z - info: Starting rendering (child) request rootId=8ztn07vohxfv3iz, id=hgeoyw1d44o3fwk
+2024-01-18T17:17:52.084Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=8ztn07vohxfv3iz, id=hgeoyw1d44o3fwk
+2024-01-18T17:17:52.233Z - info: Rendering (child) request finished in 3179 ms rootId=8ztn07vohxfv3iz, id=hgeoyw1d44o3fwk
+2024-01-18T17:17:52.234Z - info: pdf-utils pdf processing was finished rootId=8ztn07vohxfv3iz, id=8ztn07vohxfv3iz
+2024-01-18T17:17:52.234Z - info: Rendering request 14 finished in 3194 ms rootId=8ztn07vohxfv3iz, id=8ztn07vohxfv3iz
+2024-01-18T17:22:47.579Z - info: Initializing jsreport (version: 4.2.0, configuration file: jsreport.config.json, nodejs: 18.17.1)
+2024-01-18T17:22:47.582Z - info: Searching for available extensions in C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\
+2024-01-18T17:22:47.589Z - info: Extensions location cache contains up to date information, skipping crawling in C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\
+2024-01-18T17:22:47.607Z - info: Found 35 extension(s)
+2024-01-18T17:22:47.678Z - info: Using extension base@4.0.0
+2024-01-18T17:22:47.683Z - info: Using extension child-templates@4.0.0
+2024-01-18T17:22:47.686Z - info: Using extension cli@4.0.2
+2024-01-18T17:22:47.690Z - info: Using extension components@4.0.0
+2024-01-18T17:22:47.692Z - info: Using extension data@4.0.0
+2024-01-18T17:22:47.694Z - info: Using extension express@4.0.1
+2024-01-18T17:22:47.884Z - info: Using extension freeze@4.0.0
+2024-01-18T17:22:47.886Z - info: Using extension fs-store@4.0.1
+2024-01-18T17:22:47.964Z - info: Using extension handlebars@4.0.1
+2024-01-18T17:22:47.965Z - info: Using extension import-export@4.0.2
+2024-01-18T17:22:47.972Z - info: Using extension jsrender@4.0.0
+2024-01-18T17:22:47.973Z - info: Using extension licensing@4.0.1
+2024-01-18T17:22:47.993Z - info: Using extension localization@4.0.1
+2024-01-18T17:22:47.994Z - info: Using extension npm@4.0.0
+2024-01-18T17:22:47.996Z - info: Using extension pdf-utils@4.0.2
+2024-01-18T17:22:47.998Z - info: Using extension reports@4.0.0
+2024-01-18T17:22:48.001Z - info: Using extension tags@4.0.1
+2024-01-18T17:22:48.003Z - info: Using extension text@4.0.0
+2024-01-18T17:22:48.003Z - info: Using extension version-control@4.0.0
+2024-01-18T17:22:48.014Z - info: Using extension assets@4.0.2
+2024-01-18T17:22:48.023Z - info: Using extension authorization@4.0.0
+2024-01-18T17:22:48.028Z - info: Using extension browser-client@4.0.0
+2024-01-18T17:22:48.030Z - info: Using extension chrome-pdf@4.0.0
+2024-01-18T17:22:48.032Z - info: Using extension docx@4.1.1
+2024-01-18T17:22:48.035Z - info: Using extension html-to-xlsx@4.0.1
+2024-01-18T17:22:48.282Z - info: html-to-xlsx detected chrome as available html engine
+2024-01-18T17:22:48.282Z - info: Using extension pptx@4.1.0
+2024-01-18T17:22:48.284Z - info: Using extension scheduling@4.0.0
+2024-01-18T17:22:48.305Z - info: Using extension scripts@4.0.0
+2024-01-18T17:22:48.306Z - info: Using extension static-pdf@4.0.0
+2024-01-18T17:22:48.307Z - info: Using extension studio@4.0.2
+2024-01-18T17:22:48.385Z - info: Using extension xlsx@4.0.2
+2024-01-18T17:22:48.387Z - info: Using extension public-templates@4.0.0
+2024-01-18T17:22:48.389Z - info: Using extension sample-template@4.0.0
+2024-01-18T17:22:48.390Z - info: Using extension studio-theme-dark@4.0.0
+2024-01-18T17:22:48.392Z - info: Code sandboxing is disabled, users can potentially penetrate the local system if you allow code from external users to be part of your reports
+2024-01-18T17:22:48.392Z - info: Using general timeout for rendering (reportTimeout: 60000)
+2024-01-18T17:22:48.392Z - info: Using fs provider for template store.
+2024-01-18T17:22:48.396Z - info: fs store is persisting using fs for C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\data
+2024-01-18T17:22:48.404Z - info: fs store is loading data
+2024-01-18T17:22:48.423Z - info: fs store is initialized successfully
+2024-01-18T17:22:48.434Z - info: Creating default express app.
+2024-01-18T17:22:48.450Z - info: jsreport server successfully started on http port: 5488
+2024-01-18T17:22:48.452Z - info: Verifying license key free
+2024-01-18T17:22:48.453Z - info: Using free license
+2024-01-18T17:22:48.457Z - info: Initializing worker threads
+2024-01-18T17:22:48.631Z - info: 2 worker threads initialized in 173ms
+2024-01-18T17:22:48.631Z - info: Starting temp files cleanup with 180000ms threshold
+2024-01-18T17:22:48.632Z - info: reporter initialized
+2024-01-18T17:22:53.512Z - info: Render request 1 queued for execution and waiting for available worker rootId=z8cdb5x1sjl3yo1, id=z8cdb5x1sjl3yo1
+2024-01-18T17:22:53.533Z - info: Starting rendering request 1 rootId=z8cdb5x1sjl3yo1, id=z8cdb5x1sjl3yo1
+2024-01-18T17:22:53.534Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=z8cdb5x1sjl3yo1, id=z8cdb5x1sjl3yo1
+2024-01-18T17:22:56.396Z - warn: Page error: Missing initializer in const declaration , stack: SyntaxError: Missing initializer in const declaration rootId=z8cdb5x1sjl3yo1, id=z8cdb5x1sjl3yo1
+2024-01-18T17:22:56.396Z - info: pdf-utils is starting pdf processing rootId=z8cdb5x1sjl3yo1, id=z8cdb5x1sjl3yo1
+2024-01-18T17:22:56.402Z - info: Starting rendering (child) request rootId=z8cdb5x1sjl3yo1, id=096yuffckusqhpr
+2024-01-18T17:22:56.402Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=z8cdb5x1sjl3yo1, id=096yuffckusqhpr
+2024-01-18T17:22:56.590Z - info: Rendering (child) request finished in 3049 ms rootId=z8cdb5x1sjl3yo1, id=096yuffckusqhpr
+2024-01-18T17:22:56.592Z - info: pdf-utils pdf processing was finished rootId=z8cdb5x1sjl3yo1, id=z8cdb5x1sjl3yo1
+2024-01-18T17:22:56.592Z - info: Rendering request 1 finished in 3076 ms rootId=z8cdb5x1sjl3yo1, id=z8cdb5x1sjl3yo1
+2024-01-18T17:23:45.843Z - info: Render request 2 queued for execution and waiting for available worker rootId=efa3pipytftklyt, id=efa3pipytftklyt
+2024-01-18T17:23:45.859Z - info: Starting rendering request 2 rootId=efa3pipytftklyt, id=efa3pipytftklyt
+2024-01-18T17:23:45.860Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=efa3pipytftklyt, id=efa3pipytftklyt
+2024-01-18T17:23:48.328Z - warn: Page error: Missing initializer in const declaration , stack: SyntaxError: Missing initializer in const declaration rootId=efa3pipytftklyt, id=efa3pipytftklyt
+2024-01-18T17:23:48.711Z - info: pdf-utils is starting pdf processing rootId=efa3pipytftklyt, id=efa3pipytftklyt
+2024-01-18T17:23:48.718Z - info: Starting rendering (child) request rootId=efa3pipytftklyt, id=d15c6isxde22ksd
+2024-01-18T17:23:48.719Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=efa3pipytftklyt, id=d15c6isxde22ksd
+2024-01-18T17:23:48.894Z - info: Rendering (child) request finished in 3021 ms rootId=efa3pipytftklyt, id=d15c6isxde22ksd
+2024-01-18T17:23:48.895Z - info: pdf-utils pdf processing was finished rootId=efa3pipytftklyt, id=efa3pipytftklyt
+2024-01-18T17:23:48.896Z - info: Rendering request 2 finished in 3049 ms rootId=efa3pipytftklyt, id=efa3pipytftklyt
+2024-01-18T17:24:00.098Z - info: Render request 3 queued for execution and waiting for available worker rootId=jmxp4qo6afp01t0, id=jmxp4qo6afp01t0
+2024-01-18T17:24:00.107Z - info: Starting rendering request 3 rootId=jmxp4qo6afp01t0, id=jmxp4qo6afp01t0
+2024-01-18T17:24:00.107Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=jmxp4qo6afp01t0, id=jmxp4qo6afp01t0
+2024-01-18T17:24:00.305Z - warn: Page error: Missing initializer in const declaration , stack: SyntaxError: Missing initializer in const declaration rootId=jmxp4qo6afp01t0, id=jmxp4qo6afp01t0
+2024-01-18T17:24:00.393Z - info: pdf-utils is starting pdf processing rootId=jmxp4qo6afp01t0, id=jmxp4qo6afp01t0
+2024-01-18T17:24:00.394Z - info: Starting rendering (child) request rootId=jmxp4qo6afp01t0, id=bh2x9uorv55pknu
+2024-01-18T17:24:00.395Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=jmxp4qo6afp01t0, id=bh2x9uorv55pknu
+2024-01-18T17:24:00.553Z - info: Rendering (child) request finished in 429 ms rootId=jmxp4qo6afp01t0, id=bh2x9uorv55pknu
+2024-01-18T17:24:00.554Z - info: pdf-utils pdf processing was finished rootId=jmxp4qo6afp01t0, id=jmxp4qo6afp01t0
+2024-01-18T17:24:00.555Z - info: Rendering request 3 finished in 454 ms rootId=jmxp4qo6afp01t0, id=jmxp4qo6afp01t0
+2024-01-18T17:24:20.971Z - info: Render request 4 queued for execution and waiting for available worker rootId=l46xgt1e5tp4eur, id=l46xgt1e5tp4eur
+2024-01-18T17:24:20.980Z - info: Starting rendering request 4 rootId=l46xgt1e5tp4eur, id=l46xgt1e5tp4eur
+2024-01-18T17:24:20.981Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=l46xgt1e5tp4eur, id=l46xgt1e5tp4eur
+2024-01-18T17:24:21.168Z - warn: Page error: Unexpected token ';' , stack: SyntaxError: Unexpected token ';' rootId=l46xgt1e5tp4eur, id=l46xgt1e5tp4eur
+2024-01-18T17:24:21.256Z - info: pdf-utils is starting pdf processing rootId=l46xgt1e5tp4eur, id=l46xgt1e5tp4eur
+2024-01-18T17:24:21.257Z - info: Starting rendering (child) request rootId=l46xgt1e5tp4eur, id=l6vzq02jw0ouv3t
+2024-01-18T17:24:21.257Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=l46xgt1e5tp4eur, id=l6vzq02jw0ouv3t
+2024-01-18T17:24:21.436Z - info: Rendering (child) request finished in 432 ms rootId=l46xgt1e5tp4eur, id=l6vzq02jw0ouv3t
+2024-01-18T17:24:21.437Z - info: pdf-utils pdf processing was finished rootId=l46xgt1e5tp4eur, id=l46xgt1e5tp4eur
+2024-01-18T17:24:21.438Z - info: Rendering request 4 finished in 464 ms rootId=l46xgt1e5tp4eur, id=l46xgt1e5tp4eur
+2024-01-18T17:24:30.897Z - info: Render request 5 queued for execution and waiting for available worker rootId=tintspdz1nxr6q8, id=tintspdz1nxr6q8
+2024-01-18T17:24:30.907Z - info: Starting rendering request 5 rootId=tintspdz1nxr6q8, id=tintspdz1nxr6q8
+2024-01-18T17:24:30.908Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=tintspdz1nxr6q8, id=tintspdz1nxr6q8
+2024-01-18T17:24:31.132Z - warn: Page error: Unexpected token ';' , stack: SyntaxError: Unexpected token ';' rootId=tintspdz1nxr6q8, id=tintspdz1nxr6q8
+2024-01-18T17:24:31.160Z - info: pdf-utils is starting pdf processing rootId=tintspdz1nxr6q8, id=tintspdz1nxr6q8
+2024-01-18T17:24:31.162Z - info: Starting rendering (child) request rootId=tintspdz1nxr6q8, id=kcvrq8hlv5a59iw
+2024-01-18T17:24:31.162Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=tintspdz1nxr6q8, id=kcvrq8hlv5a59iw
+2024-01-18T17:24:31.334Z - info: Rendering (child) request finished in 417 ms rootId=tintspdz1nxr6q8, id=kcvrq8hlv5a59iw
+2024-01-18T17:24:31.335Z - info: pdf-utils pdf processing was finished rootId=tintspdz1nxr6q8, id=tintspdz1nxr6q8
+2024-01-18T17:24:31.335Z - info: Rendering request 5 finished in 433 ms rootId=tintspdz1nxr6q8, id=tintspdz1nxr6q8
+2024-01-18T17:28:01.872Z - info: Render request 6 queued for execution and waiting for available worker rootId=bmcufc8dyspsp7o, id=bmcufc8dyspsp7o
+2024-01-18T17:28:01.879Z - info: Starting rendering request 6 rootId=bmcufc8dyspsp7o, id=bmcufc8dyspsp7o
+2024-01-18T17:28:01.879Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=bmcufc8dyspsp7o, id=bmcufc8dyspsp7o
+2024-01-18T17:28:02.061Z - warn: Page error: Unexpected token ';' , stack: SyntaxError: Unexpected token ';' rootId=bmcufc8dyspsp7o, id=bmcufc8dyspsp7o
+2024-01-18T17:28:02.062Z - info: pdf-utils is starting pdf processing rootId=bmcufc8dyspsp7o, id=bmcufc8dyspsp7o
+2024-01-18T17:28:02.063Z - info: Starting rendering (child) request rootId=bmcufc8dyspsp7o, id=07obpybrwy1p6mq
+2024-01-18T17:28:02.064Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=bmcufc8dyspsp7o, id=07obpybrwy1p6mq
+2024-01-18T17:28:02.235Z - info: Rendering (child) request finished in 355 ms rootId=bmcufc8dyspsp7o, id=07obpybrwy1p6mq
+2024-01-18T17:28:02.236Z - info: pdf-utils pdf processing was finished rootId=bmcufc8dyspsp7o, id=bmcufc8dyspsp7o
+2024-01-18T17:28:02.237Z - info: Rendering request 6 finished in 362 ms rootId=bmcufc8dyspsp7o, id=bmcufc8dyspsp7o
+2024-01-18T17:28:12.453Z - info: Render request 7 queued for execution and waiting for available worker rootId=gcvo3x00vk7erna, id=gcvo3x00vk7erna
+2024-01-18T17:28:12.462Z - info: Starting rendering request 7 rootId=gcvo3x00vk7erna, id=gcvo3x00vk7erna
+2024-01-18T17:28:12.462Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=gcvo3x00vk7erna, id=gcvo3x00vk7erna
+2024-01-18T17:28:12.713Z - warn: Page error: Unexpected token ';' , stack: SyntaxError: Unexpected token ';' rootId=gcvo3x00vk7erna, id=gcvo3x00vk7erna
+2024-01-18T17:28:12.751Z - info: pdf-utils is starting pdf processing rootId=gcvo3x00vk7erna, id=gcvo3x00vk7erna
+2024-01-18T17:28:12.753Z - info: Starting rendering (child) request rootId=gcvo3x00vk7erna, id=h6hrejuni9km2pa
+2024-01-18T17:28:12.753Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=gcvo3x00vk7erna, id=h6hrejuni9km2pa
+2024-01-18T17:28:12.930Z - info: Rendering (child) request finished in 460 ms rootId=gcvo3x00vk7erna, id=h6hrejuni9km2pa
+2024-01-18T17:28:12.931Z - info: pdf-utils pdf processing was finished rootId=gcvo3x00vk7erna, id=gcvo3x00vk7erna
+2024-01-18T17:28:12.931Z - info: Rendering request 7 finished in 475 ms rootId=gcvo3x00vk7erna, id=gcvo3x00vk7erna
+2024-01-18T17:31:09.813Z - info: Render request 8 queued for execution and waiting for available worker rootId=glnziuz82hsypv0, id=glnziuz82hsypv0
+2024-01-18T17:31:09.819Z - info: Starting rendering request 8 rootId=glnziuz82hsypv0, id=glnziuz82hsypv0
+2024-01-18T17:31:09.820Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=glnziuz82hsypv0, id=glnziuz82hsypv0
+2024-01-18T17:31:10.033Z - warn: Page error: Unexpected token ';' , stack: SyntaxError: Unexpected token ';' rootId=glnziuz82hsypv0, id=glnziuz82hsypv0
+2024-01-18T17:31:10.105Z - info: pdf-utils is starting pdf processing rootId=glnziuz82hsypv0, id=glnziuz82hsypv0
+2024-01-18T17:31:10.108Z - info: Starting rendering (child) request rootId=glnziuz82hsypv0, id=rajlxp70m5bx9l2
+2024-01-18T17:31:10.108Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=glnziuz82hsypv0, id=rajlxp70m5bx9l2
+2024-01-18T17:31:10.280Z - info: Rendering (child) request finished in 449 ms rootId=glnziuz82hsypv0, id=rajlxp70m5bx9l2
+2024-01-18T17:31:10.282Z - info: pdf-utils pdf processing was finished rootId=glnziuz82hsypv0, id=glnziuz82hsypv0
+2024-01-18T17:31:10.282Z - info: Rendering request 8 finished in 467 ms rootId=glnziuz82hsypv0, id=glnziuz82hsypv0
+2024-01-18T17:31:32.782Z - info: Render request 9 queued for execution and waiting for available worker rootId=lg28uop0jpr1daz, id=lg28uop0jpr1daz
+2024-01-18T17:31:32.792Z - info: Starting rendering request 9 rootId=lg28uop0jpr1daz, id=lg28uop0jpr1daz
+2024-01-18T17:31:32.793Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=lg28uop0jpr1daz, id=lg28uop0jpr1daz
+2024-01-18T17:31:32.934Z - warn: Page error: Unexpected token ';' , stack: SyntaxError: Unexpected token ';' rootId=lg28uop0jpr1daz, id=lg28uop0jpr1daz
+2024-01-18T17:31:33.020Z - info: pdf-utils is starting pdf processing rootId=lg28uop0jpr1daz, id=lg28uop0jpr1daz
+2024-01-18T17:31:33.021Z - info: Starting rendering (child) request rootId=lg28uop0jpr1daz, id=8uc0zs21mt0vg5s
+2024-01-18T17:31:33.021Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=lg28uop0jpr1daz, id=8uc0zs21mt0vg5s
+2024-01-18T17:31:33.177Z - info: Rendering (child) request finished in 380 ms rootId=lg28uop0jpr1daz, id=8uc0zs21mt0vg5s
+2024-01-18T17:31:33.178Z - info: pdf-utils pdf processing was finished rootId=lg28uop0jpr1daz, id=lg28uop0jpr1daz
+2024-01-18T17:31:33.178Z - info: Rendering request 9 finished in 394 ms rootId=lg28uop0jpr1daz, id=lg28uop0jpr1daz
+2024-01-18T17:32:09.763Z - info: Render request 10 queued for execution and waiting for available worker rootId=05xonxh520p2f86, id=05xonxh520p2f86
+2024-01-18T17:32:09.772Z - info: Starting rendering request 10 rootId=05xonxh520p2f86, id=05xonxh520p2f86
+2024-01-18T17:32:09.773Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=05xonxh520p2f86, id=05xonxh520p2f86
+2024-01-18T17:32:09.983Z - warn: Page error: Unexpected token ';' , stack: SyntaxError: Unexpected token ';' rootId=05xonxh520p2f86, id=05xonxh520p2f86
+2024-01-18T17:32:10.019Z - info: pdf-utils is starting pdf processing rootId=05xonxh520p2f86, id=05xonxh520p2f86
+2024-01-18T17:32:10.021Z - info: Starting rendering (child) request rootId=05xonxh520p2f86, id=p7aazhmqu5qm2bq
+2024-01-18T17:32:10.022Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=05xonxh520p2f86, id=p7aazhmqu5qm2bq
+2024-01-18T17:32:10.190Z - info: Rendering (child) request finished in 409 ms rootId=05xonxh520p2f86, id=p7aazhmqu5qm2bq
+2024-01-18T17:32:10.191Z - info: pdf-utils pdf processing was finished rootId=05xonxh520p2f86, id=05xonxh520p2f86
+2024-01-18T17:32:10.191Z - info: Rendering request 10 finished in 425 ms rootId=05xonxh520p2f86, id=05xonxh520p2f86
+2024-01-18T17:33:47.190Z - info: Render request 11 queued for execution and waiting for available worker rootId=m4g2f66fk1ptc0k, id=m4g2f66fk1ptc0k
+2024-01-18T17:33:47.199Z - info: Starting rendering request 11 rootId=m4g2f66fk1ptc0k, id=m4g2f66fk1ptc0k
+2024-01-18T17:33:47.200Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=m4g2f66fk1ptc0k, id=m4g2f66fk1ptc0k
+2024-01-18T17:33:47.428Z - warn: Page error: Unexpected token ';' , stack: SyntaxError: Unexpected token ';' rootId=m4g2f66fk1ptc0k, id=m4g2f66fk1ptc0k
+2024-01-18T17:33:47.430Z - info: pdf-utils is starting pdf processing rootId=m4g2f66fk1ptc0k, id=m4g2f66fk1ptc0k
+2024-01-18T17:33:47.445Z - info: Starting rendering (child) request rootId=m4g2f66fk1ptc0k, id=fk5qy20lsz839w9
+2024-01-18T17:33:47.446Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=m4g2f66fk1ptc0k, id=fk5qy20lsz839w9
+2024-01-18T17:33:47.598Z - info: Rendering (child) request finished in 393 ms rootId=m4g2f66fk1ptc0k, id=fk5qy20lsz839w9
+2024-01-18T17:33:47.599Z - info: pdf-utils pdf processing was finished rootId=m4g2f66fk1ptc0k, id=m4g2f66fk1ptc0k
+2024-01-18T17:33:47.599Z - info: Rendering request 11 finished in 407 ms rootId=m4g2f66fk1ptc0k, id=m4g2f66fk1ptc0k
+2024-01-18T17:34:02.963Z - info: Render request 12 queued for execution and waiting for available worker rootId=egu2s1ji1oc0dwf, id=egu2s1ji1oc0dwf
+2024-01-18T17:34:02.971Z - info: Starting rendering request 12 rootId=egu2s1ji1oc0dwf, id=egu2s1ji1oc0dwf
+2024-01-18T17:34:02.971Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=egu2s1ji1oc0dwf, id=egu2s1ji1oc0dwf
+2024-01-18T17:34:03.181Z - warn: Page error: Unexpected token ';' , stack: SyntaxError: Unexpected token ';' rootId=egu2s1ji1oc0dwf, id=egu2s1ji1oc0dwf
+2024-01-18T17:34:03.227Z - info: pdf-utils is starting pdf processing rootId=egu2s1ji1oc0dwf, id=egu2s1ji1oc0dwf
+2024-01-18T17:34:03.229Z - info: Starting rendering (child) request rootId=egu2s1ji1oc0dwf, id=l1arhog7yonbdi0
+2024-01-18T17:34:03.229Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=egu2s1ji1oc0dwf, id=l1arhog7yonbdi0
+2024-01-18T17:34:03.390Z - info: Rendering (child) request finished in 409 ms rootId=egu2s1ji1oc0dwf, id=l1arhog7yonbdi0
+2024-01-18T17:34:03.391Z - info: pdf-utils pdf processing was finished rootId=egu2s1ji1oc0dwf, id=egu2s1ji1oc0dwf
+2024-01-18T17:34:03.392Z - info: Rendering request 12 finished in 427 ms rootId=egu2s1ji1oc0dwf, id=egu2s1ji1oc0dwf
+2024-01-18T17:35:39.009Z - info: Render request 13 queued for execution and waiting for available worker rootId=cb3vxqttqr51s78, id=cb3vxqttqr51s78
+2024-01-18T17:35:39.018Z - info: Starting rendering request 13 rootId=cb3vxqttqr51s78, id=cb3vxqttqr51s78
+2024-01-18T17:35:39.019Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=cb3vxqttqr51s78, id=cb3vxqttqr51s78
+2024-01-18T17:35:39.203Z - warn: Page error: Unexpected token ';' , stack: SyntaxError: Unexpected token ';' rootId=cb3vxqttqr51s78, id=cb3vxqttqr51s78
+2024-01-18T17:35:39.251Z - info: pdf-utils is starting pdf processing rootId=cb3vxqttqr51s78, id=cb3vxqttqr51s78
+2024-01-18T17:35:39.252Z - info: Starting rendering (child) request rootId=cb3vxqttqr51s78, id=nb6nrw62yos7jhh
+2024-01-18T17:35:39.252Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=cb3vxqttqr51s78, id=nb6nrw62yos7jhh
+2024-01-18T17:35:39.407Z - info: Rendering (child) request finished in 381 ms rootId=cb3vxqttqr51s78, id=nb6nrw62yos7jhh
+2024-01-18T17:35:39.408Z - info: pdf-utils pdf processing was finished rootId=cb3vxqttqr51s78, id=cb3vxqttqr51s78
+2024-01-18T17:35:39.409Z - info: Rendering request 13 finished in 396 ms rootId=cb3vxqttqr51s78, id=cb3vxqttqr51s78
+2024-01-18T17:35:57.582Z - info: Render request 14 queued for execution and waiting for available worker rootId=bocbka7u41jre56, id=bocbka7u41jre56
+2024-01-18T17:35:57.591Z - info: Starting rendering request 14 rootId=bocbka7u41jre56, id=bocbka7u41jre56
+2024-01-18T17:35:57.592Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=bocbka7u41jre56, id=bocbka7u41jre56
+2024-01-18T17:35:57.796Z - warn: Page error: Unexpected token ';' , stack: SyntaxError: Unexpected token ';' rootId=bocbka7u41jre56, id=bocbka7u41jre56
+2024-01-18T17:35:57.834Z - info: pdf-utils is starting pdf processing rootId=bocbka7u41jre56, id=bocbka7u41jre56
+2024-01-18T17:35:57.836Z - info: Starting rendering (child) request rootId=bocbka7u41jre56, id=vuhhfxsn7tsev2e
+2024-01-18T17:35:57.836Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=bocbka7u41jre56, id=vuhhfxsn7tsev2e
+2024-01-18T17:35:57.999Z - info: Rendering (child) request finished in 401 ms rootId=bocbka7u41jre56, id=vuhhfxsn7tsev2e
+2024-01-18T17:35:58.001Z - info: pdf-utils pdf processing was finished rootId=bocbka7u41jre56, id=bocbka7u41jre56
+2024-01-18T17:35:58.001Z - info: Rendering request 14 finished in 416 ms rootId=bocbka7u41jre56, id=bocbka7u41jre56
+2024-01-18T17:36:04.792Z - info: Render request 15 queued for execution and waiting for available worker rootId=dg1s7q21dlojazs, id=dg1s7q21dlojazs
+2024-01-18T17:36:04.800Z - info: Starting rendering request 15 rootId=dg1s7q21dlojazs, id=dg1s7q21dlojazs
+2024-01-18T17:36:04.800Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=dg1s7q21dlojazs, id=dg1s7q21dlojazs
+2024-01-18T17:36:05.017Z - warn: Page error: Unexpected token ';' , stack: SyntaxError: Unexpected token ';' rootId=dg1s7q21dlojazs, id=dg1s7q21dlojazs
+2024-01-18T17:36:05.018Z - info: pdf-utils is starting pdf processing rootId=dg1s7q21dlojazs, id=dg1s7q21dlojazs
+2024-01-18T17:36:05.019Z - info: Starting rendering (child) request rootId=dg1s7q21dlojazs, id=4sz0jgg582cb85b
+2024-01-18T17:36:05.019Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=dg1s7q21dlojazs, id=4sz0jgg582cb85b
+2024-01-18T17:36:05.163Z - info: Rendering (child) request finished in 356 ms rootId=dg1s7q21dlojazs, id=4sz0jgg582cb85b
+2024-01-18T17:36:05.164Z - info: pdf-utils pdf processing was finished rootId=dg1s7q21dlojazs, id=dg1s7q21dlojazs
+2024-01-18T17:36:05.165Z - info: Rendering request 15 finished in 371 ms rootId=dg1s7q21dlojazs, id=dg1s7q21dlojazs
+2024-01-18T17:36:17.116Z - info: Render request 16 queued for execution and waiting for available worker rootId=brpuxia2dgpfqap, id=brpuxia2dgpfqap
+2024-01-18T17:36:17.124Z - info: Starting rendering request 16 rootId=brpuxia2dgpfqap, id=brpuxia2dgpfqap
+2024-01-18T17:36:17.124Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=brpuxia2dgpfqap, id=brpuxia2dgpfqap
+2024-01-18T17:36:17.292Z - warn: Page error: Unexpected token ';' , stack: SyntaxError: Unexpected token ';' rootId=brpuxia2dgpfqap, id=brpuxia2dgpfqap
+2024-01-18T17:36:17.343Z - info: pdf-utils is starting pdf processing rootId=brpuxia2dgpfqap, id=brpuxia2dgpfqap
+2024-01-18T17:36:17.344Z - info: Starting rendering (child) request rootId=brpuxia2dgpfqap, id=5d2q0mby4dkkgwj
+2024-01-18T17:36:17.345Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=brpuxia2dgpfqap, id=5d2q0mby4dkkgwj
+2024-01-18T17:36:17.505Z - info: Rendering (child) request finished in 373 ms rootId=brpuxia2dgpfqap, id=5d2q0mby4dkkgwj
+2024-01-18T17:36:17.506Z - info: pdf-utils pdf processing was finished rootId=brpuxia2dgpfqap, id=brpuxia2dgpfqap
+2024-01-18T17:36:17.506Z - info: Rendering request 16 finished in 387 ms rootId=brpuxia2dgpfqap, id=brpuxia2dgpfqap
+2024-01-18T17:36:57.217Z - info: Render request 17 queued for execution and waiting for available worker rootId=b4z49skvjlbbh78, id=b4z49skvjlbbh78
+2024-01-18T17:36:57.225Z - info: Starting rendering request 17 rootId=b4z49skvjlbbh78, id=b4z49skvjlbbh78
+2024-01-18T17:36:57.225Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=b4z49skvjlbbh78, id=b4z49skvjlbbh78
+2024-01-18T17:36:57.375Z - warn: Page error: Unexpected token ';' , stack: SyntaxError: Unexpected token ';' rootId=b4z49skvjlbbh78, id=b4z49skvjlbbh78
+2024-01-18T17:36:57.456Z - info: pdf-utils is starting pdf processing rootId=b4z49skvjlbbh78, id=b4z49skvjlbbh78
+2024-01-18T17:36:57.457Z - info: Starting rendering (child) request rootId=b4z49skvjlbbh78, id=bhlgtfcda3qqc8o
+2024-01-18T17:36:57.458Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=b4z49skvjlbbh78, id=bhlgtfcda3qqc8o
+2024-01-18T17:36:57.622Z - info: Rendering (child) request finished in 389 ms rootId=b4z49skvjlbbh78, id=bhlgtfcda3qqc8o
+2024-01-18T17:36:57.623Z - info: pdf-utils pdf processing was finished rootId=b4z49skvjlbbh78, id=b4z49skvjlbbh78
+2024-01-18T17:36:57.626Z - info: Rendering request 17 finished in 405 ms rootId=b4z49skvjlbbh78, id=b4z49skvjlbbh78
+2024-01-18T17:37:01.652Z - info: Render request 18 queued for execution and waiting for available worker rootId=a422tge323bj3wd, id=a422tge323bj3wd
+2024-01-18T17:37:01.661Z - info: Starting rendering request 18 rootId=a422tge323bj3wd, id=a422tge323bj3wd
+2024-01-18T17:37:01.661Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=a422tge323bj3wd, id=a422tge323bj3wd
+2024-01-18T17:37:01.883Z - warn: Page error: Unexpected token ';' , stack: SyntaxError: Unexpected token ';' rootId=a422tge323bj3wd, id=a422tge323bj3wd
+2024-01-18T17:37:01.883Z - info: pdf-utils is starting pdf processing rootId=a422tge323bj3wd, id=a422tge323bj3wd
+2024-01-18T17:37:01.888Z - info: Starting rendering (child) request rootId=a422tge323bj3wd, id=p5dk4qk60wsudns
+2024-01-18T17:37:01.889Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=a422tge323bj3wd, id=p5dk4qk60wsudns
+2024-01-18T17:37:02.033Z - info: Rendering (child) request finished in 366 ms rootId=a422tge323bj3wd, id=p5dk4qk60wsudns
+2024-01-18T17:37:02.034Z - info: pdf-utils pdf processing was finished rootId=a422tge323bj3wd, id=a422tge323bj3wd
+2024-01-18T17:37:02.035Z - info: Rendering request 18 finished in 381 ms rootId=a422tge323bj3wd, id=a422tge323bj3wd
+2024-01-18T17:40:07.448Z - info: Render request 19 queued for execution and waiting for available worker rootId=ni2lhgrva1gx6p6, id=ni2lhgrva1gx6p6
+2024-01-18T17:40:07.460Z - info: Starting rendering request 19 rootId=ni2lhgrva1gx6p6, id=ni2lhgrva1gx6p6
+2024-01-18T17:40:07.461Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=ni2lhgrva1gx6p6, id=ni2lhgrva1gx6p6
+2024-01-18T17:40:07.622Z - warn: Page error: Unexpected token ';' , stack: SyntaxError: Unexpected token ';' rootId=ni2lhgrva1gx6p6, id=ni2lhgrva1gx6p6
+2024-01-18T17:40:07.700Z - info: pdf-utils is starting pdf processing rootId=ni2lhgrva1gx6p6, id=ni2lhgrva1gx6p6
+2024-01-18T17:40:07.702Z - info: Starting rendering (child) request rootId=ni2lhgrva1gx6p6, id=ug96qy4l5ve7gbt
+2024-01-18T17:40:07.702Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=ni2lhgrva1gx6p6, id=ug96qy4l5ve7gbt
+2024-01-18T17:40:07.869Z - info: Rendering (child) request finished in 403 ms rootId=ni2lhgrva1gx6p6, id=ug96qy4l5ve7gbt
+2024-01-18T17:40:07.870Z - info: pdf-utils pdf processing was finished rootId=ni2lhgrva1gx6p6, id=ni2lhgrva1gx6p6
+2024-01-18T17:40:07.870Z - info: Rendering request 19 finished in 420 ms rootId=ni2lhgrva1gx6p6, id=ni2lhgrva1gx6p6
+2024-01-18T17:42:14.967Z - info: Render request 20 queued for execution and waiting for available worker rootId=jyc7gu3kbma96kv, id=jyc7gu3kbma96kv
+2024-01-18T17:42:14.978Z - info: Starting rendering request 20 rootId=jyc7gu3kbma96kv, id=jyc7gu3kbma96kv
+2024-01-18T17:42:14.978Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=jyc7gu3kbma96kv, id=jyc7gu3kbma96kv
+2024-01-18T17:42:15.226Z - warn: Page error: Unexpected token ';' , stack: SyntaxError: Unexpected token ';' rootId=jyc7gu3kbma96kv, id=jyc7gu3kbma96kv
+2024-01-18T17:42:15.227Z - info: pdf-utils is starting pdf processing rootId=jyc7gu3kbma96kv, id=jyc7gu3kbma96kv
+2024-01-18T17:42:15.234Z - info: Starting rendering (child) request rootId=jyc7gu3kbma96kv, id=rq3xw6f2misv9qk
+2024-01-18T17:42:15.235Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=jyc7gu3kbma96kv, id=rq3xw6f2misv9qk
+2024-01-18T17:42:15.409Z - info: Rendering (child) request finished in 422 ms rootId=jyc7gu3kbma96kv, id=rq3xw6f2misv9qk
+2024-01-18T17:42:15.411Z - info: pdf-utils pdf processing was finished rootId=jyc7gu3kbma96kv, id=jyc7gu3kbma96kv
+2024-01-18T17:42:15.411Z - info: Rendering request 20 finished in 443 ms rootId=jyc7gu3kbma96kv, id=jyc7gu3kbma96kv
+2024-01-18T17:42:24.818Z - info: Render request 21 queued for execution and waiting for available worker rootId=10aenrx8ziryfu2, id=10aenrx8ziryfu2
+2024-01-18T17:42:24.827Z - info: Starting rendering request 21 rootId=10aenrx8ziryfu2, id=10aenrx8ziryfu2
+2024-01-18T17:42:24.828Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=10aenrx8ziryfu2, id=10aenrx8ziryfu2
+2024-01-18T17:42:25.055Z - warn: Page error: Unexpected token ';' , stack: SyntaxError: Unexpected token ';' rootId=10aenrx8ziryfu2, id=10aenrx8ziryfu2
+2024-01-18T17:42:25.070Z - info: pdf-utils is starting pdf processing rootId=10aenrx8ziryfu2, id=10aenrx8ziryfu2
+2024-01-18T17:42:25.071Z - info: Starting rendering (child) request rootId=10aenrx8ziryfu2, id=klzx1i9qhc9sdfh
+2024-01-18T17:42:25.071Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=10aenrx8ziryfu2, id=klzx1i9qhc9sdfh
+2024-01-18T17:42:25.224Z - info: Rendering (child) request finished in 390 ms rootId=10aenrx8ziryfu2, id=klzx1i9qhc9sdfh
+2024-01-18T17:42:25.226Z - info: pdf-utils pdf processing was finished rootId=10aenrx8ziryfu2, id=10aenrx8ziryfu2
+2024-01-18T17:42:25.226Z - info: Rendering request 21 finished in 405 ms rootId=10aenrx8ziryfu2, id=10aenrx8ziryfu2
+2024-01-18T18:04:37.963Z - info: Render request 22 queued for execution and waiting for available worker rootId=5f9ztuoewo2gen3, id=5f9ztuoewo2gen3
+2024-01-18T18:04:37.973Z - info: Starting rendering request 22 rootId=5f9ztuoewo2gen3, id=5f9ztuoewo2gen3
+2024-01-18T18:04:37.974Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=5f9ztuoewo2gen3, id=5f9ztuoewo2gen3
+2024-01-18T18:04:38.602Z - warn: Page error: Unexpected token ';' , stack: SyntaxError: Unexpected token ';' rootId=5f9ztuoewo2gen3, id=5f9ztuoewo2gen3
+2024-01-18T18:04:38.629Z - info: pdf-utils is starting pdf processing rootId=5f9ztuoewo2gen3, id=5f9ztuoewo2gen3
+2024-01-18T18:04:38.630Z - info: Starting rendering (child) request rootId=5f9ztuoewo2gen3, id=l395z7zmmmquotd
+2024-01-18T18:04:38.631Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=5f9ztuoewo2gen3, id=l395z7zmmmquotd
+2024-01-18T18:04:38.794Z - info: Rendering (child) request finished in 818 ms rootId=5f9ztuoewo2gen3, id=l395z7zmmmquotd
+2024-01-18T18:04:38.795Z - info: pdf-utils pdf processing was finished rootId=5f9ztuoewo2gen3, id=5f9ztuoewo2gen3
+2024-01-18T18:04:38.796Z - info: Rendering request 22 finished in 831 ms rootId=5f9ztuoewo2gen3, id=5f9ztuoewo2gen3
+2024-01-18T18:06:21.078Z - info: Render request 23 queued for execution and waiting for available worker rootId=vf7eva13i4rgneu, id=vf7eva13i4rgneu
+2024-01-18T18:06:21.085Z - info: Starting rendering request 23 rootId=vf7eva13i4rgneu, id=vf7eva13i4rgneu
+2024-01-18T18:06:21.085Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=vf7eva13i4rgneu, id=vf7eva13i4rgneu
+2024-01-18T18:06:21.300Z - warn: Page error: Unexpected token ';' , stack: SyntaxError: Unexpected token ';' rootId=vf7eva13i4rgneu, id=vf7eva13i4rgneu
+2024-01-18T18:06:21.300Z - warn: Page error: orders is not defined , stack: ReferenceError: orders is not defined
+    at <anonymous> (file:///C:/Users/DANIEL~1/AppData/Local/Temp/jsreport/autocleanup/70fc08ff-ae75-4696-a054-5d1662b9e728-chrome-pdf.html:42:16) rootId=vf7eva13i4rgneu, id=vf7eva13i4rgneu
+2024-01-18T18:06:21.300Z - warn: Page error: Identifier 'data' has already been declared , stack: SyntaxError: Identifier 'data' has already been declared rootId=vf7eva13i4rgneu, id=vf7eva13i4rgneu
+2024-01-18T18:06:21.355Z - info: pdf-utils is starting pdf processing rootId=vf7eva13i4rgneu, id=vf7eva13i4rgneu
+2024-01-18T18:06:21.357Z - info: Starting rendering (child) request rootId=vf7eva13i4rgneu, id=q1bo0jevzj8cjf2
+2024-01-18T18:06:21.357Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=vf7eva13i4rgneu, id=q1bo0jevzj8cjf2
+2024-01-18T18:06:21.509Z - info: Rendering (child) request finished in 416 ms rootId=vf7eva13i4rgneu, id=q1bo0jevzj8cjf2
+2024-01-18T18:06:21.510Z - info: pdf-utils pdf processing was finished rootId=vf7eva13i4rgneu, id=vf7eva13i4rgneu
+2024-01-18T18:06:21.511Z - info: Rendering request 23 finished in 430 ms rootId=vf7eva13i4rgneu, id=vf7eva13i4rgneu
+2024-01-18T18:13:43.273Z - info: Render request 24 queued for execution and waiting for available worker rootId=yclj5tdy7818k22, id=yclj5tdy7818k22
+2024-01-18T18:13:43.288Z - info: Starting rendering request 24 rootId=yclj5tdy7818k22, id=yclj5tdy7818k22
+2024-01-18T18:13:43.289Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=yclj5tdy7818k22, id=yclj5tdy7818k22
+2024-01-18T18:13:43.450Z - warn: Page error: Unexpected token ';' , stack: SyntaxError: Unexpected token ';' rootId=yclj5tdy7818k22, id=yclj5tdy7818k22
+2024-01-18T18:13:43.521Z - info: pdf-utils is starting pdf processing rootId=yclj5tdy7818k22, id=yclj5tdy7818k22
+2024-01-18T18:13:43.521Z - info: Starting rendering (child) request rootId=yclj5tdy7818k22, id=o3bm2wdq9skm8mj
+2024-01-18T18:13:43.522Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=yclj5tdy7818k22, id=o3bm2wdq9skm8mj
+2024-01-18T18:13:43.684Z - info: Rendering (child) request finished in 393 ms rootId=yclj5tdy7818k22, id=o3bm2wdq9skm8mj
+2024-01-18T18:13:43.686Z - info: pdf-utils pdf processing was finished rootId=yclj5tdy7818k22, id=yclj5tdy7818k22
+2024-01-18T18:13:43.687Z - info: Rendering request 24 finished in 413 ms rootId=yclj5tdy7818k22, id=yclj5tdy7818k22
+2024-01-18T18:13:57.037Z - info: Render request 25 queued for execution and waiting for available worker rootId=ipl808igtxmd18x, id=ipl808igtxmd18x
+2024-01-18T18:13:57.046Z - info: Starting rendering request 25 rootId=ipl808igtxmd18x, id=ipl808igtxmd18x
+2024-01-18T18:13:57.046Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=ipl808igtxmd18x, id=ipl808igtxmd18x
+2024-01-18T18:13:57.289Z - warn: Page error: Unexpected identifier 'Object' , stack: SyntaxError: Unexpected identifier 'Object' rootId=ipl808igtxmd18x, id=ipl808igtxmd18x
+2024-01-18T18:13:57.317Z - info: pdf-utils is starting pdf processing rootId=ipl808igtxmd18x, id=ipl808igtxmd18x
+2024-01-18T18:13:57.318Z - info: Starting rendering (child) request rootId=ipl808igtxmd18x, id=6ggmxhcjcrqvfuq
+2024-01-18T18:13:57.318Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=ipl808igtxmd18x, id=6ggmxhcjcrqvfuq
+2024-01-18T18:13:57.471Z - info: Rendering (child) request finished in 420 ms rootId=ipl808igtxmd18x, id=6ggmxhcjcrqvfuq
+2024-01-18T18:13:57.471Z - info: pdf-utils pdf processing was finished rootId=ipl808igtxmd18x, id=ipl808igtxmd18x
+2024-01-18T18:13:57.472Z - info: Rendering request 25 finished in 433 ms rootId=ipl808igtxmd18x, id=ipl808igtxmd18x
+2024-01-18T18:14:02.498Z - info: Render request 26 queued for execution and waiting for available worker rootId=iekapembs7r0tai, id=iekapembs7r0tai
+2024-01-18T18:14:02.507Z - info: Starting rendering request 26 rootId=iekapembs7r0tai, id=iekapembs7r0tai
+2024-01-18T18:14:02.507Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=iekapembs7r0tai, id=iekapembs7r0tai
+2024-01-18T18:14:02.699Z - warn: Page error: Unexpected identifier 'Object' , stack: SyntaxError: Unexpected identifier 'Object' rootId=iekapembs7r0tai, id=iekapembs7r0tai
+2024-01-18T18:14:02.749Z - info: pdf-utils is starting pdf processing rootId=iekapembs7r0tai, id=iekapembs7r0tai
+2024-01-18T18:14:02.750Z - info: Starting rendering (child) request rootId=iekapembs7r0tai, id=5bp7y9q6kihs3at
+2024-01-18T18:14:02.751Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=iekapembs7r0tai, id=5bp7y9q6kihs3at
+2024-01-18T18:14:02.911Z - info: Rendering (child) request finished in 396 ms rootId=iekapembs7r0tai, id=5bp7y9q6kihs3at
+2024-01-18T18:14:02.912Z - info: pdf-utils pdf processing was finished rootId=iekapembs7r0tai, id=iekapembs7r0tai
+2024-01-18T18:14:02.913Z - info: Rendering request 26 finished in 412 ms rootId=iekapembs7r0tai, id=iekapembs7r0tai
+2024-01-18T18:15:49.519Z - info: Render request 27 queued for execution and waiting for available worker rootId=75jnwa1g58882gy, id=75jnwa1g58882gy
+2024-01-18T18:15:49.530Z - info: Starting rendering request 27 rootId=75jnwa1g58882gy, id=75jnwa1g58882gy
+2024-01-18T18:15:49.530Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=75jnwa1g58882gy, id=75jnwa1g58882gy
+2024-01-18T18:15:49.751Z - warn: Page error: Unexpected identifier 'Object' , stack: SyntaxError: Unexpected identifier 'Object' rootId=75jnwa1g58882gy, id=75jnwa1g58882gy
+2024-01-18T18:15:49.792Z - info: pdf-utils is starting pdf processing rootId=75jnwa1g58882gy, id=75jnwa1g58882gy
+2024-01-18T18:15:49.794Z - info: Starting rendering (child) request rootId=75jnwa1g58882gy, id=uzzevtaoa01auo6
+2024-01-18T18:15:49.794Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=75jnwa1g58882gy, id=uzzevtaoa01auo6
+2024-01-18T18:15:49.952Z - info: Rendering (child) request finished in 415 ms rootId=75jnwa1g58882gy, id=uzzevtaoa01auo6
+2024-01-18T18:15:49.952Z - info: pdf-utils pdf processing was finished rootId=75jnwa1g58882gy, id=75jnwa1g58882gy
+2024-01-18T18:15:49.953Z - info: Rendering request 27 finished in 430 ms rootId=75jnwa1g58882gy, id=75jnwa1g58882gy
+2024-01-18T18:16:19.945Z - info: Render request 28 queued for execution and waiting for available worker rootId=sk0eyl3boq4j63y, id=sk0eyl3boq4j63y
+2024-01-18T18:16:19.955Z - info: Starting rendering request 28 rootId=sk0eyl3boq4j63y, id=sk0eyl3boq4j63y
+2024-01-18T18:16:19.955Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=sk0eyl3boq4j63y, id=sk0eyl3boq4j63y
+2024-01-18T18:16:20.191Z - warn: Page error: Unexpected identifier 'Object' , stack: SyntaxError: Unexpected identifier 'Object' rootId=sk0eyl3boq4j63y, id=sk0eyl3boq4j63y
+2024-01-18T18:16:20.191Z - warn: Page error: Unexpected identifier 'Object' , stack: SyntaxError: Unexpected identifier 'Object' rootId=sk0eyl3boq4j63y, id=sk0eyl3boq4j63y
+2024-01-18T18:16:20.192Z - info: pdf-utils is starting pdf processing rootId=sk0eyl3boq4j63y, id=sk0eyl3boq4j63y
+2024-01-18T18:16:20.196Z - info: Starting rendering (child) request rootId=sk0eyl3boq4j63y, id=sun3mm4o0xjxrhu
+2024-01-18T18:16:20.196Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=sk0eyl3boq4j63y, id=sun3mm4o0xjxrhu
+2024-01-18T18:16:20.349Z - info: Rendering (child) request finished in 387 ms rootId=sk0eyl3boq4j63y, id=sun3mm4o0xjxrhu
+2024-01-18T18:16:20.350Z - info: pdf-utils pdf processing was finished rootId=sk0eyl3boq4j63y, id=sk0eyl3boq4j63y
+2024-01-18T18:16:20.351Z - info: Rendering request 28 finished in 403 ms rootId=sk0eyl3boq4j63y, id=sk0eyl3boq4j63y
+2024-01-18T18:16:25.651Z - info: Render request 29 queued for execution and waiting for available worker rootId=gr4vplv4mhrrnm7, id=gr4vplv4mhrrnm7
+2024-01-18T18:16:25.659Z - info: Starting rendering request 29 rootId=gr4vplv4mhrrnm7, id=gr4vplv4mhrrnm7
+2024-01-18T18:16:25.660Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=gr4vplv4mhrrnm7, id=gr4vplv4mhrrnm7
+2024-01-18T18:16:25.869Z - warn: Page error: Unexpected token ';' , stack: SyntaxError: Unexpected token ';' rootId=gr4vplv4mhrrnm7, id=gr4vplv4mhrrnm7
+2024-01-18T18:16:25.869Z - warn: Page error: Unexpected token ';' , stack: SyntaxError: Unexpected token ';' rootId=gr4vplv4mhrrnm7, id=gr4vplv4mhrrnm7
+2024-01-18T18:16:25.912Z - info: pdf-utils is starting pdf processing rootId=gr4vplv4mhrrnm7, id=gr4vplv4mhrrnm7
+2024-01-18T18:16:25.913Z - info: Starting rendering (child) request rootId=gr4vplv4mhrrnm7, id=d4ilj07zgpg4jql
+2024-01-18T18:16:25.914Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=gr4vplv4mhrrnm7, id=d4ilj07zgpg4jql
+2024-01-18T18:16:26.066Z - info: Rendering (child) request finished in 394 ms rootId=gr4vplv4mhrrnm7, id=d4ilj07zgpg4jql
+2024-01-18T18:16:26.067Z - info: pdf-utils pdf processing was finished rootId=gr4vplv4mhrrnm7, id=gr4vplv4mhrrnm7
+2024-01-18T18:16:26.067Z - info: Rendering request 29 finished in 413 ms rootId=gr4vplv4mhrrnm7, id=gr4vplv4mhrrnm7
+2024-01-18T18:16:34.957Z - info: Render request 30 queued for execution and waiting for available worker rootId=1fv6qe9pvdcenob, id=1fv6qe9pvdcenob
+2024-01-18T18:16:34.967Z - info: Starting rendering request 30 rootId=1fv6qe9pvdcenob, id=1fv6qe9pvdcenob
+2024-01-18T18:16:34.968Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=1fv6qe9pvdcenob, id=1fv6qe9pvdcenob
+2024-01-18T18:16:35.000Z - warn: Error when processing render request 30
+(because) error when evaluating engine handlebars for template /samples/Trabajo/orders-main
+(because) "pdfCreatePagesGroup" helper call failed
+(because) "pdfCreatePagesGroup" was called with undefined parameter. One parameter was expected.
+Error: "pdfCreatePagesGroup" helper call failed
+(because) "pdfCreatePagesGroup" was called with undefined parameter. One parameter was expected.
+    at module.exports (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\shared\createError.js:10:13)
+    at WorkerReporter.createError (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\shared\reporter.js:49:12)
+    at getEnhancedHelperError (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\worker\render\executeEngine.js:364:54)
+    at Array.<anonymous> (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\worker\render\executeEngine.js:370:15)
+    at Array.<anonymous> (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\worker\render\executeEngine.js:347:27)
+    at Array.wrapper (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\handlebars\dist\cjs\handlebars\internal\wrapHelper.js:15:19)
+    at 1 (eval at compile (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-handlebars\lib\handlebarsEngine.js:35:30), <anonymous>:18:155)
+    at prog (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\handlebars\dist\cjs\handlebars\runtime.js:268:12)
+    at execIteration (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\handlebars\dist\cjs\handlebars\helpers\each.js:51:19)
+    at C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\handlebars\dist\cjs\handlebars\helpers\each.js:83:15
+wrapped by:
+Error: Error when evaluating engine handlebars for template /samples/Trabajo/orders-main
+(because) "pdfCreatePagesGroup" helper call failed
+(because) "pdfCreatePagesGroup" was called with undefined parameter. One parameter was expected.
+    at module.exports (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\shared\createError.js:10:13)
+    at WorkerReporter.createError (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\shared\reporter.js:49:12)
+    at executeEngine (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\worker\render\executeEngine.js:310:33)
+    at async engine.engine (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\worker\render\executeEngine.js:115:14)
+    at async invokeRender (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\worker\render\render.js:61:23)
+    at async WorkerReporter._render (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\worker\render\render.js:142:7)
+    at async C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\jsreport-core\lib\worker\reporter.js:224:19
+    at async processAndResponse (C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\node_modules\@jsreport\advanced-workers\lib\workerHandler.js:41:17) rootId=1fv6qe9pvdcenob, id=1fv6qe9pvdcenob
+2024-01-18T18:16:35.003Z - warn: Rendering request 30 finished with error in 43 ms rootId=1fv6qe9pvdcenob, id=1fv6qe9pvdcenob
+2024-01-18T18:16:56.210Z - info: Render request 31 queued for execution and waiting for available worker rootId=ur7olyyxzxwas44, id=ur7olyyxzxwas44
+2024-01-18T18:16:56.220Z - info: Starting rendering request 31 rootId=ur7olyyxzxwas44, id=ur7olyyxzxwas44
+2024-01-18T18:16:56.220Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=ur7olyyxzxwas44, id=ur7olyyxzxwas44
+2024-01-18T18:16:56.414Z - warn: Page error: this.map is not a function , stack: TypeError: this.map is not a function
+    at <anonymous> (file:///C:/Users/DANIEL~1/AppData/Local/Temp/jsreport/autocleanup/092d4684-b7a3-4920-aa21-5242de482f17-chrome-pdf.html:14:32) rootId=ur7olyyxzxwas44, id=ur7olyyxzxwas44
+2024-01-18T18:16:56.415Z - warn: Page error: Identifier 'raceNames' has already been declared , stack: SyntaxError: Identifier 'raceNames' has already been declared rootId=ur7olyyxzxwas44, id=ur7olyyxzxwas44
+2024-01-18T18:16:56.472Z - info: pdf-utils is starting pdf processing rootId=ur7olyyxzxwas44, id=ur7olyyxzxwas44
+2024-01-18T18:16:56.473Z - info: Starting rendering (child) request rootId=ur7olyyxzxwas44, id=be7suyb7gha5174
+2024-01-18T18:16:56.474Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=ur7olyyxzxwas44, id=be7suyb7gha5174
+2024-01-18T18:16:56.638Z - info: Rendering (child) request finished in 411 ms rootId=ur7olyyxzxwas44, id=be7suyb7gha5174
+2024-01-18T18:16:56.639Z - info: pdf-utils pdf processing was finished rootId=ur7olyyxzxwas44, id=ur7olyyxzxwas44
+2024-01-18T18:16:56.639Z - info: Rendering request 31 finished in 427 ms rootId=ur7olyyxzxwas44, id=ur7olyyxzxwas44
+2024-01-18T18:17:19.967Z - info: Render request 32 queued for execution and waiting for available worker rootId=omaap22iubkxkvs, id=omaap22iubkxkvs
+2024-01-18T18:17:19.976Z - info: Starting rendering request 32 rootId=omaap22iubkxkvs, id=omaap22iubkxkvs
+2024-01-18T18:17:19.977Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=omaap22iubkxkvs, id=omaap22iubkxkvs
+2024-01-18T18:17:20.216Z - warn: Page error: Unexpected identifier 'Object' , stack: SyntaxError: Unexpected identifier 'Object' rootId=omaap22iubkxkvs, id=omaap22iubkxkvs
+2024-01-18T18:17:20.217Z - warn: Page error: Unexpected identifier 'Object' , stack: SyntaxError: Unexpected identifier 'Object' rootId=omaap22iubkxkvs, id=omaap22iubkxkvs
+2024-01-18T18:17:20.218Z - info: pdf-utils is starting pdf processing rootId=omaap22iubkxkvs, id=omaap22iubkxkvs
+2024-01-18T18:17:20.224Z - info: Starting rendering (child) request rootId=omaap22iubkxkvs, id=d5qn434omwwbyh7
+2024-01-18T18:17:20.225Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=omaap22iubkxkvs, id=d5qn434omwwbyh7
+2024-01-18T18:17:20.386Z - info: Rendering (child) request finished in 406 ms rootId=omaap22iubkxkvs, id=d5qn434omwwbyh7
+2024-01-18T18:17:20.386Z - info: pdf-utils pdf processing was finished rootId=omaap22iubkxkvs, id=omaap22iubkxkvs
+2024-01-18T18:17:20.387Z - info: Rendering request 32 finished in 418 ms rootId=omaap22iubkxkvs, id=omaap22iubkxkvs
+2024-01-18T18:23:24.354Z - info: Render request 33 queued for execution and waiting for available worker rootId=bjytrmjy89uqf9h, id=bjytrmjy89uqf9h
+2024-01-18T18:23:24.363Z - info: Starting rendering request 33 rootId=bjytrmjy89uqf9h, id=bjytrmjy89uqf9h
+2024-01-18T18:23:24.364Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=bjytrmjy89uqf9h, id=bjytrmjy89uqf9h
+2024-01-18T18:23:24.579Z - warn: Page error: Unexpected token ';' , stack: SyntaxError: Unexpected token ';' rootId=bjytrmjy89uqf9h, id=bjytrmjy89uqf9h
+2024-01-18T18:23:24.621Z - info: pdf-utils is starting pdf processing rootId=bjytrmjy89uqf9h, id=bjytrmjy89uqf9h
+2024-01-18T18:23:24.623Z - info: Starting rendering (child) request rootId=bjytrmjy89uqf9h, id=ymv33wiai595lah
+2024-01-18T18:23:24.623Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=bjytrmjy89uqf9h, id=ymv33wiai595lah
+2024-01-18T18:23:24.785Z - info: Rendering (child) request finished in 412 ms rootId=bjytrmjy89uqf9h, id=ymv33wiai595lah
+2024-01-18T18:23:24.786Z - info: pdf-utils pdf processing was finished rootId=bjytrmjy89uqf9h, id=bjytrmjy89uqf9h
+2024-01-18T18:23:24.786Z - info: Rendering request 33 finished in 429 ms rootId=bjytrmjy89uqf9h, id=bjytrmjy89uqf9h
+2024-01-18T18:25:10.820Z - info: Initializing jsreport (version: 4.2.0, configuration file: jsreport.config.json, nodejs: 18.17.1)
+2024-01-18T18:25:10.823Z - info: Searching for available extensions in C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\
+2024-01-18T18:25:10.828Z - info: Extensions location cache C:\Users\DANIEL~1\AppData\Local\Temp\jsreport\core\locations.json contains older information, crawling
+2024-01-18T18:25:11.941Z - info: Found 35 extension(s)
+2024-01-18T18:25:12.000Z - info: Using extension base@4.0.0
+2024-01-18T18:25:12.005Z - info: Using extension child-templates@4.0.0
+2024-01-18T18:25:12.010Z - info: Using extension cli@4.0.2
+2024-01-18T18:25:12.012Z - info: Using extension components@4.0.0
+2024-01-18T18:25:12.014Z - info: Using extension data@4.0.0
+2024-01-18T18:25:12.016Z - info: Using extension express@4.0.1
+2024-01-18T18:25:12.195Z - info: Using extension freeze@4.0.0
+2024-01-18T18:25:12.197Z - info: Using extension fs-store@4.0.1
+2024-01-18T18:25:12.275Z - info: Using extension handlebars@4.0.1
+2024-01-18T18:25:12.277Z - info: Using extension import-export@4.0.2
+2024-01-18T18:25:12.285Z - info: Using extension jsrender@4.0.0
+2024-01-18T18:25:12.287Z - info: Using extension licensing@4.0.1
+2024-01-18T18:25:12.293Z - info: Using extension localization@4.0.1
+2024-01-18T18:25:12.294Z - info: Using extension npm@4.0.0
+2024-01-18T18:25:12.297Z - info: Using extension pdf-utils@4.0.2
+2024-01-18T18:25:12.298Z - info: Using extension reports@4.0.0
+2024-01-18T18:25:12.301Z - info: Using extension tags@4.0.1
+2024-01-18T18:25:12.303Z - info: Using extension text@4.0.0
+2024-01-18T18:25:12.304Z - info: Using extension version-control@4.0.0
+2024-01-18T18:25:12.314Z - info: Using extension assets@4.0.2
+2024-01-18T18:25:12.323Z - info: Using extension authorization@4.0.0
+2024-01-18T18:25:12.327Z - info: Using extension browser-client@4.0.0
+2024-01-18T18:25:12.329Z - info: Using extension chrome-pdf@4.0.0
+2024-01-18T18:25:12.331Z - info: Using extension docx@4.1.1
+2024-01-18T18:25:12.333Z - info: Using extension html-to-xlsx@4.0.1
+2024-01-18T18:25:12.591Z - info: html-to-xlsx detected chrome as available html engine
+2024-01-18T18:25:12.592Z - info: Using extension pptx@4.1.0
+2024-01-18T18:25:12.594Z - info: Using extension scheduling@4.0.0
+2024-01-18T18:25:12.616Z - info: Using extension scripts@4.0.0
+2024-01-18T18:25:12.617Z - info: Using extension static-pdf@4.0.0
+2024-01-18T18:25:12.618Z - info: Using extension studio@4.0.2
+2024-01-18T18:25:12.674Z - info: Using extension xlsx@4.0.2
+2024-01-18T18:25:12.676Z - info: Using extension public-templates@4.0.0
+2024-01-18T18:25:12.678Z - info: Using extension sample-template@4.0.0
+2024-01-18T18:25:12.680Z - info: Using extension studio-theme-dark@4.0.0
+2024-01-18T18:25:12.683Z - info: Code sandboxing is disabled, users can potentially penetrate the local system if you allow code from external users to be part of your reports
+2024-01-18T18:25:12.683Z - info: Using general timeout for rendering (reportTimeout: 60000)
+2024-01-18T18:25:12.683Z - info: Using fs provider for template store.
+2024-01-18T18:25:12.687Z - info: fs store is persisting using fs for C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\data
+2024-01-18T18:25:12.694Z - info: fs store is loading data
+2024-01-18T18:25:12.734Z - info: fs store is initialized successfully
+2024-01-18T18:25:12.748Z - info: Creating default express app.
+2024-01-18T18:25:12.769Z - info: jsreport server successfully started on http port: 5488
+2024-01-18T18:25:12.770Z - info: Verifying license key free
+2024-01-18T18:25:12.771Z - info: Using free license
+2024-01-18T18:25:12.774Z - info: Initializing worker threads
+2024-01-18T18:25:12.977Z - info: 2 worker threads initialized in 203ms
+2024-01-18T18:25:12.977Z - info: Starting temp files cleanup with 180000ms threshold
+2024-01-18T18:25:12.979Z - info: reporter initialized
+2024-01-18T18:26:43.922Z - info: Render request 1 queued for execution and waiting for available worker rootId=d6ehb3k3vh13t8s, id=d6ehb3k3vh13t8s
+2024-01-18T18:26:43.941Z - info: Starting rendering request 1 rootId=d6ehb3k3vh13t8s, id=d6ehb3k3vh13t8s
+2024-01-18T18:26:43.942Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=d6ehb3k3vh13t8s, id=d6ehb3k3vh13t8s
+2024-01-18T18:26:49.445Z - warn: Page error: Unexpected token ';' , stack: SyntaxError: Unexpected token ';' rootId=d6ehb3k3vh13t8s, id=d6ehb3k3vh13t8s
+2024-01-18T18:26:49.446Z - info: pdf-utils is starting pdf processing rootId=d6ehb3k3vh13t8s, id=d6ehb3k3vh13t8s
+2024-01-18T18:26:49.452Z - info: Starting rendering (child) request rootId=d6ehb3k3vh13t8s, id=2te09f4gz2ihvkp
+2024-01-18T18:26:49.453Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=d6ehb3k3vh13t8s, id=2te09f4gz2ihvkp
+2024-01-18T18:26:49.670Z - info: Rendering (child) request finished in 5715 ms rootId=d6ehb3k3vh13t8s, id=2te09f4gz2ihvkp
+2024-01-18T18:26:49.672Z - info: pdf-utils pdf processing was finished rootId=d6ehb3k3vh13t8s, id=d6ehb3k3vh13t8s
+2024-01-18T18:26:49.673Z - info: Rendering request 1 finished in 5748 ms rootId=d6ehb3k3vh13t8s, id=d6ehb3k3vh13t8s
+2024-01-18T18:27:52.117Z - info: Render request 2 queued for execution and waiting for available worker rootId=wrfiqam9uyuqe7d, id=wrfiqam9uyuqe7d
+2024-01-18T18:27:52.133Z - info: Starting rendering request 2 rootId=wrfiqam9uyuqe7d, id=wrfiqam9uyuqe7d
+2024-01-18T18:27:52.134Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=wrfiqam9uyuqe7d, id=wrfiqam9uyuqe7d
+2024-01-18T18:27:52.399Z - error: Report render failed
+(because) res.end is not a function
+TypeError: res.end is not a function
+    at sandbox.js:73:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5) rootId=wrfiqam9uyuqe7d, id=wrfiqam9uyuqe7d
+2024-01-18T18:28:03.358Z - info: Render request 3 queued for execution and waiting for available worker rootId=sr90mebsohmnjq0, id=sr90mebsohmnjq0
+2024-01-18T18:28:03.373Z - info: Starting rendering request 3 rootId=sr90mebsohmnjq0, id=sr90mebsohmnjq0
+2024-01-18T18:28:03.373Z - info: Rendering template { name: orders-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=sr90mebsohmnjq0, id=sr90mebsohmnjq0
+2024-01-18T18:28:05.880Z - warn: Page error: Unexpected token ';' , stack: SyntaxError: Unexpected token ';' rootId=sr90mebsohmnjq0, id=sr90mebsohmnjq0
+2024-01-18T18:28:06.266Z - info: pdf-utils is starting pdf processing rootId=sr90mebsohmnjq0, id=sr90mebsohmnjq0
+2024-01-18T18:28:06.272Z - info: Starting rendering (child) request rootId=sr90mebsohmnjq0, id=p4vgskp2inn00cc
+2024-01-18T18:28:06.273Z - info: Rendering template { name: orders-header, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=sr90mebsohmnjq0, id=p4vgskp2inn00cc
+2024-01-18T18:28:06.447Z - info: Rendering (child) request finished in 3055 ms rootId=sr90mebsohmnjq0, id=p4vgskp2inn00cc
+2024-01-18T18:28:06.448Z - info: pdf-utils pdf processing was finished rootId=sr90mebsohmnjq0, id=sr90mebsohmnjq0
+2024-01-18T18:28:06.448Z - info: Rendering request 3 finished in 3087 ms rootId=sr90mebsohmnjq0, id=sr90mebsohmnjq0
+2024-01-18T20:01:34.491Z - info: Initializing jsreport (version: 4.2.0, configuration file: jsreport.config.json, nodejs: 18.17.1)
+2024-01-18T20:01:34.496Z - info: Searching for available extensions in C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\
+2024-01-18T20:01:34.507Z - info: Extensions location cache contains up to date information, skipping crawling in C:\Users\Daniel Mesa\Desktop\proyecto\mitca\jsreportapp\

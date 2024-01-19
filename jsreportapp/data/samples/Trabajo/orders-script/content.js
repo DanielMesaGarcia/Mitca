@@ -1,4 +1,5 @@
 const axios = require('axios');
+const nodemailer = require('nodemailer');
 
 function fetchData() {
   const apiUrl = 'http://localhost:3001/races';
@@ -12,7 +13,7 @@ function fetchData() {
 }
 
 function transformData(data) {
-  return data.data.map(race => {
+  const transformedData = data.data.map(race => {
     const raceRunners = race.runners.map(runner => ({
       id: runner._id,
       name: runner.name,
@@ -26,9 +27,24 @@ function transformData(data) {
       length: race.length,
       runners: raceRunners,
       runnerCount: race.runners.length,
+      raceNames: race._id,
+      runnerCounts: race.runners.length,
     };
   });
+
+  const nombres = transformedData.map(race => race.raceNames);
+  const cuenta = transformedData.map(race => race.runnerCounts);
+
+  console.log(nombres);
+  console.log(cuenta);
+
+  return {
+    nombres: nombres,
+    cuenta: cuenta,
+    info: transformedData,
+  };
 }
+
 
 function beforeRender(req, res, done) {
   fetchData()
