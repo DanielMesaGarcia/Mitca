@@ -1,5 +1,4 @@
 const axios = require('axios');
-const nodemailer = require('nodemailer');
 
 function fetchData() {
   const apiUrl = 'http://localhost:3001/races';
