@@ -66,6 +66,16 @@ const Header = () => {
             </Button>
           </li>
           <li>
+          <a href="http://localhost:5488/templates/HJH11D83ce" >
+            <Button
+              type="primary"
+              className="demo-button"
+            >
+              Report
+            </Button>
+            </a>
+          </li>
+          <li>
             <Button
               type="primary"
               className="demo-button"
